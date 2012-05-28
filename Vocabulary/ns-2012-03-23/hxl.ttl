@@ -1,0 +1,2291 @@
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix foaf:         <http://xmlns.com/foaf/0.1/> .
+@prefix dc:         <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:         <http://www.w3.org/2004/02/skos/core#> .
+@prefix hxl:         <http://carsten.io/hxl/ns-2012-03-23#> . 
+
+<http://carsten.io/hxl/ns-2012-03-23> a owl:Ontology ;   # update
+        dc:date "2012-03-09"^^xsd:date ;                                                                 # update
+        dc:creator hxl:carsten , hxl:cj , hxl:minu ;
+        dc:title "Humanitarian eXchange Language (HXL) Situation and Response Standard"@en ;
+        dc:abstract "<p>Draft specification of the Humanitarian eXchange Language (HXL) standard. This vocabulary specification is currently <b>under development</b> and may change at any time without notice.</p> <p>The porpuse of HXL is to facilitate data exchange within the humanitarian domain. It provides a core domain model that has been created bottom-up by inspecting a broad range of systems in use with different humanitarian organisations. As needs vary widely across organisations in this domain, this vocabulary does <em>not</em> intend to be complete; in fact, it is the smallest common denominator. Any organisations that wish to publish <em>full</em> exports of their data can do so by extending this domain model with application- or organisation-specific models that reflect their internal data models (which may already be formalised in an XML schema or database schema). </p>"@en ;
+        dc:license "We still need to decide under which license this vocabulary should be published."@en ;
+        dc:versionOf <http://hxl.humanitarianresponse.info> ;
+        rdfs:seeAlso "For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>."@en ;
+        dc:replaces <http://carsten.io/hxl/ns-2012-03-09> ; # update -> previous version
+        skos:changeNote "Changes compared to the previous version:<ol><li>WASH cluster section has been added.</li><li>Shelter cluster section has been remodeled; most classes have been turned into data properties.</li></ol>" . 
+
+
+# define the different vocabulary sections for vocabulary management 
+hxl:geolocationSection a hxl:vocabularySection ;
+        rdfs:comment "This section of the vocabulary defines the geolocation standard. The <a href='hxl-geolocation-standard-draft.pdf'>draft HXL geolocation standard</a> contains a detailed description of how to use the classes and properties."@en ;
+dc:title "Geolocation Section".
+hxl:datetimeSection a hxl:vocabularySection ; 
+        rdfs:comment "This section of the vocabulary defines the date/time standard. The <a href='hxl-datetime-standard-draft.pdf'>draft HXL date/time standard</a> contains a detailed description of how to use the classes and properties."@en         ;
+dc:title "Date/Time Section".
+hxl:situationSection a hxl:vocabularySection ;
+        rdfs:comment "This section of the vocabulary defines the standards for situations and emergencies."@en ;
+dc:title "Situation Section".
+hxl:responseSection a hxl:vocabularySection ;
+        rdfs:comment "This section of the vocabulary defines the standards for response activities."@en ;
+dc:title "Response Section".
+hxl:shelterClusterSection a hxl:vocabularySection ;
+        rdfs:comment "This section of the vocabulary defines the standards for the shelter cluster."@en ;
+dc:title "Shelter Cluster Section".
+hxl:washClusterSection a hxl:vocabularySection ;
+        rdfs:comment "This section of the vocabulary defines the standards for the WASH cluster."@en ;
+dc:title "WASH Cluster Section".
+hxl:metadataSection a hxl:vocabularySection ;
+        rdfs:comment "This section of the vocabulary defines the standards for metadata about a set of HXL data that is being exchanged."@en ;
+dc:title "Metadata Section".
+                
+hxl:carsten foaf:name "Carsten Keßler" ;
+        foaf:mbox "me@carsten.io" ;
+        foaf:homepage <http://carsten.io> .
+
+hxl:cj foaf:name "CJ Hendrix" ;
+        foaf:mbox "hendrix@un.org" .
+
+hxl:minu foaf:name "Minu Limbu" ;
+        foaf:mbox "minulimbu@gmail.com" .
+                
+hxl:Situation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection;
+        skos:prefLabel "Situation"@en ;
+        rdfs:comment "Generic situation."@en.          # eventually add more languages ?
+        
+hxl:Activity
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection;
+        skos:prefLabel "Humanitarian Activity"@en ;
+        skos:altLabel "Project"@en ;
+        skos:altLabel "Intervention"@en ;
+#        rdfs:comment "Description en français."@fr ;
+        rdfs:comment "An Activity generally addresses some kind of need given in a Humanitarian Situation. Synonyms: Project, intervention. <br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, Sahana Project, Sigmah DB</small>"@en .        
+
+hxl:AdminUnit
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection;
+        skos:prefLabel "Administrative Unit"@en ;
+        rdfs:subClassOf hxl:Feature ;
+        rdfs:comment "Administrative units can include coutries, regions, cities, etc. The hierarchy of administrative units can vary from country to country."@en .        
+
+hxl:PopulatedPlace
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection;
+        skos:prefLabel "Populated Place"@en ;
+        rdfs:subClassOf hxl:AdminUnit ;
+rdfs:comment "Lowest-level administrative unit, such as a town or settlement."@en .
+        
+hxl:Country
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection;
+        skos:prefLabel "Country"@en ;
+        rdfs:subClassOf hxl:AdminUnit ;
+rdfs:comment "Highest-level administrative unit (level 0)."@en .
+
+hxl:AdminUnitLevel
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection;
+        skos:prefLabel "Administrative Unit Level"@en ;
+        rdfs:comment "The specific administrative unit levels can vary from country to country. Administrative Unit Level 0 is a country – in this case, hxl:Country should be used."@en .
+
+hxl:AffectedPopulation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Affected Population"@en ;
+        rdfs:subClassOf hxl:Population ;
+        rdfs:comment "The population affected by an emergency.<br /><small>Term origin: Humanitarian Profile (<em>Affected</em>);</small>"@en .        
+
+hxl:Cluster
+         a rdfs:Class ;
+         rdfs:isDefinedBy hxl:responseSection;
+         skos:prefLabel "Cluster"@en ;
+ rdfs:comment "An organizational unit responsible for one or more sectors during an emergency. Examples: Emergency shelter cluster, WASH, Food.  The <em>cluster approach</em> is a coordination mechanism that can help to address identified gaps in response and enhance the quality of humanitarian action with improved effectiveness, predictability and accountability of humanitarian response.<br /><small>Term origin: CAP OPS, CCDI.</small>"@en .
+
+hxl:Sector
+         a rdfs:Class ;
+         rdfs:isDefinedBy hxl:responseSection;
+         skos:prefLabel "Sector"@en ;
+         rdfs:comment "A thematic sector, such as health, that needs to be addressed during an emergency. One cluster can be responsible for one or more sectors, depeding on the emergency."@en .
+
+# 
+# hxl:Agency
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:peopleOrganizationSection ;
+#         rdfs:subClassOf hxl:Organization ;
+#         skos:prefLabel "Agency"@en ;
+# rdfs:comment "An Agency is an official body of the United Nations. <br /><small>Term origin: CCDI, CERF, Shelter Cluster</small>"@en .
+
+
+# hxl:Camp
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection;
+#         rdfs:subClassOf hxl:Site ;
+#         rdfs:subClassOf hxl:Shelter ;
+#         skos:prefLabel "Camp"@en ;
+#         rdfs:comment "A site with temporary shelter for an affected population, such as refugees. <br /><small>Term origin: UNHCR Camp DB, Pakistan SRF, Humanitarian Profile.</small>"@en .
+
+hxl:Population
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Population"@en ;
+        rdfs:subClassOf foaf:Group ;
+        rdfs:comment "Generic class for any kind of population. Example: Total population, affected population etc; use the subclasses for the data annotation."@en .
+
+hxl:TotalPopulation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Total Population"@en ;
+        rdfs:subClassOf hxl:Population ;
+        rdfs:comment "Total population for a given administrative unit or geographic area. Instances can be created to make statements about this population."@en .
+
+hxl:AgeGroup
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Age Group"@en ;
+        rdfs:subClassOf hxl:Population;
+        rdfs:comment "Generic class for age groups; instances should be created for actual age groups. Example: <em>Children under 5</em>. " .
+        
+# hxl:Appeal        
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection;
+#         skos:prefLabel "Appeal"@en ;
+#         rdfs:comment "An appeal is a request for aid in the form of money or goods from Donors. <br /><small>Term origin: CAP OPS, Pakistan SRF.</small>" .
+        
+# hxl:Budget 
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection;
+#         skos:prefLabel "Budget"@en ;
+#         skos:altLabel  "Funding"@en ;
+#         rdfs:comment "The money allocated to a Project.<br /><small>Term origin: IATI, Sigmah DB, Sahana Project (<em>Funding</em>), EDXL (<em>Funding</em>).</small>" .
+
+hxl:Casualty
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        rdfs:subClassOf hxl:AffectedPopulation ;
+        skos:prefLabel "Casualty"@en ;
+        rdfs:comment "Examples: <em>Injured</em> or <em>dead</em>.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile.</small>" .
+
+# hxl:Country
+#         a rdfs:Class ;
+#         rdfs:subClassOf hxl:AdminUnit ;
+#         skos:prefLabel "Country"@en ;
+#         rdfs:comment "Geolocation admin level 0.<br /><small>Term origin: CAP OPS, Sahana Project, ACAPS DSS, CERF, Sigmah DB.</small>" .
+        
+# hxl:Damage
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection;
+#         skos:prefLabel "Damage"@en ;
+#         rdfs:comment "A (reported) damage.<br /><small>Term origin: ACAPS DSS, Shelter Cluster.</small>" .
+        
+# hxl:DataCollection
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection;
+#         skos:prefLabel "Data Collection"@en ;
+#         rdfs:comment "The first phase of Information Management Chain that covers various stages like data collection, processing, analysis and dissemination. See <em>Guidelines for OCHA Field Information Management, OCHA</em>. <br /><small>Term origin: MRM/MARA, HPM Ethiopia.</small>" .
+
+hxl:Dead
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Dead"@en ;
+        skos:altLabel "Death"@en ;
+        rdfs:subClassOf hxl:Casualty ;
+        owl:disjointWith hxl:Injured ;
+        rdfs:comment "A (reported) death.<br /><small>Term origin: ACAPS DSS, HPM Ethiopia, Shelter Cluster, Humanitarian Profile (<em>Dead</em>).</small>" .
+        
+hxl:Displaced
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Displaced"@en ;
+        skos:altLabel "Displacement"@en ;
+        rdfs:subClassOf hxl:AffectedPopulation ;
+        rdfs:comment "Refers to internally displaced persons, refugees, and others of concern.<br /><small>Term origin: Humanitarian Profile, ACAPS DSS (<em>Displacement</em>)</small>" ;
+owl:disjointWith hxl:NonDisplaced .
+
+# hxl:Donor
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection;
+#         skos:prefLabel "Donor"@en ;
+#         rdfs:subClassOf foaf:Agent ;
+#         rdfs:comment "A donor is an individual or organization donating money for a project or a specific activity."@en .
+
+hxl:NonDisplaced
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Non-Displaced"@en ;
+        rdfs:subClassOf hxl:AffectedPopulation ;
+        rdfs:comment "Refers to the part of the affected population that is not displaced (i.e., host or non-host);.<br /><small>Term origin: Humanitarian Profile.</small>" ;
+owl:disjointWith hxl:Displaced .
+
+
+hxl:Emergency
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection;        
+        skos:prefLabel "Emergency"@en ;
+        rdfs:subClassOf hxl:Situation ;
+        rdfs:comment "<p>Any situation in which ... life or well-being ... will be threatened  unless immediate  and  appropriate   action  is  taken,  and  which demands   an   extraordinary   response   and   exceptional measures” (UNHCR Handbook for Emergencies)</p><p>A sudden crisis situation or event requiring immediate action (WART) </p><p>Any situation in which there is an exceptional and widespread threat to life, health or basic  subsistence,  that  is  beyond  the  coping  capacity  of individuals and the community”  (Oxfam GB Emergency Response Manual). </p><p>Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance” (source: ACFIN Emergency module)</p><small>Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.</small>" .
+
+hxl:GLIDEnumber
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection;        
+        skos:prefLabel "GLIDE number"@en ;
+        rdfs:comment "Globally common Unique ID code for disasters. See <a href='http://glidenumber.net/glide/public/about.jsp'>about GLIDE</a>." .
+
+hxl:Female
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Female"@en;        
+        rdfs:subClassOf foaf:Agent , hxl:Sex ;
+        rdfs:comment "A woman/girl or group of women/girls.<br /><small>Term origin: CERF, EIMS Report.</small>" ;
+owl:disjointWith hxl:Male .
+
+hxl:Male
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;        
+        skos:prefLabel "Male"@en;
+        rdfs:subClassOf foaf:Agent , hxl:Sex ;
+        rdfs:comment "A man/boy or group of men/boys.<br /><small>Term origin: CERF, EIMS Report.</small>" ;
+owl:disjointWith hxl:Female .        
+
+
+hxl:Sex
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;        
+        skos:prefLabel "Sex"@en;
+        rdfs:comment "Class to describe sex-specific issues, either at individual or group level.<br /><small>Term origin: MIRA, CCDI</small>" .
+
+hxl:Need
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection;        
+        skos:prefLabel "Need"@en;
+        skos:altLabel "Gap"@en;
+        skos:altLabel "Lack"@en;
+        rdfs:comment "A concrete need, lack, or gap, e.g. a shortage of food. Can be based on the application of relevant norms (usually a minimum requirement or a pre-existing ‘normal’ situation); and an assessment of how  the reality differs.        Identifying and measuring deficits, either actual or predicted.<br /><small>Term origin: CAP OPS, ACAPS DSS (also: <em>Humanitarian Need</em>), CCDI (<em>Humanitarian Need</em>), CCDI Shelter Cluster (<em>Gap</em>), HPM Ethiopia (<em>Gap</em>).</small>" .
+
+hxl:OutcomePlanned
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "Outcome planned"@en;
+        rdfs:subClassOf hxl:Objective;
+rdfs:comment "Planned outcome. An outcome is the short-term or medium-term effect of a humanitarian action on the affected population. Outcomes often are the results of multiple outputs; each outcome in your planning may therefore correspond to more than one output. Example: Increase in household consumption of potable water. See <em>CAP Guidelines 2012</em>." .
+
+# hxl:OutcomeToDate
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:responseSection ;
+#         skos:prefLabel "Outcome to date"@en ;
+#         skos:altLabel "Outcome achieved"@en ;
+# rdfs:comment "The state of this outcome at a certain point in time. An outcome is the short-term or medium-term effect of a humanitarian action on the affected population. Outcomes often are the results of multiple outputs; each outcome in your planning may therefore correspond to more than one output. Example: increase in household consumption of potable water. See <em>CAP Guidelines 2012</em>."@en.
+
+hxl:OutputPlanned
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "Output planned"@en;
+        rdfs:subClassOf hxl:Objective;
+rdfs:comment "Planned output. The outputs are the products, goods or services that are the direct results of a humanitarian action. Example: NFI kits in the hands of affected households; functioning water points; latrines; distributed food rations; therapeutic feeding treatments. See <em>CAP Guidelines 2012</em>." .
+
+# hxl:OutputToDate
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:responseSection ;
+#         skos:prefLabel "Output to date"@en ;        
+#         skos:altLabel "Output achieved"@en ;
+# rdfs:comment "The state of this outcome at a certain point in time. The outputs are the products, goods or services that are the direct results of a humanitarian action. Example: NFI kits in the hands of affected households; functioning water points; latrines; distributed food rations; therapeutic feeding treatments. See <em>CAP Guidelines 2012</em>. See <em>CAP Guidelines 2012</em>."@en.
+
+hxl:ImpactPlanned
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "Impact planned"@en;
+        rdfs:subClassOf hxl:Objective;
+rdfs:comment "The positive and negative, primary and secondary long-term effects produced by a humanitarian action, directly or indirectly. Example: Reduction in child mortality. See <em>CAP Guidelines 2012</em>." .
+
+        
+# hxl:Intervention
+#         a rdfs:Class ;
+#         skos:prefLabel "Intervention"@en;
+#         rdfs:subClassOf hxl:Activity ;
+#         rdfs:comment "Relief assistance, remedial action, or some other humanitarian intervention; (such  as immunisation, food distribution, etc.).<br /><small>Term origin: ACAPS.</small>" .
+
+# hxl:NeedsAssessment
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection;        
+#         skos:prefLabel "Needs Assessment"@en;
+#         rdfs:subClassOf hxl:Report ;
+#         rdfs:comment "The process of obtaining and analyzing information to determine the current status and service needs of a defined  population and/or geographic area (NOAA definition);.<br /><small>Term origin: ACAPS.</small>" .
+        
+        
+
+hxl:Response
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "Response"@en;
+        rdfs:comment "Generic term for the collection of all activities that address the needs araising from an emergency.<br /><small>Term origin: ACAPS DSS, ACAPS DSS, MIRA, EDXL, CCDI (<em>Humanitarian Response</em>), CERF (<em>Humanitarian Response</em>)</small>" .
+
+
+hxl:IDP
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+        rdfs:subClassOf hxl:Displaced ;
+        skos:prefLabel "Internally Displaced Person"@en;
+        skos:altLabel "IDP"@en;
+        owl:disjointWith hxl:Others ;
+        owl:disjointWith hxl:RefugeesAsylumSeekers ;
+        rdfs:comment "A group of internally displaced persons (IDPs).<br /><small>Term origin: Humanitarian Profile, CERF, HPM Ethiopia</small>" .
+
+hxl:Others
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+        rdfs:subClassOf hxl:Displaced ;
+        skos:prefLabel "Internally Displaced Person"@en;
+        skos:altLabel "Others of Concern"@en;
+        owl:disjointWith hxl:IDP ;
+        owl:disjointWith hxl:RefugeesAsylumSeekers ;
+        rdfs:comment "A group of displaced persons that does neither fit the IDP nor Refugees/Asylum Seekers classes.<br /><small>Term origin: Humanitarian Profile</small>" .
+
+hxl:RefugeesAsylumSeekers
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+        rdfs:subClassOf hxl:Displaced ;
+        skos:prefLabel "Refugees and Asylum Seekers"@en;
+        owl:disjointWith hxl:IDP ;
+        owl:disjointWith hxl:Others ;
+        rdfs:comment "A group of refugees and asylum seekers.<br /><small>Term origin: Humanitarian Profile</small>" .
+
+# hxl:Incident
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "Incident"@en;
+#         rdfs:comment "An individual incident in the context of a crisis, such as a recruitment of children.<br /><small>Term origin: MRM/MARA, EDXL</small>" .
+
+hxl:IndicatorUnit
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Indicator unit"@en;
+        rdfs:comment "Measurement unit for an indicator; Instances to be created in the registry: <em>Household, Individual, Session, School, TSS, Child, Student, Square Meter, Teacher, Child friendly spaces, Committee, Acre, Animal, Meeting, Hub, Tree, and 'other'</em>.<br /><small>Term origin: Indicator registry</small>" .
+
+hxl:Indicator
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Indicator"@en;
+        rdfs:comment "Concrete measurable reference for a concrete need; e.g., <em>5 litres of clean water per person and day</em>. The different subclasses should be used to type instances.<br /><small>Term origin: Pakistan SRF, ACAPS DSS, CCDI, CERF, HPM Ethiopia, Sigmah DB, Indicator registry</small>" .
+        
+hxl:InputIndicator 
+        a rdfs:Class ;
+        rdfs:subClassOf hxl:Indicator ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Input indicator"@en;
+rdfs:comment "<em>Explanation t.b.d.</em>.<br /><small>Term origin: Indicator registry.</small>" .
+
+hxl:ProxyInputIndicator
+        a rdfs:Class ;
+        rdfs:subClassOf hxl:Indicator ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Proxy input indicator"@en;
+rdfs:comment "<em>Explanation t.b.d.</em>.<br /><small>Term origin: Indicator registry.</small>" .
+
+hxl:OutputIndicator 
+        a rdfs:Class ;
+        rdfs:subClassOf hxl:Indicator ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Output indicator"@en;
+rdfs:comment "<em>Explanation t.b.d.</em>.<br /><small>Term origin: Indicator registry.</small>" .
+        
+hxl:OutcomeIndicator 
+        a rdfs:Class ;
+        rdfs:subClassOf hxl:Indicator ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Outcome indicator"@en;
+rdfs:comment "<em>Explanation t.b.d.</em>.<br /><small>Term origin: Indicator registry.</small>" .
+
+hxl:ProxyOutcomeIndicator
+        a rdfs:Class ;
+        rdfs:subClassOf hxl:Indicator ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "Proxy outcome indicator"@en;
+rdfs:comment "<em>Explanation t.b.d.</em>.<br /><small>Term origin: Indicator registry.</small>" .
+        
+
+hxl:Injured
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+        rdfs:subClassOf hxl:Casualty ;
+        skos:prefLabel "Injured"@en;
+        owl:disjointWith hxl:Death ;
+        rdfs:comment "Indicates the Injured population.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile, Shelter Cluster, HERAMS Checklist (<em>Injury</em>)</small>" .
+
+# hxl:Killing
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "Killing"@en;
+#         rdfs:subClassOf hxl:Incident ;
+#         rdfs:comment "A (reported) killing.<br /><small>Term origin: MRM/MARA, EIMS Report</small>" .
+
+hxl:Feature
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "Feature"@en;
+        rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+rdfs:comment "Any real-word phenomenon with spatial extent, i.e. size, shape, or position. " .
+
+hxl:Geometry
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "Geometry"@en;
+rdfs:comment "Abstract root class of the geometry. This class should not be instantiated; use any of the subclasses when creating actual geometries. " .
+
+hxl:Point
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "Point"@en;
+        rdfs:subClassOf hxl:Geometry;
+rdfs:comment "A Point is a 0-dimensional geometric object and represents a single location in a two- or three-dimensional coordinate space." .
+
+hxl:Line
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "Line String"@en;
+        rdfs:subClassOf hxl:Geometry;
+rdfs:comment "A LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment." .
+
+hxl:Polygon
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "Polygon"@en;
+        rdfs:subClassOf hxl:Geometry;
+rdfs:comment "A Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon." .
+
+hxl:BoundingBox
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "Bounding Box"@en;
+        rdfs:subClassOf hxl:Polygon;
+rdfs:comment "A BoundingBox is a Polygon defined by 1 exterior boundary and 0 interior boundaries. The exterior boundary consists of 4 points arranged as a rectangle." .
+
+# hxl:Maiming
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "Maiming"@en;
+#         rdfs:subClassOf hxl:Incident ;
+#         rdfs:comment "A (reported) maiming;.<br /><small>Term origin: MRM/MARA, EIMS Report</small>" .
+
+hxl:Missing
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+        skos:prefLabel "Missing"@en ;
+        rdfs:subClassOf hxl:Casualty ;
+        owl:disjointWith hxl:Death ;
+        rdfs:comment "Associated with <i>Missing Persons</i> as a major humanitarian concern in complex emergencies where many people go missing, causing anguish and uncertainty for their families and friends. See <em> ICRC </em>. <br /><small>Term origin: Humanitarian Profile.</small>" .
+
+hxl:Objective
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "Objective"@en;
+        rdfs:comment "An objective states part of your humanitarian strategy in terms of the expected outputs, outcomes and impact, supported by a convincing description of how you will attain them in the face of limited resources, imperfect access and other impediments. Every objective should be SMART: specific, measurable (when matched with relevant indicators), achievable, relevant and time-bound. (<em>CAP 2012 Guidelines</em>)<br /><small>Term origin: Sahana Project, CERF</small>" .
+
+hxl:Organisation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection  ;
+        rdfs:subClassOf foaf:Organisation ;
+        skos:prefLabel "Organisation"@en ;
+rdfs:comment "A humanitarian organisation.<br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report,        Shelter Cluster, Sigmah DB.</small>" .
+
+hxl:GovernmentOrganisation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection  ;
+        rdfs:subClassOf hxl:Organisation ;
+        skos:prefLabel "Government organisation"@en ;
+rdfs:comment "A government organisation.<br /><small>Term origin: FTS.</small>" .
+
+hxl:InterGovernmentalOrganisation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection  ;
+        rdfs:subClassOf hxl:Organisation ;
+        skos:prefLabel "Inter-governmental organisation"@en ;
+rdfs:comment "An inter-governmental organisation (IGOs) is an organization composed primarily of sovereign states (referred to as member states), or of other intergovernmental organizations.Example:  NATO, SAARC. <br /><small>Term origin: FTS.</small>" .
+
+hxl:UNAgency
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection  ;
+        rdfs:subClassOf hxl:Organisation ;
+        skos:prefLabel "UN agency"@en ;
+rdfs:comment "Specialized agencies that carry out various functions on behalf of the United Nations. Example: WHO, WFP.An UN agency.<br /><small>Term origin: FTS.</small>"@en .
+
+hxl:RedCrossRedCrescent
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        rdfs:subClassOf hxl:Organisation ;
+        skos:prefLabel "Red cross / red crescent"@en ;
+rdfs:comment "Organisations under the world's largest humanitarian network  of International Red Cross and Red Crescent Movement.(source:IFRC )Organisation under red cross / red crescent.<br /><small>Term origin: FTS.</small>" .
+
+hxl:NGO
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        rdfs:subClassOf hxl:Organisation ;
+        skos:prefLabel "NGO"@en ;
+        skos:altLabel "Non-governmental organisation"@en ;        
+rdfs:comment "A non-governmental organization (NGO) is a nonprofit, voluntary citizens' group that operates independently from any government on a local, national or international level. Example:  Wolrd Vision International, ACF, Oxfam.<small>Term origin: FTS.</small>"@en .
+
+hxl:PrivateOrganisation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        rdfs:subClassOf hxl:Organisation ;
+        skos:prefLabel "Private organisation / foundation"@en ;
+rdfs:comment "is a self-sustaining special interest groups (like business firms) with activities mor enclined towards profit making. <small>Term origin: FTS.</small>"@en .
+
+hxl:BilateralOrganisation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        rdfs:subClassOf hxl:Organisation ;
+        skos:prefLabel "Bilateral organisation"@en ;
+rdfs:comment "A bilateral organization is a government agency or nonprofit organization based in a single country while the agency provides aid, including medical aid or disaster relief, for people in other countries. Example:  DFID, AusAID, USAID. <small>Term origin: FTS.</small>"@en .
+
+
+#hxl:Output
+#        a rdfs:Class ;
+#        skos:prefLabel "Output"@en;
+#rdfs:comment "<em>Merge with <strong>objective</strong>?</em>.<br /><small>Term origin: CAP OPS, Sahana Project</small>" .
+
+hxl:Priority
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "Priority"@en;
+        rdfs:comment "The priority for a project or activity. Individuals of this class should be created whenever a fixed scale for priorities is in use.<br /><small>Term origin: CAP OPS, UNHCR Camp DB, Sahana Project, MIRA, HPM Ethiopia.</small>" .
+
+# hxl:Project
+#         a rdfs:Class ;
+#         rdfs:subClassOf hxl:Activity ;
+#         skos:prefLabel "Project"@en;
+# rdfs:comment "A project is a specific activity or intervention (or collection of such activities) that have been grouped for management purposes.<br /><small>Term origin: CAP OPS, Pakistan SRF, Sahana Project, Sigmah DB. </small>" .
+                        
+# hxl:Region
+#         a rdfs:Class ;
+#         skos:prefLabel "Region"@en;
+#         rdfs:subClassOf hxl:AdminUnit ;
+# rdfs:comment "Geolocation admin level 1.<br /><small>Term origin: ACAPS DSS,        CCDI, CERF, HPM Ethiopia.</small>" .
+
+# hxl:Report
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "Report"@en;
+#         rdfs:subClassOf foaf:Document ;
+# rdfs:comment "Generic class for any kind of report (such as a needs assessment or project report)." .
+
+hxl:ReportingPeriod
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+        skos:prefLabel "Reporting Period"@en;
+        rdfs:subClassOf dc:PeriodOfTime ;
+        rdfs:comment "The time frame that a report covers.<br /><small>Term origin: Sigmah DB.</small>" .
+
+# hxl:RuralPopulation
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:peopleOrganizationSection  ;
+#         skos:prefLabel "Rural Population"@en;
+#         rdfs:subClassOf hxl:Population ;
+#         rdfs:comment "Population living in the countryside.<br /><small>Term origin: HPM Ethiopia, Shelter Cluster.</small>" ;
+# owl:disjointWith hxl:UrbanPopulation .
+# 
+# hxl:UrbanPopulation
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:peopleOrganizationSection  ;
+#         skos:prefLabel "Urban Population"@en;
+#         rdfs:subClassOf hxl:Population ;
+#         rdfs:comment "Population living in cities.<br /><small>Term origin: Shelter Cluster.</small>" ;
+# owl:disjointWith hxl:RuralPopulation .
+
+# hxl:Sector
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "Sector"@en ;
+#         rdfs:comment "A sector adresses a specific thematic area in an Emergency. , e.g. Health or Logistics.<br /><small>Term origin: IATI, CAP OPS, UNHCR Camp DB, Pakistan SRF, ACAPS DSS, MIRA, CERF, HPM Ethiopia</small>."@en .
+
+# hxl:Site
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "Site"@en ;
+#         rdfs:comment "<em>What sites other than camps do we have?</em><br /><small>Term origin: EIMS Report        Sigmah DB.</small>"@en .
+
+# hxl:Shelter
+#         a rdfs:Class ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "Shelter"@en;
+#         rdfs:comment "A structure that provides privacy and protection from danger (WordNet).It could be either emergency shelter, transitional or permanent shelter depending upon the stages of response or recovery phases in a crisis.<br /><small>Term origin: UNHCR Camp DB, ACAPS DSS.</small>" .
+
+hxl:Status     
+         a rdfs:Class ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "Status"@en;
+rdfs:comment "Status of an activity. Can be instantiated by organisations that use standardised status codes.<br /><small>Term origin: Sahana Project        CCDI, CERF, EDXL.</small>" .
+
+hxl:TotalPopulation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+        rdfs:subClassOf hxl:Population ;
+        skos:prefLabel "Total Population"@en;
+rdfs:comment "The total population for an administrative unit. Example: A region.<br /><small>Term origin: Shelter Cluster.</small>" .
+
+hxl:ShelterCluster
+        a rdfs:Class ;
+         rdfs:isDefinedBy hxl:shelterClusterSection ;
+        rdfs:subClassOf hxl:Cluster ;
+        skos:prefLabel "Shelter cluster"@en ;
+rdfs:comment "Based on the IASC principals agreed upon Cluster Apparoach, IFRC is convener of the Emergency Shelter Cluster in <i>disaster situations </i>while UNHCR leads the Emergency Shelter Cluster in the area of <i>conflict generated IDPs</i>. See <em>Guidance note on using the cluster approach to strengthen humanitarian response.2006</em>. Instances of this class should be created for the shelter cluster in a specific emergency."@en .
+        
+hxl:SupplyingAgency
+         a rdfs:Class ;
+         rdfs:isDefinedBy hxl:shelterClusterSection ;
+        rdfs:subClassOf hxl:Organisation ;
+         skos:prefLabel "Supplying agency"@en ;
+rdfs:comment "Specific relief agency who supplies or procures humanitarian relief items necessary for response.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:DistributingPartner
+         a rdfs:Class ;
+         rdfs:isDefinedBy hxl:shelterClusterSection ;
+        rdfs:subClassOf hxl:Organisation ;
+         skos:prefLabel "Distributing partner"@en ;
+rdfs:comment "Specific relief agency involved in distribution of humanitarian relief items.<small>Term origin: Shelter Cluster.</small>"@en .
+
+
+hxl:nonFoodItemsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "non-food items distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies Non Food Items (NFIs) distributed by a distributing partner in a certain location. <small>Term origin: Shelter Cluster.</small>" .
+
+hxl:nonFoodItemsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "non-food items supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the NFIs supplied by a certain supplying agency. <small>Term origin: Shelter Cluster.</small>" .
+
+hxl:nonFoodItemsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "non-food items contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Refers to a specifically designed set of NFI items packaged for distribution after a disaster in which the regular capacities of the population have been affected.<br /><small>Term origin: Shelter Cluster.</small>" .
+
+hxl:tentsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "tents distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a Shelter/NFI distribution partner and its tent distribution activities. <small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:tentsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "tents supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the number of tents provided by a supplying agency.  <small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:tentsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "tents contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI item <i>tent</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.  <small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:familyTentsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:tentsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "family tents distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Relates a NFI/Shelter distributing partner to the number of family tents provided during the reporting period.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:familyTentsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:tentsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "family tents supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the number of family  tents (based on SPHERE standards) supplied by a supplying agency.  <small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:familyTentsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:tentsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "family tents contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI item <i>family tent</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response. <small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:largeTentsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:tentsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "large tents distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a Shelter/NFI distributing partner and its large size (enough to shelter more than one family) family tent distribution activities. <small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:largeTentsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:tentsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "large tents supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the number of family (SPHERE standards) tents supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:largeTentsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:tentsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "large tents contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI <i>large (community) tent</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>"@en . 
+        
+
+hxl:tarpaulinDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "tarpaulin distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a Shelter/NFI distributing partner and its tarpaulin distribution activities. <small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:tarpaulinSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "tarpaulin supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the amount of tarpaulins supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:tarpaulinContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "tarpaulin contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI item <i>tarpaulin</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:ropeDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "rope distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a Shelter/NFI distributing partner and its rope distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:ropeSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "rope supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the number of ropes supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:ropeContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "rope contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI <i>ropes</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:Kit
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "Kit"@en;
+rdfs:comment "A kit is specifically designed set of items for distribution after a disaster in which the regular capacities of the population have been affected.<small>Term origin: Shelter Cluster.</small>"@en .
+
+
+hxl:ShelterKit
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        rdfs:subClassOf hxl:Kit ;
+        skos:prefLabel "Shelter kit"@en;
+rdfs:comment "Shelter Kit is a package including plastic sheeting, tools and fixings suitable for repairing damaged houses or building emergency shelters.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:ToolKit
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        rdfs:subClassOf hxl:Kit ;
+        skos:prefLabel "Tool kit"@en;
+rdfs:comment "Refers to sets of humanitarian clusters specific (agreed upon) tools prepared for distribution in emergencies.Example: Emergency shelter tools included in Shelter Kits.See <em>Shelter Cluster</em>.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:FamilyToolKit
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        rdfs:subClassOf hxl:ToolKit ;
+        skos:prefLabel "Family tool kit"@en;
+rdfs:comment "Toolkit prepared for distribution per affected family. <small>Term origin: Shelter Cluster.</small>" .
+
+hxl:CommunityToolKit
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        rdfs:subClassOf hxl:ToolKit ;
+        skos:prefLabel "Community tool kit"@en;
+rdfs:comment "Community toolkit is designed to be placed in a community containing more than one family where beneficiaries will have equal access to the community owned tools.<small>Term origin: Shelter Cluster.</small>"@en .
+
+
+hxl:bucketsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "buckets distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its bucket distribution activities.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:bucketsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "buckets supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the amount of buckets supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:bucketsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "buckets contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI <i> bucket </i>as one of the items included in a  shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>"@en .
+
+
+hxl:jerryCansDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "jerry cans distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its jerry can distribution activities.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:jerryCansSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "jerry cans supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the amount of jerry cans supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:jerryCansContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "jerry cans contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI <i>jerry cans</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:kitchenSetsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "kitchen sets distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its kitchen set distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:kitchenSetsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "kitchen sets supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the total amount of kitchen sets  supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:kitchenSetsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "kitchen sets contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI  <i>kitchen sets</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>"@en .
+
+
+hxl:individualItemsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "individual items distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Generic property to relate a humanitarian partner to its indivisual relief item distributed during a response.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:individualItemsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "individual items supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Generic property to specify the total amount of unique relief items supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>"@en .
+
+hxl:individualItemsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "individual items contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Generic property to define <i> indivisual relief material </i> as a possible item to be included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:HygieneKit
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        rdfs:subClassOf hxl:Kit ;
+        skos:prefLabel "Hygiene kit"@en;
+rdfs:comment "Hygiene Kits are prepared in humanitarian Emergencies and disasters to provide immediate support to a family for 20 days to 1 Month. Although Hygiene Kits vary from country to country and also differs in each disaster, standard components include the NFI items like  cooking sets, soap, buckets, jerry cans and sanitary towels. See <em>Emergency Field Handbook: A guide for UNICEF staff</em>. <small>Term origin: Shelter Cluster, WASH cluster CRF sheet.</small>"@en .
+
+hxl:blanketsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "blankets distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its blanket distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:blanketsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "blankets supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the amount of blankets supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:blanketsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "blankets contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI<i>blanket</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+
+hxl:sheetsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "sheets distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its NFI sheet distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:sheetsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "sheets supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the amount of NFI Sheets supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:sheetsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "sheets contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI<i>sheets</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:matsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "mats distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its NFI Mats distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:matsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "mats supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the amount of NFI mats supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:matsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "mats contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI<i>Mats</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:cotsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "cots distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its NFI cot distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:cotsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "cots supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the amount of NFI cots  supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:cotsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "cots contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI<i>Cots</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+
+hxl:mosquitoNetsDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "mosquito nets distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its NFI mosquito nets distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:mosquitoNetsSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "mosquito nets supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the amount of NFI mosquito nets supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:mosquitoNetsContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "mosquito nets contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI<i>mosquito nets</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:bladdersDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "bladders distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its NFI baldders (water container of various sizes) distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:bladdersSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "bladders supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the amount of NFI bladders supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:bladdersContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "bladders contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI<i>bladder</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:waterFiltersDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "water filters distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its NFI water filter distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:waterFiltersSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "water filters supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the total amount of NFI water filters supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:waterFiltersContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "water filters contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI<i>water filter</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+
+hxl:polesDistributed
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsDistributed ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "poles distributed"@en;
+        rdfs:domain hxl:DistributingPartner ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Links a relief item distributing partner and its NFI poles distribution activities.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:polesSupplied
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf         hxl:nonFoodItemsSupplied ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "poles supplied"@en;
+        rdfs:domain hxl:SupplyingAgency ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Specifies the total amount of NFI poles supplied by a supplying agency.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:polesContained
+        a rdf:Property, owl:DataProperty ;
+        rdfs:subPropertyOf hxl:nonFoodItemsContained ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "poles contained"@en;
+        rdfs:domain hxl:Kit ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "Defines NFI<i>poles</i> as one of the items included in a shelter kit that is distributed to affected communities during emergency shelter response.<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:Distribution
+        a rdfs:Class ;
+        rdfs:subClassOf hxl:Activity ;
+        rdfs:isDefinedBy hxl:shelterClusterSection ;
+        skos:prefLabel "Distribution"@en;
+rdfs:comment "Activity that refers to the distribution of relief item(s) during an emergency or a crisis to save lives. Do we need a <em>distribution point</em>?<small>Term origin: Shelter Cluster.</small>" .
+
+hxl:WASHCluster
+        a rdfs:Class ;
+         rdfs:isDefinedBy hxl:washClusterSection ;
+        rdfs:subClassOf hxl:Cluster ;
+        skos:prefLabel "WASH cluster"@en ;
+        skos:prefLabel "Water, sanitation and hygiene cluster"@en ;
+rdfs:comment "The main objective of water supply and sanitation programmes in emergencies is to reduce the transmission of diseases from faeces to mouth through the promotion of good hygiene practices, the provision of safe drinking water and the reduction of health risks related to poor sanitation. See <em>WASH OneResponse</em>.</br>Instances of this class should be created for the WASH cluster in a specific emergency."@en .
+
+hxl:DataContainer
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:metadataSection ;
+        skos:prefLabel "Data container"@en;
+rdfs:comment "This is the <em>container</em> element for to attach any metadata to. Any HXL file has to include exactly one data container element and make all metadata statements about this container. When loading the file into the triple store, a new named graph will be created that inherits the metadata from this container." .
+
+hxl:ApprovalLevel
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:metadataSection ;
+        skos:prefLabel "Approval level"@en;
+rdfs:comment "Instance of this class define fixed levels of approval. Example:  in the WHO system, there could be three levels: region, country, and world." .
+
+hxl:WaterSourceChlorination
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Water source chlorination" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment "Instances of this class define chlorine usage at the water source as critical role in providing safe drinking water in different emergencies around the globe. <small>Term origin: WASH cluster CRF sheet.</small>" .        
+
+hxl:ShallowWellImprovement
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Shallow well improvement" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment "Refers to wells that needs improvement in order to increase the drinking water sources. <small>Term origin: WASH cluster CRF sheet.</small>" .        
+
+hxl:HygienePromotion
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Hygiene promotion" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment "Hygiene promotion is an umbrella term used to cover a range of activities/strategies which aim to improve people’s hygiene behavior and so prevent the spread of water and sanitation related diseases. See <em>ochaonline</em>. <small>Term origin: WASH cluster CRF sheet.</small>" .        
+
+hxl:HygieneKitDistribution
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Hygiene kit distribution" ;
+        rdfs:subClassOf hxl:Distribution ;
+rdfs:comment "Distribution of  WASH NFI <i>hygiene kit</i> during humanitarian relief item distribution.<small>Term origin: WASH cluster CRF sheet.</small>" .        
+
+hxl:PipeBuilding
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Pipe building" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment "Instance of this class defines activities related to construction of water pipe buidling for safe drinking water facilities. <small>Term origin: WASH cluster CRF sheet.</small>" .
+
+hxl:CommunalLatrineBuilding
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Communal latrine building" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment " Class to describes communal latrines in a IDP camp set up or a community. <small>Term origin: WASH cluster CRF sheet.</small>" .
+
+hxl:CommunalLatrineRehabilitation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Communal latrine rehabilitation" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment "Rehabiliation of communal laterines udring emergency response. <small>Term origin: WASH cluster CRF sheet.</small>" .
+
+hxl:WaterTrucking
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Water trucking" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment " Class to describes activities when water trucks are used to commute drinking water to and from pre identified water source. <small>Term origin: WASH cluster CRF sheet.</small>" .
+
+hxl:SolidWasteContainerInstallment
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Solid waste container installment" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment "Class that describes installment of solid waster container to avoid insect borne diseaes through ccumulations of garbages. See <em>Emergency Field Handbook: A guide for UNICEF staff</em>.<small>Term origin: WASH cluster CRF sheet.</small>" .
+
+hxl:RainwaterCatchmentBuilding
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Rainwater catchment building" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment "Describes WASH activities directed towards collection of rainwater where possible (if available the available source of water is contaminated, if wells are reduced or insufficient).See <em>Emergency Field Handbook: A guide for UNICEF staff</em>.<small>Term origin: WASH cluster CRF sheet.</small>" .
+
+hxl:RainwaterCatchmentRehabilitation
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Rainwater catchment rehabilitation" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment "Instance of this class can be used to specify the rehabiliation of rainwater catchment during emergencies. <small>Term origin: WASH cluster CRF sheet.</small>" .
+
+hxl:BoreholeDrilling
+        a rdfs:Class ;
+        rdfs:isDefinedBy hxl:washClusterSection ;
+        skos:prefLabel "Borehole drilling" ;
+        rdfs:subClassOf hxl:Activity ;
+rdfs:comment "The process of drilling additional boreholes for installation of water yards and/or hand pumps. See <em>WASH Cluster Response Plan: Refugees and Returnees from Blue Nile State. 2011.</em>  <small>Term origin: WASH cluster CRF sheet.</small>"@en .
+
+## PROPERTIES -----------------------------
+
+hxl:outputToDate
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "output to date" ;
+        rdfs:domain hxl:OutputPlanned ;        
+        rdfs:range rdfs:Literal ;
+        rdfs:comment "The state of this outcome at a certain point in time. The outputs are the products, goods or services that are the direct results of a humanitarian action. Example: NFI kits in the hands of affected households; functioning water points; latrines; distributed food rations; therapeutic feeding treatments. See <em>CAP Guidelines 2012</em>. "@en .
+
+hxl:outcomeToDate
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "outcome to date" ;
+        rdfs:domain hxl:OutcomePlanned ;
+        rdfs:range rdfs:Literal ;
+rdfs:comment "The state of this outcome at a certain point in time. An outcome is the short-term or medium-term effect of a humanitarian action on the affected population. Outcomes often are the results of multiple outputs; each outcome in your planning may therefore correspond to more than one output. Example: Increase in household consumption of potable water. See <em>CAP Guidelines 2012</em>."@en.
+
+hxl:objectiveDescription
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "objective description" ;
+        rdfs:subPropertyOf dc:description ;
+        rdfs:comment "Describes the objective(s) of the humanitarian activity <small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Objective ;
+rdfs:range rdfs:Literal .
+
+hxl:clusterMemberOf
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "cluster member of" ;
+        rdfs:comment "Indicates that this organisation is a member of the cluster." ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range hxl:Cluster .
+
+hxl:hasMember owl:inverseOf hxl:clusterMemberOf .
+
+hxl:clusterLeadOf
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "cluster lead of" ;
+        rdfs:subPropertyOf hxl:clusterMemberOf ;
+        rdfs:comment "IASC The cluster member designated organisation(s) to lead sector(s) with clear responsiblilities, accountability and predictable leaderships in situation of humanitarian emergencies.See <em>Guidance note on using the cluster approach to strengthen humanitarian response.2006 </em>.<small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range hxl:Cluster .
+
+hxl:leadBy owl:inverseOf hxl:clusterLeadOf .
+
+hxl:representedCountry
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "represented country" ;
+        rdfs:comment "Links a given organisation wiith the country it represents. <small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range hxl:Country .
+
+hxl:locatedInCountry
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "located in country" ;
+        rdfs:comment "Specifies the country where the given Organisation is working/functioning. <small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range hxl:Country .
+
+hxl:organisationHomepage
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "organisation homepage" ;
+        rdfs:subPropertyOf foaf:homepage ;
+        rdfs:comment "States the website of a given organisation. <small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range foaf:Document .
+
+hxl:orgName
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "organisation name" ;
+        rdfs:comment "States the name of the organisation. <small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range rdfs:Literal .
+
+hxl:abbreviation
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "organisation abbreviation" ;
+        rdfs:comment "Indicates the abbreviation of the Organisation. <small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range rdfs:Literal .
+
+hxl:orgNativeName
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "native organisation name" ;
+        rdfs:comment "Specifies the native name of the organisation. <small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range rdfs:Literal .
+
+hxl:orgDisplayName
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "organisation name for display" ;
+        rdfs:comment "Indicates the organisation name that is most commonly used and displayed.  <small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range rdfs:Literal .
+
+hxl:hasChildOrg
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "has child organisation" ;
+        rdfs:comment "Relates the parent organisation with its child agencies or other branches.<small>Term origin: FTS.</small>" ;                
+        rdfs:domain hxl:Organisation ;
+rdfs:range hxl:Organisation .
+
+hxl:hasParentOrg owl:inverseOf hxl:hasChildOrg .
+
+hxl:indicatorID
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "indicator ID" ;
+        rdfs:comment "Links an Indicator to its ID defined by OCHA. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:numerator
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "numerator" ;
+        rdfs:comment "Related to Unit. To be verified. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:dataSource
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "data source" ;
+        rdfs:comment "URL that points to the source of the data. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range foaf:Document .
+
+hxl:denominator
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "denominator" ;
+        rdfs:comment "Related to Unit. To be verified. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:indicatorTitle
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "indicator title" ;
+        rdfs:subPropertyOf dc:title;
+        rdfs:comment "Links an Indicator to its title. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:measurementMethodology
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "measurement methodology" ;
+        rdfs:subPropertyOf dc:title;
+        rdfs:comment "Links an Indicator to a description of the corresponding measurement methodology. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:benchmark
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "benchmark" ;
+        rdfs:comment "Links an Indicator to benchmark description. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:rationale
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "rationale" ;
+        rdfs:comment "Links an Indicator to rationale description. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:dataSource
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "rationale" ;
+        rdfs:comment "Links an Indicator to rationale description. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:indicatorID
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "indicator ID" ;
+        rdfs:comment "Links an Indicator to its ID defined by OCHA. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:indicatorNote
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "indicator note" ;
+        rdfs:subPropertyOf rdfs:comment ;
+        rdfs:comment "Any notes or comments on this Indicator. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:indicatorReferences
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "indicator references" ;
+        rdfs:comment "Any references for this Indicator. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:submittingOrganization
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "submitting organization" ;
+        rdfs:comment "Links an Indicator to the submitting organisation. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range hxl:Organisation .
+
+hxl:inUnit
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "in unit" ;
+        rdfs:comment "Links an Indicator to the IndicatorUnit it is measured in. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range hxl:IndicatorUnit .
+
+hxl:relatedIndicator
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "related indicator" ;
+        rdfs:comment "Links an Indicator to a related Indicator. <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range hxl:Indicator .
+
+hxl:inSector
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "in sector" ;
+        rdfs:comment "Links an Indicator to the corresponding sector(s). <br /><small>Term origin: Indicator registry.</small>" ;                
+        rdfs:domain hxl:Indicator ;
+rdfs:range hxl:Sector .
+
+
+hxl:dataCollectionProcess
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:metadataSection ;
+        skos:prefLabel "data collection process" ;
+        rdfs:comment "Links a container to a description of the data collection process. <em>We'll have to discuss this – is there a set fixed procedures (such as MIRA) so that it would make sense to have a class DataCollectionProcess?</em>" ;
+        rdfs:domain hxl:DataContainer ;
+rdfs:range rdfs:Literal .
+
+hxl:implementedBy
+        a rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "implemented by"@en ;
+        rdfs:comment "Property for external organisations / partners implenting (parts) of a project for an agency. <br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, HPM Ethiopia (<em>Partner</em>), Sigmah DB (<em>Partner</em>).</small>"@en ;
+        rdfs:domain hxl:Activity ;
+rdfs:range hxl:Organisation .
+
+hxl:reportedBy
+        a rdf:Property , owl:ObjectProperty ;        
+        rdfs:isDefinedBy hxl:metadataSection ;
+        skos:prefLabel "reported by"@en ;
+        rdfs:comment "The reporting person or organization - not necessarily involved in the aid activity itself, though in practice it often will be a donor or appealing agency.  <br /><small>Term origin: IATI.</small>"@en ;
+        rdfs:domain hxl:DataContainer ;        
+rdfs:range foaf:Agent .
+
+hxl:approvedBy
+        a rdf:Property , owl:ObjectProperty ;        
+        rdfs:isDefinedBy hxl:metadataSection ;
+        skos:prefLabel "approved by"@en ;
+        rdfs:comment "Link from a container to the person or organisation who has 'lifted' it to the current approvalLevel."@en ;
+        rdfs:domain hxl:DataContainer ;        
+rdfs:range foaf:Agent .
+
+hxl:approvedAtLevel
+        a rdf:Property , owl:ObjectProperty ;        
+        rdfs:isDefinedBy hxl:metadataSection ;
+        skos:prefLabel "approved at level"@en ;
+        rdfs:comment "A container can have approval at different levels, which may in turn indicate for which kind of analyses the data in this container is fit.</em>"@en ;
+        rdfs:domain hxl:DataContainer ;        
+rdfs:range hxl:ApprovalLevel .
+
+hxl:containsPrimaryData
+        a rdf:Property , owl:DataProperty ;        
+        rdfs:isDefinedBy hxl:metadataSection ;
+        skos:prefLabel "contains primary data"@en ;
+        rdfs:comment "A container can contain primary data, secondary data, or both.</em>"@en ;
+rdfs:domain hxl:DataContainer ;        
+rdfs:range rdfs:Literal .
+
+hxl:containsSecondaryData
+        a rdf:Property , owl:DataProperty ;        
+        rdfs:isDefinedBy hxl:metadataSection ;
+        skos:prefLabel "contains secondary data"@en ;
+        rdfs:comment "A container can contain primary data, secondary data, or both.</em>"@en ;
+rdfs:domain hxl:DataContainer ;        
+rdfs:range rdfs:Literal .
+
+hxl:fundedBy
+        a rdf:Property , owl:ObjectProperty ;        
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "funded by"@en ;
+        rdfs:comment "Relates an activity to the organisation providing money or any kind of funding.  <br /><small>Term origin: IATI.</small>"@en ;
+        rdfs:domain hxl:Activity ;
+rdfs:range hxl:Organisation .
+
+hxl:funds owl:inverseOf hxl:fundedBy .
+
+hxl:covers
+        a rdf:Property , owl:ObjectProperty ;        
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "covers"@en ;
+        rdfs:comment "Relates IASC cluster to the sector(s) it is designated to cover (food, health, water hygiene and sanitation etc. ).covers."@en ;
+        rdfs:domain hxl:Cluster ;
+rdfs:range hxl:Sector .
+
+hxl:coveredBy owl:inverseOf hxl:covers .
+
+hxl:coordinates
+        a rdf:Property , owl:ObjectProperty ;        
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "coordinates"@en ;
+        rdfs:comment "Relates a cluster to the sectors(s) or activitie(s) it coordinates."@en ;
+        rdfs:domain hxl:Cluster ;
+rdfs:range hxl:Activity .
+
+hxl:coordinatedBy owl:inverseOf hxl:coordinates .
+
+hxl:extends
+        a rdf:Property , owl:ObjectProperty ;        
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "extends"@en ;
+        rdfs:comment "The subunit of the funding country or organisation, financing the activity from its own budget. Example:  Government agency or department.<br /><small>Term origin: IATI.</small>"@en ;
+        rdfs:subClassOf hxl:domain ;        
+rdfs:range hxl:Organisation .
+
+hxl:extendedBy owl:inverseOf hxl:extends .
+
+hxl:hasBeneficiaryOrganisation
+        a rdf:Property , owl:ObjectProperty ;        
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "has beneficiary organisation"@en ;
+        rdfs:comment "An organisation receiving funding for this activity and ultimately carrying it out.<br /><small>Term origin: IATI.</small>"@en ;
+        rdfs:domain hxl:Activity ;
+rdfs:range hxl:Organisation .
+
+hxl:isBeneficiaryIn owl:inverseOf hxl:hasBeneficiaryOrganisation .
+
+hxl:numberOfBeneficiaries
+        a rdf:Property , owl:DataProperty ;        
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "number of beneficiaries"@en ;
+        rdfs:comment "Number of people who benefit from this activity.<br /><small>Term origin: 3W.</small>"@en ;
+        rdfs:domain hxl:Activity ;
+rdfs:range rdfs:Literal .
+
+hxl:activityTitle
+        a rdf:Property , owl:DataProperty ;        
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "activity title"@en ;
+        rdfs:comment "Title of an activity.<br /><small>Term origin: 3W.</small>"@en ;
+        rdfs:domain hxl:Activity ;
+rdfs:range rdfs:Literal .
+
+hxl:activityDescription
+        a rdf:Property , owl:DataProperty ;        
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "activity desription"@en ;
+        rdfs:comment "Description of an activity.<br /><small>Term origin: 3W.</small>"@en ;
+        rdfs:domain hxl:Activity ;
+rdfs:range rdfs:Literal .
+
+hxl:clusterName
+        a rdf:Property , owl:DataProperty ;        
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "cluster name"@en ;
+        rdfs:comment "The name of IASC emergency cluser."@en ;
+        rdfs:domain hxl:Cluster ;
+rdfs:range rdfs:Literal .        
+
+hxl:reaches
+        a rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:shelterClusterSection  ;
+        skos:prefLabel "reaches"@en ;
+        rdfs:comment "Links the items and kits to affected population."@en ;
+        rdfs:domain hxl:Distribution ;
+rdfs:range hxl:Population .
+
+hxl:provides
+        a rdf:Property , owl:ObjectProperty ; 
+        rdfs:isDefinedBy hxl:shelterClusterSection  ;
+        skos:prefLabel "provides"@en ;
+        rdfs:comment "Links the items and kits to its actual distribution in a given location ."@en ;
+        rdfs:domain hxl:Distribution ;
+rdfs:range hxl:NonFoodItem, hxl:Kit .
+
+hxl:providedBy owl:inverseOf hxl:porvides .
+
+hxl:supplies
+        a rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:shelterClusterSection  ;
+        skos:prefLabel "supplies"@en ;
+        rdfs:comment "Links the items and kits to the supplying agency."@en ;
+        rdfs:domain hxl:SupplyingAgency ;
+rdfs:range hxl:NonFoodItem, hxl:Kit .
+
+hxl:suppliedBy owl:inverseOf hxl:supplies .
+
+hxl:containsItem
+        a rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:shelterClusterSection  ;
+        skos:prefLabel "contains item"@en ;
+        rdfs:comment "Used to specify the items contained in a kit."@en ;
+        rdfs:domain hxl:Kit ;
+rdfs:range hxl:NonFoodItem .
+
+hxl:containedInKit owl:inverseOf hxl:containsItem .
+
+hxl:distributes
+        a rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:shelterClusterSection  ;
+        skos:prefLabel "distributes"@en ;
+        rdfs:comment "Specifies whichwith items or kits a distributing partner is resposible for  Links the actual distribution of a NFI and/or the kits with pre-arranged NFIs to a humanitarian agency responsible for such distribution."@en ;
+        rdfs:domain hxl:DistributingPartner ;
+rdfs:range hxl:NonFoodItem , hxl:Kit .
+
+hxl:distributedBy owl:inverseOf hxl:distributes .
+
+hxl:affectedBy
+        a rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+        skos:prefLabel "affected by"@en ;
+        rdfs:comment "States that a Population is affacted by an Emergency."@en ;
+        rdfs:domain hxl:AffectedPopulation ;
+rdfs:range hxl:Emergency .
+
+hxl:affects owl:inverseOf hxl:affectedBy .
+
+
+hxl:addresses
+        a rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "addresses"@en ;
+        rdfs:comment "States that a certain activity addresses a need."@en ;
+        rdfs:domain hxl:Response, hxl:Activity ;
+        rdfs:range hxl:Need .
+
+hxl:addressedBy owl:inverseOf hxl:addresses .
+
+hxl:forEmergency
+        a rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "for emergency"@en ;
+        rdfs:comment "States that a certain activity has been initiated for an emergency."@en ;
+        rdfs:domain hxl:Response ;
+        rdfs:range hxl:Emergency .
+        
+hxl:emergencyOf owl:inverseOf hxl:forEmergency .
+
+# hxl:contributesTo
+#         a rdf:Property , owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "contributes to"@en ;
+#         rdfs:comment "Specifiies the relationship between a donor and the project or activity budget he contributes money to."@en ;
+#         rdfs:domain hxl:Donor ;
+# rdfs:range hxl:Budget .
+
+# hxl:leadBy
+#         a rdf:Property , owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "lead By"@en ;
+#         rdfs:comment "Relates a cluster to its leading Agency."@en ;
+#         rdfs:domain hxl:Cluster ;
+#         rdfs:range hxl:Agency .
+
+hxl:fromAge        
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+        skos:prefLabel "from age"@en ;
+        rdfs:comment "Specifies the bottom of an age range for an AgeGroup (in years)." ;
+        rdfs:domain hxl:AgeGroup ;
+rdfs:range rdfs:Literal .
+
+hxl:toAge        
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+        skos:prefLabel "to age"@en ;
+        rdfs:comment "Specifies the top of an age range for an AgeGroup (in years)." ;
+        rdfs:domain hxl:AgeGroup ;
+rdfs:range rdfs:Literal .
+
+hxl:start        
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+        skos:prefLabel "start"@en ;
+        rdfs:comment "Specifies the start of time periods." ;
+        rdfs:subPropertyOf dc:date ;
+        rdfs:domain dc:PeriodOfTime ;        
+rdfs:range rdfs:Literal .
+
+hxl:plannedStart        
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+        skos:prefLabel "planned start"@en ;
+        rdfs:comment "Specifies the planned start of an activity." ;
+        rdfs:subPropertyOf hxl:start ;
+        rdfs:domain hxl:Activity ;        
+rdfs:range rdfs:Literal .
+
+
+hxl:actualStart        
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+        skos:prefLabel "actual start"@en ;
+        rdfs:comment "Specifies the actual start of an activity." ;
+        rdfs:subPropertyOf hxl:start ;
+        rdfs:domain hxl:Activity ;        
+rdfs:range rdfs:Literal .
+
+hxl:plannedEnd        
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+        skos:prefLabel "planned end"@en ;
+        rdfs:comment "Specifies the planned end of an activity." ;
+        rdfs:subPropertyOf hxl:end ;
+        rdfs:domain hxl:Activity ;        
+rdfs:range rdfs:Literal .
+
+
+hxl:actualEnd
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+        skos:prefLabel "actual end"@en ;
+        rdfs:comment "Specifies the actual end of an activity." ;
+        rdfs:subPropertyOf hxl:end ;
+        rdfs:domain hxl:Activity ;        
+rdfs:range rdfs:Literal .
+
+
+hxl:end        
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+        skos:prefLabel "end"@en ;
+        rdfs:comment "Specifies the end of activities, projects, etc." ;
+        rdfs:domain dc:PeriodOfTime ;
+rdfs:range rdfs:Literal .
+
+hxl:duration
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+        skos:prefLabel "duration"@en ;
+        rdfs:comment "Specifies the duration of a period of time; if the duration is given, start and/or end may be omitted." ;
+        rdfs:domain dc:PeriodOfTime ;
+rdfs:range rdfs:Literal .
+
+
+dc:date
+        a rdf:Property , owl:DataProperty ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+        skos:prefLabel "dc:date"@en ;
+        rdfs:comment "Generic property for date/time stamps at arbitrary granularity." ;
+# rdfs:domain hxl:OutcomeToDate, hxl:OutputToDate ;
+rdfs:range rdfs:Literal .
+        
+hxl:hasPart
+        a rdf:Property , owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "has part"@en ;
+        rdfs:subPropertyOf dc:hasPart ;
+rdfs:comment "Specifies part-whole relationships; e.g., a specific project can have sub-projects or specific activities."@en ;
+        rdfs:domain hxl:Response, hxl:Activity ;
+rdfs:range hxl:Activity .
+
+hxl:partOf owl:inverseOf hxl:hasPart .
+
+# hxl:measurementOf
+#         a rdf:Property , owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:responseSection ;
+#         skos:prefLabel "measurement of"@en ;
+# rdfs:comment "Defines what impact an output / outcome to date measures."@en ;
+#         rdfs:domain hxl:OutputToDate, hxl:OutcomeToDate ;
+# rdfs:range hxl:Indicator .
+
+
+# hxl:hasBudget
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "has budget"@en ;
+#         rdfs:comment "Links a specific budget to a Project or Activity."@en;
+#         rdfs:domain hxl:Activity ;
+# rdfs:range hxl:Budget .
+        
+# hxl:raisedBy
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "raises"@en ;
+#         rdfs:comment "Provenance record for a specific budget that links it back to the appeal it was raised through."@en ;
+#         rdfs:domain hxl:Budget ;
+# rdfs:range hxl:Appeal .
+# 
+# hxl:subBudgetOf
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "sub-budget of"@en ;
+#         rdfs:comment "Supports adding up budgets for different activities to the budget of a project."@en;
+#         rdfs:domain hxl:Budget ;
+# rdfs:range hxl:Budget .
+
+# hxl:identifies
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "identifies"@en ;
+#         rdfs:comment "Links a NeedsAssessment to the different Needs it identifies."@en ;
+#         rdfs:domain hxl:NeedsAssessment ;
+# rdfs:range hxl:Need .
+
+# hxl:analyzes
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "analyzes"@en ;
+#         rdfs:comment "Links a NeedsAssessment to the situation it analyzes."@en ;
+#         rdfs:domain hxl:NeedsAssessment ;
+# rdfs:range hxl:Situation .
+
+# hxl:covers
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "covers"@en ;
+#         rdfs:comment "Used to define the sectors that are covered by a cluster; can be used to re-define clusters for a specific emergency."@en ;
+#         rdfs:domain hxl:Cluster ;
+#         rdfs:range hxl:Sector .
+
+hxl:hasObjective
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "has objective"@en ;
+        rdfs:comment "Defines the objectives for an activity or project."@en ;
+        rdfs:domain hxl:Activity ;
+rdfs:range hxl:Objective .
+
+hxl:isObjectiveOf owl:inverseOf hxl:hasObjective .
+
+# hxl:hasOutput
+#         a rdf:Property, owl:ObjectProperty ;
+#         skos:prefLabel "has output"@en ;
+#         rdfs:comment "Defines the output for an activity or project."@en ;
+#         rdfs:domain hxl:Activity ;
+# rdfs:range hxl:Output .
+
+hxl:hasPriority
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "has priority"@en ;
+        rdfs:comment "Defines the priority for an activity or project."@en ;
+        rdfs:domain hxl:Activity ;
+rdfs:range hxl:Priority .
+
+hxl:isPriorityOf owl:inverseOf hxl:hasPriority . 
+
+# hxl:inputTo
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "input to"@en ;
+#         rdfs:comment "Specififes that data collection is input to a report."@en ;
+#         rdfs:domain hxl:DataCollection ;
+# rdfs:range hxl:Report .
+        
+# hxl:subject
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:managementSection ;
+#         skos:prefLabel "subject"@en ;
+#         rdfs:subPropertyOf dc:subject ; 
+#         rdfs:comment "Specififes the subjects of a report; can be used to assign keywords."@en ;
+#         rdfs:domain hxl:Report ;
+# rdfs:range hxl:Incident, hxl:Damage, hxl:Indicator, hxl:Need, xsd:string . #hxl:Budget, 
+
+hxl:measures
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "measures"@en ;
+        rdfs:subPropertyOf dc:subject ; 
+        rdfs:comment "Specififes the need or objective that a certain indicator addresses or measures. <em>Eventually create second property for objectives?</em>"@en ;
+        rdfs:domain hxl:Indicator ;
+rdfs:range hxl:Objective .
+
+hxl:measuredBy owl:inverseOf hxl:measures .
+
+hxl:identifiedAt
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "identified at"@en ;
+        rdfs:subPropertyOf dc:date ; 
+        rdfs:comment "Specifies when a specific need has been identified." ;
+        rdfs:domain hxl:Need ;
+rdfs:range rdfs:Literal .
+        
+hxl:basedOn
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "based on"@en ;
+        rdfs:subPropertyOf dc:subject ; 
+        rdfs:comment "Specififes that a gap for a certain need has been identified based on a specific indicator."@en ;
+        rdfs:domain hxl:Need ;
+rdfs:range hxl:Indicator .
+
+hxl:indicates owl:inverseOf hxl:basedOn .
+
+
+hxl:atLocation
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "at Location"@en ;
+        rdfs:subPropertyOf dc:spatial ; 
+        rdfs:comment "Specififes the location for things like emergencies, projects, or camps."@en ;
+        rdfs:domain hxl:Situation, hxl:Activity ; 
+rdfs:range hxl:Feature .
+
+hxl:locationOf owl:inverseOf hxl:atLocation .
+
+
+# hxl:completedOutcomeOf
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:responseSection ;
+#         skos:prefLabel "completed outcome of"@en;
+#         rdfs:subPropertyOf hxl:measures;
+#         rdfs:comment "Relates the outcome to date to the outcome planned.";
+#         rdfs:domain hxl:OutcomeToDate;
+# rdfs:range hxl:OutcomePlanned .
+# 
+# 
+# hxl:completedOutputOf
+#         a rdf:Property, owl:ObjectProperty ;
+#         rdfs:isDefinedBy hxl:responseSection ;
+#         skos:prefLabel "completed output of"@en;
+#         rdfs:subPropertyOf hxl:measures;
+#         rdfs:comment "Relates the output to date to the output planned.";
+#         rdfs:domain hxl:OutputToDate;
+# rdfs:range hxl:OutputPlanned .
+
+
+hxl:atLevel
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "at level"@en;
+        rdfs:comment "Specifies the level for an administrative unit.";
+        rdfs:domain hxl:AdminUnit;
+rdfs:range hxl:AdminUnitLevel .
+
+hxl:levelOf owl:inverseOf hxl:atLevel .
+
+hxl:inAdminUnit
+        a rdf:Property, owl:ObjectProperty, owl:TransitiveProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "in administrative unit"@en;
+        rdfs:comment "Specifies direct containment between two administrative units. This property should only be used between administrative units that directly contain each other, i.e., when the administrative unit level of the containing unit is the level of the contained unit plus 1.";
+        rdfs:domain hxl:AdminUnit;
+rdfs:range hxl:AdminUnit .
+
+hxl:hasStatus
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "has status"@en ;
+        rdfs:comment "Sets the current status for an activity."@en ;
+        rdfs:domain hxl:Activity ;
+rdfs:range hxl:Status .
+
+hxl:statusOf owl:inverseOf hxl:hasStatus .
+
+hxl:hasGeometry
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "has geometry"@en ;
+        rdfs:comment "Relates a feature to its geometry."@en ;
+        rdfs:domain hxl:Feature ;
+rdfs:range hxl:Geometry .
+
+hxl:adminUnitLevelNumber
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "administrative unit level number"@en ;
+        rdfs:comment "The number for this administrative unit level; e.g. 0 for country, 1 for state, etc."@en ;
+        rdfs:domain hxl:AdminUnitLevel ;
+rdfs:range rdfs:Literal .
+
+hxl:adminUnitLevelTitle
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "administrative unit level title"@en ;
+        rdfs:comment "The title for this administrative unit level; e.g. <em>state</em> or <em>city district</em>."@en ;
+        rdfs:domain hxl:AdminUnitLevel ;
+rdfs:range rdfs:Literal .
+
+hxl:adminUnitLevelCountry
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "administrative unit level title"@en ;
+        rdfs:comment "Relates an administrative unit level to the country (or countries) that it can be used in."@en ;
+        rdfs:domain hxl:AdminUnitLevel ;
+rdfs:range hxl:Country .
+
+hxl:isGeometryOf owl:inverseOf hxl:hasGeometry .
+
+hxl:asWKT
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "as WKT"@en ;
+        rdfs:comment "A geometry serialised as WKT. Note that the WKT serialisation contains the spatial reference system (SRS), as specified in the <a href='http://portal.opengeospatial.org/files/?artifact_id=25355'>OGC Simple Feature standard</a>. If no SRS is given, HXL uses WGS 84 as the standard SRS."@en ;
+        rdfs:domain hxl:Geometry ;
+rdfs:range rdfs:Literal .
+
+
+hxl:equals
+        a rdf:Property, owl:ObjectProperty, owl:SymmetricProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "equals"@en ;
+        rdfs:comment "Topological relation. States that two geometries are equal."@en ;
+        rdfs:domain hxl:Geometry ;
+rdfs:range hxl:Geometry .
+
+hxl:intersects
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "intersects"@en ;
+        rdfs:comment "Topological relation. States that one geometry intersects another one. "@en ;
+        rdfs:domain hxl:Geometry ;
+rdfs:range hxl:Geometry .
+
+hxl:touches
+        a rdf:Property, owl:ObjectProperty, owl:SymmetricProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "touches"@en ;
+        rdfs:comment "Topological relation. States that one geometry touches another one. "@en ;
+        rdfs:domain hxl:Geometry ;
+rdfs:range hxl:Geometry .
+
+
+hxl:crosses
+        a rdf:Property, owl:ObjectProperty, owl:TransitiveProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "crosses"@en ;
+        rdfs:comment "Topological relation. States that one geometry crosses another one. "@en ;
+        rdfs:domain hxl:Geometry ;
+rdfs:range hxl:Geometry .
+
+hxl:within
+        a rdf:Property, owl:ObjectProperty, owl:TransitiveProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "within"@en ;
+        rdfs:comment "Topological relation. States that one geometry is within another one. "@en ;
+        rdfs:domain hxl:Geometry ;
+rdfs:range hxl:Geometry .
+
+
+hxl:contains
+        a rdf:Property, owl:ObjectProperty, owl:TransitiveProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "contains"@en ;
+        rdfs:comment "Topological relation. States that one geometry contains another one. "@en ;
+        rdfs:domain hxl:Geometry ;
+rdfs:range hxl:Geometry .
+
+
+hxl:overlaps
+        a rdf:Property, owl:ObjectProperty, owl:TransitiveProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "overlaps"@en ;
+        rdfs:comment "Topological relation. States that one geometry overlaps another one. "@en ;
+        rdfs:domain hxl:Geometry ;
+rdfs:range hxl:Geometry .
+
+
+hxl:near
+        a rdf:Property, owl:ObjectProperty, owl:SymmetricProperty ;
+        rdfs:isDefinedBy hxl:geolocationSection ;
+        skos:prefLabel "near"@en ;
+        rdfs:comment "Topological relation. States that one geometry is near another one. "@en ;
+        rdfs:domain hxl:Geometry ;
+rdfs:range hxl:Geometry .
+
+hxl:hasGLIDEnumber
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "has GLIDE number"@en ;
+        rdfs:comment "Assigns the GLIDE number to an Emergency."@en ;
+        rdfs:domain hxl:Emergency ;
+rdfs:range hxl:GLIDEnumber .
+
+hxl:count
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "count"@en ;
+rdfs:comment "Property to count people, things, etc. Subproperties should be used if possible to clarify what has been counted."@en .
+
+hxl:personCount
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "person count"@en ;
+        rdfs:subPropertyOf hxl:count ;
+        rdfs:comment "The number of persons in a population. The range is intentionally not restricted to numeric values, so that rough numbers or estimates are supported."@en ;
+        rdfs:domain hxl:Population ;
+rdfs:range rdfs:Literal .
+
+hxl:householdCount
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "household count"@en ;
+        rdfs:subPropertyOf hxl:count ;
+        rdfs:comment "The number of people in a population. The range is intentionally not restricted to numeric values, so that rough numbers or estimates are supported."@en ;
+        rdfs:domain hxl:Population ;
+rdfs:range rdfs:Literal .
+
+hxl:populationDescription
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "population description"@en ;
+        rdfs:comment "A description of this population."@en ;
+        rdfs:domain hxl:Population ;
+rdfs:range rdfs:Literal .
+
+hxl:provenanceInfo
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "provenance Information"@en ;
+        rdfs:comment "Free-text description of how the information about the demographic methodology, where the data came from, etc."@en ;
+        rdfs:domain hxl:Population ;
+rdfs:range rdfs:Literal .
+
+hxl:hasValue
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "has value"@en ;
+        rdfs:comment "The measured value of this indicator."@en ;
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:hasStandard
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "has standard"@en ;
+        rdfs:comment "A reference against which the measured value can be compared to know if it requires intervention."@en ;
+        rdfs:domain hxl:Indicator ;
+rdfs:range rdfs:Literal .
+
+hxl:involvedIn 
+        a rdf:Property, owl:ObjectProperty ;
+        rdfs:isDefinedBy hxl:responseSection ;
+        skos:prefLabel "involved in"@en;
+        rdfs:comment "Indicates an organisation's involvement in an activity."@en;
+        rdfs:domain hxl:Organisation;
+rdfs:range hxl:Activity.
+
+hxl:involvedOrganisation owl:inverseOf hxl:involvedIn .
+
+hxl:commonTitle
+        a rdf:Property, owl:DataProperty ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "common title"@en ;
+        rdfs:comment "A commonly use title/name for an emergency."@en ;
+        rdfs:domain hxl:Situation ;
+rdfs:range rdfs:Literal .
+
+# -- some stuff copied from other vocabs for completeness:
+
+dc:PeriodOfTime
+        a rdfs:Class , owl:Class ;
+        rdfs:isDefinedBy hxl:datetimeSection ;
+skos:prefLabel "dc:PeriodOfTime" .
+
+hxl:situationDescription
+        a rdf:Property , owl:DataProperty ;
+        rdfs:subPropertyOf dc:description ;
+        rdfs:isDefinedBy hxl:situationSection ;
+        skos:prefLabel "situation description" ;
+        rdfs:domain hxl:Situation ;
+rdfs:range rdfs:Literal .
+
+foaf:Agent
+        a rdfs:Class , owl:Class ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+skos:prefLabel "foaf:Agent" .
+
+foaf:Organisation
+        a rdfs:Class , owl:Class ;
+        rdfs:isDefinedBy hxl:responseSection  ;
+    skos:prefLabel "foaf:Organisation" ;
+    rdfs:subClassOf foaf:Agent .
+
+foaf:Group
+        a rdfs:Class , owl:Class ;
+        rdfs:isDefinedBy hxl:situationSection  ;
+    skos:prefLabel "foaf:Group" ;
+rdfs:subClassOf foaf:Agent .

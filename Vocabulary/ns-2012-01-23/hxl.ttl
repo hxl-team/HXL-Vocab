@@ -1,0 +1,571 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 	<http://www.w3.org/2002/07/owl#> .
+@prefix foaf: 	<http://xmlns.com/foaf/0.1/> .
+@prefix dc: 	<http://purl.org/dc/terms/> .
+@prefix xsd: 	<http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: 	<http://www.w3.org/2004/02/skos/core#> .
+@prefix hxl: 	<http://carsten.io/hxl/ns-2012-01-23#> . # update
+
+<http://carsten.io/hxl/ns-2012-01-23> a owl:Ontology ;   # update
+	dc:date "2012-01-23" ;								 # update
+	dc:creator hxl:carsten , hxl:cj ;
+	dc:title "Humanitarian eXchange Language (HXL) domain vocabulary"@en ;
+	dc:abstract "<p>Draft specification of the Humanitarian eXchange Language (HXL) standard. This vocabulary specification is currently <b>under development</b> and may change at any time without notice.</p> <p>The porpuse of HXL is to facilitate data exchange within the humanitarian domain. It provides a core domain model that has been created bottom-up by inspecting a broad range of systems in use with different humanitarian organizations. As needs vary widely across organizations in this domain, this vocabulary does <em>not</em> intend to be complete; in fact, it is the smallest common denominator. Any organizations that wish to publish <em>full</em> exports of their data can do so by extending this domain model with application- or organization-specific models that reflect their internal data models (which may already be formalized in an XML schema or database schema). "@en ;
+	dc:license "We still need to decide under which license this vocabulary should be published."@en ;
+	dc:versionOf <http://carsten.io/hxl/ns> ;
+	rdfs:seeAlso "For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>."@en ;
+	dc:replaces <http://carsten.io/hxl/ns-2012-01-21> ; # update -> previous version
+	skos:changeNote "<ol><li>Classes <a href='#NeedTarget'>NeedTarget</a> and <a href='#NeedAchieved'>NeedAchieved</a> have been introduced.</li><li>The <a href='#measures'>measures</a> property does not have <a href='#Need'>Need</a> as range anymore: a need is <a href='#basedOn'>based on</a> an indicator, which measures the progress in addressing this need. </li><li><a href='#Project'>Project</a> is now a subclass of <a href='#Activity'>Activity</a>. This is more consistent, as Activity is the (more ambiguous) superclass now that is used in all property definitions (which still apply to Project). <li>Classes <a href='#Need'>Need</a> , Gap, and Lack have been merged, since we only address actual needs, i.e., in the sense of a lack of food. These needs <a href='requires'>require</a> some kind of <a href='#'<li>Property <em>locatedAt</em> removed for redundancy (see <a href='#location'>location</a>).<li>Class <a href='#Donor'>Donor</a> introduced, along with property <a href='#contributesTo'>contributesTo</a>.<li>Class <em>BasicHumanNeed</em> has been removed – design decision to stick to measurable or reportable classes for HXL.<li>Switched from <em>rdfs:label</em> to <em>skos:prefLabel</em> to be able to add alternative labels to the classes (via <em>skos:altLabel</em>). </li><li>Merged classes Budget and Funding.</li><li>Added alternative labels to several classes.</li><li>Fixed a number of typos.</li></ol>" . # change log compared to last version .
+
+hxl:carsten foaf:name "Carsten Keßler" ;
+	foaf:mbox "me@carsten.io" ;
+	foaf:homepage <http://carsten.io> .
+
+hxl:cj foaf:name "CJ Hendrix" ;
+	foaf:mbox "hendrix@un.org" .
+
+hxl:Situation
+	a rdfs:Class ;
+	skos:prefLabel "Situation"@en ;
+	rdfs:comment "Generic situation."@en. 						# eventually add more languages ?
+	
+hxl:Activity
+	a rdfs:Class ;
+	skos:prefLabel "Humanitarian Activity"@en ;
+#	rdfs:comment "Description en français."@fr ;
+	rdfs:comment "An Activity generally addresses some kind of need given in a Humanitarian Situation. <br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, Sahana Project, Sigmah DB</small>"@en .	
+
+hxl:AffectedPopulation
+	a rdfs:Class ;
+	skos:prefLabel "Affected Population"@en ;
+	rdfs:subClassOf hxl:Population ;
+	rdfs:comment "The population affected by an emergency.<br /><small>Term origin: Humanitarian Profile (<em>Affected</em>);</small>"@en .	
+
+
+hxl:Cluster
+	a rdfs:Class ;
+	skos:prefLabel "Cluster"@en ;
+	rdfs:comment "An organizational unit responsible for one or more sectors during an emergency.<br /><small>Term origin: CAP OPS, CCDI.</small>"@en .
+
+hxl:Agency
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Organization ;
+	skos:prefLabel "Agency"@en ;
+rdfs:comment "An Agency is an official body of the United Nations. <br /><small>Term origin: CCDI, CERF, Shelter Cluster</small>"@en .
+
+hxl:ImplementingPartner
+	a rdfs:Class ;
+	skos:prefLabel "Implementing Partner"@en ;
+	skos:altLabel "IP"@en;
+	rdfs:comment "An external partner implenting (parts) of a project for an agency. <br /><small>Term origin: CAP OPS, Pakistan SRF, HPM Ethiopia (<em>Partner</em>), Sigmah DB (<em>Partner</em>).</small>"@en ;
+	rdfs:subClassOf hxl:Organization .
+
+hxl:Camp
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Site ;
+	rdfs:subClassOf hxl:Shelter ;
+	skos:prefLabel "Camp"@en ;
+	rdfs:comment "A site with temporary shelter for an affected population, such as refugees. <br /><small>Term origin: UNHCR Camp DB, Pakistan SRF, Humanitarian Profile.</small>"@en .
+
+hxl:Population
+	a rdfs:Class ;
+	skos:prefLabel "Population"@en ;
+	rdfs:subClassOf foaf:Group ;
+	rdfs:comment "Generic class for any kind of population (e.g. total, affected, etc.); use the subclasses for the data annotation."@en .
+
+hxl:TotalPopulation
+	a rdfs:Class ;
+	skos:prefLabel "Total Population"@en ;
+	rdfs:subClassOf hxl:Population ;
+	rdfs:comment "Total population for a given administrative unit or geographic area. Instances can be created to make statements about this population."@en .
+
+hxl:AgeGroup
+	a rdfs:Class ;
+	skos:prefLabel "Age Group"@en ;
+	rdfs:subClassOf hxl:Population;
+	rdfs:comment "Generic class for age groups; instances should be created for actual age groups (e.g. children under 5). "
+	
+hxl:Appeal	
+	a rdfs:Class ;
+	skos:prefLabel "Appeal"@en ;
+	rdfs:comment "An appeal is a request for aid in the form of money or goods from Donors. <br /><small>Term origin: CAP OPS, Pakistan SRF.</small>" .
+	
+hxl:Budget 
+	a rdfs:Class ;
+	skos:prefLabel "Budget"@en ;
+	skos:altLabel  "Funding"@en ;
+	rdfs:comment "The money allocated to a Project.<br /><small>Term origin: IATI, Sigmah DB, Sahana Project (<em>Funding</em>), EDXL (<em>Funding</em>).</small>" .
+
+hxl:Casualty
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:AffectedPopulation ;
+	skos:prefLabel "Casualty"@en ;
+	rdfs:comment "E.g. injured or dead.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile.</small>" .
+
+hxl:Country
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Location ;
+	skos:prefLabel "Country"@en ;
+	rdfs:comment "Geolocation admin level 0.<br /><small>Term origin: CAP OPS, Sahana Project, ACAPS DSS, CERF, Sigmah DB.</small>" .
+	
+hxl:Damage
+	a rdfs:Class ;
+	skos:prefLabel "Damage"@en ;
+	rdfs:comment "A (reported) damage.<br /><small>Term origin: ACAPS DSS, Shelter Cluster.</small>" .
+	
+hxl:DataCollection
+	a rdfs:Class ;
+	skos:prefLabel "Data Collection"@en ;
+	rdfs:comment "The process that leads to a NeedsAssessment of Report. <br /><small>Term origin: MRM/MARA, HPM Ethiopia.</small>" .
+
+hxl:Death
+	a rdfs:Class ;
+	skos:prefLabel "Death"@en ;
+	skos:altLabel "Dead"@en ;
+	rdfs:subClassOf hxl:Casualty ;
+	owl:disjointWith hxl:Injured ;
+	rdfs:comment "A (reported) death.<br /><small>Term origin: ACAPS DSS, HPM Ethiopia, Shelter Cluster, Humanitarian Profile (<em>Dead</em>).</small>" .
+	
+hxl:Displaced
+	a rdfs:Class ;
+	skos:prefLabel "Displaced"@en ;
+	skos:altLabel "Displacement"@en ;
+	rdfs:subClassOf hxl:AffectedPopulation ;
+	rdfs:comment "Refers to internally displaced persons, refugees, and others of concern.<br /><small>Term origin: Humanitarian Profile, ACAPS DSS (<em>Displacement</em>)</small>" ;
+owl:disjointWith hxl:NonDisplaced .
+
+hxl:Donor
+	a rdfs:Class ;
+	skos:prefLabel "Donor"@en ;
+	rdfs:subClassOf foaf:Agent ;
+	rdfs:comment "A donor is an individual or organization donating money for a project or a specific activity."@en .
+
+hxl:NonDisplaced
+	a rdfs:Class ;
+	skos:prefLabel "Non-Displaced"@en ;
+	rdfs:subClassOf hxl:AffectedPopulation ;
+	rdfs:comment "Refers to the part of the affected population that is not displaced (i.e., host or non-host);.<br /><small>Term origin: Humanitarian Profile.</small>" ;
+owl:disjointWith hxl:Displaced .
+
+
+hxl:Emergency
+	a rdfs:Class ;
+	skos:prefLabel "Emergency"@en ;
+	rdfs:subClassOf hxl:Situation ;
+	rdfs:comment "<p>Any situation in which ... life or well-being ... will be threatened  unless immediate  and  appropriate   action  is  taken,  and  which demands   an   extraordinary   response   and   exceptional measures” (UNHCR Handbook for Emergencies)</p><p>A sudden crisis situation or event requiring immediate action (WART) </p><p>Any situation in which there is an exceptional and widespread threat to life, health or basic  subsistence,  that  is  beyond  the  coping  capacity  of individuals and the community”  (Oxfam GB Emergency Response Manual). </p><p>Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance” (source: ACFIN Emergency module)</p><small>Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.</small>" .
+	# clarify relationship to "situation"
+
+hxl:Female
+	a rdfs:Class ;
+	skos:prefLabel "Female"@en;	
+	rdfs:subClassOf foaf:Agent , hxl:Gender ;
+	rdfs:comment "A woman/girl or group of women/girls.<br /><small>Term origin: CERF, EIMS Report.</small>" ;
+owl:disjointWith hxl:Male .
+
+hxl:Male
+	a rdfs:Class ;
+	skos:prefLabel "Male"@en;
+	rdfs:subClassOf foaf:Agent , hxl:Gender ;
+	rdfs:comment "A man/boy or group of men/boys.<br /><small>Term origin: CERF, EIMS Report.</small>" ;
+owl:disjointWith hxl:Female .	
+
+
+hxl:Gender
+	a rdfs:Class ;
+	skos:prefLabel "Gender"@en;
+	rdfs:comment "Class to describe gender-specific issues, either at individual or group level.<br /><small>Term origin: MIRA, CCDI</small>" .
+
+hxl:Need
+	a rdfs:Class ;
+	skos:prefLabel "Need"@en;
+	skos:altLabel "Gap"@en;
+	skos:altLabel "Lack"@en;
+	rdfs:comment "A concrete need, lack, or gap, e.g. a shortage of food. Can be based on the application of relevant norms (usually a minimum requirement or a pre-existing ‘normal’ situation); and an assessment of how  the reality differs.	Identifying and measuring deficits, either actual or predicted.<br /><small>Term origin: CAP OPS, ACAPS DSS (also: <em>Humanitarian Need</em>), CCDI (<em>Humanitarian Need</em>), CCDI Shelter Cluster (<em>Gap</em>), HPM Ethiopia (<em>Gap</em>).</small>" .
+
+hxl:NeedTarget
+	a rdfs:Class ;
+	skos:prefLabel "Need target"@en;
+	rdfs:subClassOf hxl:Objective;
+rdfs:comment "An objective towards a specific need." .
+
+hxl:NeedAchieved
+	a rdfs:Class ;
+	skos:prefLabel "Need achieved"@en ;
+rdfs:comment "The part of a need target that has already been achieved."@en.
+	
+hxl:Intervention
+	a rdfs:Class ;
+	skos:prefLabel "Intervention"@en;
+	rdfs:subClassOf hxl:Activity ;
+	rdfs:comment "Relief assistance, remedial action, or some other humanitarian intervention; (such  as immunisation, food distribution, etc.).<br /><small>Term origin: ACAPS.</small>" .
+
+hxl:NeedsAssessment
+	a rdfs:Class ;
+	skos:prefLabel "Needs Assessment"@en;
+	rdfs:subClassOf hxl:Report ;
+	rdfs:comment "The process of obtaining and analyzing information to determine the current status and service needs of a defined  population and/or geographic area (NOAA definition);.<br /><small>Term origin: ACAPS.</small>" .
+	
+	
+
+hxl:Response
+	a rdfs:Class ;
+	skos:prefLabel "Response"@en;
+	rdfs:comment "Generic term for the collection of all activities that address the needs araising from an emergency.<br /><small>Term origin: ACAPS DSS, ACAPS DSS, MIRA, EDXL, CCDI (<em>Humanitarian Response</em>), CERF (<em>Humanitarian Response</em>)</small>" .
+
+
+hxl:IDP
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Displaced ;
+	skos:prefLabel "Internally Displaced Person"@en;
+	skos:altLabel "IDP"@en;
+	rdfs:comment "A group of internally displaced persons (IDPs).<br /><small>Term origin: Humanitarian Profile, CERF, HPM Ethiopia</small>" .
+
+hxl:Refugee
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Displaced ;
+	skos:prefLabel "Refugee"@en;
+	rdfs:comment "A group of refugees.<br /><small>Term origin: Humanitarian Profile</small>" .
+
+hxl:AsylumSeeker
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Displaced ;
+	skos:prefLabel "Asylum Seeker"@en;
+	rdfs:comment "A group of asylum seekers.<br /><small>Term origin: Humanitarian Profile</small>" .
+
+hxl:Incident
+	a rdfs:Class ;
+	skos:prefLabel "Incident"@en;
+	rdfs:comment "An individual incident in the context of a crisis, such as a recruitment of children.<br /><small>Term origin: MRM/MARA, EDXL</small>" .
+
+hxl:Indicator
+	a rdfs:Class ;
+	skos:prefLabel "Indicator"@en;
+	rdfs:comment "Concrete measurable reference for a concrete need; e.g., <em>5 litres of clean water per person and day</em>.<br /><small>Term origin: Pakistan SRF, ACAPS DSS, CCDI, CERF, HPM Ethiopia, Sigmah DB</small>" .
+
+hxl:Injured
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Casualty ;
+	skos:prefLabel "Injured"@en;
+	owl:disjointWith hxl:Death ;
+	rdfs:comment "Injured part of the population.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile, Shelter Cluster, HERAMS Checklist (<em>Injury</em>)</small>" .
+
+hxl:Intervention
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Activity ;
+	skos:prefLabel "Intervention"@en ;
+	rdfs:comment "<em>Needs further specification; is there any difference between an intervention and an activity?</em>.<br /><small>Term origin: MIRA, CCDI, HPM Ethiopia.</small>" .
+
+hxl:Killing
+	a rdfs:Class ;
+	skos:prefLabel "Killing"@en;
+	rdfs:subClassOf hxl:Incident ;
+	rdfs:comment "A (reported) killing.<br /><small>Term origin: MRM/MARA, EIMS Report</small>" .
+
+hxl:Location
+	a rdfs:Class ;
+	skos:prefLabel "Location"@en;
+	rdfs:comment "Geolocation - <em>will be further specficied using admin levels and p-codes in the next iteration</em>.<br /><small>Term origin: Pakistan SRF, CCDI, EDXL, Shelter Cluster, Sigmah DB</small>" .
+
+hxl:Maiming
+	a rdfs:Class ;
+	skos:prefLabel "Maiming"@en;
+	rdfs:subClassOf hxl:Incident ;
+	rdfs:comment "A (reported) maiming;.<br /><small>Term origin: MRM/MARA, EIMS Report</small>" .
+
+hxl:Missing
+	a rdfs:Class ;
+	skos:prefLabel "Missing"@en ;
+	rdfs:subClassOf hxl:Casualty ;
+	owl:disjointWith hxl:Death ;
+	rdfs:comment "Missing population.<br /><small>Term origin: Humanitarian Profile.</small>" .
+
+hxl:Objective
+	a rdfs:Class ;
+	skos:prefLabel "Objective"@en;
+	rdfs:comment "And objective is a goal for an activity, measureable in terms of an indicator.<br /><small>Term origin: Sahana Project, CERF</small>" .
+
+hxl:Organization
+	a rdfs:Class ;
+	rdfs:subClassOf foaf:Organization ;
+	skos:prefLabel "Organization"@en ;
+	rdfs:comment "A humanitarian organization.<br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report,	Shelter Cluster, Sigmah DB.</small>" .
+
+hxl:Output
+	a rdfs:Class ;
+	skos:prefLabel "Output"@en;
+rdfs:comment "<em>Merge with <strong>objective</strong>?</em>.<br /><small>Term origin: CAP OPS, Sahana Project</small>" .
+
+hxl:Priority
+	a rdfs:Class ;
+	skos:prefLabel "Priority"@en;
+	rdfs:comment "The priority for a project or activity. Individuals of this class should be created whenever a fixed scale for priorities is in use.<br /><small>Term origin: CAP OPS, UNHCR Camp DB, Sahana Project, MIRA, HPM Ethiopia.</small>" .
+
+hxl:Project
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Activity ;
+	skos:prefLabel "Project"@en;
+rdfs:comment "A project is a specific activity or intervention (or collection of these)	that have been grouped for management purposes.<br /><small>Term origin: CAP OPS, Pakistan SRF, Sahana Project, Sigmah DB. </small>" .
+			
+hxl:Region
+	a rdfs:Class ;
+	skos:prefLabel "Region"@en;
+	rdfs:subClassOf hxl:Location ;
+rdfs:comment "Geolocation admin level 1.<br /><small>Term origin: ACAPS DSS,	CCDI, CERF, HPM Ethiopia.</small>" .
+
+hxl:Report
+	a rdfs:Class ;
+	skos:prefLabel "Report"@en;
+	rdfs:subClassOf foaf:Document ;
+rdfs:comment "Generic class for any kind of report (such as a needs assessment or project report)." .
+
+hxl:ReportingPeriod
+	a rdfs:Class ;
+	skos:prefLabel "Reporting Period"@en;
+	rdfs:comment "The time frame that a report covers.<br /><small>Term origin: Sigmah DB.</small>" .
+
+hxl:RuralPopulation
+	a rdfs:Class ;
+	skos:prefLabel "Rural Population"@en;
+	rdfs:subClassOf hxl:Population ;
+	rdfs:comment "Population living in the countryside.<br /><small>Term origin: HPM Ethiopia, Shelter Cluster.</small>" ;
+owl:disjointWith hxl:UrbanPopulation .
+
+hxl:UrbanPopulation
+	a rdfs:Class ;
+	skos:prefLabel "Urban Population"@en;
+	rdfs:subClassOf hxl:Population ;
+	rdfs:comment "Population living in cities.<br /><small>Term origin: Shelter Cluster.</small>" ;
+owl:disjointWith hxl:RuralPopulation .
+
+hxl:Sector
+	a rdfs:Class ;
+	skos:prefLabel "Sector"@en ;
+	rdfs:comment "A sector adresses a specific thematic area in an Emergency, e.g. Health or Logistics.<br /><small>Term origin: IATI, CAP OPS, UNHCR Camp DB, Pakistan SRF, ACAPS DSS, MIRA, CERF, HPM Ethiopia</small>."@en .
+
+hxl:Site
+	a rdfs:Class ;
+	skos:prefLabel "Site"@en ;
+	rdfs:comment "<em>What sites other than camps do we have?</em><br /><small>Term origin: EIMS Report	Sigmah DB.</small>"@en .
+
+hxl:Shelter
+	a rdfs:Class ;
+	skos:prefLabel "Shelter"@en;
+	rdfs:comment "A structure that provides privacy and protection from danger (WordNet).<br /><small>Term origin: UNHCR Camp DB, ACAPS DSS.</small>" .
+
+# make this a data property for now:
+# hxl:Status     
+# 	a rdfs:Class ;
+#	skos:prefLabel "Status"@en;
+# rdfs:comment ".<br /><small>Term origin: Sahana Project	CCDI, CERF, EDXL.</small>" .
+
+hxl:SubRegion
+	a rdfs:Class ;
+	skos:prefLabel "Sub Region"@en;
+	rdfs:subClassOf hxl:Location ;
+rdfs:comment "Geolocation admin level 2.<br /><small>Term origin: CCDI, CERF.</small>" .
+
+hxl:TotalPopulation
+	a rdfs:Class ;
+	rdfs:subClassOf hxl:Population ;
+	skos:prefLabel "Total Population"@en;
+rdfs:comment "The total population for an administrative unit (e.g. a region).<br /><small>Term origin: Shelter Cluster.</small>" .
+
+
+
+			
+## PROPERTIES -----------------------------
+
+hxl:affectedBy
+	a rdf:Property , owl:ObjectProperty ;
+	skos:prefLabel "affected by"@en ;
+	rdfs:comment "States that a Population is affacted by an Emergency."@en ;
+	rdfs:domain hxl:AffectedPopulation ;
+rdfs:range hxl:Emergency .
+
+
+hxl:addresses
+	a rdf:Property , owl:ObjectProperty ;
+	skos:prefLabel "addresses"@en ;
+	rdfs:comment "States that a certain activity addresses a situation description."@en ;
+	rdfs:domain hxl:Response, hxl:Activity ;
+	rdfs:range hxl:Emergency, hxl:Need .
+	
+hxl:contributesTo
+	a rdf:Property , owl:ObjectProperty ;
+	skos:prefLabel "contributes to"@en ;
+	rdfs:comment "Specifiies the relationship between a donor and the project or activity budget he contributes money to."@en ;
+	rdfs:domain hxl:Donor ;
+rdfs:range hxl:Budget .
+
+hxl:leadBy
+	a rdf:Property , owl:ObjectProperty ;
+	skos:prefLabel "lead By"@en ;
+	rdfs:comment "Relates a cluster to its leading Agency."@en ;
+	rdfs:domain hxl:Cluster ;
+	rdfs:range hxl:Agency .
+
+hxl:fromAge	
+	a rdf:Property , owl:DataProperty ;
+	skos:prefLabel "from age"@en ;
+	rdfs:comment "Specifies the bottom of an age range for an AgeGroup (in years)." ;
+	rdfs:domain hxl:AgeGroup ;
+	rdfs:range xsd:int .
+
+hxl:toAge	
+	a rdf:Property , owl:DataProperty ;
+	skos:prefLabel "to age"@en ;
+	rdfs:comment "Specifies the top of an age range for an AgeGroup (in years)." ;
+	rdfs:domain hxl:AgeGroup ;
+	rdfs:range xsd:int .
+
+hxl:start	
+	a rdf:Property , owl:DataProperty ;
+	skos:prefLabel "start"@en ;
+	rdfs:comment "Specifies the start of activities, projects, etc." ;
+	rdfs:domain hxl:Activity, hxl:Emergency, hxl:ReportingPeriod ;
+	rdfs:range xsd:date .
+
+hxl:end	
+	a rdf:Property , owl:DataProperty ;
+	skos:prefLabel "end"@en ;
+	rdfs:comment "Specifies the end of activities, projects, etc." ;
+	rdfs:domain hxl:Activity, hxl:Emergency, hxl:ReportingPeriod ;
+	rdfs:range xsd:date .
+
+hxl:partOf
+	a rdf:Property ;
+	skos:prefLabel "part of"@en ;
+	rdfs:subPropertyOf dc:partOf ;
+rdfs:comment "Specifies part-whole relationships; e.g., a specific Project can be partOf the Response to a certain Emergency."@en ;
+	rdfs:domain hxl:Activity ;
+rdfs:range hxl:Response, hxl:Activity .
+
+hxl:hasBudget
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "has budget"@en ;
+	rdfs:comment "Links a specific budget to a Project or Activity."@en;
+	rdfs:domain hxl:Activity ;
+rdfs:range hxl:Budget .
+	
+hxl:raisedBy
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "raises"@en ;
+	rdfs:comment "Provenance record for a specific budget that links it back to the appeal it was raised through."@en ;
+	rdfs:domain hxl:Budget ;
+rdfs:range hxl:Appeal .
+
+hxl:subBudgetOf
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "sub-budget of"@en ;
+	rdfs:comment "Supports adding up budgets for different activities to the budget of a project."@en;
+	rdfs:domain hxl:Budget ;
+rdfs:range hxl:Budget .
+
+hxl:identifies
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "identifies"@en ;
+	rdfs:comment "Links a NeedsAssessment to the different Needs it identifies."@en ;
+	rdfs:domain hxl:NeedsAssessment ;
+rdfs:range hxl:Need .
+
+hxl:analyzes
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "analyzes"@en ;
+	rdfs:comment "Links a NeedsAssessment to the Situation it analyzes."@en ;
+	rdfs:domain hxl:NeedsAssessment ;
+rdfs:range hxl:Situation .
+
+hxl:convers
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "covers"@en ;
+	rdfs:comment "Used to define the sectors that are covered by a cluster; can be used to re-define clusters by Emergency."@en ;
+	rdfs:domain hxl:Cluster ;
+	rdfs:range hxl:Sector .
+
+hxl:hasObjective
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "has objective"@en ;
+	rdfs:comment "Defines the objectives for an activity or project."@en ;
+	rdfs:domain hxl:Activity ;
+rdfs:range hxl:Objective .
+
+hxl:hasOutput
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "has output"@en ;
+	rdfs:comment "Defines the output for an activity or project."@en ;
+	rdfs:domain hxl:Activity ;
+rdfs:range hxl:Output .
+
+hxl:hasPriority
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "has priority"@en ;
+	rdfs:comment "Defines the priority for an activity or project."@en ;
+	rdfs:domain hxl:Activity ;
+rdfs:range hxl:Priority .
+
+hxl:period
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "period"@en ;
+	rdfs:comment "Defines the reporting period for a report."@en ;
+	rdfs:domain hxl:Report ;
+rdfs:range hxl:ReportingPeriod .
+
+hxl:inputTo
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "input to"@en ;
+	rdfs:comment "Specififes that data collection is input to a report."@en ;
+	rdfs:domain hxl:DataCollection ;
+rdfs:range hxl:Report .
+	
+hxl:subject
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "subject"@en ;
+	rdfs:subPropertyOf dc:subject ; 
+	rdfs:comment "Specififes the subjects of a report."@en ;
+	rdfs:domain hxl:Report ;
+rdfs:range hxl:Incident, hxl:Damage, hxl:Indicator, hxl:Budget, hxl:Need .
+
+hxl:measures
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "measures"@en ;
+	rdfs:subPropertyOf dc:subject ; 
+	rdfs:comment "Specififes the need or objective that a certain indicator addresses or measures. <em>Eventually create second property for objectives?</em>"@en ;
+	rdfs:domain hxl:Indicator ;
+rdfs:range hxl:Objective .
+
+hxl:basedOn
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "based on"@en ;
+	rdfs:subPropertyOf dc:subject ; 
+	rdfs:comment "Specififes that a gap for a certain need has been identified based on a specific indicator."@en ;
+	rdfs:domain hxl:Need ;
+rdfs:range hxl:Indicator .
+
+hxl:location
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "location"@en ;
+	rdfs:subPropertyOf dc:spatial ; 
+	rdfs:comment "Specififes the location for things like emergencies, projects, or camps."@en ;
+	rdfs:domain hxl:Emergency, hxl:Site, hxl:Incident, hxl:Situation ;
+rdfs:range hxl:Location .
+
+hxl:achievedOf
+	a rdf:Property, owl:ObjectProperty ;
+	skos:prefLabel "achieved of"@en;
+	rdfs:subPropertyOf hxl:measures;
+	rdfs:comment "Relates the need achieved to the need target.";
+	rdfs:domain hxl:NeedAchieved;
+rdfs:range hxl:NeedTarget .
+
+# -- some stuff copied from other vocabs for completeness:
+
+foaf:Organization
+	a rdfs:Class , owl:Class ;
+    skos:prefLabel "foaf:Organization" ;
+    rdfs:subClassOf foaf:Agent .
+
+foaf:Group
+	a rdfs:Class , owl:Class ;
+    skos:prefLabel "foaf:Group" ;
+rdfs:subClassOf foaf:Agent .

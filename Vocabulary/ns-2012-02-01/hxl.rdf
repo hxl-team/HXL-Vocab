@@ -1,0 +1,1695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:hxl="http://carsten.io/hxl/ns-2012-02-01#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <dc:date>2012-02-01</dc:date>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <dc:creator rdf:resource="http://carsten.io/hxl/ns-2012-02-01#carsten"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <dc:creator rdf:resource="http://carsten.io/hxl/ns-2012-02-01#cj"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <dc:title xml:lang="en">Humanitarian eXchange Language (HXL) Situation and Response Standard</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <dc:abstract xml:lang="en">&lt;p&gt;Draft specification of the Humanitarian eXchange Language (HXL) standard. This vocabulary specification is currently &lt;b&gt;under development&lt;/b&gt; and may change at any time without notice.&lt;/p&gt; &lt;p&gt;The porpuse of HXL is to facilitate data exchange within the humanitarian domain. It provides a core domain model that has been created bottom-up by inspecting a broad range of systems in use with different humanitarian organizations. As needs vary widely across organizations in this domain, this vocabulary does &lt;em&gt;not&lt;/em&gt; intend to be complete; in fact, it is the smallest common denominator. Any organizations that wish to publish &lt;em&gt;full&lt;/em&gt; exports of their data can do so by extending this domain model with application- or organization-specific models that reflect their internal data models (which may already be formalized in an XML schema or database schema). </dc:abstract>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <dc:license xml:lang="en">We still need to decide under which license this vocabulary should be published.</dc:license>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <dc:versionOf rdf:resource="http://carsten.io/hxl/ns"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <rdfs:seeAlso xml:lang="en">For further information about the HXL project, see &lt;a href='https://sites.google.com/site/hxlproject/'&gt;https://sites.google.com/site/hxlproject/&lt;/a&gt;.</rdfs:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <dc:replaces rdf:resource="http://carsten.io/hxl/ns-2012-01-30"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01">
+    <skos:changeNote>&lt;ol&gt;&lt;li&gt;The &lt;em&gt;Agent Section&lt;/em&gt; of the vocabulary has been renamed &lt;em&gt;People and Organization Section&lt;/em&gt;. &lt;/li&gt;&lt;li&gt;Inverse properties are introduced for a number of properties.&lt;/li&gt;&lt;li&gt;Classes and properties for GLIDE numbers added.&lt;/li&gt;&lt;li&gt;Several classes in then response section have been renamed for conformance with the CAP guidelines.&lt;/li&gt;&lt;/ol&gt;</skos:changeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#geolocationSection">
+    <rdf:type rdf:resource="http://carsten.io/hxl/ns-2012-02-01#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#geolocationSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the geolocation standard.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#geolocationSection">
+    <dc:title>Geolocation Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#datetimeSection">
+    <rdf:type rdf:resource="http://carsten.io/hxl/ns-2012-02-01#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#datetimeSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the date/time standard.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#datetimeSection">
+    <dc:title>Date/Time Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection">
+    <rdf:type rdf:resource="http://carsten.io/hxl/ns-2012-02-01#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the standards for people, populations and organizations.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection">
+    <dc:title>People and Organization Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#situationSection">
+    <rdf:type rdf:resource="http://carsten.io/hxl/ns-2012-02-01#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#situationSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the standards for situations and emergencies.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#situationSection">
+    <dc:title>Situation Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#responseSection">
+    <rdf:type rdf:resource="http://carsten.io/hxl/ns-2012-02-01#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#responseSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the standards for response activities.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#responseSection">
+    <dc:title>Response Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#carsten">
+    <foaf:name>Carsten Keßler</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#carsten">
+    <foaf:mbox>me@carsten.io</foaf:mbox>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#carsten">
+    <foaf:homepage rdf:resource="http://carsten.io"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#cj">
+    <foaf:name>CJ Hendrix</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#cj">
+    <foaf:mbox>hendrix@un.org</foaf:mbox>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Situation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Situation">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Situation">
+    <skos:prefLabel xml:lang="en">Situation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Situation">
+    <rdfs:comment xml:lang="en">Generic situation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Activity">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Activity">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Activity">
+    <skos:prefLabel xml:lang="en">Humanitarian Activity</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Activity">
+    <skos:altLabel xml:lang="en">Project</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Activity">
+    <skos:altLabel xml:lang="en">Intervention</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Activity">
+    <rdfs:comment xml:lang="en">An Activity generally addresses some kind of need given in a Humanitarian Situation. Synonyms: Project, intervention. &lt;br /&gt;&lt;small&gt;Term origin: IATI, CAP OPS, Pakistan SRF, Sahana Project, Sigmah DB&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AdminUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AdminUnit">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AdminUnit">
+    <skos:prefLabel xml:lang="en">Administrative Unit</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AdminUnit">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AdminUnit">
+    <rdfs:comment xml:lang="en">Administrative units can include coutries, regions, cities, etc. The hierarchy of administrative units can vary from country to country.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AdminUnitLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AdminUnitLevel">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AdminUnitLevel">
+    <skos:prefLabel xml:lang="en">Administrative Unit Level</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AdminUnitLevel">
+    <rdfs:comment xml:lang="en">The specific administrative unit levels can vary from country to country. Administrative Unit Level 0 is a country – in this case, hxl:Country should be used.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AffectedPopulation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AffectedPopulation">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AffectedPopulation">
+    <skos:prefLabel xml:lang="en">Affected Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AffectedPopulation">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AffectedPopulation">
+    <rdfs:comment xml:lang="en">The population affected by an emergency.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile (&lt;em&gt;Affected&lt;/em&gt;);&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImplementingPartner">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImplementingPartner">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImplementingPartner">
+    <skos:prefLabel xml:lang="en">Implementing Partner</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImplementingPartner">
+    <skos:altLabel xml:lang="en">IP</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImplementingPartner">
+    <rdfs:comment xml:lang="en">An external partner implenting (parts) of a project for an agency. &lt;br /&gt;&lt;small&gt;Term origin: CAP OPS, Pakistan SRF, HPM Ethiopia (&lt;em&gt;Partner&lt;/em&gt;), Sigmah DB (&lt;em&gt;Partner&lt;/em&gt;).&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImplementingPartner">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Population">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Population">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Population">
+    <skos:prefLabel xml:lang="en">Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Population">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Population">
+    <rdfs:comment xml:lang="en">Generic class for any kind of population (e.g. total, affected, etc.); use the subclasses for the data annotation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <skos:prefLabel xml:lang="en">Total Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <rdfs:comment xml:lang="en">Total population for a given administrative unit or geographic area. Instances can be created to make statements about this population.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AgeGroup">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AgeGroup">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AgeGroup">
+    <skos:prefLabel xml:lang="en">Age Group</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AgeGroup">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AgeGroup">
+    <rdfs:comment>Generic class for age groups; instances should be created for actual age groups (e.g. children under 5). </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Casualty">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Casualty">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Casualty">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AffectedPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Casualty">
+    <skos:prefLabel xml:lang="en">Casualty</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Casualty">
+    <rdfs:comment>E.g. injured or dead.&lt;br /&gt;&lt;small&gt;Term origin: ACAPS DSS, Humanitarian Profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Death">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Death">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Death">
+    <skos:prefLabel xml:lang="en">Death</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Death">
+    <skos:altLabel xml:lang="en">Dead</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Death">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Casualty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Death">
+    <owl:disjointWith rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Injured"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Death">
+    <rdfs:comment>A (reported) death.&lt;br /&gt;&lt;small&gt;Term origin: ACAPS DSS, HPM Ethiopia, Shelter Cluster, Humanitarian Profile (&lt;em&gt;Dead&lt;/em&gt;).&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Displaced">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Displaced">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Displaced">
+    <skos:prefLabel xml:lang="en">Displaced</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Displaced">
+    <skos:altLabel xml:lang="en">Displacement</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Displaced">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AffectedPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Displaced">
+    <rdfs:comment>Refers to internally displaced persons, refugees, and others of concern.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile, ACAPS DSS (&lt;em&gt;Displacement&lt;/em&gt;)&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Displaced">
+    <owl:disjointWith rdf:resource="http://carsten.io/hxl/ns-2012-02-01#NonDisplaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#NonDisplaced">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#NonDisplaced">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#NonDisplaced">
+    <skos:prefLabel xml:lang="en">Non-Displaced</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#NonDisplaced">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AffectedPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#NonDisplaced">
+    <rdfs:comment>Refers to the part of the affected population that is not displaced (i.e., host or non-host);.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#NonDisplaced">
+    <owl:disjointWith rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Emergency">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Emergency">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Emergency">
+    <skos:prefLabel xml:lang="en">Emergency</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Emergency">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Situation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Emergency">
+    <rdfs:comment>&lt;p&gt;Any situation in which ... life or well-being ... will be threatened  unless immediate  and  appropriate   action  is  taken,  and  which demands   an   extraordinary   response   and   exceptional measures” (UNHCR Handbook for Emergencies)&lt;/p&gt;&lt;p&gt;A sudden crisis situation or event requiring immediate action (WART) &lt;/p&gt;&lt;p&gt;Any situation in which there is an exceptional and widespread threat to life, health or basic  subsistence,  that  is  beyond  the  coping  capacity  of individuals and the community”  (Oxfam GB Emergency Response Manual). &lt;/p&gt;&lt;p&gt;Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance” (source: ACFIN Emergency module)&lt;/p&gt;&lt;small&gt;Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#GLIDEnumber">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#GLIDEnumber">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#GLIDEnumber">
+    <skos:prefLabel xml:lang="en">GLIDE number</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#GLIDEnumber">
+    <rdfs:comment>Globally common Unique ID code for disasters. See &lt;a href='http://glidenumber.net/glide/public/about.jsp'&gt;about GLIDE&lt;/a&gt;.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Female">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Female">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Female">
+    <skos:prefLabel xml:lang="en">Female</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Female">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Female">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Gender"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Female">
+    <rdfs:comment>A woman/girl or group of women/girls.&lt;br /&gt;&lt;small&gt;Term origin: CERF, EIMS Report.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Female">
+    <owl:disjointWith rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Male"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Male">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Male">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Male">
+    <skos:prefLabel xml:lang="en">Male</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Male">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Male">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Gender"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Male">
+    <rdfs:comment>A man/boy or group of men/boys.&lt;br /&gt;&lt;small&gt;Term origin: CERF, EIMS Report.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Male">
+    <owl:disjointWith rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Female"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Gender">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Gender">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Gender">
+    <skos:prefLabel xml:lang="en">Gender</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Gender">
+    <rdfs:comment>Class to describe gender-specific issues, either at individual or group level.&lt;br /&gt;&lt;small&gt;Term origin: MIRA, CCDI&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Need">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Need">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Need">
+    <skos:prefLabel xml:lang="en">Need</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Need">
+    <skos:altLabel xml:lang="en">Gap</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Need">
+    <skos:altLabel xml:lang="en">Lack</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Need">
+    <rdfs:comment>A concrete need, lack, or gap, e.g. a shortage of food. Can be based on the application of relevant norms (usually a minimum requirement or a pre-existing ‘normal’ situation); and an assessment of how  the reality differs.	Identifying and measuring deficits, either actual or predicted.&lt;br /&gt;&lt;small&gt;Term origin: CAP OPS, ACAPS DSS (also: &lt;em&gt;Humanitarian Need&lt;/em&gt;), CCDI (&lt;em&gt;Humanitarian Need&lt;/em&gt;), CCDI Shelter Cluster (&lt;em&gt;Gap&lt;/em&gt;), HPM Ethiopia (&lt;em&gt;Gap&lt;/em&gt;).&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomePlanned">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomePlanned">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomePlanned">
+    <skos:prefLabel xml:lang="en">Outcome planned</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomePlanned">
+    <skos:altLabel xml:lang="en">Output planned</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomePlanned">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Objective"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomePlanned">
+    <rdfs:comment>Short-term or medium-term effect of a humanitarian action on the affected population. See CAP Guidelines 2012.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImpactPlanned">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImpactPlanned">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImpactPlanned">
+    <skos:prefLabel xml:lang="en">Impact planned</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImpactPlanned">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Objective"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ImpactPlanned">
+    <rdfs:comment>The positive and negative, primary and secondary long-term effects produced by a humanitarian action, directly or indirectly. See CAP Guidelines 2012.)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomeToDate">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomeToDate">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomeToDate">
+    <skos:prefLabel xml:lang="en">Outcome to date</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomeToDate">
+    <skos:altLabel xml:lang="en">Outcome achieved</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomeToDate">
+    <skos:altLabel xml:lang="en">Output to date</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomeToDate">
+    <skos:altLabel xml:lang="en">Output achieved</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#OutcomeToDate">
+    <rdfs:comment xml:lang="en">The measured output of a planned output at a certain date.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Response">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Response">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Response">
+    <skos:prefLabel xml:lang="en">Response</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Response">
+    <rdfs:comment>Generic term for the collection of all activities that address the needs araising from an emergency.&lt;br /&gt;&lt;small&gt;Term origin: ACAPS DSS, ACAPS DSS, MIRA, EDXL, CCDI (&lt;em&gt;Humanitarian Response&lt;/em&gt;), CERF (&lt;em&gt;Humanitarian Response&lt;/em&gt;)&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#IDP">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#IDP">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#IDP">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#IDP">
+    <skos:prefLabel xml:lang="en">Internally Displaced Person</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#IDP">
+    <skos:altLabel xml:lang="en">IDP</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#IDP">
+    <rdfs:comment>A group of internally displaced persons (IDPs).&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile, CERF, HPM Ethiopia&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Refugee">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Refugee">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Refugee">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Refugee">
+    <skos:prefLabel xml:lang="en">Refugee</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Refugee">
+    <rdfs:comment>A group of refugees.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AsylumSeeker">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AsylumSeeker">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AsylumSeeker">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AsylumSeeker">
+    <skos:prefLabel xml:lang="en">Asylum Seeker</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#AsylumSeeker">
+    <rdfs:comment>A group of asylum seekers.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Indicator">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Indicator">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Indicator">
+    <skos:prefLabel xml:lang="en">Indicator</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Indicator">
+    <rdfs:comment>Concrete measurable reference for a concrete need; e.g., &lt;em&gt;5 litres of clean water per person and day&lt;/em&gt;.&lt;br /&gt;&lt;small&gt;Term origin: Pakistan SRF, ACAPS DSS, CCDI, CERF, HPM Ethiopia, Sigmah DB&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Injured">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Injured">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Injured">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Casualty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Injured">
+    <skos:prefLabel xml:lang="en">Injured</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Injured">
+    <owl:disjointWith rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Death"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Injured">
+    <rdfs:comment>Injured part of the population.&lt;br /&gt;&lt;small&gt;Term origin: ACAPS DSS, Humanitarian Profile, Shelter Cluster, HERAMS Checklist (&lt;em&gt;Injury&lt;/em&gt;)&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Feature">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Feature">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Feature">
+    <skos:prefLabel xml:lang="en">Feature</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Feature">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Feature">
+    <rdfs:comment>Any real-word phenomenon with spatial extent, i.e. size, shape, or position. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Geometry">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Geometry">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Geometry">
+    <skos:prefLabel xml:lang="en">Geometry</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Geometry">
+    <rdfs:comment>Abstract root class of the geometry. This class should not be instantiated; use any of the subclasses when creating actual geometries. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Point">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Point">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Point">
+    <skos:prefLabel xml:lang="en">Point</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Point">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Point">
+    <rdfs:comment>A Point is a 0-dimensional geometric object and represents a single location in a two- or three-dimensional coordinate space.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#LineString">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#LineString">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#LineString">
+    <skos:prefLabel xml:lang="en">Line String</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#LineString">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#LineString">
+    <rdfs:comment>A LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Polygon">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Polygon">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Polygon">
+    <skos:prefLabel xml:lang="en">Polygon</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Polygon">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Polygon">
+    <rdfs:comment>A Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#BoundingBox">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#BoundingBox">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#BoundingBox">
+    <skos:prefLabel xml:lang="en">Bounding Box</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#BoundingBox">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Polygon"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#BoundingBox">
+    <rdfs:comment>A BoundingBox is a Polygon defined by 1 exterior boundary and 0 interior boundaries. The exterior boundary consists of 4 points arranged as a rectangle.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Missing">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Missing">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Missing">
+    <skos:prefLabel xml:lang="en">Missing</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Missing">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Casualty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Missing">
+    <owl:disjointWith rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Death"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Missing">
+    <rdfs:comment>Missing population.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Objective">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Objective">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Objective">
+    <skos:prefLabel xml:lang="en">Objective</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Objective">
+    <rdfs:comment>And objective is a goal for an activity, measureable in terms of an indicator.&lt;br /&gt;&lt;small&gt;Term origin: Sahana Project, CERF&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Organization">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Organization">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Organization">
+    <skos:prefLabel xml:lang="en">Organization</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Organization">
+    <rdfs:comment>A humanitarian organization.&lt;br /&gt;&lt;small&gt;Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report,	Shelter Cluster, Sigmah DB.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Priority">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Priority">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Priority">
+    <skos:prefLabel xml:lang="en">Priority</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Priority">
+    <rdfs:comment>The priority for a project or activity. Individuals of this class should be created whenever a fixed scale for priorities is in use.&lt;br /&gt;&lt;small&gt;Term origin: CAP OPS, UNHCR Camp DB, Sahana Project, MIRA, HPM Ethiopia.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ReportingPeriod">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ReportingPeriod">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ReportingPeriod">
+    <skos:prefLabel xml:lang="en">Reporting Period</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ReportingPeriod">
+    <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#ReportingPeriod">
+    <rdfs:comment>The time frame that a report covers.&lt;br /&gt;&lt;small&gt;Term origin: Sigmah DB.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Status">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Status">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Status">
+    <skos:prefLabel xml:lang="en">Status</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#Status">
+    <rdfs:comment>Status of an activity. Can be instantiated by organizations that use standardized status codes.&lt;br /&gt;&lt;small&gt;Term origin: Sahana Project	CCDI, CERF, EDXL.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <rdfs:subClassOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <skos:prefLabel xml:lang="en">Total Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#TotalPopulation">
+    <rdfs:comment>The total population for an administrative unit (e.g. a region).&lt;br /&gt;&lt;small&gt;Term origin: Shelter Cluster.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#affectedBy">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#affectedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#affectedBy">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#affectedBy">
+    <skos:prefLabel xml:lang="en">affected by</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#affectedBy">
+    <rdfs:comment xml:lang="en">States that a Population is affacted by an Emergency.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#affectedBy">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AffectedPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#affectedBy">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Emergency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#affects">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#affectedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addresses">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addresses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addresses">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addresses">
+    <skos:prefLabel xml:lang="en">addresses</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addresses">
+    <rdfs:comment xml:lang="en">States that a certain activity addresses a situation description.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addresses">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Response"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addresses">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addresses">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Emergency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addresses">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Need"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#addressedBy">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#addresses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#fromAge">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#fromAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#fromAge">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#fromAge">
+    <skos:prefLabel xml:lang="en">from age</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#fromAge">
+    <rdfs:comment>Specifies the bottom of an age range for an AgeGroup (in years).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#fromAge">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AgeGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#fromAge">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#toAge">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#toAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#toAge">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#toAge">
+    <skos:prefLabel xml:lang="en">to age</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#toAge">
+    <rdfs:comment>Specifies the top of an age range for an AgeGroup (in years).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#toAge">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AgeGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#toAge">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#start">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#start">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#start">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#start">
+    <skos:prefLabel xml:lang="en">start</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#start">
+    <rdfs:comment>Specifies the start of time periods.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#start">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#start">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#start">
+    <rdfs:domain rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#start">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedStart">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedStart">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedStart">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedStart">
+    <skos:prefLabel xml:lang="en">planned start</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedStart">
+    <rdfs:comment>Specifies the planned start of an activity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedStart">
+    <rdfs:subPropertyOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#start"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedStart">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedStart">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualStart">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualStart">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualStart">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualStart">
+    <skos:prefLabel xml:lang="en">actual start</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualStart">
+    <rdfs:comment>Specifies the actual start of an activity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualStart">
+    <rdfs:subPropertyOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#start"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualStart">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualStart">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedEnd">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedEnd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedEnd">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedEnd">
+    <skos:prefLabel xml:lang="en">planned end</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedEnd">
+    <rdfs:comment>Specifies the planned end of an activity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedEnd">
+    <rdfs:subPropertyOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#end"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedEnd">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#plannedEnd">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualEnd">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualEnd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualEnd">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualEnd">
+    <skos:prefLabel xml:lang="en">actual end</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualEnd">
+    <rdfs:comment>Specifies the actual end of an activity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualEnd">
+    <rdfs:subPropertyOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#end"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualEnd">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#actualEnd">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#end">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#end">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#end">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#end">
+    <skos:prefLabel xml:lang="en">end</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#end">
+    <rdfs:comment>Specifies the end of activities, projects, etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#end">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#end">
+    <rdfs:domain rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#end">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/date">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/date">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/date">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/date">
+    <skos:prefLabel xml:lang="en">dc:date</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/date">
+    <rdfs:comment>Generic property for date/time stamps at arbitrary granularity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/date">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/date">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPart">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPart">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPart">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPart">
+    <skos:prefLabel xml:lang="en">has part</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPart">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPart">
+    <rdfs:comment xml:lang="en">Specifies part-whole relationships; e.g., a specific project can have sub-projects or specific activities.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPart">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Response"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPart">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPart">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#partOf">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#hasPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasObjective">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasObjective">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasObjective">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasObjective">
+    <skos:prefLabel xml:lang="en">has objective</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasObjective">
+    <rdfs:comment xml:lang="en">Defines the objectives for an activity or project.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasObjective">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasObjective">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Objective"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#isObjectiveOf">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#hasObjective"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPriority">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPriority">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPriority">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPriority">
+    <skos:prefLabel xml:lang="en">has priority</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPriority">
+    <rdfs:comment xml:lang="en">Defines the priority for an activity or project.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPriority">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasPriority">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Priority"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#isPriorityOf">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#hasPriority"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#measures">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#measures">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#measures">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#measures">
+    <skos:prefLabel xml:lang="en">measures</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#measures">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#measures">
+    <rdfs:comment xml:lang="en">Specififes the need or objective that a certain indicator addresses or measures. &lt;em&gt;Eventually create second property for objectives?&lt;/em&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#measures">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#measures">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Objective"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#measuredBy">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#measures"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#basedOn">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#basedOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#basedOn">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#basedOn">
+    <skos:prefLabel xml:lang="en">based on</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#basedOn">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#basedOn">
+    <rdfs:comment xml:lang="en">Specififes that a gap for a certain need has been identified based on a specific indicator.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#basedOn">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Need"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#basedOn">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#indicates">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#basedOn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <skos:prefLabel xml:lang="en">atLocation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/spatial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <rdfs:comment xml:lang="en">Specififes the location for things like emergencies, projects, or camps.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Emergency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Situation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLocation">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#locationOf">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#atLocation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#completedOf">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#completedOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#completedOf">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#completedOf">
+    <skos:prefLabel xml:lang="en">completed of</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#completedOf">
+    <rdfs:subPropertyOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#measures"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#completedOf">
+    <rdfs:comment>Relates the output to date to the output planned.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#completedOf">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#OutputToDate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#completedOf">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#OutputPlanned"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLevel">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLevel">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLevel">
+    <skos:prefLabel xml:lang="en">at level</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLevel">
+    <rdfs:comment>Specifies the level for an administrative unit.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLevel">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#atLevel">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AdminUnitLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#levelOf">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#atLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#inAdminUnit">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#inAdminUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#inAdminUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#inAdminUnit">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#inAdminUnit">
+    <skos:prefLabel xml:lang="en">in administrative unit</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#inAdminUnit">
+    <rdfs:comment>Specifies direct containment between two administrative units. This property should only be used between administrative units that directly contain each other, i.e., when the administrative unit level of the containing unit is the level of the contained unit plus 1.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#inAdminUnit">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#inAdminUnit">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStatus">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStatus">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStatus">
+    <skos:prefLabel xml:lang="en">has status</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStatus">
+    <rdfs:comment xml:lang="en">Sets the current status for an activity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStatus">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStatus">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Status"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#statusOf">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#hasStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGeometry">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGeometry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGeometry">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGeometry">
+    <skos:prefLabel xml:lang="en">has geometry</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGeometry">
+    <rdfs:comment xml:lang="en">Relates a feature to its geometry.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGeometry">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGeometry">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#isGeometryOf">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#hasGeometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#asWKT">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#asWKT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#asWKT">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#asWKT">
+    <skos:prefLabel xml:lang="en">as WKT</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#asWKT">
+    <rdfs:comment xml:lang="en">A geometry serialized as WKT. Note that the WKT serialization contains the spatial reference system (SRS), as specified in the &lt;a href='http://portal.opengeospatial.org/files/?artifact_id=25355'&gt;OGC Simple Feature standard&lt;/a&gt;. If no SRS is given, HXL uses WGS 84 as the standard SRS.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#asWKT">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#asWKT">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#equals">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#equals">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#equals">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#equals">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#equals">
+    <skos:prefLabel xml:lang="en">equals</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#equals">
+    <rdfs:comment xml:lang="en">Topological relation. States that two geometries are equal.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#equals">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#equals">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#intersects">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#intersects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#intersects">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#intersects">
+    <skos:prefLabel xml:lang="en">intersects</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#intersects">
+    <rdfs:comment xml:lang="en">Topological relation. States that one geometry intersects another one. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#intersects">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#intersects">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#touches">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#touches">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#touches">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#touches">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#touches">
+    <skos:prefLabel xml:lang="en">touches</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#touches">
+    <rdfs:comment xml:lang="en">Topological relation. States that one geometry touches another one. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#touches">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#touches">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#crosses">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#crosses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#crosses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#crosses">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#crosses">
+    <skos:prefLabel xml:lang="en">crosses</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#crosses">
+    <rdfs:comment xml:lang="en">Topological relation. States that one geometry crosses another one. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#crosses">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#crosses">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#within">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#within">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#within">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#within">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#within">
+    <skos:prefLabel xml:lang="en">within</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#within">
+    <rdfs:comment xml:lang="en">Topological relation. States that one geometry is within another one. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#within">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#within">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#contains">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#contains">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#contains">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#contains">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#contains">
+    <skos:prefLabel xml:lang="en">contains</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#contains">
+    <rdfs:comment xml:lang="en">Topological relation. States that one geometry contains another one. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#contains">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#contains">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#overlaps">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#overlaps">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#overlaps">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#overlaps">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#overlaps">
+    <skos:prefLabel xml:lang="en">overlaps</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#overlaps">
+    <rdfs:comment xml:lang="en">Topological relation. States that one geometry overlaps another one. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#overlaps">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#overlaps">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#near">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#near">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#near">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#near">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#near">
+    <skos:prefLabel xml:lang="en">near</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#near">
+    <rdfs:comment xml:lang="en">Topological relation. States that one geometry is near another one. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#near">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#near">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGLIDEnumber">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGLIDEnumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGLIDEnumber">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGLIDEnumber">
+    <skos:prefLabel xml:lang="en">has GLIDE number</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGLIDEnumber">
+    <rdfs:comment xml:lang="en">Assigns the GLIDE number to an Emergency.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGLIDEnumber">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Emergency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasGLIDEnumber">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#GLIDEnumber"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#count">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#count">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#count">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#count">
+    <skos:prefLabel xml:lang="en">count</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#count">
+    <rdfs:comment xml:lang="en">Assigns numbers to populations. The range is intentionally not restricted to numeric values, so that rough numbers or estimates are supported.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#count">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#count">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#provenanceInfo">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#provenanceInfo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#provenanceInfo">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#provenanceInfo">
+    <skos:prefLabel xml:lang="en">provenance Information</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#provenanceInfo">
+    <rdfs:comment xml:lang="en">Free-text description of how the information about the demographic methodology, where the data came from, etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#provenanceInfo">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#provenanceInfo">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasValue">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasValue">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasValue">
+    <skos:prefLabel xml:lang="en">has value</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasValue">
+    <rdfs:comment xml:lang="en">The measured value of this indicator.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasValue">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStandard">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStandard">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStandard">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStandard">
+    <skos:prefLabel xml:lang="en">has standard</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStandard">
+    <rdfs:comment xml:lang="en">A reference against which the measured value can be compared to know if it requires intervention.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStandard">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#hasStandard">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#involvedIn">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#involvedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#involvedIn">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#involvedIn">
+    <skos:prefLabel xml:lang="en">involved in</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#involvedIn">
+    <rdfs:comment xml:lang="en">Indicates an organization's involvement in an activity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#involvedIn">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#involvedIn">
+    <rdfs:range rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://carsten.io/hxl/ns-2012-02-01#involvedOrganization">
+    <owl:inverseOf rdf:resource="http://carsten.io/hxl/ns-2012-02-01#involvedIn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/PeriodOfTime">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/PeriodOfTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/PeriodOfTime">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/PeriodOfTime">
+    <skos:prefLabel>dc:PeriodOfTime</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <skos:prefLabel>dc:description</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdfs:domain rdf:resource="http://carsten.io/hxl/ns-2012-02-01#Situation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <skos:prefLabel>foaf:Agent</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <skos:prefLabel>foaf:Organization</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <rdfs:isDefinedBy rdf:resource="http://carsten.io/hxl/ns-2012-02-01#peopleOrganizationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <skos:prefLabel>foaf:Group</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+</rdf:RDF>

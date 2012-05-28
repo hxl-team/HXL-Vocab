@@ -1,0 +1,489 @@
+
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xml:lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:owl="http://www.w3.org/2002/07/owl#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:wot="http://xmlns.com/wot/0.1/"
+      xmlns:prv="http://purl.org/net/provenance/ns#"
+      xmlns:opmv="http://purl.org/net/opmv/ns#"
+      xmlns:lsc="http://linkedscience.org/lsc/ns#"
+>
+<head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  	<link rel="stylesheet" type="text/css" href="style.css" />
+  	<title>Humanitarian eXchange Language (HXL) domain vocabulary</title>
+</head>
+
+<body>
+
+<h1 about="" property="dc:title" xml:lang="en">Humanitarian eXchange Language (HXL) domain vocabulary</h1>
+
+<hr />
+<div about="" typeof="foaf:Document">
+
+<!-- TODO <div property="rdfs:label" content="Document that defines the Linked Science Core Vocabulary" xml:lang="en"></div>
+  <div rel="foaf:primaryTopic">
+    <div about="http://linkedscience.org/lsc/ns#">
+      <div rel="rdf:type" resource="http://purl.org/net/provenance/ns#DataItem"></div>
+      <div rel="rdf:type" resource="http://www.w3.org/2002/07/owl#Ontology"></div>
+      <div property="dc:title" content="Linked Science Core Vocabulary namespace" xml:lang="en"></div>
+      <div rel="prv:createdBy">
+	    <div rel="rdf:type" resource="http://purl.org/net/provenance/ns#DataCreation"></div>
+	    <div rel="prv:performedBy" resource="http://kauppinen.net/tomi#me"></div>
+	    <div property="prv:performedAt" content="2011-11-29T11:30:00Z" datatype="xsd:dateTime"></div>
+      </div>
+      <div rel="dc:creator" resource="http://kauppinen.net/tomi#me"></div>
+      <div property="dc:created" content="2011-11-29T11:30:00Z" datatype="xsd:dateTime"></div>
+     </div>
+   </div> -->
+</div>
+
+<dl>
+  <dt>This version:</dt>
+  <dd><a href="http://carsten.io/hxl/ns-2012-01-23">http://carsten.io/hxl/ns-2012-01-23</a></dd>
+  <dt>Latest version:</dt>
+  <dd><a href="http://carsten.io/hxl/ns">http://carsten.io/hxl/ns</a></dd>
+
+ <dt>Previous version:</dt>
+  <dd><a href="http://carsten.io/hxl/ns-2012-01-21">http://carsten.io/hxl/ns-2012-01-21</a></dd>
+  <dt>Revision:</dt>
+  <dd>January 23, 2012</dd>  
+  <dt>Authors:</dt>
+   <dd about="http://carsten.io/hxl/ns-2012-01-23#carsten" typeof="foaf:Person"><a rel="foaf:homepage" href="http://carsten.io" property="foaf:name">Carsten Keßler</a></dd><dd about="http://carsten.io/hxl/ns-2012-01-23#cj" typeof="foaf:Person" property="foaf:name">CJ Hendrix</dd>   <dt>Further information:</dt>
+   <dd>For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>.</dd>
+   <dt>Formats:</dt>
+   <dd>Besides this human-readable form, the HXL vocabulary specification is also available in various machine-readble RDF serializations: <a href="hxl.rdf">RDF/XML</a> | <a href="hxl.ttl">Turtle</a> | <a href="hxl.n3">N-Triples</a> .</dd>
+</dl>
+
+
+<h2>License</h2>
+<p>We still need to decide under which license this vocabulary should be published.</p>
+
+<p about="" resource="http://www.w3.org/TR/rdfa-syntax" rel="dc:conformsTo">
+  <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml-rdfa.png" style="border: 0pt none; float: right" alt="Valid XHTML + RDFa" /> </a>
+  This Vocabulary Specification relies on W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an open Web standard that can be freely used by anyone.</p>
+
+  <p>This visual layout and structure of the specification was adapted from the <a href="http://open-biomed.sourceforge.net/opmv/ns.html">Open Provenance Model Vocabulary</a> edited by Jun Zhao, <a href="http://rdfs.org/sioc/spec/">SIOC Core Ontology Specification</a> edited by Uldis Bojars and John G. Breslin and the <a href="http://trdf.sourceforge.net/provenance/ns.html">Provenance Vocabulary Core Ontology Specification</a> edited by Olaf Hartig and Jun Zhao.</p>
+
+<hr />
+
+<div>
+<h2 id="sec-abstract">Abstract</h2>
+
+<p about="http://linkedscience.org/lsc/ns#" property="dc:abstract">
+	<p>Draft specification of the Humanitarian eXchange Language (HXL) standard. This vocabulary specification is currently <b>under development</b> and may change at any time without notice.</p> <p>The porpuse of HXL is to facilitate data exchange within the humanitarian domain. It provides a core domain model that has been created bottom-up by inspecting a broad range of systems in use with different humanitarian organizations. As needs vary widely across organizations in this domain, this vocabulary does <em>not</em> intend to be complete; in fact, it is the smallest common denominator. Any organizations that wish to publish <em>full</em> exports of their data can do so by extending this domain model with application- or organization-specific models that reflect their internal data models (which may already be formalized in an XML schema or database schema). </p>
+</div>
+<hr />
+
+
+<h2 id="sec-toc">Table of contents</h2>
+<ol>
+  <li><a href="#sec-intro">Introduction</a></li>
+  <li><a href="#sec-glance">The HXL vocabulary at a glance</a></li>
+  <li><a href="#sec-specification">Cross-reference for core HXL classes and properties</a></li>
+  <li><a href="#sec-changes">Change log</a></li>
+</ol>
+
+<hr />
+
+<h2 id="sec-intro">1. Introduction</h2>
+  <p>The Humanitarian eXchange Language is defined as a set of classes and properties. The following figure gives an overview of the different classes and properties defined by HXL, and how they are connected. The ellipses represent classes, whereas the arrows represent properties: Dashed lines indicate a subclass relationship (e.g. Camp is a subclass of Site). Solid lines are labeled with the property that connects these two classes.</p>
+
+<!-- Graph generated at http://www.w3.org/RDF/Validator/ -->
+  <a href="hxl-graph.pdf" target="_blank"><img src="hxl-graph.png"></a>
+	<p align="right"><small>[click to <a href="hxl-graph.pdf" target="_blank">enlarge</a>]</small></p>
+
+
+<p>The XML Namespace URI that should be used by implementations of this specification is: <a href="http://carsten.io/hxl/ns">http://carsten.io/hxl/ns</a>.</p> 
+
+<p>The preferred prefix for the vocabulary is <strong>hxl</strong>.</p>
+
+
+<div class="glance">
+<h2 id="sec-glance">2. The HXL vocabulary at a glance</h2>
+
+<p>An alphabetical index of terms from the HXL vocabulary, by class and by property, is given below for quick reference. Click the terms for a more detailed description.</p>
+
+<div style="padding: 5px; border: dotted; background-color: #ddd;">
+
+<p><strong>Classes</strong> |
+  
+
+<a href="#Activity">Humanitarian Activity</a> | <a href="#AffectedPopulation">Affected Population</a> | <a href="#AgeGroup">Age Group</a> | <a href="#Agency">Agency</a> | <a href="#Appeal">Appeal</a> | <a href="#AsylumSeeker">Asylum Seeker</a> | <a href="#Budget">Budget</a> | <a href="#Camp">Camp</a> | <a href="#Casualty">Casualty</a> | <a href="#Cluster">Cluster</a> | <a href="#Country">Country</a> | <a href="#Damage">Damage</a> | <a href="#DataCollection">Data Collection</a> | <a href="#Death">Death</a> | <a href="#Displaced">Displaced</a> | <a href="#Donor">Donor</a> | <a href="#Emergency">Emergency</a> | <a href="#Female">Female</a> | <a href="#Gender">Gender</a> | <a href="#IDP">Internally Displaced Person</a> | <a href="#ImplementingPartner">Implementing Partner</a> | <a href="#Incident">Incident</a> | <a href="#Indicator">Indicator</a> | <a href="#Injured">Injured</a> | <a href="#Intervention">Intervention</a> | <a href="#Killing">Killing</a> | <a href="#Location">Location</a> | <a href="#Maiming">Maiming</a> | <a href="#Male">Male</a> | <a href="#Missing">Missing</a> | <a href="#Need">Need</a> | <a href="#NeedAchieved">Need achieved</a> | <a href="#NeedTarget">Need target</a> | <a href="#NeedsAssessment">Needs Assessment</a> | <a href="#NonDisplaced">Non-Displaced</a> | <a href="#Objective">Objective</a> | <a href="#Organization">Organization</a> | <a href="#Output">Output</a> | <a href="#Population">Population</a> | <a href="#Priority">Priority</a> | <a href="#Project">Project</a> | <a href="#Refugee">Refugee</a> | <a href="#Region">Region</a> | <a href="#Report">Report</a> | <a href="#ReportingPeriod">Reporting Period</a> | <a href="#Response">Response</a> | <a href="#RuralPopulation">Rural Population</a> | <a href="#Sector">Sector</a> | <a href="#Shelter">Shelter</a> | <a href="#Site">Site</a> | <a href="#Situation">Situation</a> | <a href="#SubRegion">Sub Region</a> | <a href="#TotalPopulation">Total Population</a> | <a href="#UrbanPopulation">Urban Population</a> | <a href="http://xmlns.com/foaf/0.1/Group">http://xmlns.com/foaf/0.1/Group</a> | <a href="http://xmlns.com/foaf/0.1/Organization">http://xmlns.com/foaf/0.1/Organization</a> |   
+</p>
+
+
+<p><strong>Properties</strong> |
+
+<a href="#achievedOf">achieved of</a> | <a href="#addresses">addresses</a> | <a href="#affectedBy">affected by</a> | <a href="#analyzes">analyzes</a> | <a href="#basedOn">based on</a> | <a href="#contributesTo">contributes to</a> | <a href="#convers">covers</a> | <a href="#end">end</a> | <a href="#fromAge">from age</a> | <a href="#hasBudget">has budget</a> | <a href="#hasObjective">has objective</a> | <a href="#hasOutput">has output</a> | <a href="#hasPriority">has priority</a> | <a href="#identifies">identifies</a> | <a href="#inputTo">input to</a> | <a href="#leadBy">lead By</a> | <a href="#location">location</a> | <a href="#measures">measures</a> | <a href="#partOf">part of</a> | <a href="#period">period</a> | <a href="#raisedBy">raises</a> | <a href="#start">start</a> | <a href="#subBudgetOf">sub-budget of</a> | <a href="#subject">subject</a> | <a href="#toAge">to age</a> | </p>
+
+</div>
+
+  
+
+<div class="overview">
+<h2 id="sec-specification">3. Cross-reference for all HXL classes and properties</h2>
+
+
+<h2>Classes:</h2>
+
+
+		<div class="specterm" id="Activity" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Humanitarian Activity</h3>	  <div property="skos:prefLabel" content="Humanitarian Activity" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">An Activity generally addresses some kind of need given in a Humanitarian Situation. <br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, Sahana Project, Sigmah DB</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Activity">Activity</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Intervention">Intervention</a> | <a href="#Project">Project</a> | </td>	 <tr><th>Domain of:</th><td><a href="#addresses">addresses</a> | <a href="#end">end</a> | <a href="#hasBudget">has budget</a> | <a href="#hasObjective">has objective</a> | <a href="#hasOutput">has output</a> | <a href="#hasPriority">has priority</a> | <a href="#partOf">part of</a> | <a href="#start">start</a> | </td>	 <tr><th>Range of:</th><td><a href="#partOf">part of</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="AffectedPopulation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Affected Population</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Population"></div>	  <div property="skos:prefLabel" content="Affected Population" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">The population affected by an emergency.<br /><small>Term origin: Humanitarian Profile (<em>Affected</em>);</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#AffectedPopulation">AffectedPopulation</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Population">Population</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Casualty">Casualty</a> | <a href="#Displaced">Displaced</a> | <a href="#NonDisplaced">Non-Displaced</a> | </td>	 <tr><th>Domain of:</th><td><a href="#affectedBy">affected by</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="AgeGroup" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Age Group</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Population"></div>	  <div property="skos:prefLabel" content="Age Group" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Generic class for age groups; instances should be created for actual age groups (e.g. children under 5). </p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#AgeGroup">AgeGroup</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Population">Population</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#fromAge">from age</a> | <a href="#toAge">to age</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Agency" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Agency</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Organization"></div>	  <div property="skos:prefLabel" content="Agency" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">An Agency is an official body of the United Nations. <br /><small>Term origin: CCDI, CERF, Shelter Cluster</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Agency">Agency</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Organization">Organization</a></td></tr>	 <tr><th>Range of:</th><td><a href="#leadBy">lead By</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Appeal" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Appeal</h3>	  <div property="skos:prefLabel" content="Appeal" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">An appeal is a request for aid in the form of money or goods from Donors. <br /><small>Term origin: CAP OPS, Pakistan SRF.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Appeal">Appeal</a></td></tr>	 <tr><th>Range of:</th><td><a href="#raisedBy">raises</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="AsylumSeeker" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Asylum Seeker</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Displaced"></div>	  <div property="skos:prefLabel" content="Asylum Seeker" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A group of asylum seekers.<br /><small>Term origin: Humanitarian Profile</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#AsylumSeeker">AsylumSeeker</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Displaced">Displaced</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Budget" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Budget / Funding</h3>	  <div property="skos:prefLabel" content="Budget" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">The money allocated to a Project.<br /><small>Term origin: IATI, Sigmah DB, Sahana Project (<em>Funding</em>), EDXL (<em>Funding</em>).</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Budget">Budget</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#raisedBy">raises</a> | <a href="#subBudgetOf">sub-budget of</a> | </td>	 <tr><th>Range of:</th><td><a href="#contributesTo">contributes to</a> | <a href="#hasBudget">has budget</a> | <a href="#subBudgetOf">sub-budget of</a> | <a href="#subject">subject</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Camp" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Camp</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Site"></div>	  <div property="skos:prefLabel" content="Camp" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A site with temporary shelter for an affected population, such as refugees. <br /><small>Term origin: UNHCR Camp DB, Pakistan SRF, Humanitarian Profile.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Camp">Camp</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Site">Site</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Casualty" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Casualty</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#AffectedPopulation"></div>	  <div property="skos:prefLabel" content="Casualty" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">E.g. injured or dead.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Casualty">Casualty</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#AffectedPopulation">Affected Population</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Death">Death</a> | <a href="#Injured">Injured</a> | <a href="#Missing">Missing</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Cluster" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Cluster</h3>	  <div property="skos:prefLabel" content="Cluster" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">An organizational unit responsible for one or more sectors during an emergency.<br /><small>Term origin: CAP OPS, CCDI.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Cluster">Cluster</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#convers">covers</a> | <a href="#leadBy">lead By</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Country" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Country</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Location"></div>	  <div property="skos:prefLabel" content="Country" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Geolocation admin level 0.<br /><small>Term origin: CAP OPS, Sahana Project, ACAPS DSS, CERF, Sigmah DB.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Country">Country</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Location">Location</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Damage" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Damage</h3>	  <div property="skos:prefLabel" content="Damage" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A (reported) damage.<br /><small>Term origin: ACAPS DSS, Shelter Cluster.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Damage">Damage</a></td></tr>	 <tr><th>Range of:</th><td><a href="#subject">subject</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="DataCollection" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Data Collection</h3>	  <div property="skos:prefLabel" content="Data Collection" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">The process that leads to a NeedsAssessment of Report. <br /><small>Term origin: MRM/MARA, HPM Ethiopia.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#DataCollection">DataCollection</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#inputTo">input to</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Death" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Death / Dead</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Casualty"></div>	  <div property="skos:prefLabel" content="Death" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A (reported) death.<br /><small>Term origin: ACAPS DSS, HPM Ethiopia, Shelter Cluster, Humanitarian Profile (<em>Dead</em>).</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Death">Death</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Casualty">Casualty</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Displaced" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Displaced / Displacement</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#AffectedPopulation"></div>	  <div property="skos:prefLabel" content="Displaced" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Refers to internally displaced persons, refugees, and others of concern.<br /><small>Term origin: Humanitarian Profile, ACAPS DSS (<em>Displacement</em>)</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Displaced">Displaced</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#AffectedPopulation">Affected Population</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#AsylumSeeker">Asylum Seeker</a> | <a href="#IDP">Internally Displaced Person</a> | <a href="#Refugee">Refugee</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Donor" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Donor</h3>	  <div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Agent"></div>	  <div property="skos:prefLabel" content="Donor" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A donor is an individual or organization donating money for a project or a specific activity.</p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Donor">Donor</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#contributesTo">contributes to</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Emergency" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Emergency</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Situation"></div>	  <div property="skos:prefLabel" content="Emergency" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en"><p>Any situation in which ... life or well-being ... will be threatened  unless immediate  and  appropriate   action  is  taken,  and  which demands   an   extraordinary   response   and   exceptional measures” (UNHCR Handbook for Emergencies)</p><p>A sudden crisis situation or event requiring immediate action (WART) </p><p>Any situation in which there is an exceptional and widespread threat to life, health or basic  subsistence,  that  is  beyond  the  coping  capacity  of individuals and the community”  (Oxfam GB Emergency Response Manual). </p><p>Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance” (source: ACFIN Emergency module)</p><small>Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Emergency">Emergency</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Situation">Situation</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#end">end</a> | <a href="#location">location</a> | <a href="#start">start</a> | </td>	 <tr><th>Range of:</th><td><a href="#addresses">addresses</a> | <a href="#affectedBy">affected by</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Female" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Female</h3>	  <div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Agent"></div>	  <div property="skos:prefLabel" content="Female" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A woman/girl or group of women/girls.<br /><small>Term origin: CERF, EIMS Report.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Female">Female</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Gender" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Gender</h3>	  <div property="skos:prefLabel" content="Gender" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Class to describe gender-specific issues, either at individual or group level.<br /><small>Term origin: MIRA, CCDI</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Gender">Gender</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Female">Female</a> | <a href="#Male">Male</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="IDP" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Internally Displaced Person / IDP</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Displaced"></div>	  <div property="skos:prefLabel" content="Internally Displaced Person" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A group of internally displaced persons (IDPs).<br /><small>Term origin: Humanitarian Profile, CERF, HPM Ethiopia</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#IDP">IDP</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Displaced">Displaced</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="ImplementingPartner" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Implementing Partner / IP</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Organization"></div>	  <div property="skos:prefLabel" content="Implementing Partner" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">An external partner implenting (parts) of a project for an agency. <br /><small>Term origin: CAP OPS, Pakistan SRF, HPM Ethiopia (<em>Partner</em>), Sigmah DB (<em>Partner</em>).</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#ImplementingPartner">ImplementingPartner</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Organization">Organization</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Incident" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Incident</h3>	  <div property="skos:prefLabel" content="Incident" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">An individual incident in the context of a crisis, such as a recruitment of children.<br /><small>Term origin: MRM/MARA, EDXL</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Incident">Incident</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Killing">Killing</a> | <a href="#Maiming">Maiming</a> | </td>	 <tr><th>Domain of:</th><td><a href="#location">location</a> | </td>	 <tr><th>Range of:</th><td><a href="#subject">subject</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Indicator" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Indicator</h3>	  <div property="skos:prefLabel" content="Indicator" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Concrete measurable reference for a concrete need; e.g., <em>5 litres of clean water per person and day</em>.<br /><small>Term origin: Pakistan SRF, ACAPS DSS, CCDI, CERF, HPM Ethiopia, Sigmah DB</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Indicator">Indicator</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#measures">measures</a> | </td>	 <tr><th>Range of:</th><td><a href="#basedOn">based on</a> | <a href="#subject">subject</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Injured" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Injured</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Casualty"></div>	  <div property="skos:prefLabel" content="Injured" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Injured part of the population.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile, Shelter Cluster, HERAMS Checklist (<em>Injury</em>)</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Injured">Injured</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Casualty">Casualty</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Intervention" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Intervention</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></div>	  <div property="skos:prefLabel" content="Intervention" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Relief assistance, remedial action, or some other humanitarian intervention; (such  as immunisation, food distribution, etc.).<br /><small>Term origin: ACAPS.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Intervention">Intervention</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Activity">Humanitarian Activity</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Killing" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Killing</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Incident"></div>	  <div property="skos:prefLabel" content="Killing" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A (reported) killing.<br /><small>Term origin: MRM/MARA, EIMS Report</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Killing">Killing</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Incident">Incident</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Location" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Location</h3>	  <div property="skos:prefLabel" content="Location" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Geolocation - <em>will be further specficied using admin levels and p-codes in the next iteration</em>.<br /><small>Term origin: Pakistan SRF, CCDI, EDXL, Shelter Cluster, Sigmah DB</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Location">Location</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Country">Country</a> | <a href="#Region">Region</a> | <a href="#SubRegion">Sub Region</a> | </td>	 <tr><th>Range of:</th><td><a href="#location">location</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Maiming" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Maiming</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Incident"></div>	  <div property="skos:prefLabel" content="Maiming" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A (reported) maiming;.<br /><small>Term origin: MRM/MARA, EIMS Report</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Maiming">Maiming</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Incident">Incident</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Male" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Male</h3>	  <div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Agent"></div>	  <div property="skos:prefLabel" content="Male" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A man/boy or group of men/boys.<br /><small>Term origin: CERF, EIMS Report.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Male">Male</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Missing" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Missing</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Casualty"></div>	  <div property="skos:prefLabel" content="Missing" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Missing population.<br /><small>Term origin: Humanitarian Profile.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Missing">Missing</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Casualty">Casualty</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Need" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Need / Gap / Lack</h3>	  <div property="skos:prefLabel" content="Need" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A concrete need, lack, or gap, e.g. a shortage of food. Can be based on the application of relevant norms (usually a minimum requirement or a pre-existing ‘normal’ situation); and an assessment of how  the reality differs.	Identifying and measuring deficits, either actual or predicted.<br /><small>Term origin: CAP OPS, ACAPS DSS (also: <em>Humanitarian Need</em>), CCDI (<em>Humanitarian Need</em>), CCDI Shelter Cluster (<em>Gap</em>), HPM Ethiopia (<em>Gap</em>).</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Need">Need</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#basedOn">based on</a> | </td>	 <tr><th>Range of:</th><td><a href="#addresses">addresses</a> | <a href="#identifies">identifies</a> | <a href="#subject">subject</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="NeedAchieved" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Need achieved</h3>	  <div property="skos:prefLabel" content="Need achieved" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">The part of a need target that has already been achieved.</p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#NeedAchieved">NeedAchieved</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#achievedOf">achieved of</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="NeedTarget" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Need target</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Objective"></div>	  <div property="skos:prefLabel" content="Need target" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">An objective towards a specific need.</p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#NeedTarget">NeedTarget</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Objective">Objective</a></td></tr>	 <tr><th>Range of:</th><td><a href="#achievedOf">achieved of</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="NeedsAssessment" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Needs Assessment</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Report"></div>	  <div property="skos:prefLabel" content="Needs Assessment" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">The process of obtaining and analyzing information to determine the current status and service needs of a defined  population and/or geographic area (NOAA definition);.<br /><small>Term origin: ACAPS.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#NeedsAssessment">NeedsAssessment</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Report">Report</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#analyzes">analyzes</a> | <a href="#identifies">identifies</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="NonDisplaced" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Non-Displaced</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#AffectedPopulation"></div>	  <div property="skos:prefLabel" content="Non-Displaced" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Refers to the part of the affected population that is not displaced (i.e., host or non-host);.<br /><small>Term origin: Humanitarian Profile.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#NonDisplaced">NonDisplaced</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#AffectedPopulation">Affected Population</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Objective" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Objective</h3>	  <div property="skos:prefLabel" content="Objective" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">And objective is a goal for an activity, measureable in terms of an indicator.<br /><small>Term origin: Sahana Project, CERF</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Objective">Objective</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#NeedTarget">Need target</a> | </td>	 <tr><th>Range of:</th><td><a href="#hasObjective">has objective</a> | <a href="#measures">measures</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Organization" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Organization</h3>	  <div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Organization"></div>	  <div property="skos:prefLabel" content="Organization" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A humanitarian organization.<br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report,	Shelter Cluster, Sigmah DB.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Organization">Organization</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="http://xmlns.com/foaf/0.1/Organization">http://xmlns.com/foaf/0.1/Organization</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Agency">Agency</a> | <a href="#ImplementingPartner">Implementing Partner</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Output" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Output</h3>	  <div property="skos:prefLabel" content="Output" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en"><em>Merge with <strong>objective</strong>?</em>.<br /><small>Term origin: CAP OPS, Sahana Project</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Output">Output</a></td></tr>	 <tr><th>Range of:</th><td><a href="#hasOutput">has output</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Population" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Population</h3>	  <div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Group"></div>	  <div property="skos:prefLabel" content="Population" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Generic class for any kind of population (e.g. total, affected, etc.); use the subclasses for the data annotation.</p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Population">Population</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="http://xmlns.com/foaf/0.1/Group">http://xmlns.com/foaf/0.1/Group</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#AffectedPopulation">Affected Population</a> | <a href="#AgeGroup">Age Group</a> | <a href="#RuralPopulation">Rural Population</a> | <a href="#TotalPopulation">Total Population</a> | <a href="#UrbanPopulation">Urban Population</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Priority" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Priority</h3>	  <div property="skos:prefLabel" content="Priority" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">The priority for a project or activity. Individuals of this class should be created whenever a fixed scale for priorities is in use.<br /><small>Term origin: CAP OPS, UNHCR Camp DB, Sahana Project, MIRA, HPM Ethiopia.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Priority">Priority</a></td></tr>	 <tr><th>Range of:</th><td><a href="#hasPriority">has priority</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Project" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Project</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></div>	  <div property="skos:prefLabel" content="Project" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A project is a specific activity or intervention (or collection of these)	that have been grouped for management purposes.<br /><small>Term origin: CAP OPS, Pakistan SRF, Sahana Project, Sigmah DB. </small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Project">Project</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Activity">Humanitarian Activity</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Refugee" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Refugee</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Displaced"></div>	  <div property="skos:prefLabel" content="Refugee" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A group of refugees.<br /><small>Term origin: Humanitarian Profile</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Refugee">Refugee</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Displaced">Displaced</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Region" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Region</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Location"></div>	  <div property="skos:prefLabel" content="Region" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Geolocation admin level 1.<br /><small>Term origin: ACAPS DSS,	CCDI, CERF, HPM Ethiopia.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Region">Region</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Location">Location</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Report" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Report</h3>	  <div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Document"></div>	  <div property="skos:prefLabel" content="Report" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Generic class for any kind of report (such as a needs assessment or project report).</p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Report">Report</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="http://xmlns.com/foaf/0.1/Document">http://xmlns.com/foaf/0.1/Document</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#NeedsAssessment">Needs Assessment</a> | </td>	 <tr><th>Domain of:</th><td><a href="#period">period</a> | <a href="#subject">subject</a> | </td>	 <tr><th>Range of:</th><td><a href="#inputTo">input to</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="ReportingPeriod" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Reporting Period</h3>	  <div property="skos:prefLabel" content="Reporting Period" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">The time frame that a report covers.<br /><small>Term origin: Sigmah DB.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#ReportingPeriod">ReportingPeriod</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#end">end</a> | <a href="#start">start</a> | </td>	 <tr><th>Range of:</th><td><a href="#period">period</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Response" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Response</h3>	  <div property="skos:prefLabel" content="Response" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Generic term for the collection of all activities that address the needs araising from an emergency.<br /><small>Term origin: ACAPS DSS, ACAPS DSS, MIRA, EDXL, CCDI (<em>Humanitarian Response</em>), CERF (<em>Humanitarian Response</em>)</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Response">Response</a></td></tr>	 <tr><th>Domain of:</th><td><a href="#addresses">addresses</a> | </td>	 <tr><th>Range of:</th><td><a href="#partOf">part of</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="RuralPopulation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Rural Population</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Population"></div>	  <div property="skos:prefLabel" content="Rural Population" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Population living in the countryside.<br /><small>Term origin: HPM Ethiopia, Shelter Cluster.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#RuralPopulation">RuralPopulation</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Population">Population</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Sector" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Sector</h3>	  <div property="skos:prefLabel" content="Sector" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A sector adresses a specific thematic area in an Emergency, e.g. Health or Logistics.<br /><small>Term origin: IATI, CAP OPS, UNHCR Camp DB, Pakistan SRF, ACAPS DSS, MIRA, CERF, HPM Ethiopia</small>.</p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Sector">Sector</a></td></tr>	 <tr><th>Range of:</th><td><a href="#convers">covers</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Shelter" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Shelter</h3>	  <div property="skos:prefLabel" content="Shelter" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">A structure that provides privacy and protection from danger (WordNet).<br /><small>Term origin: UNHCR Camp DB, ACAPS DSS.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Shelter">Shelter</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Camp">Camp</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Site" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Site</h3>	  <div property="skos:prefLabel" content="Site" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en"><em>What sites other than camps do we have?</em><br /><small>Term origin: EIMS Report	Sigmah DB.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Site">Site</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Camp">Camp</a> | </td>	 <tr><th>Domain of:</th><td><a href="#location">location</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="Situation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Situation</h3>	  <div property="skos:prefLabel" content="Situation" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Generic situation.</p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#Situation">Situation</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Emergency">Emergency</a> | </td>	 <tr><th>Domain of:</th><td><a href="#location">location</a> | </td>	 <tr><th>Range of:</th><td><a href="#analyzes">analyzes</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="SubRegion" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Sub Region</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Location"></div>	  <div property="skos:prefLabel" content="Sub Region" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Geolocation admin level 2.<br /><small>Term origin: CCDI, CERF.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#SubRegion">SubRegion</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Location">Location</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="TotalPopulation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Total Population</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Population"></div>	  <div property="skos:prefLabel" content="Total Population" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Total population for a given administrative unit or geographic area. Instances can be created to make statements about this population.</p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#TotalPopulation">TotalPopulation</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Population">Population</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="UrbanPopulation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: Urban Population</h3>	  <div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-01-23#Population"></div>	  <div property="skos:prefLabel" content="Urban Population" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Population living in cities.<br /><small>Term origin: Shelter Cluster.</small></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="#UrbanPopulation">UrbanPopulation</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="#Population">Population</a></td></tr>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="http://xmlns.com/foaf/0.1/Group" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: foaf:Group</h3>	  <div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Agent"></div>	  <div property="skos:prefLabel" content="foaf:Group" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en"></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="http://xmlns.com/foaf/0.1/Group">http://xmlns.com/foaf/0.1/Group</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Population">Population</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>		<div class="specterm" id="http://xmlns.com/foaf/0.1/Organization" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">	  <h3>Class: foaf:Organization</h3>	  <div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Agent"></div>	  <div property="skos:prefLabel" content="foaf:Organization" xml:lang="en"></div>	  <p class="TermComment" property="rdfs:comment" xml:lang="en"></p>  <table>
+	    <tbody>
+	      <tr><th>Identifier:</th><td><a href="http://xmlns.com/foaf/0.1/Organization">http://xmlns.com/foaf/0.1/Organization</a></td></tr>	 <tr><th>Subclass of:</th><td><a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a></td></tr>	 <tr><th>Subclasses:</th><td><a href="#Organization">Organization</a> | </td>	      </tbody>
+	    </table>
+	  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
+	  <br/>
+	</div>
+
+
+<h2>Properties:</h2>
+
+		<div class="specterm" id="achievedOf" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: achieved of</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Relates the need achieved to the need target.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#achievedOf">achievedOf</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#NeedAchieved">Need achieved</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#NeedAchieved"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#NeedTarget">Need target</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#NeedTarget"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="addresses" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: addresses</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">States that a certain activity addresses a situation description.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#addresses">addresses</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Response">Response</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Response"></span> <a href="#Activity">Humanitarian Activity</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Emergency">Emergency</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Emergency"></span> <a href="#Need">Need</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Need"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="affectedBy" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: affected by</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">States that a Population is affacted by an Emergency.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#affectedBy">affectedBy</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#AffectedPopulation">Affected Population</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#AffectedPopulation"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Emergency">Emergency</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Emergency"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="analyzes" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: analyzes</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Links a NeedsAssessment to the Situation it analyzes.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#analyzes">analyzes</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#NeedsAssessment">Needs Assessment</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#NeedsAssessment"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Situation">Situation</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Situation"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="basedOn" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: based on</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specififes that a gap for a certain need has been identified based on a specific indicator.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#basedOn">basedOn</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Need">Need</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Need"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Indicator">Indicator</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Indicator"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="contributesTo" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: contributes to</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specifiies the relationship between a donor and the project or activity budget he contributes money to.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#contributesTo">contributesTo</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Donor">Donor</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Donor"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Budget">Budget</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Budget"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="convers" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: covers</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Used to define the sectors that are covered by a cluster; can be used to re-define clusters by Emergency.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#convers">convers</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Cluster">Cluster</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Cluster"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Sector">Sector</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Sector"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="end" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: end</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specifies the end of activities, projects, etc.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#end">end</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Activity">Humanitarian Activity</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></span> <a href="#Emergency">Emergency</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Emergency"></span> <a href="#ReportingPeriod">Reporting Period</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#ReportingPeriod"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="http://www.w3.org/2001/XMLSchema#date">http://www.w3.org/2001/XMLSchema#date</a><span rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#date"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="fromAge" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: from age</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specifies the bottom of an age range for an AgeGroup (in years).</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#fromAge">fromAge</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#AgeGroup">Age Group</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#AgeGroup"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="http://www.w3.org/2001/XMLSchema#int">http://www.w3.org/2001/XMLSchema#int</a><span rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#int"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="hasBudget" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: has budget</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Links a specific budget to a Project or Activity.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#hasBudget">hasBudget</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Activity">Humanitarian Activity</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Budget">Budget</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Budget"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="hasObjective" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: has objective</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Defines the objectives for an activity or project.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#hasObjective">hasObjective</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Activity">Humanitarian Activity</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Objective">Objective</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Objective"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="hasOutput" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: has output</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Defines the output for an activity or project.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#hasOutput">hasOutput</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Activity">Humanitarian Activity</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Output">Output</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Output"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="hasPriority" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: has priority</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Defines the priority for an activity or project.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#hasPriority">hasPriority</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Activity">Humanitarian Activity</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Priority">Priority</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Priority"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="identifies" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: identifies</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Links a NeedsAssessment to the different Needs it identifies.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#identifies">identifies</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#NeedsAssessment">Needs Assessment</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#NeedsAssessment"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Need">Need</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Need"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="inputTo" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: input to</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specififes that data collection is input to a report.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#inputTo">inputTo</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#DataCollection">Data Collection</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#DataCollection"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Report">Report</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Report"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="leadBy" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: lead By</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Relates a cluster to its leading Agency.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#leadBy">leadBy</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Cluster">Cluster</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Cluster"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Agency">Agency</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Agency"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="location" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: location</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specififes the location for things like emergencies, projects, or camps.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#location">location</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Emergency">Emergency</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Emergency"></span> <a href="#Site">Site</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Site"></span> <a href="#Incident">Incident</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Incident"></span> <a href="#Situation">Situation</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Situation"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Location">Location</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Location"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="measures" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: measures</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specififes the need or objective that a certain indicator addresses or measures. <em>Eventually create second property for objectives?</em></p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#measures">measures</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Indicator">Indicator</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Indicator"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Objective">Objective</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Objective"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="partOf" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: part of</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specifies part-whole relationships; e.g., a specific Project can be partOf the Response to a certain Emergency.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#partOf">partOf</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Activity">Humanitarian Activity</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Response">Response</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Response"></span> <a href="#Activity">Humanitarian Activity</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="period" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: period</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Defines the reporting period for a report.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#period">period</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Report">Report</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Report"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#ReportingPeriod">Reporting Period</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#ReportingPeriod"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="raisedBy" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: raises</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Provenance record for a specific budget that links it back to the appeal it was raised through.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#raisedBy">raisedBy</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Budget">Budget</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Budget"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Appeal">Appeal</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Appeal"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="start" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: start</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specifies the start of activities, projects, etc.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#start">start</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Activity">Humanitarian Activity</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Activity"></span> <a href="#Emergency">Emergency</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Emergency"></span> <a href="#ReportingPeriod">Reporting Period</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#ReportingPeriod"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="http://www.w3.org/2001/XMLSchema#date">http://www.w3.org/2001/XMLSchema#date</a><span rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#date"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="subBudgetOf" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: sub-budget of</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Supports adding up budgets for different activities to the budget of a project.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#subBudgetOf">subBudgetOf</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Budget">Budget</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Budget"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Budget">Budget</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Budget"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="subject" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: subject</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specififes the subjects of a report.</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#subject">subject</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#Report">Report</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#Report"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="#Incident">Incident</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Incident"></span> <a href="#Damage">Damage</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Damage"></span> <a href="#Indicator">Indicator</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Indicator"></span> <a href="#Budget">Budget</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Budget"></span> <a href="#Need">Need</a><span rel="rdfs:range" resource="http://carsten.io/hxl/ns-2012-01-23#Need"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>		<div class="specterm" id="toAge" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">  <h3>Property: to age</h3>  <p class="TermComment" property="rdfs:comment" xml:lang="en">Specifies the top of an age range for an AgeGroup (in years).</p>  <table>    <tbody>     <tr><th>Identifier:</th><td><a href="#toAge">toAge</a></td></tr>      <tr><th>Domain:</th>	  <td><a href="#AgeGroup">Age Group</a><span rel="rdfs:domain" resource="http://carsten.io/hxl/ns-2012-01-23#AgeGroup"></span> </td>	  </tr>      <tr>	  <th>Range:</th>	  <td><a href="http://www.w3.org/2001/XMLSchema#int">http://www.w3.org/2001/XMLSchema#int</a><span rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#int"></span>  </td>	  </tr>      </tbody>    </table>  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>  <br/></div>
+</div>
+
+<h2 id="sec-changes">4. Change log</h2>
+
+<p>Changes compared to the <a href="http://carsten.io/hxl/ns-2012-01-21">previous version</a> of the vocabulary:</p>
+
+<p><ol><li>Classes <a href='#NeedTarget'>NeedTarget</a> and <a href='#NeedAchieved'>NeedAchieved</a> have been introduced.</li><li>The <a href='#measures'>measures</a> property does not have <a href='#Need'>Need</a> as range anymore: a need is <a href='#basedOn'>based on</a> an indicator, which measures the progress in addressing this need. </li><li><a href='#Project'>Project</a> is now a subclass of <a href='#Activity'>Activity</a>. This is more consistent, as Activity is the (more ambiguous) superclass now that is used in all property definitions (which still apply to Project). <li>Classes <a href='#Need'>Need</a> , Gap, and Lack have been merged, since we only address actual needs, i.e., in the sense of a lack of food. These needs <a href='requires'>require</a> some kind of <a href='#'<li>Property <em>locatedAt</em> removed for redundancy (see <a href='#location'>location</a>).<li>Class <a href='#Donor'>Donor</a> introduced, along with property <a href='#contributesTo'>contributesTo</a>.<li>Class <em>BasicHumanNeed</em> has been removed – design decision to stick to measurable or reportable classes for HXL.<li>Switched from <em>rdfs:label</em> to <em>skos:prefLabel</em> to be able to add alternative labels to the classes (via <em>skos:altLabel</em>). </li><li>Merged classes Budget and Funding.</li><li>Added alternative labels to several classes.</li><li>Fixed a number of typos.</li></ol></p>
+
+
+
+</body>
+</html>
