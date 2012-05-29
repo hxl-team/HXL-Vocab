@@ -1,0 +1,12 @@
+digraph { 
+ rankdir = "LR";
+ charset="utf-8";
+ overlap=false;
+ edge [color=darkslategray];
+ edge [fontname=Helvetica , fontsize=11.0 ];
+ node [fontname=Helvetica , fontsize=11.0];
+ 
+ "Yemen Crisis" [shape=box] ;
+ 
+ "un:emergency123" -> "Yemen Crisis" [ label="hxl:commonTitle" ]; 
+}

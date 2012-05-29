@@ -1,0 +1,161 @@
+body {
+	background: white fixed no-repeat left top;
+	color: black;
+	font-family: sans-serif;
+	line-height: 1.8em;
+	margin: 0;
+	padding-top: 2em;
+	padding-bottom: 1em;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 900px;
+	margin-left: -450px;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:link {
+  color: #00c;
+}
+
+a:visited {
+  color: #609
+}
+
+a:active {
+  color: #c00
+}
+
+a:link img, a:visited img {
+  border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background: white;
+  color: #005a9c;
+  font-weight: normal;
+  text-align: left;
+}
+
+h1 {
+  clear: both;
+  font-size: 240%;
+line-height: 100%;
+  margin-top: 2em
+}
+
+h2 {
+  border-top: 2px groove;
+  font-size: 170%;
+  margin-top: 2.5em;
+  padding-top: 0.6em;
+}
+
+h2.vocabsection{
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 140%;
+  margin-top: 2.5em;
+}
+
+h4 {
+  font-size: 120%;
+  margin: 2em 0 0.5em;
+}
+
+.hide {
+  display: none
+}
+
+pre {
+  background-color: #ffec8b;
+  color: black;
+  font-family: monospace;
+  line-height: 1.5em;
+  padding: 1.5em 2em;
+}
+
+pre strong {
+  color: #a00;
+  font-weight: bold;
+}
+
+dt {
+  font-weight: bold;
+  margin: 1em 0 0 0;
+}
+
+dd {
+  margin: 0 0 0 3em;
+}
+
+code, tt {
+  font-family: monospace
+}
+
+ul.toc {
+  list-style-type: none
+}
+
+
+h1, h2, h3 {
+  	stress: 20; 
+	richness: 90
+}
+
+.hide {
+  speak: none
+}
+
+dt {
+  pause-before: 20%
+}
+
+pre {
+  speak-punctuation: code;
+}
+
+img{
+	max-width:900px;
+}
+
+table { 
+	width: 900px;
+}
+
+th, td{
+	text-align: left; 
+	background: lightgrey;
+	padding: 0 3px;
+}
+
+th{
+	width: 200px;
+}
+
+div.index{
+	padding: 5px; 
+	border: dotted; 
+	background-color: #ddd;
+}
+
+div#doc-link{
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	z-index: 5;
+}
+
+p.intro{
+	clear:both;
+	padding-top: 15px;
+}
+
+p.intro img{
+	margin-left: 25px;
+}

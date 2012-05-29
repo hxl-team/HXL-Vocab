@@ -1,0 +1,414 @@
+<http://carsten.io/hxl/ns-2012-01-26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://carsten.io/hxl/ns-2012-01-26> <http://purl.org/dc/terms/date> "2012-01-26" .
+<http://carsten.io/hxl/ns-2012-01-26> <http://purl.org/dc/terms/creator> <http://carsten.io/hxl/ns-2012-01-26#carsten> .
+<http://carsten.io/hxl/ns-2012-01-26> <http://purl.org/dc/terms/creator> <http://carsten.io/hxl/ns-2012-01-26#cj> .
+<http://carsten.io/hxl/ns-2012-01-26> <http://purl.org/dc/terms/title> "Humanitarian eXchange Language (HXL) domain vocabulary"@en .
+<http://carsten.io/hxl/ns-2012-01-26> <http://purl.org/dc/terms/abstract> "<p>Draft specification of the Humanitarian eXchange Language (HXL) standard. This vocabulary specification is currently <b>under development</b> and may change at any time without notice.</p> <p>The porpuse of HXL is to facilitate data exchange within the humanitarian domain. It provides a core domain model that has been created bottom-up by inspecting a broad range of systems in use with different humanitarian organizations. As needs vary widely across organizations in this domain, this vocabulary does <em>not</em> intend to be complete; in fact, it is the smallest common denominator. Any organizations that wish to publish <em>full</em> exports of their data can do so by extending this domain model with application- or organization-specific models that reflect their internal data models (which may already be formalized in an XML schema or database schema). "@en .
+<http://carsten.io/hxl/ns-2012-01-26> <http://purl.org/dc/terms/license> "We still need to decide under which license this vocabulary should be published."@en .
+<http://carsten.io/hxl/ns-2012-01-26> <http://purl.org/dc/terms/versionOf> <http://carsten.io/hxl/ns> .
+<http://carsten.io/hxl/ns-2012-01-26> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>."@en .
+<http://carsten.io/hxl/ns-2012-01-26> <http://purl.org/dc/terms/replaces> <http://carsten.io/hxl/ns-2012-01-23> .
+<http://carsten.io/hxl/ns-2012-01-26> <http://www.w3.org/2004/02/skos/core#changeNote> "<ol><li>Class Output and property hasOutput have been removed.</li><li>Classes Project and Intervention have been removed; these terms are now synonyms of <a href='#Activity'>Activity</a>.</li><li>Class <em>Need achieved</em> has been renamed <a href='#OutputToDate'>Ouput to date</a>.</li><li>Class <em>Need target</em> has been renamed <a href='#OutputPlanned'>Ouput planned</a>.</li><li>Property <em>achieved of</em> has been renamed <a href='#completedOf'>completed of</a>, domain and range have been changed according to the renamings listed above.</ol>" .
+<http://carsten.io/hxl/ns-2012-01-26#carsten> <http://xmlns.com/foaf/0.1/name> "Carsten Ke\u00DFler" .
+<http://carsten.io/hxl/ns-2012-01-26#carsten> <http://xmlns.com/foaf/0.1/mbox> "me@carsten.io" .
+<http://carsten.io/hxl/ns-2012-01-26#carsten> <http://xmlns.com/foaf/0.1/homepage> <http://carsten.io> .
+<http://carsten.io/hxl/ns-2012-01-26#cj> <http://xmlns.com/foaf/0.1/name> "CJ Hendrix" .
+<http://carsten.io/hxl/ns-2012-01-26#cj> <http://xmlns.com/foaf/0.1/mbox> "hendrix@un.org" .
+<http://carsten.io/hxl/ns-2012-01-26#Situation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Situation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Situation"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Situation> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic situation."@en .
+<http://carsten.io/hxl/ns-2012-01-26#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Activity> <http://www.w3.org/2004/02/skos/core#prefLabel> "Humanitarian Activity"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Activity> <http://www.w3.org/2004/02/skos/core#altLabel> "Project"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Activity> <http://www.w3.org/2004/02/skos/core#altLabel> "Intervention"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Activity> <http://www.w3.org/2000/01/rdf-schema#comment> "An Activity generally addresses some kind of need given in a Humanitarian Situation. Synonyms: Project, intervention. <br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, Sahana Project, Sigmah DB</small>"@en .
+<http://carsten.io/hxl/ns-2012-01-26#AdminUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#AdminUnit> <http://www.w3.org/2004/02/skos/core#prefLabel> "Administrative Unit"@en .
+<http://carsten.io/hxl/ns-2012-01-26#AdminUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Location> .
+<http://carsten.io/hxl/ns-2012-01-26#AdminUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Administrative units can include coutries, regions, cities, etc. The hierarchy of administrative units can vary from country to country."@en .
+<http://carsten.io/hxl/ns-2012-01-26#AdminUnitLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#AdminUnitLevel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Administrative Unit Level"@en .
+<http://carsten.io/hxl/ns-2012-01-26#AdminUnitLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "The specific administrative unit levels can vary from country to country. Administrative Unit Level 0 is a country \u2013 in this case, hxl:Country should be used."@en .
+<http://carsten.io/hxl/ns-2012-01-26#AffectedPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#AffectedPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Affected Population"@en .
+<http://carsten.io/hxl/ns-2012-01-26#AffectedPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Population> .
+<http://carsten.io/hxl/ns-2012-01-26#AffectedPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "The population affected by an emergency.<br /><small>Term origin: Humanitarian Profile (<em>Affected</em>);</small>"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Cluster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Cluster> <http://www.w3.org/2004/02/skos/core#prefLabel> "Cluster"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Cluster> <http://www.w3.org/2000/01/rdf-schema#comment> "An organizational unit responsible for one or more sectors during an emergency.<br /><small>Term origin: CAP OPS, CCDI.</small>"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Agency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Agency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Organization> .
+<http://carsten.io/hxl/ns-2012-01-26#Agency> <http://www.w3.org/2004/02/skos/core#prefLabel> "Agency"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Agency> <http://www.w3.org/2000/01/rdf-schema#comment> "An Agency is an official body of the United Nations. <br /><small>Term origin: CCDI, CERF, Shelter Cluster</small>"@en .
+<http://carsten.io/hxl/ns-2012-01-26#ImplementingPartner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#ImplementingPartner> <http://www.w3.org/2004/02/skos/core#prefLabel> "Implementing Partner"@en .
+<http://carsten.io/hxl/ns-2012-01-26#ImplementingPartner> <http://www.w3.org/2004/02/skos/core#altLabel> "IP"@en .
+<http://carsten.io/hxl/ns-2012-01-26#ImplementingPartner> <http://www.w3.org/2000/01/rdf-schema#comment> "An external partner implenting (parts) of a project for an agency. <br /><small>Term origin: CAP OPS, Pakistan SRF, HPM Ethiopia (<em>Partner</em>), Sigmah DB (<em>Partner</em>).</small>"@en .
+<http://carsten.io/hxl/ns-2012-01-26#ImplementingPartner> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Organization> .
+<http://carsten.io/hxl/ns-2012-01-26#Camp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Camp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Site> .
+<http://carsten.io/hxl/ns-2012-01-26#Camp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Shelter> .
+<http://carsten.io/hxl/ns-2012-01-26#Camp> <http://www.w3.org/2004/02/skos/core#prefLabel> "Camp"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Camp> <http://www.w3.org/2000/01/rdf-schema#comment> "A site with temporary shelter for an affected population, such as refugees. <br /><small>Term origin: UNHCR Camp DB, Pakistan SRF, Humanitarian Profile.</small>"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Population> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Population> <http://www.w3.org/2004/02/skos/core#prefLabel> "Population"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Population> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Group> .
+<http://carsten.io/hxl/ns-2012-01-26#Population> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic class for any kind of population (e.g. total, affected, etc.); use the subclasses for the data annotation."@en .
+<http://carsten.io/hxl/ns-2012-01-26#TotalPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#TotalPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Total Population"@en .
+<http://carsten.io/hxl/ns-2012-01-26#TotalPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Population> .
+<http://carsten.io/hxl/ns-2012-01-26#TotalPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "Total population for a given administrative unit or geographic area. Instances can be created to make statements about this population."@en .
+<http://carsten.io/hxl/ns-2012-01-26#AgeGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#AgeGroup> <http://www.w3.org/2004/02/skos/core#prefLabel> "Age Group"@en .
+<http://carsten.io/hxl/ns-2012-01-26#AgeGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Population> .
+<http://carsten.io/hxl/ns-2012-01-26#AgeGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic class for age groups; instances should be created for actual age groups (e.g. children under 5). " .
+<http://carsten.io/hxl/ns-2012-01-26#Appeal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Appeal> <http://www.w3.org/2004/02/skos/core#prefLabel> "Appeal"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Appeal> <http://www.w3.org/2000/01/rdf-schema#comment> "An appeal is a request for aid in the form of money or goods from Donors. <br /><small>Term origin: CAP OPS, Pakistan SRF.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Budget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Budget> <http://www.w3.org/2004/02/skos/core#prefLabel> "Budget"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Budget> <http://www.w3.org/2004/02/skos/core#altLabel> "Funding"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Budget> <http://www.w3.org/2000/01/rdf-schema#comment> "The money allocated to a Project.<br /><small>Term origin: IATI, Sigmah DB, Sahana Project (<em>Funding</em>), EDXL (<em>Funding</em>).</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Casualty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Casualty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#AffectedPopulation> .
+<http://carsten.io/hxl/ns-2012-01-26#Casualty> <http://www.w3.org/2004/02/skos/core#prefLabel> "Casualty"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Casualty> <http://www.w3.org/2000/01/rdf-schema#comment> "E.g. injured or dead.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Damage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Damage> <http://www.w3.org/2004/02/skos/core#prefLabel> "Damage"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Damage> <http://www.w3.org/2000/01/rdf-schema#comment> "A (reported) damage.<br /><small>Term origin: ACAPS DSS, Shelter Cluster.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#DataCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#DataCollection> <http://www.w3.org/2004/02/skos/core#prefLabel> "Data Collection"@en .
+<http://carsten.io/hxl/ns-2012-01-26#DataCollection> <http://www.w3.org/2000/01/rdf-schema#comment> "The process that leads to a NeedsAssessment of Report. <br /><small>Term origin: MRM/MARA, HPM Ethiopia.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Death> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Death> <http://www.w3.org/2004/02/skos/core#prefLabel> "Death"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Death> <http://www.w3.org/2004/02/skos/core#altLabel> "Dead"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Death> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Casualty> .
+<http://carsten.io/hxl/ns-2012-01-26#Death> <http://www.w3.org/2002/07/owl#disjointWith> <http://carsten.io/hxl/ns-2012-01-26#Injured> .
+<http://carsten.io/hxl/ns-2012-01-26#Death> <http://www.w3.org/2000/01/rdf-schema#comment> "A (reported) death.<br /><small>Term origin: ACAPS DSS, HPM Ethiopia, Shelter Cluster, Humanitarian Profile (<em>Dead</em>).</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Displaced> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Displaced> <http://www.w3.org/2004/02/skos/core#prefLabel> "Displaced"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Displaced> <http://www.w3.org/2004/02/skos/core#altLabel> "Displacement"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Displaced> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#AffectedPopulation> .
+<http://carsten.io/hxl/ns-2012-01-26#Displaced> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to internally displaced persons, refugees, and others of concern.<br /><small>Term origin: Humanitarian Profile, ACAPS DSS (<em>Displacement</em>)</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Displaced> <http://www.w3.org/2002/07/owl#disjointWith> <http://carsten.io/hxl/ns-2012-01-26#NonDisplaced> .
+<http://carsten.io/hxl/ns-2012-01-26#Donor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Donor> <http://www.w3.org/2004/02/skos/core#prefLabel> "Donor"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Donor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://carsten.io/hxl/ns-2012-01-26#Donor> <http://www.w3.org/2000/01/rdf-schema#comment> "A donor is an individual or organization donating money for a project or a specific activity."@en .
+<http://carsten.io/hxl/ns-2012-01-26#NonDisplaced> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#NonDisplaced> <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-Displaced"@en .
+<http://carsten.io/hxl/ns-2012-01-26#NonDisplaced> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#AffectedPopulation> .
+<http://carsten.io/hxl/ns-2012-01-26#NonDisplaced> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the part of the affected population that is not displaced (i.e., host or non-host);.<br /><small>Term origin: Humanitarian Profile.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#NonDisplaced> <http://www.w3.org/2002/07/owl#disjointWith> <http://carsten.io/hxl/ns-2012-01-26#Displaced> .
+<http://carsten.io/hxl/ns-2012-01-26#Emergency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Emergency> <http://www.w3.org/2004/02/skos/core#prefLabel> "Emergency"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Emergency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Situation> .
+<http://carsten.io/hxl/ns-2012-01-26#Emergency> <http://www.w3.org/2000/01/rdf-schema#comment> "<p>Any situation in which ... life or well-being ... will be threatened  unless immediate  and  appropriate   action  is  taken,  and  which demands   an   extraordinary   response   and   exceptional measures\u201D (UNHCR Handbook for Emergencies)</p><p>A sudden crisis situation or event requiring immediate action (WART) </p><p>Any situation in which there is an exceptional and widespread threat to life, health or basic  subsistence,  that  is  beyond  the  coping  capacity  of individuals and the community\u201D  (Oxfam GB Emergency Response Manual). </p><p>Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance\u201D (source: ACFIN Emergency module)</p><small>Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Female> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Female> <http://www.w3.org/2004/02/skos/core#prefLabel> "Female"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Female> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://carsten.io/hxl/ns-2012-01-26#Female> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Gender> .
+<http://carsten.io/hxl/ns-2012-01-26#Female> <http://www.w3.org/2000/01/rdf-schema#comment> "A woman/girl or group of women/girls.<br /><small>Term origin: CERF, EIMS Report.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Female> <http://www.w3.org/2002/07/owl#disjointWith> <http://carsten.io/hxl/ns-2012-01-26#Male> .
+<http://carsten.io/hxl/ns-2012-01-26#Male> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Male> <http://www.w3.org/2004/02/skos/core#prefLabel> "Male"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Male> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://carsten.io/hxl/ns-2012-01-26#Male> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Gender> .
+<http://carsten.io/hxl/ns-2012-01-26#Male> <http://www.w3.org/2000/01/rdf-schema#comment> "A man/boy or group of men/boys.<br /><small>Term origin: CERF, EIMS Report.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Male> <http://www.w3.org/2002/07/owl#disjointWith> <http://carsten.io/hxl/ns-2012-01-26#Female> .
+<http://carsten.io/hxl/ns-2012-01-26#Gender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Gender> <http://www.w3.org/2004/02/skos/core#prefLabel> "Gender"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Gender> <http://www.w3.org/2000/01/rdf-schema#comment> "Class to describe gender-specific issues, either at individual or group level.<br /><small>Term origin: MIRA, CCDI</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Need> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Need> <http://www.w3.org/2004/02/skos/core#prefLabel> "Need"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Need> <http://www.w3.org/2004/02/skos/core#altLabel> "Gap"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Need> <http://www.w3.org/2004/02/skos/core#altLabel> "Lack"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Need> <http://www.w3.org/2000/01/rdf-schema#comment> "A concrete need, lack, or gap, e.g. a shortage of food. Can be based on the application of relevant norms (usually a minimum requirement or a pre-existing \u2018normal\u2019 situation); and an assessment of how  the reality differs.\tIdentifying and measuring deficits, either actual or predicted.<br /><small>Term origin: CAP OPS, ACAPS DSS (also: <em>Humanitarian Need</em>), CCDI (<em>Humanitarian Need</em>), CCDI Shelter Cluster (<em>Gap</em>), HPM Ethiopia (<em>Gap</em>).</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#OutputPlanned> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#OutputPlanned> <http://www.w3.org/2004/02/skos/core#prefLabel> "Output planned"@en .
+<http://carsten.io/hxl/ns-2012-01-26#OutputPlanned> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Objective> .
+<http://carsten.io/hxl/ns-2012-01-26#OutputPlanned> <http://www.w3.org/2000/01/rdf-schema#comment> "Planned output for an activity." .
+<http://carsten.io/hxl/ns-2012-01-26#OutputToDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#OutputToDate> <http://www.w3.org/2004/02/skos/core#prefLabel> "Output to date"@en .
+<http://carsten.io/hxl/ns-2012-01-26#OutputToDate> <http://www.w3.org/2004/02/skos/core#altLabel> "Output achieved"@en .
+<http://carsten.io/hxl/ns-2012-01-26#OutputToDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The measured output of a planned output at a certain date."@en .
+<http://carsten.io/hxl/ns-2012-01-26#NeedsAssessment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#NeedsAssessment> <http://www.w3.org/2004/02/skos/core#prefLabel> "Needs Assessment"@en .
+<http://carsten.io/hxl/ns-2012-01-26#NeedsAssessment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Report> .
+<http://carsten.io/hxl/ns-2012-01-26#NeedsAssessment> <http://www.w3.org/2000/01/rdf-schema#comment> "The process of obtaining and analyzing information to determine the current status and service needs of a defined  population and/or geographic area (NOAA definition);.<br /><small>Term origin: ACAPS.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Response> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Response> <http://www.w3.org/2004/02/skos/core#prefLabel> "Response"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Response> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic term for the collection of all activities that address the needs araising from an emergency.<br /><small>Term origin: ACAPS DSS, ACAPS DSS, MIRA, EDXL, CCDI (<em>Humanitarian Response</em>), CERF (<em>Humanitarian Response</em>)</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#IDP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#IDP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Displaced> .
+<http://carsten.io/hxl/ns-2012-01-26#IDP> <http://www.w3.org/2004/02/skos/core#prefLabel> "Internally Displaced Person"@en .
+<http://carsten.io/hxl/ns-2012-01-26#IDP> <http://www.w3.org/2004/02/skos/core#altLabel> "IDP"@en .
+<http://carsten.io/hxl/ns-2012-01-26#IDP> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of internally displaced persons (IDPs).<br /><small>Term origin: Humanitarian Profile, CERF, HPM Ethiopia</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Refugee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Refugee> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Displaced> .
+<http://carsten.io/hxl/ns-2012-01-26#Refugee> <http://www.w3.org/2004/02/skos/core#prefLabel> "Refugee"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Refugee> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of refugees.<br /><small>Term origin: Humanitarian Profile</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#AsylumSeeker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#AsylumSeeker> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Displaced> .
+<http://carsten.io/hxl/ns-2012-01-26#AsylumSeeker> <http://www.w3.org/2004/02/skos/core#prefLabel> "Asylum Seeker"@en .
+<http://carsten.io/hxl/ns-2012-01-26#AsylumSeeker> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of asylum seekers.<br /><small>Term origin: Humanitarian Profile</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Incident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Incident> <http://www.w3.org/2004/02/skos/core#prefLabel> "Incident"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Incident> <http://www.w3.org/2000/01/rdf-schema#comment> "An individual incident in the context of a crisis, such as a recruitment of children.<br /><small>Term origin: MRM/MARA, EDXL</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Indicator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Indicator> <http://www.w3.org/2004/02/skos/core#prefLabel> "Indicator"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Indicator> <http://www.w3.org/2000/01/rdf-schema#comment> "Concrete measurable reference for a concrete need; e.g., <em>5 litres of clean water per person and day</em>.<br /><small>Term origin: Pakistan SRF, ACAPS DSS, CCDI, CERF, HPM Ethiopia, Sigmah DB</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Injured> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Injured> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Casualty> .
+<http://carsten.io/hxl/ns-2012-01-26#Injured> <http://www.w3.org/2004/02/skos/core#prefLabel> "Injured"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Injured> <http://www.w3.org/2002/07/owl#disjointWith> <http://carsten.io/hxl/ns-2012-01-26#Death> .
+<http://carsten.io/hxl/ns-2012-01-26#Injured> <http://www.w3.org/2000/01/rdf-schema#comment> "Injured part of the population.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile, Shelter Cluster, HERAMS Checklist (<em>Injury</em>)</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Killing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Killing> <http://www.w3.org/2004/02/skos/core#prefLabel> "Killing"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Killing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Incident> .
+<http://carsten.io/hxl/ns-2012-01-26#Killing> <http://www.w3.org/2000/01/rdf-schema#comment> "A (reported) killing.<br /><small>Term origin: MRM/MARA, EIMS Report</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Location> <http://www.w3.org/2004/02/skos/core#prefLabel> "Location"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Geolocation - <em>will be further specficied using admin levels and p-codes in the next iteration</em>.<br /><small>Term origin: Pakistan SRF, CCDI, EDXL, Shelter Cluster, Sigmah DB</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Maiming> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Maiming> <http://www.w3.org/2004/02/skos/core#prefLabel> "Maiming"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Maiming> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Incident> .
+<http://carsten.io/hxl/ns-2012-01-26#Maiming> <http://www.w3.org/2000/01/rdf-schema#comment> "A (reported) maiming;.<br /><small>Term origin: MRM/MARA, EIMS Report</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Missing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Missing> <http://www.w3.org/2004/02/skos/core#prefLabel> "Missing"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Missing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Casualty> .
+<http://carsten.io/hxl/ns-2012-01-26#Missing> <http://www.w3.org/2002/07/owl#disjointWith> <http://carsten.io/hxl/ns-2012-01-26#Death> .
+<http://carsten.io/hxl/ns-2012-01-26#Missing> <http://www.w3.org/2000/01/rdf-schema#comment> "Missing population.<br /><small>Term origin: Humanitarian Profile.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Objective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Objective> <http://www.w3.org/2004/02/skos/core#prefLabel> "Objective"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Objective> <http://www.w3.org/2000/01/rdf-schema#comment> "And objective is a goal for an activity, measureable in terms of an indicator.<br /><small>Term origin: Sahana Project, CERF</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
+<http://carsten.io/hxl/ns-2012-01-26#Organization> <http://www.w3.org/2004/02/skos/core#prefLabel> "Organization"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "A humanitarian organization.<br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report,\tShelter Cluster, Sigmah DB.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Priority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Priority> <http://www.w3.org/2004/02/skos/core#prefLabel> "Priority"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Priority> <http://www.w3.org/2000/01/rdf-schema#comment> "The priority for a project or activity. Individuals of this class should be created whenever a fixed scale for priorities is in use.<br /><small>Term origin: CAP OPS, UNHCR Camp DB, Sahana Project, MIRA, HPM Ethiopia.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Report> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Report> <http://www.w3.org/2004/02/skos/core#prefLabel> "Report"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Report> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Document> .
+<http://carsten.io/hxl/ns-2012-01-26#Report> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic class for any kind of report (such as a needs assessment or project report)." .
+<http://carsten.io/hxl/ns-2012-01-26#ReportingPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#ReportingPeriod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reporting Period"@en .
+<http://carsten.io/hxl/ns-2012-01-26#ReportingPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf> <http://purl.org/dc/terms/PeriodOfTime> .
+<http://carsten.io/hxl/ns-2012-01-26#ReportingPeriod> <http://www.w3.org/2000/01/rdf-schema#comment> "The time frame that a report covers.<br /><small>Term origin: Sigmah DB.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#RuralPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#RuralPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Rural Population"@en .
+<http://carsten.io/hxl/ns-2012-01-26#RuralPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Population> .
+<http://carsten.io/hxl/ns-2012-01-26#RuralPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "Population living in the countryside.<br /><small>Term origin: HPM Ethiopia, Shelter Cluster.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#RuralPopulation> <http://www.w3.org/2002/07/owl#disjointWith> <http://carsten.io/hxl/ns-2012-01-26#UrbanPopulation> .
+<http://carsten.io/hxl/ns-2012-01-26#UrbanPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#UrbanPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Urban Population"@en .
+<http://carsten.io/hxl/ns-2012-01-26#UrbanPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Population> .
+<http://carsten.io/hxl/ns-2012-01-26#UrbanPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "Population living in cities.<br /><small>Term origin: Shelter Cluster.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#UrbanPopulation> <http://www.w3.org/2002/07/owl#disjointWith> <http://carsten.io/hxl/ns-2012-01-26#RuralPopulation> .
+<http://carsten.io/hxl/ns-2012-01-26#Sector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Sector> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sector"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Sector> <http://www.w3.org/2000/01/rdf-schema#comment> "A sector adresses a specific thematic area in an Emergency, e.g. Health or Logistics.<br /><small>Term origin: IATI, CAP OPS, UNHCR Camp DB, Pakistan SRF, ACAPS DSS, MIRA, CERF, HPM Ethiopia</small>."@en .
+<http://carsten.io/hxl/ns-2012-01-26#Site> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Site> <http://www.w3.org/2004/02/skos/core#prefLabel> "Site"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Site> <http://www.w3.org/2000/01/rdf-schema#comment> "<em>What sites other than camps do we have?</em><br /><small>Term origin: EIMS Report\tSigmah DB.</small>"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Shelter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Shelter> <http://www.w3.org/2004/02/skos/core#prefLabel> "Shelter"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Shelter> <http://www.w3.org/2000/01/rdf-schema#comment> "A structure that provides privacy and protection from danger (WordNet).<br /><small>Term origin: UNHCR Camp DB, ACAPS DSS.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#Status> <http://www.w3.org/2004/02/skos/core#prefLabel> "Status"@en .
+<http://carsten.io/hxl/ns-2012-01-26#Status> <http://www.w3.org/2000/01/rdf-schema#comment> "Status of an activity. Can be instantiated by organizations that use standardized status codes.<br /><small>Term origin: Sahana Project\tCCDI, CERF, EDXL.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#TotalPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://carsten.io/hxl/ns-2012-01-26#TotalPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://carsten.io/hxl/ns-2012-01-26#Population> .
+<http://carsten.io/hxl/ns-2012-01-26#TotalPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Total Population"@en .
+<http://carsten.io/hxl/ns-2012-01-26#TotalPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "The total population for an administrative unit (e.g. a region).<br /><small>Term origin: Shelter Cluster.</small>" .
+<http://carsten.io/hxl/ns-2012-01-26#affectedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#affectedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#affectedBy> <http://www.w3.org/2004/02/skos/core#prefLabel> "affected by"@en .
+<http://carsten.io/hxl/ns-2012-01-26#affectedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "States that a Population is affacted by an Emergency."@en .
+<http://carsten.io/hxl/ns-2012-01-26#affectedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#AffectedPopulation> .
+<http://carsten.io/hxl/ns-2012-01-26#affectedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Emergency> .
+<http://carsten.io/hxl/ns-2012-01-26#addresses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#addresses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#addresses> <http://www.w3.org/2004/02/skos/core#prefLabel> "addresses"@en .
+<http://carsten.io/hxl/ns-2012-01-26#addresses> <http://www.w3.org/2000/01/rdf-schema#comment> "States that a certain activity addresses a situation description."@en .
+<http://carsten.io/hxl/ns-2012-01-26#addresses> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Response> .
+<http://carsten.io/hxl/ns-2012-01-26#addresses> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Activity> .
+<http://carsten.io/hxl/ns-2012-01-26#addresses> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Emergency> .
+<http://carsten.io/hxl/ns-2012-01-26#addresses> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Need> .
+<http://carsten.io/hxl/ns-2012-01-26#contributesTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#contributesTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#contributesTo> <http://www.w3.org/2004/02/skos/core#prefLabel> "contributes to"@en .
+<http://carsten.io/hxl/ns-2012-01-26#contributesTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifiies the relationship between a donor and the project or activity budget he contributes money to."@en .
+<http://carsten.io/hxl/ns-2012-01-26#contributesTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Donor> .
+<http://carsten.io/hxl/ns-2012-01-26#contributesTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Budget> .
+<http://carsten.io/hxl/ns-2012-01-26#leadBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#leadBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#leadBy> <http://www.w3.org/2004/02/skos/core#prefLabel> "lead By"@en .
+<http://carsten.io/hxl/ns-2012-01-26#leadBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a cluster to its leading Agency."@en .
+<http://carsten.io/hxl/ns-2012-01-26#leadBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Cluster> .
+<http://carsten.io/hxl/ns-2012-01-26#leadBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Agency> .
+<http://carsten.io/hxl/ns-2012-01-26#fromAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#fromAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#fromAge> <http://www.w3.org/2004/02/skos/core#prefLabel> "from age"@en .
+<http://carsten.io/hxl/ns-2012-01-26#fromAge> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the bottom of an age range for an AgeGroup (in years)." .
+<http://carsten.io/hxl/ns-2012-01-26#fromAge> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#AgeGroup> .
+<http://carsten.io/hxl/ns-2012-01-26#fromAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://carsten.io/hxl/ns-2012-01-26#toAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#toAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#toAge> <http://www.w3.org/2004/02/skos/core#prefLabel> "to age"@en .
+<http://carsten.io/hxl/ns-2012-01-26#toAge> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the top of an age range for an AgeGroup (in years)." .
+<http://carsten.io/hxl/ns-2012-01-26#toAge> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#AgeGroup> .
+<http://carsten.io/hxl/ns-2012-01-26#toAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://carsten.io/hxl/ns-2012-01-26#start> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#start> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#start> <http://www.w3.org/2004/02/skos/core#prefLabel> "start"@en .
+<http://carsten.io/hxl/ns-2012-01-26#start> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the start of activities, projects, etc." .
+<http://carsten.io/hxl/ns-2012-01-26#start> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Activity> .
+<http://carsten.io/hxl/ns-2012-01-26#start> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Emergency> .
+<http://carsten.io/hxl/ns-2012-01-26#start> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#ReportingPeriod> .
+<http://carsten.io/hxl/ns-2012-01-26#start> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://carsten.io/hxl/ns-2012-01-26#end> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#end> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#end> <http://www.w3.org/2004/02/skos/core#prefLabel> "end"@en .
+<http://carsten.io/hxl/ns-2012-01-26#end> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the end of activities, projects, etc." .
+<http://carsten.io/hxl/ns-2012-01-26#end> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Activity> .
+<http://carsten.io/hxl/ns-2012-01-26#end> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Emergency> .
+<http://carsten.io/hxl/ns-2012-01-26#end> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#ReportingPeriod> .
+<http://carsten.io/hxl/ns-2012-01-26#end> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://carsten.io/hxl/ns-2012-01-26#partOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#partOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "part of"@en .
+<http://carsten.io/hxl/ns-2012-01-26#partOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/partOf> .
+<http://carsten.io/hxl/ns-2012-01-26#partOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies part-whole relationships; e.g., a specific Project can be partOf the Response to a certain Emergency."@en .
+<http://carsten.io/hxl/ns-2012-01-26#partOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Activity> .
+<http://carsten.io/hxl/ns-2012-01-26#partOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Response> .
+<http://carsten.io/hxl/ns-2012-01-26#partOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Activity> .
+<http://carsten.io/hxl/ns-2012-01-26#hasBudget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#hasBudget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#hasBudget> <http://www.w3.org/2004/02/skos/core#prefLabel> "has budget"@en .
+<http://carsten.io/hxl/ns-2012-01-26#hasBudget> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a specific budget to a Project or Activity."@en .
+<http://carsten.io/hxl/ns-2012-01-26#hasBudget> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Activity> .
+<http://carsten.io/hxl/ns-2012-01-26#hasBudget> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Budget> .
+<http://carsten.io/hxl/ns-2012-01-26#raisedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#raisedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#raisedBy> <http://www.w3.org/2004/02/skos/core#prefLabel> "raises"@en .
+<http://carsten.io/hxl/ns-2012-01-26#raisedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Provenance record for a specific budget that links it back to the appeal it was raised through."@en .
+<http://carsten.io/hxl/ns-2012-01-26#raisedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Budget> .
+<http://carsten.io/hxl/ns-2012-01-26#raisedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Appeal> .
+<http://carsten.io/hxl/ns-2012-01-26#subBudgetOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#subBudgetOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#subBudgetOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "sub-budget of"@en .
+<http://carsten.io/hxl/ns-2012-01-26#subBudgetOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Supports adding up budgets for different activities to the budget of a project."@en .
+<http://carsten.io/hxl/ns-2012-01-26#subBudgetOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Budget> .
+<http://carsten.io/hxl/ns-2012-01-26#subBudgetOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Budget> .
+<http://carsten.io/hxl/ns-2012-01-26#identifies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#identifies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#identifies> <http://www.w3.org/2004/02/skos/core#prefLabel> "identifies"@en .
+<http://carsten.io/hxl/ns-2012-01-26#identifies> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a NeedsAssessment to the different Needs it identifies."@en .
+<http://carsten.io/hxl/ns-2012-01-26#identifies> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#NeedsAssessment> .
+<http://carsten.io/hxl/ns-2012-01-26#identifies> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Need> .
+<http://carsten.io/hxl/ns-2012-01-26#analyzes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#analyzes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#analyzes> <http://www.w3.org/2004/02/skos/core#prefLabel> "analyzes"@en .
+<http://carsten.io/hxl/ns-2012-01-26#analyzes> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a NeedsAssessment to the Situation it analyzes."@en .
+<http://carsten.io/hxl/ns-2012-01-26#analyzes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#NeedsAssessment> .
+<http://carsten.io/hxl/ns-2012-01-26#analyzes> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Situation> .
+<http://carsten.io/hxl/ns-2012-01-26#convers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#convers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#convers> <http://www.w3.org/2004/02/skos/core#prefLabel> "covers"@en .
+<http://carsten.io/hxl/ns-2012-01-26#convers> <http://www.w3.org/2000/01/rdf-schema#comment> "Used to define the sectors that are covered by a cluster; can be used to re-define clusters by Emergency."@en .
+<http://carsten.io/hxl/ns-2012-01-26#convers> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Cluster> .
+<http://carsten.io/hxl/ns-2012-01-26#convers> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Sector> .
+<http://carsten.io/hxl/ns-2012-01-26#hasObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#hasObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#hasObjective> <http://www.w3.org/2004/02/skos/core#prefLabel> "has objective"@en .
+<http://carsten.io/hxl/ns-2012-01-26#hasObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the objectives for an activity or project."@en .
+<http://carsten.io/hxl/ns-2012-01-26#hasObjective> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Activity> .
+<http://carsten.io/hxl/ns-2012-01-26#hasObjective> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Objective> .
+<http://carsten.io/hxl/ns-2012-01-26#hasPriority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#hasPriority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#hasPriority> <http://www.w3.org/2004/02/skos/core#prefLabel> "has priority"@en .
+<http://carsten.io/hxl/ns-2012-01-26#hasPriority> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the priority for an activity or project."@en .
+<http://carsten.io/hxl/ns-2012-01-26#hasPriority> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Activity> .
+<http://carsten.io/hxl/ns-2012-01-26#hasPriority> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Priority> .
+<http://carsten.io/hxl/ns-2012-01-26#period> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#period> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#period> <http://www.w3.org/2004/02/skos/core#prefLabel> "period"@en .
+<http://carsten.io/hxl/ns-2012-01-26#period> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the reporting period for a report."@en .
+<http://carsten.io/hxl/ns-2012-01-26#period> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Report> .
+<http://carsten.io/hxl/ns-2012-01-26#period> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#ReportingPeriod> .
+<http://carsten.io/hxl/ns-2012-01-26#inputTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#inputTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#inputTo> <http://www.w3.org/2004/02/skos/core#prefLabel> "input to"@en .
+<http://carsten.io/hxl/ns-2012-01-26#inputTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Specififes that data collection is input to a report."@en .
+<http://carsten.io/hxl/ns-2012-01-26#inputTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#DataCollection> .
+<http://carsten.io/hxl/ns-2012-01-26#inputTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Report> .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/2004/02/skos/core#prefLabel> "subject"@en .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/subject> .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/2000/01/rdf-schema#comment> "Specififes the subjects of a report."@en .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Report> .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Incident> .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Damage> .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Indicator> .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Budget> .
+<http://carsten.io/hxl/ns-2012-01-26#subject> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Need> .
+<http://carsten.io/hxl/ns-2012-01-26#measures> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#measures> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#measures> <http://www.w3.org/2004/02/skos/core#prefLabel> "measures"@en .
+<http://carsten.io/hxl/ns-2012-01-26#measures> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/subject> .
+<http://carsten.io/hxl/ns-2012-01-26#measures> <http://www.w3.org/2000/01/rdf-schema#comment> "Specififes the need or objective that a certain indicator addresses or measures. <em>Eventually create second property for objectives?</em>"@en .
+<http://carsten.io/hxl/ns-2012-01-26#measures> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Indicator> .
+<http://carsten.io/hxl/ns-2012-01-26#measures> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Objective> .
+<http://carsten.io/hxl/ns-2012-01-26#basedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#basedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#basedOn> <http://www.w3.org/2004/02/skos/core#prefLabel> "based on"@en .
+<http://carsten.io/hxl/ns-2012-01-26#basedOn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/subject> .
+<http://carsten.io/hxl/ns-2012-01-26#basedOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Specififes that a gap for a certain need has been identified based on a specific indicator."@en .
+<http://carsten.io/hxl/ns-2012-01-26#basedOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Need> .
+<http://carsten.io/hxl/ns-2012-01-26#basedOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Indicator> .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/2004/02/skos/core#prefLabel> "location"@en .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/spatial> .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/2000/01/rdf-schema#comment> "Specififes the location for things like emergencies, projects, or camps."@en .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Emergency> .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Site> .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Incident> .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Situation> .
+<http://carsten.io/hxl/ns-2012-01-26#location> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Location> .
+<http://carsten.io/hxl/ns-2012-01-26#completedOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#completedOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#completedOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "completed of"@en .
+<http://carsten.io/hxl/ns-2012-01-26#completedOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://carsten.io/hxl/ns-2012-01-26#measures> .
+<http://carsten.io/hxl/ns-2012-01-26#completedOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates the output to date to the output planned." .
+<http://carsten.io/hxl/ns-2012-01-26#completedOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#OutputToDate> .
+<http://carsten.io/hxl/ns-2012-01-26#completedOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#OutputPlanned> .
+<http://carsten.io/hxl/ns-2012-01-26#level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#level> <http://www.w3.org/2004/02/skos/core#prefLabel> "level"@en .
+<http://carsten.io/hxl/ns-2012-01-26#level> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the level for an administrative unit." .
+<http://carsten.io/hxl/ns-2012-01-26#level> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#AdminUnit> .
+<http://carsten.io/hxl/ns-2012-01-26#level> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#AdminUnitLevel> .
+<http://carsten.io/hxl/ns-2012-01-26#inAdminUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#inAdminUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#inAdminUnit> <http://www.w3.org/2004/02/skos/core#prefLabel> "in administrative unit"@en .
+<http://carsten.io/hxl/ns-2012-01-26#inAdminUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies direct containment between two administrative units. This property should only be used between administrative units that directly contain each other, i.e., when the administrative unit level of the containing unit is the level of the contained unit plus 1." .
+<http://carsten.io/hxl/ns-2012-01-26#inAdminUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#AdminUnit> .
+<http://carsten.io/hxl/ns-2012-01-26#inAdminUnit> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#AdminUnit> .
+<http://carsten.io/hxl/ns-2012-01-26#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://carsten.io/hxl/ns-2012-01-26#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://carsten.io/hxl/ns-2012-01-26#hasStatus> <http://www.w3.org/2004/02/skos/core#prefLabel> "has status"@en .
+<http://carsten.io/hxl/ns-2012-01-26#hasStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Sets the current status for an activity."@en .
+<http://carsten.io/hxl/ns-2012-01-26#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <http://carsten.io/hxl/ns-2012-01-26#Activity> .
+<http://carsten.io/hxl/ns-2012-01-26#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <http://carsten.io/hxl/ns-2012-01-26#Status> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2004/02/skos/core#prefLabel> "foaf:Organization" .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://xmlns.com/foaf/0.1/Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Group> <http://www.w3.org/2004/02/skos/core#prefLabel> "foaf:Group" .
+<http://xmlns.com/foaf/0.1/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .

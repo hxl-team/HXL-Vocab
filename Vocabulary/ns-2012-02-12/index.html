@@ -1,0 +1,5269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:wot="http://xmlns.com/wot/0.1/" xmlns:prv="http://purl.org/net/provenance/ns#" xmlns:opmv="http://purl.org/net/opmv/ns#" xmlns:lsc="http://linkedscience.org/lsc/ns#" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>
+			Humanitarian eXchange Language (HXL) Situation and Response Standard
+		</title>
+	</head>
+	<body>
+		<div id="doc-link">
+			<a href="#sec-toc">TOC</a>
+		</div>
+		<h1 about="" property="dc:title" xml:lang="en" lang="en">
+			Humanitarian eXchange Language (HXL) Situation and Response Standard
+		</h1>
+		<hr />
+		<dl>
+			<dt>
+				This version:
+			</dt>
+			<dd>
+				<a href="http://carsten.io/hxl/ns-2012-02-12">http://carsten.io/hxl/ns-2012-02-12</a>
+			</dd>
+			<dt>
+				Latest version:
+			</dt>
+			<dd>
+				<a href="http://hxl.humanitarianresponse.info/">http://hxl.humanitarianresponse.info/</a>
+			</dd>
+			<dt>
+				Previous version:
+			</dt>
+			<dd>
+				<a href="http://carsten.io/hxl/ns-2012-02-03">http://carsten.io/hxl/ns-2012-02-03</a>
+			</dd>
+			<dt>
+				Revision:
+			</dt>
+			<dd>
+				February 12, 2012
+			</dd>
+			<dt>
+				Authors:
+			</dt>
+			<dd about="http://carsten.io/hxl/ns-2012-02-12#carsten" typeof="foaf:Person">
+				<a rel="foaf:homepage" href="http://carsten.io" property="foaf:name">Carsten Keßler</a>
+			</dd>
+			<dd about="http://carsten.io/hxl/ns-2012-02-12#cj" typeof="foaf:Person" property="foaf:name">
+				CJ Hendrix
+			</dd>
+			<dt>
+				Further information:
+			</dt>
+			<dd>
+				For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>.
+			</dd>
+			<dt>
+				Formats:
+			</dt>
+			<dd>
+				Besides this human-readable form, the HXL vocabulary specification is also available in various machine-readble RDF serializations: <a href="hxl.rdf">RDF/XML</a> | <a href="hxl.ttl">Turtle</a> | <a href="hxl.n3">N-Triples</a>.
+			</dd>
+			<dd>
+				<p style='clear:both'>
+					The XML Namespace URI that should be used by implementations of this specification is: <a href="http://hxl.humanitarianresponse.info/">http://hxl.humanitarianresponse.info/</a>.
+				</p>
+				<p>
+					The preferred prefix for the vocabulary is <strong>hxl</strong>.
+				</p>
+			</dd>
+		</dl>
+		<h2 id="sec-toc">
+			Table of contents
+		</h2>
+		<ol>
+			<li>
+				<a href="#sec-intro">Introduction</a>
+			</li>
+			<li>
+				<a href="#sec-glance">The HXL vocabulary at a glance</a>
+			</li>
+			<li>
+				<a href="#sec-specification">Cross-reference for core HXL classes and properties by section</a>
+			</li>
+			<li style="list-style: none">
+				<ol>
+					<li>
+						<a href="#datetimeSection">Date/Time Section</a>
+					</li>
+					<li>
+						<a href="#geolocationSection">Geolocation Section</a>
+					</li>
+					<li>
+						<a href="#responseSection">Response Section</a>
+					</li>
+					<li>
+						<a href="#shelterClusterSection">Shelter Cluster Section</a>
+					</li>
+					<li>
+						<a href="#situationSection">Situation Section</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#sec-completegraph">Integrated graph overview of the complete HXL vocabulary</a>
+			</li>
+			<li>
+				<a href="#sec-license">License</a>
+			</li>
+			<li>
+				<a href="#sec-changes">Change log</a>
+			</li>
+		</ol>
+		<hr />
+		<h2 id="sec-intro">
+			1. Introduction
+		</h2>
+		<p about="http://linkedscience.org/lsc/ns#" property="dc:abstract"></p>
+		<p>
+			Draft specification of the Humanitarian eXchange Language (HXL) standard. This vocabulary specification is currently <b>under development</b> and may change at any time without notice.
+		</p>
+		<p>
+			The porpuse of HXL is to facilitate data exchange within the humanitarian domain. It provides a core domain model that has been created bottom-up by inspecting a broad range of systems in use with different humanitarian organisations. As needs vary widely across organisations in this domain, this vocabulary does <em>not</em> intend to be complete; in fact, it is the smallest common denominator. Any organisations that wish to publish <em>full</em> exports of their data can do so by extending this domain model with application- or organisation-specific models that reflect their internal data models (which may already be formalised in an XML schema or database schema).
+		</p>
+		<p>
+			The Humanitarian eXchange Language is defined as a set of classes and properties, using the Resource Description Framework (<a href='http://www.w3.org/RDF/'>RDF</a>) as underlying technology. This enables HXL to publish humanitarian data as part of the <a href='http://linkeddata.org/'>Linked Open Data cloud</a>. We recommend <a href='http://www.ted.com/talks/tim_berners_lee_on_the_next_web.html'>Tim Berners-Lee's TED Talk</a> as a quick introduction to Linked Data and RDF, and <a href='http://linkeddatabook.com'>the Linked Data book</a> by Tom Heath and Chris Bizer as a more in-depth, technical primer to the topic.
+		</p>
+		<p>
+			The following series of figures illustrates the basics of RDF and Linked Data that are required to understand this document.
+		</p>
+		<p class='intro'>
+			<img src='intro1.dot.png' align='right' />RDF is based on statements of the form <em>subject - predicate - object</em>. Subject and object are illustrated as ellipses, the prediacte – or <em>property</em> – connects them and points from subject to object.
+		</p>
+		<p class='intro'>
+			<img src='intro2.dot.png' align='right' />URLs act as unique identifiers for subjects, properties and objects, as shown here. This way, more information about these can be found out by visiting the URLs. In case of the property, it should return its definition – again in RDF.
+		</p>
+		<p class='intro'>
+			<img src='intro3.dot.png' align='right' />Namespace declarations can be used to make the URLs more compact. In this standard, we only show the namespace prefix if the class or property has been defined in an external standard. Moreover, the object of a statement (or <em>triple</em>) can also be a <em>literal</em>, such as a string or a number. Literals are visualized as boxes.
+		</p>
+		<p class='intro'>
+			<img src='intro4.dot.png' align='right' />Any subjects and (non-literal) objects should be typed. The classes defined in this standard declare the types that can be used for this purpose.
+		</p>
+		<p class='intro'>
+			<img src='intro5.dot.png' align='right' />The definitions of these classes are based on subclass hierarchies, indicated by a dotted red line in the figure. <em>Emergency</em> is a subclass of <em>Situation</em>, for example. Subclasses inherit from their superclasses, most importantly in terms of the domain and range of properties.
+		</p>
+		<p class='intro'>
+			<img src='intro6.dot.png' align='right' />The domain and range define the types of things between which a property can be used. Consider the property <a href='#hasObjective'>hasObjective</a>, whose <em>domain</em> is defined as <a href='#Activity'>Humanitarian Activity</a>. This states that whenever we see a statement using hasObjective as property, we can infere that the <em>subject</em> of this triple is a Humanitarian Activity. Likewise, its <em>range</em> is defined as <a href='#Objective'>Objective</a>, so that we can infere that the <em>object</em> in any statement using hasObjective is an Objective. In the graphs shown in this standard, the property arrows point from domain to range (i.e., from kinds of subjects to kinds of objects).
+		</p>
+		<div class="glance">
+			<h2 id="sec-glance">
+				2. The HXL vocabulary at a glance
+			</h2>
+			<p>
+				An alphabetical index of all terms from the HXL vocabulary, by class and by property, is given below for quick reference. Click the terms for a more detailed description.
+			</p>
+			<div class="index">
+				<p>
+					<strong>Classes</strong> | <a href="#Activity">Humanitarian Activity</a> | <a href="#AdminUnit">Administrative Unit</a> | <a href="#AdminUnitLevel">Administrative Unit Level</a> | <a href="#AffectedPopulation">Affected Population</a> | <a href="#AgeGroup">Age Group</a> | <a href="#BeneficiaryOrganisation">Beneficiary Organisation</a> | <a href="#Bladder">Bladder</a> | <a href="#Blanket">Blanket</a> | <a href="#BoundingBox">Bounding Box</a> | <a href="#Bucket">Bucket</a> | <a href="#BucketJerryCan">Bucket / Jerry Can</a> | <a href="#Casualty">Casualty</a> | <a href="#Cluster">Cluster</a> | <a href="#CommunityToolKit">Community tool kit</a> | <a href="#Cot">Cot</a> | <a href="#Dead">Dead</a> | <a href="#Displaced">Displaced</a> | <a href="#DistributingPartner">Distributing partner</a> | <a href="#Distribution">Distribution</a> | <a href="#Emergency">Emergency</a> | <a href="#ExtendingOrganisation">Extending Organisation</a> | <a href="#FamilyTent">Tent (family)</a> | <a href="#FamilyToolKit">Family tool kit</a> | <a href="#Feature">Feature</a> | <a href="#Female">Female</a> | <a href="#FundingOrganisation">Funding Organisation</a> | <a href="#GLIDEnumber">GLIDE number</a> | <a href="#Gender">Gender</a> | <a href="#Geometry">Geometry</a> | <a href="#HygieneKit">Hygiene kit</a> | <a href="#IDP">Internally Displaced Person</a> | <a href="#ImpactPlanned">Impact planned</a> | <a href="#ImplementingOrganisation">Implementing Organisation</a> | <a href="#Indicator">Indicator</a> | <a href="#IndividualItem">Individual item</a> | <a href="#Injured">Injured</a> | <a href="#JerryCan">Jerry Can</a> | <a href="#Kit">Kit</a> | <a href="#KitchenSet">Kitchen set</a> | <a href="#LargeTent">Tent (large)</a> | <a href="#LineString">Line String</a> | <a href="#Male">Male</a> | <a href="#Mat">Mat</a> | <a href="#Missing">Missing</a> | <a href="#MosquitoNet">MosquitoNet</a> | <a href="#Need">Need</a> | <a href="#NonDisplaced">Non-Displaced</a> | <a href="#NonFoodItem">Non-food item</a> | <a href="#Objective">Objective</a> | <a href="#Organisation">Organisation</a> | <a href="#Others">Internally Displaced Person</a> | <a href="#OutcomePlanned">Outcome planned</a> | <a href="#OutcomeToDate">Outcome to date</a> | <a href="#OutputPlanned">Output planned</a> | <a href="#OutputToDate">Output to date</a> | <a href="#Point">Point</a> | <a href="#Pole">Pole</a> | <a href="#Polygon">Polygon</a> | <a href="#PopulatedPlace">Populated Place</a> | <a href="#Population">Population</a> | <a href="#Priority">Priority</a> | <a href="#RefugeesAsylumSeekers">Refugees and Asylum Seekers</a> | <a href="#ReportingOrganisation">Reporting Organisation</a> | <a href="#ReportingPeriod">Reporting Period</a> | <a href="#Response">Response</a> | <a href="#Rope">Rope</a> | <a href="#Sheet">Sheet</a> | <a href="#ShelterCluster">Shelter cluster</a> | <a href="#ShelterKit">Shelter kit</a> | <a href="#Situation">Situation</a> | <a href="#Status">Status</a> | <a href="#SupplyingAgency">Supplying agency</a> | <a href="#Tarpaulin">Tarpaulin</a> | <a href="#Tent">Tent</a> | <a href="#ToolKit">Tool kit</a> | <a href="#TotalPopulation">Total Population</a> | <a href="#WaterFilter">Water filter</a> | <a href="http://purl.org/dc/terms/PeriodOfTime">http://purl.org/dc/terms/PeriodOfTime</a> | <a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a> | <a href="http://xmlns.com/foaf/0.1/Group">http://xmlns.com/foaf/0.1/Group</a> | <a href="http://xmlns.com/foaf/0.1/Organisation">http://xmlns.com/foaf/0.1/Organisation</a> |
+				</p>
+				<p>
+					<strong>Properties</strong> | <a href="#actualEnd">actual end</a> | <a href="#actualStart">actual start</a> | <a href="#addresses">addresses</a> | <a href="#affectedBy">affected by</a> | <a href="#asWKT">as WKT</a> | <a href="#atLevel">at level</a> | <a href="#atLocation">atLocation</a> | <a href="#basedOn">based on</a> | <a href="#commonTitle">common title</a> | <a href="#completedOutcomeOf">completed outcome of</a> | <a href="#completedOutputOf">completed output of</a> | <a href="#contains">contains</a> | <a href="#containsItem">contains item</a> | <a href="#count">count</a> | <a href="#crosses">crosses</a> | <a href="#distributes">distributes</a> | <a href="#end">end</a> | <a href="#equals">equals</a> | <a href="#forEmergency">for emergency</a> | <a href="#fromAge">from age</a> | <a href="#hasGLIDEnumber">has GLIDE number</a> | <a href="#hasGeometry">has geometry</a> | <a href="#hasObjective">has objective</a> | <a href="#hasPart">has part</a> | <a href="#hasPriority">has priority</a> | <a href="#hasStandard">has standard</a> | <a href="#hasStatus">has status</a> | <a href="#hasValue">has value</a> | <a href="#inAdminUnit">in administrative unit</a> | <a href="#intersects">intersects</a> | <a href="#involvedIn">involved in</a> | <a href="#measurementOf">measurement of</a> | <a href="#measures">measures</a> | <a href="#near">near</a> | <a href="#overlaps">overlaps</a> | <a href="#plannedEnd">planned end</a> | <a href="#plannedStart">planned start</a> | <a href="#provenanceInfo">provenance Information</a> | <a href="#provides">provides</a> | <a href="#reaches">reaches</a> | <a href="#start">start</a> | <a href="#supplies">supplies</a> | <a href="#toAge">to age</a> | <a href="#touches">touches</a> | <a href="#within">within</a> | <a href="http://purl.org/dc/terms/date">http://purl.org/dc/terms/date</a> | <a href="http://purl.org/dc/terms/description">http://purl.org/dc/terms/description</a> |
+				</p>
+			</div>
+			<div class="overview">
+				<h2 id="sec-specification">
+					3. Cross-reference for all HXL classes and properties
+				</h2>
+				<p>
+					The cross-reference is organized into thematic sections. Each section is illustrated by a graph of the respective classes and properties. The ellipses in the graph represent classes, whereas the arrows represent properties. Dashed lines indicate a subclass relationship (e.g. Camp is a subclass of Site). Solid lines are labeled with the property that connects these two classes. Grey ellipses indicate <em>adjacent</em> classes that are defined in a different section.
+				</p>
+				<p>
+					Jump directly to the different sections: | <a href="#datetimeSection">Date/Time Section</a> | <a href="#geolocationSection">Geolocation Section</a> | <a href="#responseSection">Response Section</a> | <a href="#shelterClusterSection">Shelter Cluster Section</a> | <a href="#situationSection">Situation Section</a> |
+				</p>
+				<h2 class="vocabsection" id="datetimeSection">
+					Date/Time Section
+				</h2>
+				<p>
+					This section of the vocabulary defines the date/time standard. The <a href='hxl-datetime-standard-draft.pdf'>draft HXL date/time standard</a> contains a detailed description of how to use the classes and properties.
+				</p>
+				<p>
+					Alphabetical index of all classes and properties in the Date/Time Section:
+				</p>
+				<div class="index">
+					<p>
+						<strong>Classes</strong> | <a href="#ReportingPeriod">Reporting Period</a> | <a href="http://purl.org/dc/terms/PeriodOfTime">http://purl.org/dc/terms/PeriodOfTime</a> |
+					</p>
+					<p>
+						<strong>Properties</strong> | <a href="#actualEnd">actual end</a> | <a href="#actualStart">actual start</a> | <a href="#end">end</a> | <a href="#plannedEnd">planned end</a> | <a href="#plannedStart">planned start</a> | <a href="#start">start</a> | <a href="http://purl.org/dc/terms/date">http://purl.org/dc/terms/date</a> |
+					</p>
+				</div>
+				<p>
+					Extended graph visualization of the Date/Time Section, including adjacent classes defined in a different section (in grey).
+				</p><a href="datetimeSection.dot.svg" target="_blank"><img src="datetimeSection.dot.png" /></a>
+				<p align="right">
+					<small>[click to <a href="datetimeSection.dot.svg" target="_blank">enlarge</a>]</small>
+				</p>
+				<h2>
+					Classes:
+				</h2>
+				<div class="specterm" id="ReportingPeriod" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Reporting Period
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://purl.org/dc/terms/PeriodOfTime"></div>
+					<div property="skos:prefLabel" content="Reporting Period" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The time frame that a report covers.<br />
+						<small>Term origin: Sigmah DB.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#ReportingPeriod">ReportingPeriod</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="http://purl.org/dc/terms/PeriodOfTime">http://purl.org/dc/terms/PeriodOfTime</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="http://purl.org/dc/terms/PeriodOfTime" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: dc:PeriodOfTime
+					</h3>
+					<div property="skos:prefLabel" content="dc:PeriodOfTime" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en"></p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="http://purl.org/dc/terms/PeriodOfTime">http://purl.org/dc/terms/PeriodOfTime</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#ReportingPeriod">Reporting Period</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#end">end</a> | <a href="#start">start</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<h2>
+					Properties:
+				</h2>
+				<div class="specterm" id="actualEnd" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: actual end
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies the actual end of an activity.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#actualEnd">actualEnd</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="actualStart" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: actual start
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies the actual start of an activity.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#actualStart">actualStart</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="end" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: end
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies the end of activities, projects, etc.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#end">end</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="http://purl.org/dc/terms/PeriodOfTime">http://purl.org/dc/terms/PeriodOfTime</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="plannedEnd" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: planned end
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies the planned end of an activity.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#plannedEnd">plannedEnd</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="plannedStart" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: planned start
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies the planned start of an activity.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#plannedStart">plannedStart</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="start" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: start
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies the start of time periods.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#start">start</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="http://purl.org/dc/terms/PeriodOfTime">http://purl.org/dc/terms/PeriodOfTime</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="http://purl.org/dc/terms/date" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: dc:date
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Generic property for date/time stamps at arbitrary granularity.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="http://purl.org/dc/terms/date">http://purl.org/dc/terms/date</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#OutcomeToDate">Outcome to date</a> <a href="#OutputToDate">Output to date</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<h2 class="vocabsection" id="geolocationSection">
+					Geolocation Section
+				</h2>
+				<p>
+					This section of the vocabulary defines the geolocation standard. The <a href='hxl-geolocation-standard-draft.pdf'>draft HXL geolocation standard</a> contains a detailed description of how to use the classes and properties.
+				</p>
+				<p>
+					Alphabetical index of all classes and properties in the Geolocation Section:
+				</p>
+				<div class="index">
+					<p>
+						<strong>Classes</strong> | <a href="#AdminUnit">Administrative Unit</a> | <a href="#AdminUnitLevel">Administrative Unit Level</a> | <a href="#BoundingBox">Bounding Box</a> | <a href="#Feature">Feature</a> | <a href="#Geometry">Geometry</a> | <a href="#LineString">Line String</a> | <a href="#Point">Point</a> | <a href="#Polygon">Polygon</a> | <a href="#PopulatedPlace">Populated Place</a> |
+					</p>
+					<p>
+						<strong>Properties</strong> | <a href="#asWKT">as WKT</a> | <a href="#atLevel">at level</a> | <a href="#atLocation">atLocation</a> | <a href="#contains">contains</a> | <a href="#crosses">crosses</a> | <a href="#equals">equals</a> | <a href="#hasGeometry">has geometry</a> | <a href="#inAdminUnit">in administrative unit</a> | <a href="#intersects">intersects</a> | <a href="#near">near</a> | <a href="#overlaps">overlaps</a> | <a href="#touches">touches</a> | <a href="#within">within</a> |
+					</p>
+				</div>
+				<p>
+					Extended graph visualization of the Geolocation Section, including adjacent classes defined in a different section (in grey).
+				</p><a href="geolocationSection.dot.svg" target="_blank"><img src="geolocationSection.dot.png" /></a>
+				<p align="right">
+					<small>[click to <a href="geolocationSection.dot.svg" target="_blank">enlarge</a>]</small>
+				</p>
+				<h2>
+					Classes:
+				</h2>
+				<div class="specterm" id="AdminUnit" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Administrative Unit
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Feature"></div>
+					<div property="skos:prefLabel" content="Administrative Unit" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Administrative units can include coutries, regions, cities, etc. The hierarchy of administrative units can vary from country to country.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#AdminUnit">AdminUnit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Feature">Feature</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#PopulatedPlace">Populated Place</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#atLevel">at level</a> | <a href="#inAdminUnit">in administrative unit</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#inAdminUnit">in administrative unit</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="AdminUnitLevel" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Administrative Unit Level
+					</h3>
+					<div property="skos:prefLabel" content="Administrative Unit Level" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The specific administrative unit levels can vary from country to country. Administrative Unit Level 0 is a country – in this case, hxl:Country should be used.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#AdminUnitLevel">AdminUnitLevel</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#atLevel">at level</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="BoundingBox" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Bounding Box
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Polygon"></div>
+					<div property="skos:prefLabel" content="Bounding Box" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A BoundingBox is a Polygon defined by 1 exterior boundary and 0 interior boundaries. The exterior boundary consists of 4 points arranged as a rectangle.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#BoundingBox">BoundingBox</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Polygon">Polygon</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Feature" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Feature
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"></div>
+					<div property="skos:prefLabel" content="Feature" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Any real-word phenomenon with spatial extent, i.e. size, shape, or position.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Feature">Feature</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#AdminUnit">Administrative Unit</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#hasGeometry">has geometry</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#atLocation">atLocation</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Geometry" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Geometry
+					</h3>
+					<div property="skos:prefLabel" content="Geometry" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Abstract root class of the geometry. This class should not be instantiated; use any of the subclasses when creating actual geometries.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#LineString">Line String</a> | <a href="#Point">Point</a> | <a href="#Polygon">Polygon</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#asWKT">as WKT</a> | <a href="#contains">contains</a> | <a href="#crosses">crosses</a> | <a href="#equals">equals</a> | <a href="#intersects">intersects</a> | <a href="#near">near</a> | <a href="#overlaps">overlaps</a> | <a href="#touches">touches</a> | <a href="#within">within</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#contains">contains</a> | <a href="#crosses">crosses</a> | <a href="#equals">equals</a> | <a href="#hasGeometry">has geometry</a> | <a href="#intersects">intersects</a> | <a href="#near">near</a> | <a href="#overlaps">overlaps</a> | <a href="#touches">touches</a> | <a href="#within">within</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="LineString" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Line String
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Geometry"></div>
+					<div property="skos:prefLabel" content="Line String" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#LineString">LineString</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Point" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Point
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Geometry"></div>
+					<div property="skos:prefLabel" content="Point" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A Point is a 0-dimensional geometric object and represents a single location in a two- or three-dimensional coordinate space.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Point">Point</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Polygon" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Polygon
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Geometry"></div>
+					<div property="skos:prefLabel" content="Polygon" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Polygon">Polygon</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#BoundingBox">Bounding Box</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="PopulatedPlace" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Populated Place
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#AdminUnit"></div>
+					<div property="skos:prefLabel" content="Populated Place" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Lowest-level administrative unit, such as a town or settlement.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#PopulatedPlace">PopulatedPlace</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#AdminUnit">Administrative Unit</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<h2>
+					Properties:
+				</h2>
+				<div class="specterm" id="asWKT" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: as WKT
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A geometry serialised as WKT. Note that the WKT serialisation contains the spatial reference system (SRS), as specified in the <a href='http://portal.opengeospatial.org/files/?artifact_id=25355'>OGC Simple Feature standard</a>. If no SRS is given, HXL uses WGS 84 as the standard SRS.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#asWKT">asWKT</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="atLevel" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: at level
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies the level for an administrative unit.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#atLevel">atLevel</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#AdminUnit">Administrative Unit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#AdminUnitLevel">Administrative Unit Level</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									levelOf
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="atLocation" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: atLocation
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specififes the location for things like emergencies, projects, or camps.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#atLocation">atLocation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Emergency">Emergency</a> <a href="#Situation">Situation</a> <a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Feature">Feature</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									locationOf
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="contains" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: contains
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Topological relation. States that one geometry contains another one.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#contains">contains</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="crosses" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: crosses
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Topological relation. States that one geometry crosses another one.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#crosses">crosses</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="equals" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: equals
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Topological relation. States that two geometries are equal.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#equals">equals</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="hasGeometry" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: has geometry
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Relates a feature to its geometry.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#hasGeometry">hasGeometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Feature">Feature</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									isGeometryOf
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="inAdminUnit" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: in administrative unit
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies direct containment between two administrative units. This property should only be used between administrative units that directly contain each other, i.e., when the administrative unit level of the containing unit is the level of the contained unit plus 1.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#inAdminUnit">inAdminUnit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#AdminUnit">Administrative Unit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#AdminUnit">Administrative Unit</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="intersects" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: intersects
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Topological relation. States that one geometry intersects another one.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#intersects">intersects</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="near" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: near
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Topological relation. States that one geometry is near another one.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#near">near</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="overlaps" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: overlaps
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Topological relation. States that one geometry overlaps another one.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#overlaps">overlaps</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="touches" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: touches
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Topological relation. States that one geometry touches another one.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#touches">touches</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="within" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: within
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Topological relation. States that one geometry is within another one.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#within">within</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Geometry">Geometry</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<h2 class="vocabsection" id="responseSection">
+					Response Section
+				</h2>
+				<p>
+					This section of the vocabulary defines the standards for response activities.
+				</p>
+				<p>
+					Alphabetical index of all classes and properties in the Response Section:
+				</p>
+				<div class="index">
+					<p>
+						<strong>Classes</strong> | <a href="#Activity">Humanitarian Activity</a> | <a href="#BeneficiaryOrganisation">Beneficiary Organisation</a> | <a href="#Cluster">Cluster</a> | <a href="#ExtendingOrganisation">Extending Organisation</a> | <a href="#FundingOrganisation">Funding Organisation</a> | <a href="#ImpactPlanned">Impact planned</a> | <a href="#ImplementingOrganisation">Implementing Organisation</a> | <a href="#Objective">Objective</a> | <a href="#Organisation">Organisation</a> | <a href="#OutcomePlanned">Outcome planned</a> | <a href="#OutcomeToDate">Outcome to date</a> | <a href="#OutputPlanned">Output planned</a> | <a href="#OutputToDate">Output to date</a> | <a href="#Priority">Priority</a> | <a href="#ReportingOrganisation">Reporting Organisation</a> | <a href="#Response">Response</a> | <a href="#Status">Status</a> | <a href="http://xmlns.com/foaf/0.1/Organisation">http://xmlns.com/foaf/0.1/Organisation</a> |
+					</p>
+					<p>
+						<strong>Properties</strong> | <a href="#addresses">addresses</a> | <a href="#completedOutcomeOf">completed outcome of</a> | <a href="#completedOutputOf">completed output of</a> | <a href="#forEmergency">for emergency</a> | <a href="#hasObjective">has objective</a> | <a href="#hasPart">has part</a> | <a href="#hasPriority">has priority</a> | <a href="#hasStatus">has status</a> | <a href="#involvedIn">involved in</a> | <a href="#measurementOf">measurement of</a> | <a href="#measures">measures</a> |
+					</p>
+				</div>
+				<p>
+					Extended graph visualization of the Response Section, including adjacent classes defined in a different section (in grey).
+				</p><a href="responseSection.dot.svg" target="_blank"><img src="responseSection.dot.png" /></a>
+				<p align="right">
+					<small>[click to <a href="responseSection.dot.svg" target="_blank">enlarge</a>]</small>
+				</p>
+				<h2>
+					Classes:
+				</h2>
+				<div class="specterm" id="Activity" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Humanitarian Activity / Project / Intervention
+					</h3>
+					<div property="skos:prefLabel" content="Humanitarian Activity" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						An Activity generally addresses some kind of need given in a Humanitarian Situation. Synonyms: Project, intervention.<br />
+						<small>Term origin: IATI, CAP OPS, Pakistan SRF, Sahana Project, Sigmah DB</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Activity">Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#actualEnd">actual end</a> | <a href="#actualStart">actual start</a> | <a href="#addresses">addresses</a> | <a href="#atLocation">atLocation</a> | <a href="#hasObjective">has objective</a> | <a href="#hasPart">has part</a> | <a href="#hasPriority">has priority</a> | <a href="#hasStatus">has status</a> | <a href="#plannedEnd">planned end</a> | <a href="#plannedStart">planned start</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#hasPart">has part</a> | <a href="#involvedIn">involved in</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="BeneficiaryOrganisation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Beneficiary Organisation
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Organisation"></div>
+					<div property="skos:prefLabel" content="Beneficiary Organisation" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						An organisation receiving funding for this activity and ultimately carrying it out.<br />
+						<small>Term origin: IATI.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#BeneficiaryOrganisation">BeneficiaryOrganisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Cluster" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Cluster
+					</h3>
+					<div property="skos:prefLabel" content="Cluster" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						An organizational unit responsible for one or more sectors during an emergency.<br />
+						<small>Term origin: CAP OPS, CCDI.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Cluster">Cluster</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="ExtendingOrganisation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Extending Organisation
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Organisation"></div>
+					<div property="skos:prefLabel" content="Extending Organisation" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The subunit of the funding country or organisation, financing the activity from its own budget (e.g. a government agency or department).<br />
+						<small>Term origin: IATI.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#ExtendingOrganisation">ExtendingOrganisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="FundingOrganisation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Funding Organisation
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Organisation"></div>
+					<div property="skos:prefLabel" content="Funding Organisation" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						An organisation providing money or in-kind funding for an activity.<br />
+						<small>Term origin: IATI.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#FundingOrganisation">FundingOrganisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="ImpactPlanned" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Impact planned
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Objective"></div>
+					<div property="skos:prefLabel" content="Impact planned" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The positive and negative, primary and secondary long-term effects produced by a humanitarian action, directly or indirectly. Example: reduction in child mortality. See <em>CAP Guidelines 2012</em>.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#ImpactPlanned">ImpactPlanned</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Objective">Objective</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="ImplementingOrganisation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Implementing Organisation / IP
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Organisation"></div>
+					<div property="skos:prefLabel" content="Implementing Organisation" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						An external organisation / partner implenting (parts) of a project for an agency.<br />
+						<small>Term origin: IATI, CAP OPS, Pakistan SRF, HPM Ethiopia (<em>Partner</em>), Sigmah DB (<em>Partner</em>).</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#ImplementingOrganisation">ImplementingOrganisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Objective" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Objective
+					</h3>
+					<div property="skos:prefLabel" content="Objective" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						An objective states part of your humanitarian strategy in terms of the expected outputs, outcomes and impact, supported by a convincing description of how you will attain them in the face of limited resources, imperfect access and other impediments. Every objective should be SMART: specific, measurable (when matched with relevant indicators), achievable, relevant and time-bound. (<em>CAP 2012 Guidelines</em>)<br />
+						<small>Term origin: Sahana Project, CERF</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Objective">Objective</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#ImpactPlanned">Impact planned</a> | <a href="#OutcomePlanned">Outcome planned</a> | <a href="#OutputPlanned">Output planned</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#hasObjective">has objective</a> | <a href="#measures">measures</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Organisation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Organisation
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Organisation"></div>
+					<div property="skos:prefLabel" content="Organisation" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A humanitarian organisation.<br />
+						<small>Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report, Shelter Cluster, Sigmah DB.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="http://xmlns.com/foaf/0.1/Organisation">http://xmlns.com/foaf/0.1/Organisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#BeneficiaryOrganisation">Beneficiary Organisation</a> | <a href="#DistributingPartner">Distributing partner</a> | <a href="#ExtendingOrganisation">Extending Organisation</a> | <a href="#FundingOrganisation">Funding Organisation</a> | <a href="#ImplementingOrganisation">Implementing Organisation</a> | <a href="#ReportingOrganisation">Reporting Organisation</a> | <a href="#SupplyingAgency">Supplying agency</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#involvedIn">involved in</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="OutcomePlanned" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Outcome planned
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Objective"></div>
+					<div property="skos:prefLabel" content="Outcome planned" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Planned outcome. An outcome is the short-term or medium-term effect of a humanitarian action on the affected population. Outcomes often are the results of multiple outputs; each outcome in your planning may therefore correspond to more than one output. Example: increase in household consumption of potable water. See <em>CAP Guidelines 2012</em>.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#OutcomePlanned">OutcomePlanned</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Objective">Objective</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#completedOutcomeOf">completed outcome of</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="OutcomeToDate" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Outcome to date / Outcome achieved
+					</h3>
+					<div property="skos:prefLabel" content="Outcome to date" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The state of this outcome at a certain point in time. An outcome is the short-term or medium-term effect of a humanitarian action on the affected population. Outcomes often are the results of multiple outputs; each outcome in your planning may therefore correspond to more than one output. Example: increase in household consumption of potable water. See <em>CAP Guidelines 2012</em>.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#OutcomeToDate">OutcomeToDate</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#completedOutcomeOf">completed outcome of</a> | <a href="#measurementOf">measurement of</a> | <a href="http://purl.org/dc/terms/date">http://purl.org/dc/terms/date</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="OutputPlanned" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Output planned
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Objective"></div>
+					<div property="skos:prefLabel" content="Output planned" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Planned output. The outputs are the products, goods or services that are the direct results of a humanitarian action. Example: NFI kits in the hands of affected households; functioning water points; latrines; distributed food rations; therapeutic feeding treatments. See <em>CAP Guidelines 2012</em>.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#OutputPlanned">OutputPlanned</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Objective">Objective</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#completedOutputOf">completed output of</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="OutputToDate" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Output to date / Output achieved
+					</h3>
+					<div property="skos:prefLabel" content="Output to date" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The state of this outcome at a certain point in time. The outputs are the products, goods or services that are the direct results of a humanitarian action. Example: NFI kits in the hands of affected households; functioning water points; latrines; distributed food rations; therapeutic feeding treatments. See <em>CAP Guidelines 2012</em>. See <em>CAP Guidelines 2012</em>.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#OutputToDate">OutputToDate</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#completedOutputOf">completed output of</a> | <a href="#measurementOf">measurement of</a> | <a href="http://purl.org/dc/terms/date">http://purl.org/dc/terms/date</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Priority" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Priority
+					</h3>
+					<div property="skos:prefLabel" content="Priority" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The priority for a project or activity. Individuals of this class should be created whenever a fixed scale for priorities is in use.<br />
+						<small>Term origin: CAP OPS, UNHCR Camp DB, Sahana Project, MIRA, HPM Ethiopia.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Priority">Priority</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#hasPriority">has priority</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="ReportingOrganisation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Reporting Organisation
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Organisation"></div>
+					<div property="skos:prefLabel" content="Reporting Organisation" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The reporting organization is not necessarily involved in the aid activity itself, though in practice it often will be a donor or appealing agency.<br />
+						<small>Term origin: IATI.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#ReportingOrganisation">ReportingOrganisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Response" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Response
+					</h3>
+					<div property="skos:prefLabel" content="Response" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Generic term for the collection of all activities that address the needs araising from an emergency.<br />
+						<small>Term origin: ACAPS DSS, ACAPS DSS, MIRA, EDXL, CCDI (<em>Humanitarian Response</em>), CERF (<em>Humanitarian Response</em>)</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Response">Response</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#addresses">addresses</a> | <a href="#forEmergency">for emergency</a> | <a href="#hasPart">has part</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Status" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Status
+					</h3>
+					<div property="skos:prefLabel" content="Status" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Status of an activity. Can be instantiated by organisations that use standardised status codes.<br />
+						<small>Term origin: Sahana Project CCDI, CERF, EDXL.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Status">Status</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#hasStatus">has status</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="http://xmlns.com/foaf/0.1/Organisation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: foaf:Organisation
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Agent"></div>
+					<div property="skos:prefLabel" content="foaf:Organisation" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en"></p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="http://xmlns.com/foaf/0.1/Organisation">http://xmlns.com/foaf/0.1/Organisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<h2>
+					Properties:
+				</h2>
+				<div class="specterm" id="addresses" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: addresses
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						States that a certain activity addresses a need.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#addresses">addresses</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Response">Response</a> <a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Need">Need</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									addressedBy
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="completedOutcomeOf" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: completed outcome of
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Relates the outcome to date to the outcome planned.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#completedOutcomeOf">completedOutcomeOf</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#OutcomeToDate">Outcome to date</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#OutcomePlanned">Outcome planned</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="completedOutputOf" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: completed output of
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Relates the output to date to the output planned.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#completedOutputOf">completedOutputOf</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#OutputToDate">Output to date</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#OutputPlanned">Output planned</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="forEmergency" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: for emergency
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						States that a certain activity has been initiated for an emergency.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#forEmergency">forEmergency</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Response">Response</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Emergency">Emergency</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									emergencyOf
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="hasObjective" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: has objective
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Defines the objectives for an activity or project.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#hasObjective">hasObjective</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Objective">Objective</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									isObjectiveOf
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="hasPart" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: has part
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies part-whole relationships; e.g., a specific project can have sub-projects or specific activities.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#hasPart">hasPart</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Response">Response</a> <a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									partOf
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="hasPriority" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: has priority
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Defines the priority for an activity or project.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#hasPriority">hasPriority</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Priority">Priority</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									isPriorityOf
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="hasStatus" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: has status
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Sets the current status for an activity.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#hasStatus">hasStatus</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Status">Status</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									statusOf
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="involvedIn" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: involved in
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Indicates an organisation's involvement in an activity.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#involvedIn">involvedIn</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Activity">Humanitarian Activity</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									involvedOrganisation
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="measurementOf" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: measurement of
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Defines what impact an output / outcome to date measures.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#measurementOf">measurementOf</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#OutputToDate">Output to date</a> <a href="#OutcomeToDate">Outcome to date</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Indicator">Indicator</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="measures" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: measures
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specififes the need or objective that a certain indicator addresses or measures. <em>Eventually create second property for objectives?</em>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#measures">measures</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Indicator">Indicator</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Objective">Objective</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									measuredBy
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<h2 class="vocabsection" id="shelterClusterSection">
+					Shelter Cluster Section
+				</h2>
+				<p>
+					This section of the vocabulary defines the standards for the shelter cluster.
+				</p>
+				<p>
+					Alphabetical index of all classes and properties in the Shelter Cluster Section:
+				</p>
+				<div class="index">
+					<p>
+						<strong>Classes</strong> | <a href="#Bladder">Bladder</a> | <a href="#Blanket">Blanket</a> | <a href="#Bucket">Bucket</a> | <a href="#BucketJerryCan">Bucket / Jerry Can</a> | <a href="#CommunityToolKit">Community tool kit</a> | <a href="#Cot">Cot</a> | <a href="#DistributingPartner">Distributing partner</a> | <a href="#Distribution">Distribution</a> | <a href="#FamilyTent">Tent (family)</a> | <a href="#FamilyToolKit">Family tool kit</a> | <a href="#HygieneKit">Hygiene kit</a> | <a href="#IndividualItem">Individual item</a> | <a href="#JerryCan">Jerry Can</a> | <a href="#Kit">Kit</a> | <a href="#KitchenSet">Kitchen set</a> | <a href="#LargeTent">Tent (large)</a> | <a href="#Mat">Mat</a> | <a href="#MosquitoNet">MosquitoNet</a> | <a href="#NonFoodItem">Non-food item</a> | <a href="#Pole">Pole</a> | <a href="#Rope">Rope</a> | <a href="#Sheet">Sheet</a> | <a href="#ShelterCluster">Shelter cluster</a> | <a href="#ShelterKit">Shelter kit</a> | <a href="#SupplyingAgency">Supplying agency</a> | <a href="#Tarpaulin">Tarpaulin</a> | <a href="#Tent">Tent</a> | <a href="#ToolKit">Tool kit</a> | <a href="#WaterFilter">Water filter</a> |
+					</p>
+					<p>
+						<strong>Properties</strong> | <a href="#containsItem">contains item</a> | <a href="#distributes">distributes</a> | <a href="#provides">provides</a> | <a href="#reaches">reaches</a> | <a href="#supplies">supplies</a> |
+					</p>
+				</div>
+				<p>
+					Extended graph visualization of the Shelter Cluster Section, including adjacent classes defined in a different section (in grey).
+				</p><a href="shelterClusterSection.dot.svg" target="_blank"><img src="shelterClusterSection.dot.png" /></a>
+				<p align="right">
+					<small>[click to <a href="shelterClusterSection.dot.svg" target="_blank">enlarge</a>]</small>
+				</p>
+				<h2>
+					Classes:
+				</h2>
+				<div class="specterm" id="Bladder" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Bladder
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Bladder" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Bladder">Bladder</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Blanket" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Blanket
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Blanket" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Blanket">Blanket</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Bucket" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Bucket
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#BucketJerryCan"></div>
+					<div property="skos:prefLabel" content="Bucket" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Bucket">Bucket</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#BucketJerryCan">Bucket / Jerry Can</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="BucketJerryCan" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Bucket / Jerry Can
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Bucket / Jerry Can" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#BucketJerryCan">BucketJerryCan</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#Bucket">Bucket</a> | <a href="#JerryCan">Jerry Can</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="CommunityToolKit" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Community tool kit
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#ToolKit"></div>
+					<div property="skos:prefLabel" content="Community tool kit" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#CommunityToolKit">CommunityToolKit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#ToolKit">Tool kit</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Cot" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Cot
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Cot" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Cot">Cot</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="DistributingPartner" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Distributing partner
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Organisation"></div>
+					<div property="skos:prefLabel" content="Distributing partner" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#DistributingPartner">DistributingPartner</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#distributes">distributes</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Distribution" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Distribution
+					</h3>
+					<div property="skos:prefLabel" content="Distribution" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Do we need a <em>distribution point</em>?<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Distribution">Distribution</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#provides">provides</a> | <a href="#reaches">reaches</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="FamilyTent" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Tent (family) / Family tent
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Tent"></div>
+					<div property="skos:prefLabel" content="Tent (family)" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#FamilyTent">FamilyTent</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Tent">Tent</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="FamilyToolKit" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Family tool kit
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#ToolKit"></div>
+					<div property="skos:prefLabel" content="Family tool kit" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#FamilyToolKit">FamilyToolKit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#ToolKit">Tool kit</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="HygieneKit" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Hygiene kit
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Kit"></div>
+					<div property="skos:prefLabel" content="Hygiene kit" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#HygieneKit">HygieneKit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Kit">Kit</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="IndividualItem" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Individual item
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Individual item" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#IndividualItem">IndividualItem</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="JerryCan" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Jerry Can
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#BucketJerryCan"></div>
+					<div property="skos:prefLabel" content="Jerry Can" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#JerryCan">JerryCan</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#BucketJerryCan">Bucket / Jerry Can</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Kit" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Kit
+					</h3>
+					<div property="skos:prefLabel" content="Kit" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Kit">Kit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#HygieneKit">Hygiene kit</a> | <a href="#ShelterKit">Shelter kit</a> | <a href="#ToolKit">Tool kit</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#containsItem">contains item</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#distributes">distributes</a> | <a href="#provides">provides</a> | <a href="#supplies">supplies</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="KitchenSet" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Kitchen set
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Kitchen set" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Is this a Kit?<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#KitchenSet">KitchenSet</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="LargeTent" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Tent (large) / Large tent
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Tent"></div>
+					<div property="skos:prefLabel" content="Tent (large)" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#LargeTent">LargeTent</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Tent">Tent</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Mat" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Mat
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Mat" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Mat">Mat</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="MosquitoNet" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: MosquitoNet
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="MosquitoNet" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#MosquitoNet">MosquitoNet</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="NonFoodItem" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Non-food item / NFI
+					</h3>
+					<div property="skos:prefLabel" content="Non-food item" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#NonFoodItem">NonFoodItem</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#Bladder">Bladder</a> | <a href="#Blanket">Blanket</a> | <a href="#BucketJerryCan">Bucket / Jerry Can</a> | <a href="#Cot">Cot</a> | <a href="#IndividualItem">Individual item</a> | <a href="#KitchenSet">Kitchen set</a> | <a href="#Mat">Mat</a> | <a href="#MosquitoNet">MosquitoNet</a> | <a href="#Pole">Pole</a> | <a href="#Rope">Rope</a> | <a href="#Sheet">Sheet</a> | <a href="#Tarpaulin">Tarpaulin</a> | <a href="#Tent">Tent</a> | <a href="#WaterFilter">Water filter</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#containsItem">contains item</a> | <a href="#distributes">distributes</a> | <a href="#provides">provides</a> | <a href="#supplies">supplies</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Pole" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Pole
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Pole" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Pole">Pole</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Rope" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Rope
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Rope" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Rope">Rope</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Sheet" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Sheet
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Sheet" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Sheet">Sheet</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="ShelterCluster" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Shelter cluster
+					</h3>
+					<div property="skos:prefLabel" content="Shelter cluster" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Actually, the shelter cluster is an instance of the class HXL:Cluster... might need revision.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#ShelterCluster">ShelterCluster</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="ShelterKit" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Shelter kit
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Kit"></div>
+					<div property="skos:prefLabel" content="Shelter kit" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#ShelterKit">ShelterKit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Kit">Kit</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="SupplyingAgency" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Supplying agency
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Organisation"></div>
+					<div property="skos:prefLabel" content="Supplying agency" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#SupplyingAgency">SupplyingAgency</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Organisation">Organisation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#supplies">supplies</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Tarpaulin" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Tarpaulin / Tarp
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Tarpaulin" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Tarpaulin">Tarpaulin</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Tent" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Tent
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Tent" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Tent">Tent</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#FamilyTent">Tent (family)</a> | <a href="#LargeTent">Tent (large)</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="ToolKit" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Tool kit
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Kit"></div>
+					<div property="skos:prefLabel" content="Tool kit" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#ToolKit">ToolKit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Kit">Kit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#CommunityToolKit">Community tool kit</a> | <a href="#FamilyToolKit">Family tool kit</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="WaterFilter" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Water filter
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#NonFoodItem"></div>
+					<div property="skos:prefLabel" content="Water filter" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						<small>Term origin: Shelter Cluster.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#WaterFilter">WaterFilter</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<h2>
+					Properties:
+				</h2>
+				<div class="specterm" id="containsItem" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: contains item
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Used to specify the items contained in a kit.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#containsItem">containsItem</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Kit">Kit</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="distributes" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: distributes
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies with items or kits a distributing partner is resposible for.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#distributes">distributes</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#DistributingPartner">Distributing partner</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a> <a href="#Kit">Kit</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="provides" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: provides
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Links the items and kits to a distribution.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#provides">provides</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Distribution">Distribution</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a> <a href="#Kit">Kit</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="reaches" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: reaches
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Links the items and kits to a population.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#reaches">reaches</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Distribution">Distribution</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Population">Population</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="supplies" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: supplies
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Links the items and kits to the supplying agency.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#supplies">supplies</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#SupplyingAgency">Supplying agency</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#NonFoodItem">Non-food item</a> <a href="#Kit">Kit</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<h2 class="vocabsection" id="situationSection">
+					Situation Section
+				</h2>
+				<p>
+					This section of the vocabulary defines the standards for situations and emergencies.
+				</p>
+				<p>
+					Alphabetical index of all classes and properties in the Situation Section:
+				</p>
+				<div class="index">
+					<p>
+						<strong>Classes</strong> | <a href="#AffectedPopulation">Affected Population</a> | <a href="#AgeGroup">Age Group</a> | <a href="#Casualty">Casualty</a> | <a href="#Dead">Dead</a> | <a href="#Displaced">Displaced</a> | <a href="#Emergency">Emergency</a> | <a href="#Female">Female</a> | <a href="#GLIDEnumber">GLIDE number</a> | <a href="#Gender">Gender</a> | <a href="#IDP">Internally Displaced Person</a> | <a href="#Indicator">Indicator</a> | <a href="#Injured">Injured</a> | <a href="#Male">Male</a> | <a href="#Missing">Missing</a> | <a href="#Need">Need</a> | <a href="#NonDisplaced">Non-Displaced</a> | <a href="#Others">Internally Displaced Person</a> | <a href="#Population">Population</a> | <a href="#RefugeesAsylumSeekers">Refugees and Asylum Seekers</a> | <a href="#Situation">Situation</a> | <a href="#TotalPopulation">Total Population</a> | <a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a> | <a href="http://xmlns.com/foaf/0.1/Group">http://xmlns.com/foaf/0.1/Group</a> |
+					</p>
+					<p>
+						<strong>Properties</strong> | <a href="#affectedBy">affected by</a> | <a href="#basedOn">based on</a> | <a href="#commonTitle">common title</a> | <a href="#count">count</a> | <a href="#fromAge">from age</a> | <a href="#hasGLIDEnumber">has GLIDE number</a> | <a href="#hasStandard">has standard</a> | <a href="#hasValue">has value</a> | <a href="#provenanceInfo">provenance Information</a> | <a href="#toAge">to age</a> | <a href="http://purl.org/dc/terms/description">http://purl.org/dc/terms/description</a> |
+					</p>
+				</div>
+				<p>
+					Extended graph visualization of the Situation Section, including adjacent classes defined in a different section (in grey).
+				</p><a href="situationSection.dot.svg" target="_blank"><img src="situationSection.dot.png" /></a>
+				<p align="right">
+					<small>[click to <a href="situationSection.dot.svg" target="_blank">enlarge</a>]</small>
+				</p>
+				<h2>
+					Classes:
+				</h2>
+				<div class="specterm" id="AffectedPopulation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Affected Population
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Population"></div>
+					<div property="skos:prefLabel" content="Affected Population" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The population affected by an emergency.<br />
+						<small>Term origin: Humanitarian Profile (<em>Affected</em>);</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#AffectedPopulation">AffectedPopulation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Population">Population</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#Casualty">Casualty</a> | <a href="#Displaced">Displaced</a> | <a href="#NonDisplaced">Non-Displaced</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#affectedBy">affected by</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="AgeGroup" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Age Group
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Population"></div>
+					<div property="skos:prefLabel" content="Age Group" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Generic class for age groups; instances should be created for actual age groups (e.g. children under 5).
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#AgeGroup">AgeGroup</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Population">Population</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#fromAge">from age</a> | <a href="#toAge">to age</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Casualty" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Casualty
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#AffectedPopulation"></div>
+					<div property="skos:prefLabel" content="Casualty" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						E.g. injured or dead.<br />
+						<small>Term origin: ACAPS DSS, Humanitarian Profile.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Casualty">Casualty</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#AffectedPopulation">Affected Population</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#Dead">Dead</a> | <a href="#Injured">Injured</a> | <a href="#Missing">Missing</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Dead" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Dead / Death
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Casualty"></div>
+					<div property="skos:prefLabel" content="Dead" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A (reported) death.<br />
+						<small>Term origin: ACAPS DSS, HPM Ethiopia, Shelter Cluster, Humanitarian Profile (<em>Dead</em>).</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Dead">Dead</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Casualty">Casualty</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Displaced" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Displaced / Displacement
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#AffectedPopulation"></div>
+					<div property="skos:prefLabel" content="Displaced" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Refers to internally displaced persons, refugees, and others of concern.<br />
+						<small>Term origin: Humanitarian Profile, ACAPS DSS (<em>Displacement</em>)</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Displaced">Displaced</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#AffectedPopulation">Affected Population</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#IDP">Internally Displaced Person</a> | <a href="#Others">Internally Displaced Person</a> | <a href="#RefugeesAsylumSeekers">Refugees and Asylum Seekers</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Emergency" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Emergency
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Situation"></div>
+					<div property="skos:prefLabel" content="Emergency" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en"></p>
+					<p>
+						Any situation in which ... life or well-being ... will be threatened unless immediate and appropriate action is taken, and which demands an extraordinary response and exceptional measures” (UNHCR Handbook for Emergencies)
+					</p>
+					<p>
+						A sudden crisis situation or event requiring immediate action (WART)
+					</p>
+					<p>
+						Any situation in which there is an exceptional and widespread threat to life, health or basic subsistence, that is beyond the coping capacity of individuals and the community” (Oxfam GB Emergency Response Manual).
+					</p>
+					<p>
+						Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance” (source: ACFIN Emergency module)
+					</p><small>Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.</small>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Emergency">Emergency</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Situation">Situation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#atLocation">atLocation</a> | <a href="#hasGLIDEnumber">has GLIDE number</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#affectedBy">affected by</a> | <a href="#forEmergency">for emergency</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Female" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Female
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Agent"></div>
+					<div property="skos:prefLabel" content="Female" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A woman/girl or group of women/girls.<br />
+						<small>Term origin: CERF, EIMS Report.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Female">Female</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="GLIDEnumber" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: GLIDE number
+					</h3>
+					<div property="skos:prefLabel" content="GLIDE number" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Globally common Unique ID code for disasters. See <a href='http://glidenumber.net/glide/public/about.jsp'>about GLIDE</a>.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#GLIDEnumber">GLIDEnumber</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#hasGLIDEnumber">has GLIDE number</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Gender" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Gender
+					</h3>
+					<div property="skos:prefLabel" content="Gender" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Class to describe gender-specific issues, either at individual or group level.<br />
+						<small>Term origin: MIRA, CCDI</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Gender">Gender</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#Female">Female</a> | <a href="#Male">Male</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="IDP" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Internally Displaced Person / IDP
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Displaced"></div>
+					<div property="skos:prefLabel" content="Internally Displaced Person" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A group of internally displaced persons (IDPs).<br />
+						<small>Term origin: Humanitarian Profile, CERF, HPM Ethiopia</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#IDP">IDP</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Displaced">Displaced</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Indicator" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Indicator
+					</h3>
+					<div property="skos:prefLabel" content="Indicator" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Concrete measurable reference for a concrete need; e.g., <em>5 litres of clean water per person and day</em>.<br />
+						<small>Term origin: Pakistan SRF, ACAPS DSS, CCDI, CERF, HPM Ethiopia, Sigmah DB</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Indicator">Indicator</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#hasStandard">has standard</a> | <a href="#hasValue">has value</a> | <a href="#measures">measures</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#basedOn">based on</a> | <a href="#measurementOf">measurement of</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Injured" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Injured
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Casualty"></div>
+					<div property="skos:prefLabel" content="Injured" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Injured part of the population.<br />
+						<small>Term origin: ACAPS DSS, Humanitarian Profile, Shelter Cluster, HERAMS Checklist (<em>Injury</em>)</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Injured">Injured</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Casualty">Casualty</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Male" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Male
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Agent"></div>
+					<div property="skos:prefLabel" content="Male" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A man/boy or group of men/boys.<br />
+						<small>Term origin: CERF, EIMS Report.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Male">Male</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Missing" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Missing
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Casualty"></div>
+					<div property="skos:prefLabel" content="Missing" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Missing population.<br />
+						<small>Term origin: Humanitarian Profile.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Missing">Missing</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Casualty">Casualty</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Need" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Need / Gap / Lack
+					</h3>
+					<div property="skos:prefLabel" content="Need" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A concrete need, lack, or gap, e.g. a shortage of food. Can be based on the application of relevant norms (usually a minimum requirement or a pre-existing ‘normal’ situation); and an assessment of how the reality differs. Identifying and measuring deficits, either actual or predicted.<br />
+						<small>Term origin: CAP OPS, ACAPS DSS (also: <em>Humanitarian Need</em>), CCDI (<em>Humanitarian Need</em>), CCDI Shelter Cluster (<em>Gap</em>), HPM Ethiopia (<em>Gap</em>).</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Need">Need</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#basedOn">based on</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#addresses">addresses</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="NonDisplaced" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Non-Displaced
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#AffectedPopulation"></div>
+					<div property="skos:prefLabel" content="Non-Displaced" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Refers to the part of the affected population that is not displaced (i.e., host or non-host);.<br />
+						<small>Term origin: Humanitarian Profile.</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#NonDisplaced">NonDisplaced</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#AffectedPopulation">Affected Population</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Others" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Internally Displaced Person / Others of Concern
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Displaced"></div>
+					<div property="skos:prefLabel" content="Internally Displaced Person" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A group of displaced persons that does neither fit the IDP nor Refugees/Asylum Seekers classes.<br />
+						<small>Term origin: Humanitarian Profile</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Others">Others</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Displaced">Displaced</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Population" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Population
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Group"></div>
+					<div property="skos:prefLabel" content="Population" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Generic class for any kind of population (e.g. total, affected, etc.); use the subclasses for the data annotation.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Population">Population</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="http://xmlns.com/foaf/0.1/Group">http://xmlns.com/foaf/0.1/Group</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#AffectedPopulation">Affected Population</a> | <a href="#AgeGroup">Age Group</a> | <a href="#TotalPopulation">Total Population</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#count">count</a> | <a href="#provenanceInfo">provenance Information</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range of:
+								</th>
+								<td>
+									<a href="#reaches">reaches</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="RefugeesAsylumSeekers" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Refugees and Asylum Seekers
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Displaced"></div>
+					<div property="skos:prefLabel" content="Refugees and Asylum Seekers" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A group of refugees and asylum seekers.<br />
+						<small>Term origin: Humanitarian Profile</small>
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#RefugeesAsylumSeekers">RefugeesAsylumSeekers</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Displaced">Displaced</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="Situation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Situation
+					</h3>
+					<div property="skos:prefLabel" content="Situation" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Generic situation.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#Situation">Situation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#Emergency">Emergency</a> |
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain of:
+								</th>
+								<td>
+									<a href="#atLocation">atLocation</a> | <a href="#commonTitle">common title</a> | <a href="http://purl.org/dc/terms/description">http://purl.org/dc/terms/description</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="TotalPopulation" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: Total Population
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://carsten.io/hxl/ns-2012-02-12#Population"></div>
+					<div property="skos:prefLabel" content="Total Population" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Total population for a given administrative unit or geographic area. Instances can be created to make statements about this population.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#TotalPopulation">TotalPopulation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="#Population">Population</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="http://xmlns.com/foaf/0.1/Agent" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: foaf:Agent
+					</h3>
+					<div property="skos:prefLabel" content="foaf:Agent" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en"></p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#Female">Female</a> | <a href="#Male">Male</a> | <a href="http://xmlns.com/foaf/0.1/Group">http://xmlns.com/foaf/0.1/Group</a> | <a href="http://xmlns.com/foaf/0.1/Organisation">http://xmlns.com/foaf/0.1/Organisation</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="http://xmlns.com/foaf/0.1/Group" about="" typeof="http://www.w3.org/2000/01/rdf-schema#Class">
+					<h3>
+						Class: foaf:Group
+					</h3>
+					<div rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Agent"></div>
+					<div property="skos:prefLabel" content="foaf:Group" xml:lang="en" lang="en"></div>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en"></p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="http://xmlns.com/foaf/0.1/Group">http://xmlns.com/foaf/0.1/Group</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclass of:
+								</th>
+								<td>
+									<a href="http://xmlns.com/foaf/0.1/Agent">http://xmlns.com/foaf/0.1/Agent</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Subclasses:
+								</th>
+								<td>
+									<a href="#Population">Population</a> |
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<h2>
+					Properties:
+				</h2>
+				<div class="specterm" id="affectedBy" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: affected by
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						States that a Population is affacted by an Emergency.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#affectedBy">affectedBy</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#AffectedPopulation">Affected Population</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Emergency">Emergency</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									affects
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="basedOn" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: based on
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specififes that a gap for a certain need has been identified based on a specific indicator.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#basedOn">basedOn</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Need">Need</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#Indicator">Indicator</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Inverse property:
+								</th>
+								<td>
+									indicates
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="commonTitle" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: common title
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A commonly use title/name for an emergency.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#commonTitle">commonTitle</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Situation">Situation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2001/XMLSchema#string</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="count" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: count
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Assigns numbers to populations. The range is intentionally not restricted to numeric values, so that rough numbers or estimates are supported.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#count">count</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Population">Population</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="fromAge" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: from age
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies the bottom of an age range for an AgeGroup (in years).
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#fromAge">fromAge</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#AgeGroup">Age Group</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2001/XMLSchema#int">http://www.w3.org/2001/XMLSchema#int</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="hasGLIDEnumber" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: has GLIDE number
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Assigns the GLIDE number to an Emergency.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#hasGLIDEnumber">hasGLIDEnumber</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Emergency">Emergency</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="#GLIDEnumber">GLIDE number</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="hasStandard" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: has standard
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						A reference against which the measured value can be compared to know if it requires intervention.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#hasStandard">hasStandard</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Indicator">Indicator</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="hasValue" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: has value
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						The measured value of this indicator.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#hasValue">hasValue</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Indicator">Indicator</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="provenanceInfo" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: provenance Information
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Free-text description of how the information about the demographic methodology, where the data came from, etc.
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#provenanceInfo">provenanceInfo</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Population">Population</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="toAge" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: to age
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en">
+						Specifies the top of an age range for an AgeGroup (in years).
+					</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="#toAge">toAge</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#AgeGroup">Age Group</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2001/XMLSchema#int">http://www.w3.org/2001/XMLSchema#int</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+				<div class="specterm" id="http://purl.org/dc/terms/description" about="" typeof="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+					<h3>
+						Property: dc:description
+					</h3>
+					<p class="TermComment" property="rdfs:comment" xml:lang="en" lang="en"></p>
+					<table>
+						<tbody>
+							<tr>
+								<th>
+									Identifier:
+								</th>
+								<td>
+									<a href="http://purl.org/dc/terms/description">http://purl.org/dc/terms/description</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Domain:
+								</th>
+								<td>
+									<a href="#Situation">Situation</a>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									Range:
+								</th>
+								<td>
+									<a href="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2001/XMLSchema#string</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="float: right; font-size: small;">
+						[<a href="#sec-glance">back to overview</a>]
+					</p><br />
+				</div>
+			</div>
+			<h2 id="sec-completegraph">
+				4. Integrated graph overview of the complete HXL vocabulary
+			</h2>
+			<p>
+				The following figure gives an overview of <em>all</em> classes and properties defined by HXL, and how they are connected. The ellipses represent classes, whereas the arrows represent properties: Dashed lines indicate a subclass relationship (e.g. Camp is a subclass of Site). Solid lines are labeled with the property that connects these two classes.
+			</p><a href="hxl.dot.svg" target="_blank"><img src="hxl.dot.png" /></a>
+			<p align="right">
+				<small>[click to <a href="hxl.dot.svg" target="_blank">enlarge</a>]</small>
+			</p>
+			<h2 id="sec-license">
+				5. License
+			</h2>
+			<p>
+				We still need to decide under which license this vocabulary should be published.
+			</p>
+			<p about="" resource="http://www.w3.org/TR/rdfa-syntax" rel="dc:conformsTo">
+				<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml-rdfa.png" style="border: 0pt none; float: right" alt="Valid XHTML + RDFa" /></a> This Vocabulary Specification relies on W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an open Web standard that can be freely used by anyone.
+			</p>
+			<p>
+				This visual layout and structure of the specification was adapted from the <a href="http://open-biomed.sourceforge.net/opmv/ns.html">Open Provenance Model Vocabulary</a> edited by Jun Zhao, <a href="http://rdfs.org/sioc/spec/">SIOC Core Ontology Specification</a> edited by Uldis Bojars and John G. Breslin and the <a href="http://trdf.sourceforge.net/provenance/ns.html">Provenance Vocabulary Core Ontology Specification</a> edited by Olaf Hartig and Jun Zhao.
+			</p>
+			<h2 id="sec-changes">
+				6. Change log
+			</h2>
+			<p>
+				Changes compared to the <a href="http://carsten.io/hxl/ns-2012-02-03">previous version</a> of the vocabulary:
+			</p>
+			<ol>
+				<li>Shelter cluster section added.
+				</li>
+			</ol>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+digraph { 
+ rankdir = "LR";
+ charset="utf-8";
+ overlap=false;
+ edge [color=darkslategray];
+ edge [fontname=Helvetica , fontsize=11.0 ];
+ node [fontname=Helvetica , fontsize=11.0];
+ 
+ "domain" -> "range" [ label="property" ]; 
+}
