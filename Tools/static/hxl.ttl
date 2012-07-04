@@ -17,7 +17,7 @@
 #        dc:versionOf <http://hxl.humanitarianresponse.info> ;
         rdfs:seeAlso "For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>."@en ;
         dc:replaces <http://hxl.humanitarianresponse.info/ns-2012-06-14/> ; 
-        skos:changeNote "<b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:Thing</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:Thing. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" . # we will stick to one URI for future versions of the vocabulary; add any changes to this list!
+        skos:changeNote "<b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li><li>Generic properties <a href='#comment'>comment</a>, <a href='#title'>title</a> and <a hre='#description'>description</a> introduced.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:Thing</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:Thing. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" . # we will stick to one URI for future versions of the vocabulary; add any changes to this list!
 
 # define the different vocabulary sections for vocabulary management 
 hxl:humanitarianProfileSection a hxl:vocabularySection ;
@@ -52,7 +52,31 @@ hxl:minu foaf:name "Minu Limbu" ;
 hxl:Thing
 	a rdfs:Class ; 
 	rdfs:comment "Abstract base class. Any other class in HXL is a subclass of hxl:Thing."@en.
-                
+
+hxl:comment
+    a rdf:Property, owl:DataProperty ;
+	rdfs:subPropertyOf rdfs:comment ;
+    skos:prefLabel "comment" ;
+    rdfs:comment "Generic property for comments." ;                
+    rdfs:domain hxl:Thing ;
+rdfs:range rdfs:Literal .
+
+hxl:title
+    a rdf:Property, owl:DataProperty ;
+	rdfs:subPropertyOf dc:title ;
+    skos:prefLabel "comment" ;
+    rdfs:comment "Generic property for titles." ;                
+    rdfs:domain hxl:Thing ;
+rdfs:range rdfs:Literal .
+
+hxl:description
+    a rdf:Property, owl:DataProperty ;
+	rdfs:subPropertyOf dc:description ;
+    skos:prefLabel "description" ;
+    rdfs:comment "Generic property for descriptions." ;                
+    rdfs:domain hxl:Thing ;
+rdfs:range rdfs:Literal .             
+
 hxl:Situation
     a rdfs:Class ; 
 	rdfs:subClassOf hxl:Thing ;
