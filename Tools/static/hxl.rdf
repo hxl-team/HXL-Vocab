@@ -1,0 +1,1857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:geo="http://www.opengis.net/geosparql#" xmlns:hxl="http://hxl.humanitarianresponse.info/ns/#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-07-04</dc:date>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <dc:creator rdf:resource="http://hxl.humanitarianresponse.info/ns/#carsten"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <dc:creator rdf:resource="http://hxl.humanitarianresponse.info/ns/#cj"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <dc:creator rdf:resource="http://hxl.humanitarianresponse.info/ns/#minu"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <dc:title xml:lang="en">Humanitarian eXchange Language (HXL) Situation and Response Standard</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <dc:abstract xml:lang="en">&lt;p&gt;Draft specification of the Humanitarian eXchange Language (HXL) standard. &lt;span style='color: red'&gt;This vocabulary specification is currently &lt;b&gt;under development&lt;/b&gt; and may change at any time without notice.&lt;/span&gt;&lt;/p&gt; &lt;p&gt;The porpuse of HXL is to facilitate data exchange within the humanitarian domain. It provides a core domain model that has been created bottom-up by inspecting a broad range of systems in use with different humanitarian organisations. As needs vary widely across organisations in this domain, this vocabulary does &lt;em&gt;not&lt;/em&gt; intend to be complete; in fact, it is the smallest common denominator. Any organisations that wish to publish &lt;em&gt;full&lt;/em&gt; exports of their data can do so by extending this domain model with application- or organisation-specific models that reflect their internal data models (which may already be formalised in an XML schema or database schema).&lt;/p&gt;</dc:abstract>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <dc:license xml:lang="en">&lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;&lt;img src='cc.png' align='right' /&gt;&lt;/a&gt;The HXL vocabulary is published under a Creative Commons Attribution license (&lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;CC BY 3.0&lt;/a&gt;).</dc:license>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <rdfs:seeAlso xml:lang="en">For further information about the HXL project, see &lt;a href='https://sites.google.com/site/hxlproject/'&gt;https://sites.google.com/site/hxlproject/&lt;/a&gt;.</rdfs:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <dc:replaces rdf:resource="http://hxl.humanitarianresponse.info/ns-2012-06-14/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
+    <skos:changeNote>&lt;b&gt;Changes on July 4, 2012:&lt;ol&gt;&lt;li&gt;The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by &lt;a href='http://www.opengeospatial.org/standards/geosparql'&gt;OGC's GeoSPARQL standard&lt;/a&gt;.&lt;/li&gt;&lt;li&gt;The documentation now contains all domains and ranges inherited from super-/subclasses for each class.&lt;/li&gt;&lt;li&gt;&lt;a href='#validityDate'&gt;hxl:validityDate&lt;/a&gt; introduced.&lt;/li&gt;&lt;/ol&gt;&lt;/b&gt;&lt;b&gt;Changes on July 3, 2012:&lt;/b&gt;&lt;ol&gt;&lt;li&gt;Versioning: We will use the URI &lt;a href='http://hxl.humanitarianresponse.info/ns'&gt;http://hxl.humanitarianresponse.info/ns&lt;/a&gt; for all future versions of this vocabulary from now on. Previous versions can be found &lt;a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'&gt;here&lt;/a&gt;.&lt;/li&gt;&lt;li&gt;&lt;a href='#Country'&gt;hxl:Country&lt;/a&gt; is now a subclass of &lt;a href='http://purl.org/ontology/places#Country'&gt;http://purl.org/ontology/places#Country&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#Thing'&gt;hxl:Thing&lt;/a&gt; has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:Thing. This allows us to define generic properties for all classes in HXL.&lt;/li&gt;&lt;li&gt;Class &lt;em&gt;Activity&lt;/em&gt; has been removed.&lt;/li&gt;&lt;li&gt;Properties &lt;em&gt;containsPrimaryData&lt;/em&gt; and &lt;em&gt;containsSecondaryData&lt;/em&gt; have been removed.&lt;li&gt;Properties &lt;em&gt;displacedLocationSetTitle&lt;/em&gt;, &lt;em&gt;displacedLocationTypeSetDescription&lt;/em&gt;, &lt;em&gt;ageGroupSetDescription&lt;/em&gt;, &lt;em&gt;ageGroupSetTitle&lt;/em&gt;, and &lt;em&gt;populationDescription&lt;/em&gt; have been removed. Use the generic title / description properties instead.&lt;/li&gt;&lt;/ol&gt;</skos:changeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection">
+    <rdf:type rdf:resource="http://hxl.humanitarianresponse.info/ns/#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the humanitarian profile standard which includes classes for describing populations affected by an emergency.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection">
+    <dc:title xml:lang="en">Humanitarian Profile Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#geolocationSection">
+    <rdf:type rdf:resource="http://hxl.humanitarianresponse.info/ns/#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#geolocationSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the geolocation standard. The &lt;a href='hxl-geolocation-standard-draft.pdf'&gt;draft HXL geolocation standard&lt;/a&gt; contains a detailed description of how to use the classes and properties.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#geolocationSection">
+    <dc:title>Geolocation Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#datetimeSection">
+    <rdf:type rdf:resource="http://hxl.humanitarianresponse.info/ns/#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#datetimeSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the date/time standard. The &lt;a href='hxl-datetime-standard-draft.pdf'&gt;draft HXL date/time standard&lt;/a&gt; contains a detailed description of how to use the classes and properties.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#datetimeSection">
+    <dc:title>Date/Time Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationSection">
+    <rdf:type rdf:resource="http://hxl.humanitarianresponse.info/ns/#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the standards for situations and emergencies.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationSection">
+    <dc:title>Situation Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#responseSection">
+    <rdf:type rdf:resource="http://hxl.humanitarianresponse.info/ns/#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#responseSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the standards for response activities.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#responseSection">
+    <dc:title>Response Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#metadataSection">
+    <rdf:type rdf:resource="http://hxl.humanitarianresponse.info/ns/#vocabularySection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#metadataSection">
+    <rdfs:comment xml:lang="en">This section of the vocabulary defines the standards for metadata about a set of HXL data that is being exchanged.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#metadataSection">
+    <dc:title>Metadata Section</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#carsten">
+    <foaf:name>Carsten Keßler</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#carsten">
+    <foaf:mbox>me@carsten.io</foaf:mbox>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#carsten">
+    <foaf:homepage rdf:resource="http://carsten.io"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#cj">
+    <foaf:name>CJ Hendrix</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#cj">
+    <foaf:mbox>hendrix.cj@gmail.com</foaf:mbox>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#minu">
+    <foaf:name>Minu Limbu</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#minu">
+    <foaf:mbox>minulimbu@gmail.com</foaf:mbox>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Thing">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Thing">
+    <rdfs:comment xml:lang="en">Abstract base class. Any other class in HXL is a subclass of hxl:Thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Situation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Situation">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Situation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Situation">
+    <skos:prefLabel xml:lang="en">Situation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Situation">
+    <rdfs:comment xml:lang="en">Generic situation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnit">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnit">
+    <skos:prefLabel xml:lang="en">Administrative Unit</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnit">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/geosparql#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnit">
+    <rdfs:comment xml:lang="en">Administrative units can include coutries, regions, cities, etc. The hierarchy of administrative units can vary from country to country.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#PopulatedPlace">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#PopulatedPlace">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#PopulatedPlace">
+    <skos:prefLabel xml:lang="en">Populated Place</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#PopulatedPlace">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#PopulatedPlace">
+    <rdfs:comment xml:lang="en">Lowest-level administrative unit, such as a town or settlement.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Country">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Country">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Country">
+    <rdfs:subClassOf rdf:resource="http://purl.org/ontology/places#Country"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Country">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Country">
+    <skos:prefLabel xml:lang="en">Country</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Country">
+    <rdfs:comment xml:lang="en">Highest-level administrative unit (level 0).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel">
+    <skos:prefLabel xml:lang="en">Administrative Unit Level</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel">
+    <rdfs:comment xml:lang="en">The specific administrative unit levels can vary from country to country. Administrative Unit Level 0 is a country – in this case, hxl:Country should be used.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AffectedPopulation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AffectedPopulation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AffectedPopulation">
+    <skos:prefLabel xml:lang="en">Affected Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AffectedPopulation">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AffectedPopulation">
+    <rdfs:comment xml:lang="en">The population affected by an emergency.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile (&lt;em&gt;Affected&lt;/em&gt;);&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Population">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Population">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Population">
+    <hxl:topLevelConcept rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hxl:topLevelConcept>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Population">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Population">
+    <skos:prefLabel xml:lang="en">Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Population">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Population">
+    <rdfs:comment xml:lang="en">Generic class for any kind of population. Example: Total population, affected population etc; use the subclasses for the data annotation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroup">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroup">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroup">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroup">
+    <skos:prefLabel xml:lang="en">Age Group</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroup">
+    <rdfs:comment>Generic class for age groups; instances should be created for actual age groups. Example: &lt;em&gt;Children under 5&lt;/em&gt;. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Casualty">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Casualty">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Casualty">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#AffectedPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Casualty">
+    <skos:prefLabel xml:lang="en">Casualty</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Casualty">
+    <rdfs:comment>Examples: &lt;em&gt;Injured&lt;/em&gt; or &lt;em&gt;dead&lt;/em&gt;.&lt;br /&gt;&lt;small&gt;Term origin: ACAPS DSS, Humanitarian Profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Dead">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Dead">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Dead">
+    <skos:prefLabel xml:lang="en">Death</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Dead">
+    <skos:altLabel xml:lang="en">Dead</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Dead">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Casualty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Dead">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Injured"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Dead">
+    <rdfs:comment>A (reported) death.&lt;br /&gt;&lt;small&gt;Term origin: ACAPS DSS, HPM Ethiopia, Shelter Cluster, Humanitarian Profile (&lt;em&gt;Dead&lt;/em&gt;).&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Displaced">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Displaced">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Displaced">
+    <skos:prefLabel xml:lang="en">Displaced Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Displaced">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#AffectedPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Displaced">
+    <rdfs:comment>Refers to internally displaced persons, refugees, and others of concern.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile, ACAPS DSS (&lt;em&gt;Displacement&lt;/em&gt;)&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Displaced">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#NonDisplaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
+    <skos:prefLabel xml:lang="en">current location</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
+    <rdfs:range rdf:resource="http://www.opengis.net/geosparql#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
+    <rdfs:comment>The current location of the population being reported should be given at the level of geographic detail agreed by the IM Network using the Administrative Boundaries and Populated Places Common Operational Datasets. Organizations reporting Humanitarian Profile numbers should be encouraged to use the p-code system for unambiguous location reporting.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocationOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#currentLocation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Camp">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Camp">
+    <hxl:topLevelConcept rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hxl:topLevelConcept>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Camp">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/geosparql#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Camp">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Camp">
+    <skos:prefLabel xml:lang="en">Camp</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Camp">
+    <rdfs:comment xml:lang="en">A site with temporary shelter for an affected population, such as refugees. &lt;br /&gt;&lt;small&gt;Term origin: UNHCR Camp DB, Pakistan SRF, Humanitarian Profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#includes">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#includes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#includes">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#includes">
+    <skos:prefLabel xml:lang="en">includes</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#includes">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#includes">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#includes">
+    <rdfs:comment>Property to state that one population is part of another one (e.g. the population at camp XY includes a certain age group with a number of persons in them).&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#includedBy">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#includes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#placeOfOrigin">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#placeOfOrigin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#placeOfOrigin">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#placeOfOrigin">
+    <skos:prefLabel xml:lang="en">place of origin</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#placeOfOrigin">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#placeOfOrigin">
+    <rdfs:range rdf:resource="http://www.opengis.net/geosparql#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#placeOfOrigin">
+    <rdfs:comment>This attribute only applies to Displaced and its subclasses. It should include p-coded location from which the population being reported moved as a result of the emergency.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#placeOfOriginOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#placeOfOrigin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#nationality">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#nationality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#nationality">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#nationality">
+    <skos:prefLabel xml:lang="en">nationality</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#nationality">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#nationality">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#Country"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#nationality">
+    <rdfs:comment>This item generally only applies to populations displaced across international borders and contains the nationality of the population being reported.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#nationalityOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#nationality"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonDisplaced">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonDisplaced">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonDisplaced">
+    <skos:prefLabel xml:lang="en">Non-Displaced Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonDisplaced">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#AffectedPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonDisplaced">
+    <rdfs:comment>Refers to the part of the affected population that is not displaced (i.e., host or non-host);.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonDisplaced">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#HostPopulation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#HostPopulation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#HostPopulation">
+    <skos:prefLabel xml:lang="en">Host Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#HostPopulation">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#NonDisplaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#HostPopulation">
+    <rdfs:comment>Persons who are part of a host community or family receiving affected people. Due to the stress placed on the host families and communities, they are considered part of the humanitarian caseload.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#HostPopulation">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#NonHostPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonHostPopulation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonHostPopulation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonHostPopulation">
+    <skos:prefLabel xml:lang="en">Non-host Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonHostPopulation">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#NonDisplaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonHostPopulation">
+    <rdfs:comment>People requiring immediate assistance during a period of emergency who have not moved from their homes or places of habitual residence.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#NonHostPopulation">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#HostPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Emergency">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Emergency">
+    <hxl:topLevelConcept rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hxl:topLevelConcept>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Emergency">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Emergency">
+    <skos:prefLabel xml:lang="en">Emergency</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Emergency">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Situation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Emergency">
+    <rdfs:comment>&lt;p&gt;Any situation in which life or well-being will be threatened  unless immediate  and  appropriate   action  is  taken,  and  which demands   an   extraordinary   response   and   exceptional measures (from UNHCR Handbook for Emergencies).&lt;/p&gt;&lt;!-- &lt;p&gt;A sudden crisis situation or event requiring immediate action (WART) &lt;/p&gt;&lt;p&gt;Any situation in which there is an exceptional and widespread threat to life, health or basic  subsistence,  that  is  beyond  the  coping  capacity  of individuals and the community  (Oxfam GB Emergency Response Manual). &lt;/p&gt;&lt;p&gt;Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance” (source: ACFIN Emergency module)&lt;/p&gt; --&gt;&lt;small&gt;Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#GLIDEnumber">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#GLIDEnumber">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#GLIDEnumber">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#GLIDEnumber">
+    <skos:prefLabel xml:lang="en">GLIDE Number</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#GLIDEnumber">
+    <rdfs:comment>Globally common Unique ID code for disasters. See &lt;a href='http://glidenumber.net/glide/public/about.jsp'&gt;about GLIDE&lt;/a&gt;.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Female">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Female">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Female">
+    <skos:prefLabel xml:lang="en">Female</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Female">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Sex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Female">
+    <rdfs:comment>A woman/girl or group of women/girls.&lt;br /&gt;&lt;small&gt;Term origin: CERF, EIMS Report.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Female">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Male"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Female">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Intersex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Female">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#MixedSex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Male">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Male">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Male">
+    <skos:prefLabel xml:lang="en">Male</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Male">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Sex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Male">
+    <rdfs:comment>A man/boy or group of men/boys.&lt;br /&gt;&lt;small&gt;Term origin: CERF, EIMS Report.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Male">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Female"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Male">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Intersex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Male">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#MixedSex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Sex">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Sex">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Sex">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Sex">
+    <skos:prefLabel xml:lang="en">Sex</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Sex">
+    <rdfs:comment>Class to describe sex-specific issues, either at individual or group level.&lt;br /&gt;&lt;small&gt;Term origin: MIRA, CCDI&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Response">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Response">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Response">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Response">
+    <skos:prefLabel xml:lang="en">Response</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Response">
+    <rdfs:comment>Generic term for the collection of all activities that address the needs arising from an emergency.&lt;br /&gt;&lt;small&gt;Term origin: ACAPS DSS, ACAPS DSS, MIRA, EDXL, CCDI (&lt;em&gt;Humanitarian Response&lt;/em&gt;), CERF (&lt;em&gt;Humanitarian Response&lt;/em&gt;)&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#IDP">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#IDP">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#IDP">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#IDP">
+    <skos:prefLabel xml:lang="en">Internally Displaced Person</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#IDP">
+    <skos:altLabel xml:lang="en">IDP</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#IDP">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Others"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#IDP">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#IDP">
+    <rdfs:comment>A group of internally displaced persons (IDPs).&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile, CERF, HPM Ethiopia&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Others">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Others">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Others">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Others">
+    <skos:prefLabel xml:lang="en">Others of Concern</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Others">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#IDP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Others">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Others">
+    <rdfs:comment>Persons who have been displaced by the emergency and form part of the humanitarian caseload, but do not fall into the IDP or refugees/asylum seekers categories.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers">
+    <skos:prefLabel xml:lang="en">Refugees and Asylum Seekers</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#IDP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Others"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers">
+    <rdfs:comment>A group of refugees and asylum seekers.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Injured">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Injured">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Injured">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Casualty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Injured">
+    <skos:prefLabel xml:lang="en">Injury</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Injured">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Dead"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Injured">
+    <rdfs:comment>Indicates the Injured population.&lt;br /&gt;&lt;small&gt;Term origin: ACAPS DSS, Humanitarian Profile, Shelter Cluster, HERAMS Checklist (&lt;em&gt;Injury&lt;/em&gt;)&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Missing">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Missing">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Missing">
+    <skos:prefLabel xml:lang="en">Missing</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Missing">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Casualty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Missing">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Dead"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Missing">
+    <rdfs:comment>Associated with &lt;i&gt;Missing Persons&lt;/i&gt; as a major humanitarian concern in complex emergencies where many people go missing, causing anguish and uncertainty for their families and friends. See &lt;em&gt; ICRC &lt;/em&gt;. &lt;br /&gt;&lt;small&gt;Term origin: Humanitarian Profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Organisation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Organisation">
+    <hxl:topLevelConcept rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hxl:topLevelConcept>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Organisation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Organisation">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Organisation">
+    <skos:prefLabel xml:lang="en">Organisation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Organisation">
+    <rdfs:comment>A humanitarian organisation.&lt;br /&gt;&lt;small&gt;Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report, Shelter Cluster, Sigmah DB.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ReportingPeriod">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ReportingPeriod">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ReportingPeriod">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ReportingPeriod">
+    <skos:prefLabel xml:lang="en">Reporting Period</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ReportingPeriod">
+    <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ReportingPeriod">
+    <rdfs:comment>The time frame that a report covers.&lt;br /&gt;&lt;small&gt;Term origin: Sigmah DB.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#TotalPopulation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#TotalPopulation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#TotalPopulation">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#TotalPopulation">
+    <skos:prefLabel xml:lang="en">Total Population</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#TotalPopulation">
+    <rdfs:comment>The total population for an administrative unit. Example: A region.&lt;br /&gt;&lt;small&gt;Term origin: Shelter Cluster.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DataContainer">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DataContainer">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DataContainer">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#metadataSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DataContainer">
+    <skos:prefLabel xml:lang="en">Data container</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DataContainer">
+    <rdfs:comment>This is the &lt;em&gt;container&lt;/em&gt; element for to attach any metadata to. Any HXL file has to include exactly one data container element and make all metadata statements about this container. When loading the file into the triple store, a new named graph will be created that inherits the metadata from this container.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ApprovalLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ApprovalLevel">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ApprovalLevel">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#metadataSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ApprovalLevel">
+    <skos:prefLabel xml:lang="en">Approval level</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ApprovalLevel">
+    <rdfs:comment>Instance of this class define fixed levels of approval. Example:  in the WHO system, there could be three levels: region, country, and world.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#organisationHomepage">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#organisationHomepage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#organisationHomepage">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#organisationHomepage">
+    <skos:prefLabel>organisation homepage</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#organisationHomepage">
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#organisationHomepage">
+    <rdfs:comment>States the website of a given organisation. &lt;small&gt;Term origin: FTS.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#organisationHomepage">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#organisationHomepage">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#organisationHomepageOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#organisationHomepage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgName">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgName">
+    <skos:prefLabel>organisation name</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgName">
+    <rdfs:comment>States the name of the organisation. &lt;small&gt;Term origin: FTS.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgName">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgName">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#abbreviation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#abbreviation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#abbreviation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#abbreviation">
+    <skos:prefLabel>organisation abbreviation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#abbreviation">
+    <rdfs:comment>Indicates the abbreviation of the Organisation. &lt;small&gt;Term origin: FTS.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#abbreviation">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#abbreviation">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgNativeName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgNativeName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgNativeName">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgNativeName">
+    <skos:prefLabel>native organisation name</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgNativeName">
+    <rdfs:comment>Specifies the native name of the organisation. &lt;small&gt;Term origin: FTS.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgNativeName">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgNativeName">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgDisplayName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgDisplayName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgDisplayName">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgDisplayName">
+    <skos:prefLabel>organisation name for display</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgDisplayName">
+    <rdfs:comment>Indicates the organisation name that is most commonly used and displayed.  &lt;small&gt;Term origin: FTS.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgDisplayName">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#orgDisplayName">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#reportedBy">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#reportedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#reportedBy">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#metadataSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#reportedBy">
+    <skos:prefLabel xml:lang="en">reported by</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#reportedBy">
+    <rdfs:comment xml:lang="en">The reporting person or organization - not necessarily involved in the aid activity itself, though in practice it often will be a donor or appealing agency.  &lt;br /&gt;&lt;small&gt;Term origin: IATI.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#reportedBy">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#DataContainer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#reportedBy">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#reporting">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#reportedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedBy">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedBy">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#metadataSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedBy">
+    <skos:prefLabel xml:lang="en">approved by</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedBy">
+    <rdfs:comment xml:lang="en">Link from a container to the person or organisation who has 'lifted' it to the current approvalLevel.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedBy">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#DataContainer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedBy">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approves">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#approvedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedAtLevel">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedAtLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedAtLevel">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#metadataSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedAtLevel">
+    <skos:prefLabel xml:lang="en">approved at level</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedAtLevel">
+    <rdfs:comment xml:lang="en">A container can have approval at different levels, which may in turn indicate for which kind of analyses the data in this container is fit.&lt;/em&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedAtLevel">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#DataContainer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvedAtLevel">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#ApprovalLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#approvalLevelOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#approvedAtLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#affectedBy">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#affectedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#affectedBy">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#affectedBy">
+    <skos:prefLabel xml:lang="en">affected by</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#affectedBy">
+    <rdfs:comment xml:lang="en">States that a Population is affacted by an Emergency.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#affectedBy">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AffectedPopulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#affectedBy">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#Emergency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#affects">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#affectedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#fromAge">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#fromAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#fromAge">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#fromAge">
+    <skos:prefLabel xml:lang="en">from age</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#fromAge">
+    <rdfs:comment>Specifies the bottom of an age range for an AgeGroup (in years).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#fromAge">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AgeGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#fromAge">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#toAge">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#toAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#toAge">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#toAge">
+    <skos:prefLabel xml:lang="en">to age</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#toAge">
+    <rdfs:comment>Specifies the top of an age range for an AgeGroup (in years).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#toAge">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AgeGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#toAge">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
+    <skos:prefLabel xml:lang="en">at Location</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/spatial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
+    <rdfs:comment xml:lang="en">Specififes the location for things like emergencies, projects, or camps.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Situation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
+    <rdfs:range rdf:resource="http://www.opengis.net/geosparql#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#locationOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#atLocation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLevel">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLevel">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLevel">
+    <skos:prefLabel xml:lang="en">at level</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLevel">
+    <rdfs:comment>Specifies the level for an administrative unit.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLevel">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLevel">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#levelOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#atLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAdminUnit">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAdminUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAdminUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAdminUnit">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAdminUnit">
+    <skos:prefLabel xml:lang="en">in administrative unit</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAdminUnit">
+    <rdfs:comment>Specifies direct containment between two administrative units. This property should only be used between administrative units that directly contain each other, i.e., when the administrative unit level of the containing unit is the level of the contained unit plus 1.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAdminUnit">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAdminUnit">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelNumber">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelNumber">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelNumber">
+    <skos:prefLabel xml:lang="en">administrative unit level number</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelNumber">
+    <rdfs:comment xml:lang="en">The number for this administrative unit level; e.g. 0 for country, 1 for state, etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelNumber">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelTitle">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelTitle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelTitle">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelTitle">
+    <skos:prefLabel xml:lang="en">administrative unit level title</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelTitle">
+    <rdfs:comment xml:lang="en">The title for this administrative unit level; e.g. &lt;em&gt;state&lt;/em&gt; or &lt;em&gt;city district&lt;/em&gt;.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelTitle">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelTitle">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelCountry">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelCountry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelCountry">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelCountry">
+    <skos:prefLabel xml:lang="en">administrative unit level title</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelCountry">
+    <rdfs:comment xml:lang="en">Relates an administrative unit level to the country (or countries) that it can be used in.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelCountry">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelCountry">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#Country"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminUnitLevelCountryOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#adminUnitLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#start">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#start">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#start">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#start">
+    <skos:prefLabel xml:lang="en">start</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#start">
+    <rdfs:comment>Specifies the start of time periods.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#start">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#start">
+    <rdfs:domain rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#start">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#end">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#end">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#end">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#end">
+    <skos:prefLabel xml:lang="en">end</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#end">
+    <rdfs:comment>Specifies the end of activities, projects, etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#end">
+    <rdfs:domain rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#end">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#duration">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#duration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#duration">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#duration">
+    <skos:prefLabel xml:lang="en">duration</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#duration">
+    <rdfs:comment>Specifies the duration of a period of time; if the duration is given, start and/or end may be omitted.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#duration">
+    <rdfs:domain rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#duration">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#date">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#date">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#date">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#date">
+    <skos:prefLabel xml:lang="en">date</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#date">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#date">
+    <rdfs:comment>Generic property for date/time stamps at arbitrary granularity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#date">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#date">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validityDate">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validityDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validityDate">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validityDate">
+    <skos:prefLabel xml:lang="en">date</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validityDate">
+    <rdfs:subPropertyOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validityDate">
+    <rdfs:comment>Property to express when a certain piece of data, such as a person count, was valid. Note that this may differ from the time when the data was &lt;em&gt;reported&lt;/em&gt;; use &lt;a href='#date'&gt;hxl:date&lt;/a&gt; for these.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validityDate">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validityDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber">
+    <skos:prefLabel xml:lang="en">has GLIDE number</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber">
+    <rdfs:comment xml:lang="en">Assigns the GLIDE number to an Emergency.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Emergency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#GLIDEnumber"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#isGLIDEnumberOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#count">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#count">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#count">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#count">
+    <skos:prefLabel xml:lang="en">count</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#count">
+    <rdfs:comment xml:lang="en">Property to count people, things, etc. Subproperties should be used if possible to clarify what has been counted.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#personCount">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#personCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#personCount">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#personCount">
+    <skos:prefLabel xml:lang="en">person count</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#personCount">
+    <rdfs:subPropertyOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#count"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#personCount">
+    <rdfs:comment xml:lang="en">The number of persons in a population. The range is intentionally not restricted to numeric values, so that rough numbers or estimates are supported.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#personCount">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#personCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#householdCount">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#householdCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#householdCount">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#householdCount">
+    <skos:prefLabel xml:lang="en">household count</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#householdCount">
+    <rdfs:subPropertyOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#count"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#householdCount">
+    <rdfs:comment xml:lang="en">The number of people in a population. The range is intentionally not restricted to numeric values, so that rough numbers or estimates are supported.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#householdCount">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#householdCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#source">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#source">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#source">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#source">
+    <skos:prefLabel xml:lang="en">source</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#source">
+    <rdfs:comment xml:lang="en">The organization(s) providing the information. Note that in some cases, if the source is the same for all records, this item could be reported as metadata for the dataset rather than for each record.&lt;br /&gt;&lt;small&gt;Source: Humanitarian profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#source">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#source">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#sourceOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#source"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#method">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#method">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#method">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#method">
+    <skos:prefLabel xml:lang="en">method</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#method">
+    <rdfs:comment xml:lang="en">The method by which the Number of Persons was derived. Note that in some cases, if the method is the same for all records, this item could be reported as metadata for the dataset rather than for each record.&lt;br /&gt;&lt;small&gt;Source: Humanitarian profile.&lt;/small&gt;</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#method">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#method">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#commonTitle">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#commonTitle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#commonTitle">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#commonTitle">
+    <skos:prefLabel xml:lang="en">common title</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#commonTitle">
+    <rdfs:comment xml:lang="en">A commonly use title/name for an emergency.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#commonTitle">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Situation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#commonTitle">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/PeriodOfTime">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/PeriodOfTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/PeriodOfTime">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#datetimeSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/PeriodOfTime">
+    <skos:prefLabel>dc:PeriodOfTime</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationDescription">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationDescription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationDescription">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/description"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationDescription">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationDescription">
+    <skos:prefLabel>situation description</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationDescription">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Situation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#situationDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <skos:prefLabel>foaf:Agent</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organisation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organisation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organisation">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#responseSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organisation">
+    <skos:prefLabel>foaf:Organisation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organisation">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#situationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <skos:prefLabel>foaf:Group</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureName">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureName">
+    <skos:prefLabel xml:lang="en">feature name</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureName">
+    <rdfs:comment xml:lang="en">The common name of the feature.  This is the accepted spelling of the name for the humanitarian community at the time of this version of the dataset.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureName">
+    <rdfs:domain rdf:resource="http://www.opengis.net/geosparql#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureName">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureAltName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureAltName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureAltName">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureAltName">
+    <skos:prefLabel xml:lang="en">feature alternate name</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureAltName">
+    <rdfs:comment xml:lang="en">An alternative spelling of the feature.  This is not the accepted spelling of the name for the humanitarian community and should be avoided.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureAltName">
+    <rdfs:domain rdf:resource="http://www.opengis.net/geosparql#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureAltName">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureRefName">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureRefName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureRefName">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureRefName">
+    <skos:prefLabel xml:lang="en">feature reference name</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureRefName">
+    <rdfs:comment xml:lang="en">A version of the feature name in proper case without accented characters or apostrophes.  Spaces and hyphens are allowed.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureRefName">
+    <rdfs:domain rdf:resource="http://www.opengis.net/geosparql#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#featureRefName">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#version">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#version">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#version">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#version">
+    <skos:prefLabel xml:lang="en">dataset version</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#version">
+    <rdfs:comment xml:lang="en">Specifies to which dataset version an admin unit belongs.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#version">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#version">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#versionOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#version"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion">
+    <skos:prefLabel xml:lang="en">Administrative Units Dataset Version</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion">
+    <rdfs:comment xml:lang="en">Administrative Boundaries and Populated Places datasets form a hierarchical dataset that periodically changes.  The Administrative Units Dataset Version represents a complete set of these data valid for a particular period of time.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validity">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validity">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validity">
+    <skos:prefLabel xml:lang="en">period of validity</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validity">
+    <rdfs:comment xml:lang="en">The period of time in which a dataset was a valid reference.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validity">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#validity">
+    <rdfs:range rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#vailidityOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#vailidity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription">
+    <skos:prefLabel xml:lang="en">admin dataset version description</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription">
+    <rdfs:comment xml:lang="en">A description of a version of an administrative units dataset.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#versionID">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#versionID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#versionID">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#versionID">
+    <skos:prefLabel xml:lang="en">version ID</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#versionID">
+    <rdfs:comment xml:lang="en">Specifies the identifier for the Administrative Units Dataset.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#versionID">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#versionID">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#pcode">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#pcode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#pcode">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#geolocationSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#pcode">
+    <skos:prefLabel xml:lang="en">p-code</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#pcode">
+    <rdfs:comment xml:lang="en">Specifies the unique identifier for an administrative unit or populated place.  This is the preferred way of referencing these geographic features.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#pcode">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AdminUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#pcode">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Intersex">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Intersex">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Intersex">
+    <skos:prefLabel xml:lang="en">Intersex</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Intersex">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Sex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Intersex">
+    <rdfs:comment>A person or group of persons who are biologically intersex.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Intersex">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Female"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Intersex">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Male"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Intersex">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#MixedSex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#MixedSex">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#MixedSex">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#MixedSex">
+    <skos:prefLabel xml:lang="en">mixed sex</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#MixedSex">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Sex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#MixedSex">
+    <rdfs:comment xml:lang="en">A group of persons of mixed sexes.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#MixedSex">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Female"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#MixedSex">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Male"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#MixedSex">
+    <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#Intersex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#sexCategory">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#sexCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#sexCategory">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#sexCategory">
+    <skos:prefLabel>sex category</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#sexCategory">
+    <rdfs:comment>Specifies the sex of the population.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#sexCategory">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#sexCategory">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#Sex"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#sexCategoryOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#sexCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ageGroup">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ageGroup">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ageGroup">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ageGroup">
+    <skos:prefLabel>age group</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ageGroup">
+    <rdfs:comment>Specifies the age group of the population.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ageGroup">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ageGroup">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#AgeGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ageGroupOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#ageGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroupSet">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroupSet">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroupSet">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroupSet">
+    <skos:prefLabel xml:lang="en">Age Group Set</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#AgeGroupSet">
+    <rdfs:comment xml:lang="en">Contains a set of bracketed age groups, usually defined as a standard by some authority.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAgeGroupSet">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAgeGroupSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAgeGroupSet">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAgeGroupSet">
+    <skos:prefLabel xml:lang="en">in age group set</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAgeGroupSet">
+    <rdfs:comment xml:lang="en">Specifies to which Age Group Set a specific age group belongs.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAgeGroupSet">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#AgeGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inAgeGroupSet">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#AgeGroupSet"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#ageGroupSetOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#inAgeGroupSet"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType">
+    <skos:prefLabel xml:lang="en">in displaced location type</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType">
+    <rdfs:comment xml:lang="en">Specifies the type of living situation in which a population is living.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType">
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Displaced"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType">
+    <rdfs:range rdf:resource="http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#displacedLocationTypeOf">
+    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet">
+    <rdfs:subClassOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet">
+    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet">
+    <skos:prefLabel xml:lang="en">Displaced Persons Location Type Set</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet">
+    <rdfs:comment xml:lang="en">Generic class for classes describing the housing situation in which a displaced population is living. Subclasses of this class represent a coherent set of these location types which may vary from emergency to emergency.  The individual types are instances of the subclass.</rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>

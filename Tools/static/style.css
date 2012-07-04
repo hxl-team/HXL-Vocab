@@ -166,3 +166,7 @@ p.intro{
 p.intro img{
 	margin-left: 25px;
 }
+
+span.inherited, span.inherited a{
+	color: #282828;
+}
