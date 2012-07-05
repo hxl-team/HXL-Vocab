@@ -8,7 +8,7 @@
 <http://hxl.humanitarianresponse.info/ns/> <http://purl.org/dc/terms/license> "<a href='http://creativecommons.org/licenses/by/3.0/'><img src='cc.png' align='right' /></a>The HXL vocabulary is published under a Creative Commons Attribution license (<a href='http://creativecommons.org/licenses/by/3.0/'>CC BY 3.0</a>)."@en .
 <http://hxl.humanitarianresponse.info/ns/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>."@en .
 <http://hxl.humanitarianresponse.info/ns/> <http://purl.org/dc/terms/replaces> <http://hxl.humanitarianresponse.info/ns-2012-06-14/> .
-<http://hxl.humanitarianresponse.info/ns/> <http://www.w3.org/2004/02/skos/core#changeNote> "<b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li><li>Generic properties <a href='#comment'>comment</a>, <a href='#title'>title</a> and <a hre='#description'>description</a> introduced.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:Thing</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:Thing. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" .
+<http://hxl.humanitarianresponse.info/ns/> <http://www.w3.org/2004/02/skos/core#changeNote> "<b>Changes on July 5, 2012:</b><ol><li>ReportCategory and ReportCategorySet have been moved to the metadataSection.</li><li>Use of RDF containers is now properly documented for all subclasses of rdf:Bag.</li><li>Class <a href='#HXLer'>HXLer</a> has been introduced.</li><li>Property <em>yperiod of validity</em> has been replaced by <a href='#validityStart'>validityStart</a> and <a href='#validityEnd'>validityEnd</a>. </li></ol><b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li><li>Generic properties <a href='#comment'>comment</a>, <a href='#title'>title</a> and <a hre='#description'>description</a> introduced.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:BaseClass</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:BaseClass. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" .
 <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://hxl.humanitarianresponse.info/ns/#vocabularySection> .
 <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> <http://www.w3.org/2000/01/rdf-schema#comment> "This section of the vocabulary defines the humanitarian profile standard which includes classes for describing populations affected by an emergency."@en .
 <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> <http://purl.org/dc/terms/title> "Humanitarian Profile Section"@en .
@@ -34,31 +34,40 @@
 <http://hxl.humanitarianresponse.info/ns/#cj> <http://xmlns.com/foaf/0.1/mbox> "hendrix.cj@gmail.com" .
 <http://hxl.humanitarianresponse.info/ns/#minu> <http://xmlns.com/foaf/0.1/name> "Minu Limbu" .
 <http://hxl.humanitarianresponse.info/ns/#minu> <http://xmlns.com/foaf/0.1/mbox> "minulimbu@gmail.com" .
-<http://hxl.humanitarianresponse.info/ns/#Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#Thing> <http://www.w3.org/2000/01/rdf-schema#comment> "Abstract base class. Any other class in HXL is a subclass of hxl:Thing."@en .
+<http://hxl.humanitarianresponse.info/ns/#BaseClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://hxl.humanitarianresponse.info/ns/#BaseClass> <http://www.w3.org/2000/01/rdf-schema#comment> "Abstract base class. Any other class in HXL is a subclass of hxl:BaseClass."@en .
+<http://hxl.humanitarianresponse.info/ns/#HXLer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://hxl.humanitarianresponse.info/ns/#HXLer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://hxl.humanitarianresponse.info/ns/#HXLer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
+<http://hxl.humanitarianresponse.info/ns/#HXLer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
+<http://hxl.humanitarianresponse.info/ns/#HXLer> <http://www.w3.org/2004/02/skos/core#prefLabel> "HXLer" .
+<http://hxl.humanitarianresponse.info/ns/#HXLer> <http://www.w3.org/2000/01/rdf-schema#comment> "Superclass for any individuals or organizations interacting with HXL." .
 <http://hxl.humanitarianresponse.info/ns/#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
 <http://hxl.humanitarianresponse.info/ns/#comment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#comment> .
 <http://hxl.humanitarianresponse.info/ns/#comment> <http://www.w3.org/2004/02/skos/core#prefLabel> "comment" .
+<http://hxl.humanitarianresponse.info/ns/#comment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#comment> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic property for comments." .
-<http://hxl.humanitarianresponse.info/ns/#comment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#comment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#comment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
 <http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/title> .
-<http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/2004/02/skos/core#prefLabel> "comment" .
+<http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/2004/02/skos/core#prefLabel> "title" .
+<http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic property for titles." .
-<http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#title> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://hxl.humanitarianresponse.info/ns/#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
 <http://hxl.humanitarianresponse.info/ns/#description> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/description> .
 <http://hxl.humanitarianresponse.info/ns/#description> <http://www.w3.org/2004/02/skos/core#prefLabel> "description" .
+<http://hxl.humanitarianresponse.info/ns/#description> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#description> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic property for descriptions." .
-<http://hxl.humanitarianresponse.info/ns/#description> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#description> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#description> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://hxl.humanitarianresponse.info/ns/#Situation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#Situation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#Situation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#Situation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#situationSection> .
 <http://hxl.humanitarianresponse.info/ns/#Situation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Situation"@en .
 <http://hxl.humanitarianresponse.info/ns/#Situation> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic situation."@en .
@@ -66,6 +75,7 @@
 <http://hxl.humanitarianresponse.info/ns/#AdminUnit> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
 <http://hxl.humanitarianresponse.info/ns/#AdminUnit> <http://www.w3.org/2004/02/skos/core#prefLabel> "Administrative Unit"@en .
 <http://hxl.humanitarianresponse.info/ns/#AdminUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/geosparql#Feature> .
+<http://hxl.humanitarianresponse.info/ns/#AdminUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#AdminUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Administrative units can include coutries, regions, cities, etc. The hierarchy of administrative units can vary from country to country."@en .
 <http://hxl.humanitarianresponse.info/ns/#PopulatedPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#PopulatedPlace> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
@@ -79,7 +89,7 @@
 <http://hxl.humanitarianresponse.info/ns/#Country> <http://www.w3.org/2004/02/skos/core#prefLabel> "Country"@en .
 <http://hxl.humanitarianresponse.info/ns/#Country> <http://www.w3.org/2000/01/rdf-schema#comment> "Highest-level administrative unit (level 0)."@en .
 <http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
 <http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Administrative Unit Level"@en .
 <http://hxl.humanitarianresponse.info/ns/#AdminUnitLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "The specific administrative unit levels can vary from country to country. Administrative Unit Level 0 is a country \u2013 in this case, hxl:Country should be used."@en .
@@ -89,7 +99,7 @@
 <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Population> .
 <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "The population affected by an emergency.<br /><small>Term origin: Humanitarian Profile (<em>Affected</em>);</small>"@en .
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://hxl.humanitarianresponse.info/ns/#topLevelConcept> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/2004/02/skos/core#prefLabel> "Population"@en .
@@ -124,7 +134,8 @@
 <http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Camp> <http://hxl.humanitarianresponse.info/ns/#topLevelConcept> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/geosparql#Feature> .
-<http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#responseSection> .
+<http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
+<http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
 <http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2004/02/skos/core#prefLabel> "Camp"@en .
 <http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2000/01/rdf-schema#comment> "A site with temporary shelter for an affected population, such as refugees. <br /><small>Term origin: UNHCR Camp DB, Pakistan SRF, Humanitarian Profile.</small>"@en .
 <http://hxl.humanitarianresponse.info/ns/#includes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
@@ -176,7 +187,7 @@
 <http://hxl.humanitarianresponse.info/ns/#Emergency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Situation> .
 <http://hxl.humanitarianresponse.info/ns/#Emergency> <http://www.w3.org/2000/01/rdf-schema#comment> "<p>Any situation in which life or well-being will be threatened  unless immediate  and  appropriate   action  is  taken,  and  which demands   an   extraordinary   response   and   exceptional measures (from UNHCR Handbook for Emergencies).</p><!-- <p>A sudden crisis situation or event requiring immediate action (WART) </p><p>Any situation in which there is an exceptional and widespread threat to life, health or basic  subsistence,  that  is  beyond  the  coping  capacity  of individuals and the community  (Oxfam GB Emergency Response Manual). </p><p>Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance\u201D (source: ACFIN Emergency module)</p> --><small>Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#GLIDEnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#GLIDEnumber> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#GLIDEnumber> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#GLIDEnumber> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#situationSection> .
 <http://hxl.humanitarianresponse.info/ns/#GLIDEnumber> <http://www.w3.org/2004/02/skos/core#prefLabel> "GLIDE Number"@en .
 <http://hxl.humanitarianresponse.info/ns/#GLIDEnumber> <http://www.w3.org/2000/01/rdf-schema#comment> "Globally common Unique ID code for disasters. See <a href='http://glidenumber.net/glide/public/about.jsp'>about GLIDE</a>." .
@@ -197,12 +208,12 @@
 <http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Intersex> .
 <http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#MixedSex> .
 <http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sex"@en .
 <http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/2000/01/rdf-schema#comment> "Class to describe sex-specific issues, either at individual or group level.<br /><small>Term origin: MIRA, CCDI</small>" .
 <http://hxl.humanitarianresponse.info/ns/#Response> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#Response> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#Response> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#Response> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#responseSection> .
 <http://hxl.humanitarianresponse.info/ns/#Response> <http://www.w3.org/2004/02/skos/core#prefLabel> "Response"@en .
 <http://hxl.humanitarianresponse.info/ns/#Response> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic term for the collection of all activities that address the needs arising from an emergency.<br /><small>Term origin: ACAPS DSS, ACAPS DSS, MIRA, EDXL, CCDI (<em>Humanitarian Response</em>), CERF (<em>Humanitarian Response</em>)</small>" .
@@ -244,10 +255,11 @@
 <http://hxl.humanitarianresponse.info/ns/#Organisation> <http://hxl.humanitarianresponse.info/ns/#topLevelConcept> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#responseSection> .
 <http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organisation> .
+<http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Organisation"@en .
 <http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.w3.org/2000/01/rdf-schema#comment> "A humanitarian organisation.<br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report, Shelter Cluster, Sigmah DB.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#ReportingPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#ReportingPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#ReportingPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#ReportingPeriod> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#datetimeSection> .
 <http://hxl.humanitarianresponse.info/ns/#ReportingPeriod> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reporting Period"@en .
 <http://hxl.humanitarianresponse.info/ns/#ReportingPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/PeriodOfTime> .
@@ -258,12 +270,12 @@
 <http://hxl.humanitarianresponse.info/ns/#TotalPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Total Population"@en .
 <http://hxl.humanitarianresponse.info/ns/#TotalPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "The total population for an administrative unit. Example: A region.<br /><small>Term origin: Shelter Cluster.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2004/02/skos/core#prefLabel> "Data container"@en .
 <http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the <em>container</em> element for to attach any metadata to. Any HXL file has to include exactly one data container element and make all metadata statements about this container. When loading the file into the triple store, a new named graph will be created that inherits the metadata from this container." .
 <http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Approval level"@en .
 <http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Instance of this class define fixed levels of approval. Example:  in the WHO system, there could be three levels: region, country, and world." .
@@ -310,7 +322,7 @@
 <http://hxl.humanitarianresponse.info/ns/#reportedBy> <http://www.w3.org/2004/02/skos/core#prefLabel> "reported by"@en .
 <http://hxl.humanitarianresponse.info/ns/#reportedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The reporting person or organization - not necessarily involved in the aid activity itself, though in practice it often will be a donor or appealing agency.  <br /><small>Term origin: IATI.</small>"@en .
 <http://hxl.humanitarianresponse.info/ns/#reportedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#DataContainer> .
-<http://hxl.humanitarianresponse.info/ns/#reportedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://hxl.humanitarianresponse.info/ns/#reportedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://hxl.humanitarianresponse.info/ns/#HXLer> .
 <http://hxl.humanitarianresponse.info/ns/#reporting> <http://www.w3.org/2002/07/owl#inverseOf> <http://hxl.humanitarianresponse.info/ns/#reportedBy> .
 <http://hxl.humanitarianresponse.info/ns/#aboutEmergency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#aboutEmergency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -326,7 +338,7 @@
 <http://hxl.humanitarianresponse.info/ns/#approvedBy> <http://www.w3.org/2004/02/skos/core#prefLabel> "approved by"@en .
 <http://hxl.humanitarianresponse.info/ns/#approvedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Link from a container to the person or organisation who has 'lifted' it to the current approvalLevel."@en .
 <http://hxl.humanitarianresponse.info/ns/#approvedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#DataContainer> .
-<http://hxl.humanitarianresponse.info/ns/#approvedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://hxl.humanitarianresponse.info/ns/#approvedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://hxl.humanitarianresponse.info/ns/#HXLer> .
 <http://hxl.humanitarianresponse.info/ns/#approves> <http://www.w3.org/2002/07/owl#inverseOf> <http://hxl.humanitarianresponse.info/ns/#approvedBy> .
 <http://hxl.humanitarianresponse.info/ns/#approvedAtLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#approvedAtLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -433,15 +445,15 @@
 <http://hxl.humanitarianresponse.info/ns/#date> <http://www.w3.org/2004/02/skos/core#prefLabel> "date"@en .
 <http://hxl.humanitarianresponse.info/ns/#date> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/date> .
 <http://hxl.humanitarianresponse.info/ns/#date> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic property for date/time stamps at arbitrary granularity." .
-<http://hxl.humanitarianresponse.info/ns/#date> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#date> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#date> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
 <http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#datetimeSection> .
-<http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/2004/02/skos/core#prefLabel> "date"@en .
+<http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/2004/02/skos/core#prefLabel> "validity date"@en .
 <http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://hxl.humanitarianresponse.info/ns/#date> .
 <http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Property to express when a certain piece of data, such as a person count, was valid. Note that this may differ from the time when the data was <em>reported</em>; use <a href='#date'>hxl:date</a> for these." .
-<http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#validityDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#hasGLIDEnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -498,13 +510,6 @@
 <http://purl.org/dc/terms/PeriodOfTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/dc/terms/PeriodOfTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#datetimeSection> .
 <http://purl.org/dc/terms/PeriodOfTime> <http://www.w3.org/2004/02/skos/core#prefLabel> "dc:PeriodOfTime" .
-<http://hxl.humanitarianresponse.info/ns/#situationDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://hxl.humanitarianresponse.info/ns/#situationDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
-<http://hxl.humanitarianresponse.info/ns/#situationDescription> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/description> .
-<http://hxl.humanitarianresponse.info/ns/#situationDescription> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#situationSection> .
-<http://hxl.humanitarianresponse.info/ns/#situationDescription> <http://www.w3.org/2004/02/skos/core#prefLabel> "situation description" .
-<http://hxl.humanitarianresponse.info/ns/#situationDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#Situation> .
-<http://hxl.humanitarianresponse.info/ns/#situationDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#situationSection> .
@@ -549,25 +554,26 @@
 <http://hxl.humanitarianresponse.info/ns/#version> <http://www.w3.org/2000/01/rdf-schema#range> <http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> .
 <http://hxl.humanitarianresponse.info/ns/#versionOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://hxl.humanitarianresponse.info/ns/#version> .
 <http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
 <http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> <http://www.w3.org/2004/02/skos/core#prefLabel> "Administrative Units Dataset Version"@en .
 <http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> <http://www.w3.org/2000/01/rdf-schema#comment> "Administrative Boundaries and Populated Places datasets form a hierarchical dataset that periodically changes.  The Administrative Units Dataset Version represents a complete set of these data valid for a particular period of time."@en .
-<http://hxl.humanitarianresponse.info/ns/#validity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://hxl.humanitarianresponse.info/ns/#validity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://hxl.humanitarianresponse.info/ns/#validity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
-<http://hxl.humanitarianresponse.info/ns/#validity> <http://www.w3.org/2004/02/skos/core#prefLabel> "period of validity"@en .
-<http://hxl.humanitarianresponse.info/ns/#validity> <http://www.w3.org/2000/01/rdf-schema#comment> "The period of time in which a dataset was a valid reference."@en .
-<http://hxl.humanitarianresponse.info/ns/#validity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> .
-<http://hxl.humanitarianresponse.info/ns/#validity> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/dc/terms/PeriodOfTime> .
+<http://hxl.humanitarianresponse.info/ns/#validityStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://hxl.humanitarianresponse.info/ns/#validityStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
+<http://hxl.humanitarianresponse.info/ns/#validityStart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
+<http://hxl.humanitarianresponse.info/ns/#validityStart> <http://www.w3.org/2004/02/skos/core#prefLabel> "validity start"@en .
+<http://hxl.humanitarianresponse.info/ns/#validityStart> <http://www.w3.org/2000/01/rdf-schema#comment> "Start of the period of time in which a certain piece of data was valid."@en .
+<http://hxl.humanitarianresponse.info/ns/#validityStart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
+<http://hxl.humanitarianresponse.info/ns/#validityStart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://hxl.humanitarianresponse.info/ns/#validityEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://hxl.humanitarianresponse.info/ns/#validityEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
+<http://hxl.humanitarianresponse.info/ns/#validityEnd> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
+<http://hxl.humanitarianresponse.info/ns/#validityEnd> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://hxl.humanitarianresponse.info/ns/#validityDate> .
+<http://hxl.humanitarianresponse.info/ns/#validityEnd> <http://www.w3.org/2004/02/skos/core#prefLabel> "validity end"@en .
+<http://hxl.humanitarianresponse.info/ns/#validityEnd> <http://www.w3.org/2000/01/rdf-schema#comment> "End of the period of time in which a certain piece of data was valid."@en .
+<http://hxl.humanitarianresponse.info/ns/#validityEnd> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
+<http://hxl.humanitarianresponse.info/ns/#validityEnd> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://hxl.humanitarianresponse.info/ns/#vailidityOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://hxl.humanitarianresponse.info/ns/#vailidity> .
-<http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
-<http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
-<http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription> <http://www.w3.org/2004/02/skos/core#prefLabel> "admin dataset version description"@en .
-<http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A description of a version of an administrative units dataset."@en .
-<http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> .
-<http://hxl.humanitarianresponse.info/ns/#adminDatasetVersionDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
 <http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
@@ -580,7 +586,7 @@
 <http://hxl.humanitarianresponse.info/ns/#pcode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
 <http://hxl.humanitarianresponse.info/ns/#pcode> <http://www.w3.org/2004/02/skos/core#prefLabel> "p-code"@en .
 <http://hxl.humanitarianresponse.info/ns/#pcode> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the unique identifier for an administrative unit or populated place.  This is the preferred way of referencing these geographic features."@en .
-<http://hxl.humanitarianresponse.info/ns/#pcode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#AdminUnit> .
+<http://hxl.humanitarianresponse.info/ns/#pcode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.opengis.net/geosparql#Feature> .
 <http://hxl.humanitarianresponse.info/ns/#pcode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
@@ -615,42 +621,46 @@
 <http://hxl.humanitarianresponse.info/ns/#ageGroup> <http://www.w3.org/2000/01/rdf-schema#range> <http://hxl.humanitarianresponse.info/ns/#AgeGroup> .
 <http://hxl.humanitarianresponse.info/ns/#ageGroupOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://hxl.humanitarianresponse.info/ns/#ageGroup> .
 <http://hxl.humanitarianresponse.info/ns/#AgeGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#AgeGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#AgeGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#AgeGroup> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#AgeGroup> <http://www.w3.org/2004/02/skos/core#prefLabel> "Age Group"@en .
-<http://hxl.humanitarianresponse.info/ns/#AgeGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic class for age groups; instances should be created for actual age groups. Example: <em>Children under 5</em>. " .
+<http://hxl.humanitarianresponse.info/ns/#AgeGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic class for age groups; instances should be created for actual age groups. Example: <em>Children under 5</em>. Each AgeGroup should be added to at least one <a href='#AgeGroupSet'>AgeGroupSet</a> following the conventions of the <a href='http://www.w3.org/TR/rdf-schema/#ch_containermembershipproperty'>rdfs:ContainerMembershipProperty</a>." .
 <http://hxl.humanitarianresponse.info/ns/#AgeGroupSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#AgeGroupSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#AgeGroupSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#AgeGroupSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag> .
 <http://hxl.humanitarianresponse.info/ns/#AgeGroupSet> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#AgeGroupSet> <http://www.w3.org/2004/02/skos/core#prefLabel> "Age Group Set"@en .
-<http://hxl.humanitarianresponse.info/ns/#AgeGroupSet> <http://www.w3.org/2000/01/rdf-schema#comment> "Contains a set of bracketed age groups, usually defined as a standard by some authority."@en .
+<http://hxl.humanitarianresponse.info/ns/#AgeGroupSet> <http://www.w3.org/2000/01/rdf-schema#comment> "Contains a set of bracketed age groups, usually defined as a standard by some authority. <a href='#AgeGroup'>AgeGroups</a> should be added to an AgeGroupSet following the conventions of the <a href='http://www.w3.org/TR/rdf-schema/#ch_containermembershipproperty'>rdfs:ContainerMembershipProperty</a>."@en .
 <http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType> <http://www.w3.org/2004/02/skos/core#prefLabel> "in displaced location type"@en .
 <http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the type of living situation in which a population is living."@en .
 <http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#Displaced> .
-<http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType> <http://www.w3.org/2000/01/rdf-schema#range> <http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet> .
+<http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType> <http://www.w3.org/2000/01/rdf-schema#range> <http://hxl.humanitarianresponse.info/ns/#DisplacedLocationType> .
 <http://hxl.humanitarianresponse.info/ns/#displacedLocationTypeOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://hxl.humanitarianresponse.info/ns/#inDisplacedLocationType> .
+<http://hxl.humanitarianresponse.info/ns/#DisplacedLocationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://hxl.humanitarianresponse.info/ns/#DisplacedLocationType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
+<http://hxl.humanitarianresponse.info/ns/#DisplacedLocationType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
+<http://hxl.humanitarianresponse.info/ns/#DisplacedLocationType> <http://www.w3.org/2004/02/skos/core#prefLabel> "Displaced Location Type"@en .
+<http://hxl.humanitarianresponse.info/ns/#DisplacedLocationType> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic class for types of displaced locations; instances should be created for actual displaced location types. Examples: <em>self-settled camp</em> or <em>collective centre</em>. Each DisplacedLocationType should be added to at least one <a href='#DisplacedLocationTypeSet'>DisplacedLocationTypeSet</a> following the conventions of the <a href='http://www.w3.org/TR/rdf-schema/#ch_containermembershipproperty'>rdfs:ContainerMembershipProperty</a>."@en .
 <http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag> .
 <http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet> <http://www.w3.org/2004/02/skos/core#prefLabel> "Displaced Persons Location Type Set"@en .
-<http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic class for classes describing the housing situation in which a displaced population is living. Subclasses of this class represent a coherent set of these location types which may vary from emergency to emergency.  The individual types are instances of the subclass."@en .
+<http://hxl.humanitarianresponse.info/ns/#DisplacedLocationTypeSet> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic class for classes describing the housing situation in which a displaced population is living. Subclasses of this class represent a coherent set of these location types which may vary from emergency to emergency.  The individual types are instances of the subclass. <a href='#DisplacedLocationType'>DisplacedLocationTypes</a> should be added to a DisplacedLocationTypeSet following the conventions of the <a href='http://www.w3.org/TR/rdf-schema/#ch_containermembershipproperty'>rdfs:ContainerMembershipProperty</a>"@en .
 <http://hxl.humanitarianresponse.info/ns/#ReportCategorySet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#ReportCategorySet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
+<http://hxl.humanitarianresponse.info/ns/#ReportCategorySet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#ReportCategorySet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag> .
-<http://hxl.humanitarianresponse.info/ns/#ReportCategorySet> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
+<http://hxl.humanitarianresponse.info/ns/#ReportCategorySet> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#ReportCategorySet> <http://www.w3.org/2004/02/skos/core#prefLabel> "Report Category Set"@en .
-<http://hxl.humanitarianresponse.info/ns/#ReportCategorySet> <http://www.w3.org/2000/01/rdf-schema#comment> "Contains a set of report categories that may be specific to an emergency."@en .
+<http://hxl.humanitarianresponse.info/ns/#ReportCategorySet> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of report categories that may be specific to an emergency. <a href='#ReportCategory'>ReportCategories</a> should be added to a ReportCategorySet following the conventions of the <a href='http://www.w3.org/TR/rdf-schema/#ch_containermembershipproperty'>rdfs:ContainerMembershipProperty</a>"@en .
 <http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Thing> .
-<http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag> .
-<http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
+<http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
+<http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Report Category"@en .
-<http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Instances of this class are specific report categories such as <em>humanitrian profile</em>, <em>shelter</em> or <em>security</em>."@en .
+<http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Instances of this class are specific report categories such as <em>humanitrian profile</em>, <em>shelter</em> or <em>security</em>. Each ReportCategory should be added to at least one <a href='#ReportCategorySet'>ReportCategorySet</a> following the conventions of the <a href='http://www.w3.org/TR/rdf-schema/#ch_containermembershipproperty'>rdfs:ContainerMembershipProperty</a>."@en .
 <http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .

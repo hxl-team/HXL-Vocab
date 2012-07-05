@@ -43,8 +43,8 @@ class CUtils{
 	public function makeLink(EasyRdf_Resource $res){
 			$resource = $res->__toString();
 			
-			if($this->getFragment($res) == "Thing"){
-				return 'HXL base class';
+			if($this->getFragment($res) == "BaseClass"){
+				return 'hxl:BaseClass';
 			}else{
 				if(strpos($resource, $this->_vocab) === 0){ // internal
 					return '<a href="#'.$this->getFragment($res).'">'.$res->label().'</a>';
@@ -93,15 +93,14 @@ class CUtils{
 	// iterates through the transitive closure of the class hierarchy and prints all 
 	// properties where a superclass of $res is the domain
 	public function getInheritedDomains(EasyRdf_Graph $graph, EasyRdf_Resource $res, Array $domains){
-		
+			
 			$superclasses = $res->all("rdfs:subClassOf");
-
 			foreach($superclasses as $super){
 				$domainURIs = $graph->resourcesMatching('rdfs:domain', $super);
 				foreach($domainURIs as $domainURI){
 					$domains[] = '<span class="inherited">'.$this->makeLink($domainURI).' <small>(via '.$this->makeLink($super).')</small></span>';
 				}
-				return $this->getInheritedDomains($graph, $super, $domains); //recursion
+				$domains = array_merge($domains, $this->getInheritedDomains($graph, $super, $domains)); //recursion
 			}
 		 	
 			// end of recursion
@@ -137,14 +136,15 @@ class CUtils{
 	// iterates through the transitive closure of the class hierarchy and prints all 
 	// properties where a subclass of $res is the range
 	public function getInheritedRanges(EasyRdf_Graph $graph, EasyRdf_Resource $res, Array $ranges){		
-			$subclasses = $graph->resourcesMatching('rdfs:subClassOf', $res);
-
+			//$subclasses = $graph->resourcesMatching('rdfs:subClassOf', $res);
+			$subclasses = $res->all("rdfs:subClassOf");
 			foreach($subclasses as $sub){
+				//error_log($sub.' is a subclass of '.$res);
 				$rangeURIs = $graph->resourcesMatching('rdfs:range', $sub);
 				foreach($rangeURIs as $rangeURI){
 					$ranges[] = '<span class="inherited">'.$this->makeLink($rangeURI).' <small>(via '.$this->makeLink($sub).')</small></span>';
 				}
-				return $this->getInheritedRanges($graph, $sub, $ranges); //recursion
+				$ranges = array_merge($ranges, $this->getInheritedRanges($graph, $sub, $ranges)); //recursion
 			}
 			
 			// end of recursion
@@ -488,7 +488,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 			print'  <table>
 			    <tbody>
 			      <tr><th>Identifier:</th><td>'.$u->makeIDLink($class).'</td></tr>';
-			if($class->hasProperty("rdfs:subClassOf") && $u->getFragment($class->get('rdfs:subClassOf')) != "Thing"){	 
+			if($class->hasProperty("rdfs:subClassOf") && $u->getFragment($class->get('rdfs:subClassOf')) != "BaseClass"){	 
 				print'	 <tr><th>Subclass of:</th><td>'.$u->makeLink($class->get('rdfs:subClassOf')).'</td></tr>';
 			}
 			
