@@ -17,7 +17,7 @@
 #        dc:versionOf <http://hxl.humanitarianresponse.info> ;
         rdfs:seeAlso "For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>."@en ;
         dc:replaces <http://hxl.humanitarianresponse.info/ns-2012-06-14/> ; 
-        skos:changeNote "<b>Changes on July 5, 2012:</b><ol><li>ReportCategory and ReportCategorySet have been moved to the metadataSection.</li><li>Use of RDF containers is now properly documented for all subclasses of rdf:Bag.</li><li>Class <a href='#HXLer'>HXLer</a> has been introduced.</li><li>Property <em>yperiod of validity</em> has been replaced by <a href='#validityStart'>validityStart</a> and <a href='#validityEnd'>validityEnd</a>. </li></ol><b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li><li>Generic properties <a href='#comment'>comment</a>, <a href='#title'>title</a> and <a hre='#description'>description</a> introduced.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:BaseClass</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:BaseClass. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" . # we will stick to one URI for future versions of the vocabulary; add any changes to this list!
+        skos:changeNote "<b>Changes on July 11, 2012:</b><ol><li></li><li>The date and time properties have been moved into the <a href='#metadataSection'>metadata section</li></ol><b>Changes on July 5, 2012:</b><ol><li>ReportCategory and ReportCategorySet have been moved to the <a href='#metadataSection'>metadata section</li>.</li><li>Use of RDF containers is now properly documented for all subclasses of rdf:Bag.</li><li>Class <a href='#HXLer'>HXLer</a> has been introduced.</li><li>Property <em>yperiod of validity</em> has been replaced by <a href='#validityStart'>validityStart</a> and <a href='#validityEnd'>validityEnd</a>. </li></ol><b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li><li>Generic properties <a href='#comment'>comment</a>, <a href='#title'>title</a> and <a hre='#description'>description</a> introduced.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:BaseClass</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:BaseClass. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" . # we will stick to one URI for future versions of the vocabulary; add any changes to this list!
 
 # define the different vocabulary sections for vocabulary management 
 hxl:humanitarianProfileSection a hxl:vocabularySection ;
@@ -26,9 +26,9 @@ dc:title "Humanitarian Profile Section"@en .
 hxl:geolocationSection a hxl:vocabularySection ;
         rdfs:comment "This section of the vocabulary defines the geolocation standard. The <a href='hxl-geolocation-standard-draft.pdf'>draft HXL geolocation standard</a> contains a detailed description of how to use the classes and properties."@en ;
 dc:title "Geolocation Section".
-hxl:datetimeSection a hxl:vocabularySection ; 
-        rdfs:comment "This section of the vocabulary defines the date/time standard. The <a href='hxl-datetime-standard-draft.pdf'>draft HXL date/time standard</a> contains a detailed description of how to use the classes and properties."@en         ;
-dc:title "Date/Time Section".
+# hxl:datetimeSection a hxl:vocabularySection ; 
+#         rdfs:comment "This section of the vocabulary defines the date/time standard. The <a href='hxl-datetime-standard-draft.pdf'>draft HXL date/time standard</a> contains a detailed description of how to use the classes and properties."@en         ;
+# dc:title "Date/Time Section".
 hxl:situationSection a hxl:vocabularySection ;
         rdfs:comment "This section of the vocabulary defines the standards for situations and emergencies."@en ;
 dc:title "Situation Section".
@@ -334,7 +334,8 @@ rdfs:comment "A humanitarian organisation.<br /><small>Term origin: IATI, CAP OP
 hxl:ReportingPeriod
     a rdfs:Class ; 
 	rdfs:subClassOf hxl:BaseClass ;
-    rdfs:isDefinedBy hxl:datetimeSection ;
+    # rdfs:isDefinedBy hxl:datetimeSection ;
+	rdfs:isDefinedBy hxl:metadataSection ;
     skos:prefLabel "Reporting Period"@en;
     rdfs:subClassOf dc:PeriodOfTime ;
     rdfs:comment "The time frame that a report covers.<br /><small>Term origin: Sigmah DB.</small>" .
@@ -526,24 +527,28 @@ hxl:adminUnitLevelCountryOf owl:inverseOf hxl:adminUnitLevel .
 
 hxl:start        
     a rdf:Property , owl:DataProperty ;
-    rdfs:isDefinedBy hxl:datetimeSection ;
+    # rdfs:isDefinedBy hxl:datetimeSection ;
+	rdfs:isDefinedBy hxl:metadataSection ;
     skos:prefLabel "start"@en ;
-    rdfs:comment "Specifies the start of time periods." ;
+    rdfs:comment "Specifies the start of time periods, activities, projects, etc." ;
     rdfs:subPropertyOf dc:date ;
-    rdfs:domain dc:PeriodOfTime ;        
+    rdfs:domain dc:BaseClass ;        
 rdfs:range rdfs:Literal .
 
 hxl:end        
         a rdf:Property , owl:DataProperty ;
-        rdfs:isDefinedBy hxl:datetimeSection ;
+        # rdfs:isDefinedBy hxl:datetimeSection ;
+	rdfs:isDefinedBy hxl:metadataSection ;
         skos:prefLabel "end"@en ;
-        rdfs:comment "Specifies the end of activities, projects, etc." ;
-        rdfs:domain dc:PeriodOfTime ;
+	    rdfs:comment "Specifies the start of time periods, activities, projects, etc." ;
+	    rdfs:subPropertyOf dc:date ;
+	    rdfs:domain dc:BaseClass ;        
 rdfs:range rdfs:Literal .
 
 hxl:duration
         a rdf:Property , owl:DataProperty ;
-        rdfs:isDefinedBy hxl:datetimeSection ;
+        # rdfs:isDefinedBy hxl:datetimeSection ;
+	rdfs:isDefinedBy hxl:metadataSection ;
         skos:prefLabel "duration"@en ;
         rdfs:comment "Specifies the duration of a period of time; if the duration is given, start and/or end may be omitted." ;
         rdfs:domain dc:PeriodOfTime ;
@@ -552,7 +557,8 @@ rdfs:range rdfs:Literal .
 
 hxl:date
         a rdf:Property , owl:DataProperty ;
-        rdfs:isDefinedBy hxl:datetimeSection ;
+        # rdfs:isDefinedBy hxl:datetimeSection ;
+	rdfs:isDefinedBy hxl:metadataSection ;
         skos:prefLabel "date"@en ;
 		rdfs:subPropertyOf dc:date ;
         rdfs:comment "Generic property for date/time stamps at arbitrary granularity." ;
@@ -561,7 +567,8 @@ rdfs:range rdfs:Literal .
 
 hxl:validityDate
         a rdf:Property , owl:DataProperty ;
-        rdfs:isDefinedBy hxl:datetimeSection ;
+        # rdfs:isDefinedBy hxl:datetimeSection ;
+	rdfs:isDefinedBy hxl:metadataSection ;
         skos:prefLabel "validity date"@en ;
 		rdfs:subPropertyOf hxl:date ;
         rdfs:comment "Property to express when a certain piece of data, such as a person count, was valid. Note that this may differ from the time when the data was <em>reported</em>; use <a href='#date'>hxl:date</a> for these." ;
@@ -632,7 +639,8 @@ rdfs:range rdfs:Literal .
 
 dc:PeriodOfTime
         a rdfs:Class , owl:Class ;
-        rdfs:isDefinedBy hxl:datetimeSection ;
+        # rdfs:isDefinedBy hxl:datetimeSection ;
+	rdfs:isDefinedBy hxl:metadataSection ;
 skos:prefLabel "dc:PeriodOfTime" .
 
 foaf:Agent
