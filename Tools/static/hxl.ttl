@@ -7,6 +7,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix hxl:  <http://hxl.humanitarianresponse.info/ns/#> . 
 @prefix geo:  <http://www.opengis.net/geosparql#> .
+@prefix label: <http://www.wasab.dk/morten/2004/03/label#> .
 
 <http://hxl.humanitarianresponse.info/ns/> a owl:Ontology ;  
         dc:date "2012-07-04"^^xsd:date ; # update
@@ -17,7 +18,7 @@
 #        dc:versionOf <http://hxl.humanitarianresponse.info> ;
         rdfs:seeAlso "For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>."@en ;
         dc:replaces <http://hxl.humanitarianresponse.info/ns-2012-06-14/> ; 
-        skos:changeNote "<b>Changes on July 11, 2012:</b><ol><li></li><li>The date and time properties have been moved into the <a href='#metadataSection'>metadata section</li></ol><b>Changes on July 5, 2012:</b><ol><li>ReportCategory and ReportCategorySet have been moved to the <a href='#metadataSection'>metadata section</li>.</li><li>Use of RDF containers is now properly documented for all subclasses of rdf:Bag.</li><li>Class <a href='#HXLer'>HXLer</a> has been introduced.</li><li>Property <em>yperiod of validity</em> has been replaced by <a href='#validityStart'>validityStart</a> and <a href='#validityEnd'>validityEnd</a>. </li></ol><b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li><li>Generic properties <a href='#comment'>comment</a>, <a href='#title'>title</a> and <a hre='#description'>description</a> introduced.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:BaseClass</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:BaseClass. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" . # we will stick to one URI for future versions of the vocabulary; add any changes to this list!
+        skos:changeNote "<b>Changes on July 11, 2012:</b><ol><li>Plurals added for HXL classes, using the <a href='http://www.wasab.dk/morten/2004/03/label'>label vocabulary</a>.</li><li><a href='#reportCategory'>reportCategory</a> has been moved to the metadata section.</li><li>For consistency, <em>Sex</em> has been renamed <a href='#SexCategory'>Sex Category</a></li><li>Property <a href='#relatedInfo'>relatedInfo</a> added.</li><li>The date and time properties have been moved into the <a href='#metadataSection'>metadata section</li></ol><b>Changes on July 5, 2012:</b><ol><li>ReportCategory and ReportCategorySet have been moved to the <a href='#metadataSection'>metadata section</li>.</li><li>Use of RDF containers is now properly documented for all subclasses of rdf:Bag.</li><li>Class <a href='#HXLer'>HXLer</a> has been introduced.</li><li>Property <em>yperiod of validity</em> has been replaced by <a href='#validityStart'>validityStart</a> and <a href='#validityEnd'>validityEnd</a>. </li></ol><b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li><li>Generic properties <a href='#comment'>comment</a>, <a href='#title'>title</a> and <a hre='#description'>description</a> introduced.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:BaseClass</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:BaseClass. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" . # we will stick to one URI for future versions of the vocabulary; add any changes to this list!
 
 # define the different vocabulary sections for vocabulary management 
 hxl:humanitarianProfileSection a hxl:vocabularySection ;
@@ -126,6 +127,7 @@ hxl:AffectedPopulation
     a rdfs:Class ; 
 	rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     skos:prefLabel "Affected Population"@en ;
+    label:plural "Affected Populations"@en ;
     rdfs:subClassOf hxl:Population ;
     rdfs:comment "The population affected by an emergency.<br /><small>Term origin: Humanitarian Profile (<em>Affected</em>);</small>"@en .        
 
@@ -135,6 +137,7 @@ hxl:Population
 	hxl:topLevelConcept "true"^^xsd:boolean ;
     rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     skos:prefLabel "Population"@en ;
+	label:plural "Populations"@en ;
     rdfs:subClassOf foaf:Group ;
     rdfs:comment "Generic class for any kind of population. Example: Total population, affected population etc; use the subclasses for the data annotation."@en .
         
@@ -143,6 +146,7 @@ hxl:Casualty
     rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     rdfs:subClassOf hxl:AffectedPopulation ;
     skos:prefLabel "Casualty"@en ;
+	label:plural "Casualties"@en ;
     rdfs:comment "Examples: <em>Injured</em> or <em>dead</em>.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile.</small>" .
         
 hxl:Dead
@@ -150,6 +154,7 @@ hxl:Dead
     rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     skos:prefLabel "Death"@en ;
     skos:altLabel "Dead"@en ;
+    label:plural "Dead"@en ;
     rdfs:subClassOf hxl:Casualty ;
     owl:disjointWith hxl:Injured ;
     rdfs:comment "A (reported) death.<br /><small>Term origin: ACAPS DSS, HPM Ethiopia, Shelter Cluster, Humanitarian Profile (<em>Dead</em>).</small>" .
@@ -158,6 +163,7 @@ hxl:Displaced
     a rdfs:Class ; 
     rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     skos:prefLabel "Displaced Population"@en ;
+	label:plural "Displaced Populations"@en ;
     rdfs:subClassOf hxl:AffectedPopulation ;
     rdfs:comment "Refers to internally displaced persons, refugees, and others of concern.<br /><small>Term origin: Humanitarian Profile, ACAPS DSS (<em>Displacement</em>)</small>" ;
 owl:disjointWith hxl:NonDisplaced .
@@ -178,6 +184,7 @@ hxl:Camp
 	rdfs:subClassOf geo:Feature , hxl:BaseClass ;
     rdfs:isDefinedBy hxl:geolocationSection ; ;
     skos:prefLabel "Camp"@en ;
+	label:plural "Camps"@en ;
     rdfs:comment "A site with temporary shelter for an affected population, such as refugees. <br /><small>Term origin: UNHCR Camp DB, Pakistan SRF, Humanitarian Profile.</small>"@en .
 
 hxl:includes 
@@ -214,6 +221,7 @@ hxl:NonDisplaced
     a rdfs:Class ; 
 	rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     skos:prefLabel "Non-Displaced Population"@en ;
+    label:plural "Non-Displaced Populations"@en ;
     rdfs:subClassOf hxl:AffectedPopulation ;
     rdfs:comment "Refers to the part of the affected population that is not displaced (i.e., host or non-host);.<br /><small>Term origin: Humanitarian Profile.</small>" ;
 owl:disjointWith hxl:Displaced .
@@ -222,6 +230,7 @@ hxl:HostPopulation
     a rdfs:Class ; 
 	rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     skos:prefLabel "Host Population"@en ;
+    label:plural "Host Populations"@en ;
     rdfs:subClassOf hxl:NonDisplaced ;
     rdfs:comment "Persons who are part of a host community or family receiving affected people. Due to the stress placed on the host families and communities, they are considered part of the humanitarian caseload.<br /><small>Term origin: Humanitarian Profile.</small>" ;
 owl:disjointWith hxl:NonHostPopulation .
@@ -230,6 +239,7 @@ hxl:NonHostPopulation
     a rdfs:Class ; 
 	rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     skos:prefLabel "Non-host Population"@en ;
+    label:plural "Non-host Populations"@en ;
     rdfs:subClassOf hxl:NonDisplaced ;
     rdfs:comment "People requiring immediate assistance during a period of emergency who have not moved from their homes or places of habitual residence.<br /><small>Term origin: Humanitarian Profile.</small>" ;
 owl:disjointWith hxl:HostPopulation .
@@ -239,6 +249,7 @@ hxl:Emergency
 	hxl:topLevelConcept "true"^^xsd:boolean;
     rdfs:isDefinedBy hxl:situationSection;        
     skos:prefLabel "Emergency"@en ;
+	label:plural "Emergencies"@en ;
     rdfs:subClassOf hxl:Situation ;
     rdfs:comment "<p>Any situation in which life or well-being will be threatened  unless immediate  and  appropriate   action  is  taken,  and  which demands   an   extraordinary   response   and   exceptional measures (from UNHCR Handbook for Emergencies).</p><!-- <p>A sudden crisis situation or event requiring immediate action (WART) </p><p>Any situation in which there is an exceptional and widespread threat to life, health or basic  subsistence,  that  is  beyond  the  coping  capacity  of individuals and the community  (Oxfam GB Emergency Response Manual). </p><p>Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance” (source: ACFIN Emergency module)</p> --><small>Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.</small>" .
 
@@ -253,7 +264,7 @@ hxl:Female
     a rdfs:Class ; 
  	rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     skos:prefLabel "Female"@en;        
-    rdfs:subClassOf hxl:Sex ;
+    rdfs:subClassOf hxl:SexCategory ;
     rdfs:comment "A woman/girl or group of women/girls.<br /><small>Term origin: CERF, EIMS Report.</small>" ;
 owl:disjointWith hxl:Male , hxl:Intersex , hxl:MixedSex .
 
@@ -261,15 +272,15 @@ hxl:Male
     a rdfs:Class ; 
 	rdfs:isDefinedBy hxl:humanitarianProfileSection ;        
     skos:prefLabel "Male"@en;
-    rdfs:subClassOf hxl:Sex ;
+    rdfs:subClassOf hxl:SexCategory ;
     rdfs:comment "A man/boy or group of men/boys.<br /><small>Term origin: CERF, EIMS Report.</small>" ;
 owl:disjointWith hxl:Female , hxl:Intersex , hxl:MixedSex .     
 
-hxl:Sex
+hxl:SexCategory
     a rdfs:Class ; 
 	rdfs:subClassOf hxl:BaseClass ;
     rdfs:isDefinedBy hxl:humanitarianProfileSection ;        
-    skos:prefLabel "Sex"@en;
+    skos:prefLabel "Sex Category"@en;
     rdfs:comment "Class to describe sex-specific issues, either at individual or group level.<br /><small>Term origin: MIRA, CCDI</small>" .
 
 hxl:Response
@@ -284,6 +295,7 @@ hxl:IDP
     rdfs:isDefinedBy hxl:humanitarianProfileSection  ;
     rdfs:subClassOf hxl:Displaced ;
     skos:prefLabel "Internally Displaced Person"@en;
+    label:plural "Internally Displaced Persons"@en;
     skos:altLabel "IDP"@en;
     owl:disjointWith hxl:Others ;
     owl:disjointWith hxl:RefugeesAsylumSeekers ;
@@ -294,6 +306,7 @@ hxl:Others
 	rdfs:isDefinedBy hxl:humanitarianProfileSection  ;
     rdfs:subClassOf hxl:Displaced ;
     skos:prefLabel "Others of Concern"@en;
+	label:plural "Others of Concern"@en;
     owl:disjointWith hxl:IDP ;
     owl:disjointWith hxl:RefugeesAsylumSeekers ;
     rdfs:comment "Persons who have been displaced by the emergency and form part of the humanitarian caseload, but do not fall into the IDP or refugees/asylum seekers categories.<br /><small>Term origin: Humanitarian Profile</small>" .
@@ -303,6 +316,7 @@ hxl:RefugeesAsylumSeekers
 	rdfs:isDefinedBy hxl:humanitarianProfileSection  ;
     rdfs:subClassOf hxl:Displaced ;
     skos:prefLabel "Refugees and Asylum Seekers"@en;
+	label:plural "Refugees and Asylum Seekers"@en;
     owl:disjointWith hxl:IDP ;
     owl:disjointWith hxl:Others ;
     rdfs:comment "A group of refugees and asylum seekers.<br /><small>Term origin: Humanitarian Profile</small>" .
@@ -311,7 +325,8 @@ hxl:Injured
     a rdfs:Class ; 
 	rdfs:isDefinedBy hxl:humanitarianProfileSection  ;
     rdfs:subClassOf hxl:Casualty ;
-    skos:prefLabel "Injury"@en;
+    skos:prefLabel "Injury"@en ;
+	label:plural "Injury"@en ;
     owl:disjointWith hxl:Dead ;
     rdfs:comment "Indicates the Injured population.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile, Shelter Cluster, HERAMS Checklist (<em>Injury</em>)</small>" .
 
@@ -319,6 +334,7 @@ hxl:Missing
     a rdfs:Class ; 
 	rdfs:isDefinedBy hxl:humanitarianProfileSection  ;
     skos:prefLabel "Missing"@en ;
+	label:plural "Missing"@en ;
     rdfs:subClassOf hxl:Casualty ;
     owl:disjointWith hxl:Dead ;
     rdfs:comment "Associated with <i>Missing Persons</i> as a major humanitarian concern in complex emergencies where many people go missing, causing anguish and uncertainty for their families and friends. See <em> ICRC </em>. <br /><small>Term origin: Humanitarian Profile.</small>" .
@@ -329,6 +345,7 @@ hxl:Organisation
     rdfs:isDefinedBy hxl:responseSection  ;
     rdfs:subClassOf foaf:Organisation , hxl:BaseClass ;
     skos:prefLabel "Organisation"@en ;
+	label:plural "Organisations"@en ;
 rdfs:comment "A humanitarian organisation.<br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report, Shelter Cluster, Sigmah DB.</small>" .
 
 hxl:ReportingPeriod
@@ -345,6 +362,7 @@ hxl:TotalPopulation
 	rdfs:isDefinedBy hxl:humanitarianProfileSection  ;
     rdfs:subClassOf hxl:Population ;
     skos:prefLabel "Total Population"@en;
+    label:plural "Total Populations"@en ;
 rdfs:comment "The total population for an administrative unit. Example: A region.<br /><small>Term origin: Shelter Cluster.</small>" .
 
 hxl:DataContainer
@@ -352,14 +370,22 @@ hxl:DataContainer
 	rdfs:subClassOf hxl:BaseClass ;
     rdfs:isDefinedBy hxl:metadataSection ;
     skos:prefLabel "Data container"@en;
-rdfs:comment "This is the <em>container</em> element for to attach any metadata to. Any HXL file has to include exactly one data container element and make all metadata statements about this container. When loading the file into the triple store, a new named graph will be created that inherits the metadata from this container." .
+rdfs:comment "This is the <em>container</em> element to attach any metadata to. Any HXL file has to include exactly one data container element and make all metadata statements about this container. When loading the file into the triple store, a new named graph will be created that inherits the metadata from this container." .
+
+hxl:relatedInfo 
+    a rdf:Property, owl:ObjectProperty ; 
+    rdfs:isDefinedBy hxl:metadataSection ; 
+    skos:prefLabel "related information" ; 
+    rdfs:comment "Provides a link to a website with further information related to the data in the data container." ;                 
+    rdfs:domain hxl:DataContainer ; 
+    rdfs:range foaf:Document .
 
 hxl:ApprovalLevel
     a rdfs:Class ; 
 	rdfs:subClassOf hxl:BaseClass ;
     rdfs:isDefinedBy hxl:metadataSection ;
     skos:prefLabel "Approval level"@en;
-rdfs:comment "Instance of this class define fixed levels of approval. Example:  in the WHO system, there could be three levels: region, country, and world." .
+rdfs:comment "Instances of this class define fixed levels of approval in the HXL data repository." .
 
 hxl:organisationHomepage
     a rdf:Property, owl:ObjectProperty ;
@@ -724,7 +750,7 @@ hxl:versionID
         a rdf:Property , owl:DataProperty ;
         rdfs:isDefinedBy hxl:geolocationSection ;
         skos:prefLabel "version ID"@en ;
-        rdfs:comment "Specifies the identifier for the Administrative Units Dataset."@en ;
+        rdfs:comment "Specifies the version identifier for the Administrative Units Dataset. This ID should be unique for the given dataset and consist of no more than 8 characters, as it will also be part of the URI of the AdminDatasetVersion."@en ;
         rdfs:domain hxl:AdminDatasetVersion ;
 rdfs:range rdfs:Literal .
 
@@ -740,7 +766,7 @@ hxl:Intersex
     a rdfs:Class ; 
     rdfs:isDefinedBy hxl:humanitarianProfileSection ;        
     skos:prefLabel "Intersex"@en;
-    rdfs:subClassOf hxl:Sex ;
+    rdfs:subClassOf hxl:SexCategory ;
     rdfs:comment "A person or group of persons who are biologically intersex." ;
 owl:disjointWith hxl:Female , hxl:Male , hxl:MixedSex .      
 
@@ -748,7 +774,7 @@ hxl:MixedSex
     a rdfs:Class ; 
 	rdfs:isDefinedBy hxl:humanitarianProfileSection ;
     skos:prefLabel "mixed sex"@en ;
-    rdfs:subClassOf hxl:Sex ;
+    rdfs:subClassOf hxl:SexCategory ;
     rdfs:comment "A group of persons of mixed sexes."@en ;
 owl:disjointWith hxl:Female , hxl:Male , hxl:Intersex . 
 
@@ -758,7 +784,7 @@ hxl:sexCategory
     skos:prefLabel "sex category" ;
     rdfs:comment "Specifies the sex of the population." ;
     rdfs:domain hxl:Population ;
-rdfs:range hxl:Sex .
+rdfs:range hxl:SexCategory .
 
 hxl:sexCategoryOf owl:inverseOf hxl:sexCategory .
 
@@ -827,7 +853,7 @@ rdfs:comment "Instances of this class are specific report categories such as <em
 
 hxl:reportCategory
     a rdf:Property , owl:ObjectProperty ;
-    rdfs:isDefinedBy hxl:humanitarianProfileSection ;
+    rdfs:isDefinedBy hxl:metadataSection ;
     skos:prefLabel "report category" ;
     rdfs:comment "Specifies the ReportCategory of a DataContainer." ;
     rdfs:domain hxl:DataContainer ;

@@ -8,7 +8,7 @@
 <http://hxl.humanitarianresponse.info/ns/> <http://purl.org/dc/terms/license> "<a href='http://creativecommons.org/licenses/by/3.0/'><img src='cc.png' align='right' /></a>The HXL vocabulary is published under a Creative Commons Attribution license (<a href='http://creativecommons.org/licenses/by/3.0/'>CC BY 3.0</a>)."@en .
 <http://hxl.humanitarianresponse.info/ns/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "For further information about the HXL project, see <a href='https://sites.google.com/site/hxlproject/'>https://sites.google.com/site/hxlproject/</a>."@en .
 <http://hxl.humanitarianresponse.info/ns/> <http://purl.org/dc/terms/replaces> <http://hxl.humanitarianresponse.info/ns-2012-06-14/> .
-<http://hxl.humanitarianresponse.info/ns/> <http://www.w3.org/2004/02/skos/core#changeNote> "<b>Changes on July 11, 2012:</b><ol><li></li><li>The date and time properties have been moved into the <a href='#metadataSection'>metadata section</li></ol><b>Changes on July 5, 2012:</b><ol><li>ReportCategory and ReportCategorySet have been moved to the <a href='#metadataSection'>metadata section</li>.</li><li>Use of RDF containers is now properly documented for all subclasses of rdf:Bag.</li><li>Class <a href='#HXLer'>HXLer</a> has been introduced.</li><li>Property <em>yperiod of validity</em> has been replaced by <a href='#validityStart'>validityStart</a> and <a href='#validityEnd'>validityEnd</a>. </li></ol><b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li><li>Generic properties <a href='#comment'>comment</a>, <a href='#title'>title</a> and <a hre='#description'>description</a> introduced.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:BaseClass</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:BaseClass. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" .
+<http://hxl.humanitarianresponse.info/ns/> <http://www.w3.org/2004/02/skos/core#changeNote> "<b>Changes on July 11, 2012:</b><ol><li>Plurals added for HXL classes, using the <a href='http://www.wasab.dk/morten/2004/03/label'>label vocabulary</a>.</li><li><a href='#reportCategory'>reportCategory</a> has been moved to the metadata section.</li><li>For consistency, <em>Sex</em> has been renamed <a href='#SexCategory'>Sex Category</a></li><li>Property <a href='#relatedInfo'>relatedInfo</a> added.</li><li>The date and time properties have been moved into the <a href='#metadataSection'>metadata section</li></ol><b>Changes on July 5, 2012:</b><ol><li>ReportCategory and ReportCategorySet have been moved to the <a href='#metadataSection'>metadata section</li>.</li><li>Use of RDF containers is now properly documented for all subclasses of rdf:Bag.</li><li>Class <a href='#HXLer'>HXLer</a> has been introduced.</li><li>Property <em>yperiod of validity</em> has been replaced by <a href='#validityStart'>validityStart</a> and <a href='#validityEnd'>validityEnd</a>. </li></ol><b>Changes on July 4, 2012:</b><ol><li>The gelolocation section now contains only those classes and properties that are specific to HXL. They extend the classes and properties (esp. topological relations) introduced by <a href='http://www.opengeospatial.org/standards/geosparql'>OGC's GeoSPARQL standard</a>.</li><li>The documentation now contains all domains and ranges inherited from super-/subclasses for each class.</li><li><a href='#validityDate'>hxl:validityDate</a> introduced.</li><li>Property <a href='#aboutEmergency'>aboutEmergency</a> introduced to link a DataContainer to the Emergency it contains data about.</li><li>All sets in HXL are now subclasses of rdf:Bag, so that we can get rid of our membership functions.</li><li>Introduced <a href='#ReportCategory'>ReportCategory</a>, <a href='#reportCategory'>reportCategory</a>, and <a href='#ReportCategorySet'>ReportCategorySet</a> to define the report category for a specific DataContainer and collect the possible ReportCategories for a specific Emergency in a set.</li><li>Generic properties <a href='#comment'>comment</a>, <a href='#title'>title</a> and <a hre='#description'>description</a> introduced.</li></ol></b><b>Changes on July 3, 2012:</b><ol><li>Versioning: We will use the URI <a href='http://hxl.humanitarianresponse.info/ns'>http://hxl.humanitarianresponse.info/ns</a> for all future versions of this vocabulary from now on. Previous versions can be found <a href='http://hxl.humanitarianresponse.info/ns-2012-06-14/'>here</a>.</li><li><a href='#Country'>hxl:Country</a> is now a subclass of <a href='http://purl.org/ontology/places#Country'>http://purl.org/ontology/places#Country</a></li><li><a href='#Thing'>hxl:BaseClass</a> has been introduced as an abstract base class. Every other class in HXL is a subclass of hxl:BaseClass. This allows us to define generic properties for all classes in HXL.</li><li>Class <em>Activity</em> has been removed.</li><li>Properties <em>containsPrimaryData</em> and <em>containsSecondaryData</em> have been removed.<li>Properties <em>displacedLocationSetTitle</em>, <em>displacedLocationTypeSetDescription</em>, <em>ageGroupSetDescription</em>, <em>ageGroupSetTitle</em>, and <em>populationDescription</em> have been removed. Use the generic title / description properties instead.</li></ol>" .
 <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://hxl.humanitarianresponse.info/ns/#vocabularySection> .
 <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> <http://www.w3.org/2000/01/rdf-schema#comment> "This section of the vocabulary defines the humanitarian profile standard which includes classes for describing populations affected by an emergency."@en .
 <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> <http://purl.org/dc/terms/title> "Humanitarian Profile Section"@en .
@@ -93,6 +93,7 @@
 <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Affected Population"@en .
+<http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> <http://www.wasab.dk/morten/2004/03/label#plural> "Affected Populations"@en .
 <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Population> .
 <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "The population affected by an emergency.<br /><small>Term origin: Humanitarian Profile (<em>Affected</em>);</small>"@en .
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
@@ -100,23 +101,27 @@
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://hxl.humanitarianresponse.info/ns/#topLevelConcept> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/2004/02/skos/core#prefLabel> "Population"@en .
+<http://hxl.humanitarianresponse.info/ns/#Population> <http://www.wasab.dk/morten/2004/03/label#plural> "Populations"@en .
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Group> .
 <http://hxl.humanitarianresponse.info/ns/#Population> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic class for any kind of population. Example: Total population, affected population etc; use the subclasses for the data annotation."@en .
 <http://hxl.humanitarianresponse.info/ns/#Casualty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Casualty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Casualty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> .
 <http://hxl.humanitarianresponse.info/ns/#Casualty> <http://www.w3.org/2004/02/skos/core#prefLabel> "Casualty"@en .
+<http://hxl.humanitarianresponse.info/ns/#Casualty> <http://www.wasab.dk/morten/2004/03/label#plural> "Casualties"@en .
 <http://hxl.humanitarianresponse.info/ns/#Casualty> <http://www.w3.org/2000/01/rdf-schema#comment> "Examples: <em>Injured</em> or <em>dead</em>.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#Dead> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Dead> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Dead> <http://www.w3.org/2004/02/skos/core#prefLabel> "Death"@en .
 <http://hxl.humanitarianresponse.info/ns/#Dead> <http://www.w3.org/2004/02/skos/core#altLabel> "Dead"@en .
+<http://hxl.humanitarianresponse.info/ns/#Dead> <http://www.wasab.dk/morten/2004/03/label#plural> "Dead"@en .
 <http://hxl.humanitarianresponse.info/ns/#Dead> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Casualty> .
 <http://hxl.humanitarianresponse.info/ns/#Dead> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Injured> .
 <http://hxl.humanitarianresponse.info/ns/#Dead> <http://www.w3.org/2000/01/rdf-schema#comment> "A (reported) death.<br /><small>Term origin: ACAPS DSS, HPM Ethiopia, Shelter Cluster, Humanitarian Profile (<em>Dead</em>).</small>" .
 <http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.w3.org/2004/02/skos/core#prefLabel> "Displaced Population"@en .
+<http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.wasab.dk/morten/2004/03/label#plural> "Displaced Populations"@en .
 <http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> .
 <http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to internally displaced persons, refugees, and others of concern.<br /><small>Term origin: Humanitarian Profile, ACAPS DSS (<em>Displacement</em>)</small>" .
 <http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> .
@@ -134,6 +139,7 @@
 <http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
 <http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2004/02/skos/core#prefLabel> "Camp"@en .
+<http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.wasab.dk/morten/2004/03/label#plural> "Camps"@en .
 <http://hxl.humanitarianresponse.info/ns/#Camp> <http://www.w3.org/2000/01/rdf-schema#comment> "A site with temporary shelter for an affected population, such as refugees. <br /><small>Term origin: UNHCR Camp DB, Pakistan SRF, Humanitarian Profile.</small>"@en .
 <http://hxl.humanitarianresponse.info/ns/#includes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#includes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -162,18 +168,21 @@
 <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-Displaced Population"@en .
+<http://hxl.humanitarianresponse.info/ns/#NonDisplaced> <http://www.wasab.dk/morten/2004/03/label#plural> "Non-Displaced Populations"@en .
 <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> .
 <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the part of the affected population that is not displaced (i.e., host or non-host);.<br /><small>Term origin: Humanitarian Profile.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Displaced> .
 <http://hxl.humanitarianresponse.info/ns/#HostPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#HostPopulation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#HostPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Host Population"@en .
+<http://hxl.humanitarianresponse.info/ns/#HostPopulation> <http://www.wasab.dk/morten/2004/03/label#plural> "Host Populations"@en .
 <http://hxl.humanitarianresponse.info/ns/#HostPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> .
 <http://hxl.humanitarianresponse.info/ns/#HostPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "Persons who are part of a host community or family receiving affected people. Due to the stress placed on the host families and communities, they are considered part of the humanitarian caseload.<br /><small>Term origin: Humanitarian Profile.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#HostPopulation> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#NonHostPopulation> .
 <http://hxl.humanitarianresponse.info/ns/#NonHostPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#NonHostPopulation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#NonHostPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-host Population"@en .
+<http://hxl.humanitarianresponse.info/ns/#NonHostPopulation> <http://www.wasab.dk/morten/2004/03/label#plural> "Non-host Populations"@en .
 <http://hxl.humanitarianresponse.info/ns/#NonHostPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> .
 <http://hxl.humanitarianresponse.info/ns/#NonHostPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "People requiring immediate assistance during a period of emergency who have not moved from their homes or places of habitual residence.<br /><small>Term origin: Humanitarian Profile.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#NonHostPopulation> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#HostPopulation> .
@@ -181,6 +190,7 @@
 <http://hxl.humanitarianresponse.info/ns/#Emergency> <http://hxl.humanitarianresponse.info/ns/#topLevelConcept> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://hxl.humanitarianresponse.info/ns/#Emergency> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#situationSection> .
 <http://hxl.humanitarianresponse.info/ns/#Emergency> <http://www.w3.org/2004/02/skos/core#prefLabel> "Emergency"@en .
+<http://hxl.humanitarianresponse.info/ns/#Emergency> <http://www.wasab.dk/morten/2004/03/label#plural> "Emergencies"@en .
 <http://hxl.humanitarianresponse.info/ns/#Emergency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Situation> .
 <http://hxl.humanitarianresponse.info/ns/#Emergency> <http://www.w3.org/2000/01/rdf-schema#comment> "<p>Any situation in which life or well-being will be threatened  unless immediate  and  appropriate   action  is  taken,  and  which demands   an   extraordinary   response   and   exceptional measures (from UNHCR Handbook for Emergencies).</p><!-- <p>A sudden crisis situation or event requiring immediate action (WART) </p><p>Any situation in which there is an exceptional and widespread threat to life, health or basic  subsistence,  that  is  beyond  the  coping  capacity  of individuals and the community  (Oxfam GB Emergency Response Manual). </p><p>Where and when a disaster provokes an immediate, exceptional and widespread threat to life, health or basic subsistence, which overwhelms the coping capacity of individual and community, implying need of external assistance\u201D (source: ACFIN Emergency module)</p> --><small>Term origin: CAP OPS, Pakistan SRF, ACAPS DSS, CERF, MIRA.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#GLIDEnumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
@@ -191,7 +201,7 @@
 <http://hxl.humanitarianresponse.info/ns/#Female> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Female> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Female> <http://www.w3.org/2004/02/skos/core#prefLabel> "Female"@en .
-<http://hxl.humanitarianresponse.info/ns/#Female> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Sex> .
+<http://hxl.humanitarianresponse.info/ns/#Female> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#SexCategory> .
 <http://hxl.humanitarianresponse.info/ns/#Female> <http://www.w3.org/2000/01/rdf-schema#comment> "A woman/girl or group of women/girls.<br /><small>Term origin: CERF, EIMS Report.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#Female> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Male> .
 <http://hxl.humanitarianresponse.info/ns/#Female> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Intersex> .
@@ -199,16 +209,16 @@
 <http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2004/02/skos/core#prefLabel> "Male"@en .
-<http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Sex> .
+<http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#SexCategory> .
 <http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2000/01/rdf-schema#comment> "A man/boy or group of men/boys.<br /><small>Term origin: CERF, EIMS Report.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Female> .
 <http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Intersex> .
 <http://hxl.humanitarianresponse.info/ns/#Male> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#MixedSex> .
-<http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
-<http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
-<http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sex"@en .
-<http://hxl.humanitarianresponse.info/ns/#Sex> <http://www.w3.org/2000/01/rdf-schema#comment> "Class to describe sex-specific issues, either at individual or group level.<br /><small>Term origin: MIRA, CCDI</small>" .
+<http://hxl.humanitarianresponse.info/ns/#SexCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://hxl.humanitarianresponse.info/ns/#SexCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
+<http://hxl.humanitarianresponse.info/ns/#SexCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
+<http://hxl.humanitarianresponse.info/ns/#SexCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sex Category"@en .
+<http://hxl.humanitarianresponse.info/ns/#SexCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Class to describe sex-specific issues, either at individual or group level.<br /><small>Term origin: MIRA, CCDI</small>" .
 <http://hxl.humanitarianresponse.info/ns/#Response> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Response> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#Response> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#responseSection> .
@@ -218,6 +228,7 @@
 <http://hxl.humanitarianresponse.info/ns/#IDP> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#IDP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Displaced> .
 <http://hxl.humanitarianresponse.info/ns/#IDP> <http://www.w3.org/2004/02/skos/core#prefLabel> "Internally Displaced Person"@en .
+<http://hxl.humanitarianresponse.info/ns/#IDP> <http://www.wasab.dk/morten/2004/03/label#plural> "Internally Displaced Persons"@en .
 <http://hxl.humanitarianresponse.info/ns/#IDP> <http://www.w3.org/2004/02/skos/core#altLabel> "IDP"@en .
 <http://hxl.humanitarianresponse.info/ns/#IDP> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Others> .
 <http://hxl.humanitarianresponse.info/ns/#IDP> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers> .
@@ -226,6 +237,7 @@
 <http://hxl.humanitarianresponse.info/ns/#Others> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Others> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Displaced> .
 <http://hxl.humanitarianresponse.info/ns/#Others> <http://www.w3.org/2004/02/skos/core#prefLabel> "Others of Concern"@en .
+<http://hxl.humanitarianresponse.info/ns/#Others> <http://www.wasab.dk/morten/2004/03/label#plural> "Others of Concern"@en .
 <http://hxl.humanitarianresponse.info/ns/#Others> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#IDP> .
 <http://hxl.humanitarianresponse.info/ns/#Others> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers> .
 <http://hxl.humanitarianresponse.info/ns/#Others> <http://www.w3.org/2000/01/rdf-schema#comment> "Persons who have been displaced by the emergency and form part of the humanitarian caseload, but do not fall into the IDP or refugees/asylum seekers categories.<br /><small>Term origin: Humanitarian Profile</small>" .
@@ -233,6 +245,7 @@
 <http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Displaced> .
 <http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers> <http://www.w3.org/2004/02/skos/core#prefLabel> "Refugees and Asylum Seekers"@en .
+<http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers> <http://www.wasab.dk/morten/2004/03/label#plural> "Refugees and Asylum Seekers"@en .
 <http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#IDP> .
 <http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Others> .
 <http://hxl.humanitarianresponse.info/ns/#RefugeesAsylumSeekers> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of refugees and asylum seekers.<br /><small>Term origin: Humanitarian Profile</small>" .
@@ -240,11 +253,13 @@
 <http://hxl.humanitarianresponse.info/ns/#Injured> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Injured> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Casualty> .
 <http://hxl.humanitarianresponse.info/ns/#Injured> <http://www.w3.org/2004/02/skos/core#prefLabel> "Injury"@en .
+<http://hxl.humanitarianresponse.info/ns/#Injured> <http://www.wasab.dk/morten/2004/03/label#plural> "Injury"@en .
 <http://hxl.humanitarianresponse.info/ns/#Injured> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Dead> .
 <http://hxl.humanitarianresponse.info/ns/#Injured> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the Injured population.<br /><small>Term origin: ACAPS DSS, Humanitarian Profile, Shelter Cluster, HERAMS Checklist (<em>Injury</em>)</small>" .
 <http://hxl.humanitarianresponse.info/ns/#Missing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Missing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Missing> <http://www.w3.org/2004/02/skos/core#prefLabel> "Missing"@en .
+<http://hxl.humanitarianresponse.info/ns/#Missing> <http://www.wasab.dk/morten/2004/03/label#plural> "Missing"@en .
 <http://hxl.humanitarianresponse.info/ns/#Missing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Casualty> .
 <http://hxl.humanitarianresponse.info/ns/#Missing> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Dead> .
 <http://hxl.humanitarianresponse.info/ns/#Missing> <http://www.w3.org/2000/01/rdf-schema#comment> "Associated with <i>Missing Persons</i> as a major humanitarian concern in complex emergencies where many people go missing, causing anguish and uncertainty for their families and friends. See <em> ICRC </em>. <br /><small>Term origin: Humanitarian Profile.</small>" .
@@ -254,6 +269,7 @@
 <http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organisation> .
 <http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Organisation"@en .
+<http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.wasab.dk/morten/2004/03/label#plural> "Organisations"@en .
 <http://hxl.humanitarianresponse.info/ns/#Organisation> <http://www.w3.org/2000/01/rdf-schema#comment> "A humanitarian organisation.<br /><small>Term origin: IATI, CAP OPS, Pakistan SRF, EIMS Report, Shelter Cluster, Sigmah DB.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#ReportingPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#ReportingPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
@@ -265,17 +281,25 @@
 <http://hxl.humanitarianresponse.info/ns/#TotalPopulation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#TotalPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Population> .
 <http://hxl.humanitarianresponse.info/ns/#TotalPopulation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Total Population"@en .
+<http://hxl.humanitarianresponse.info/ns/#TotalPopulation> <http://www.wasab.dk/morten/2004/03/label#plural> "Total Populations"@en .
 <http://hxl.humanitarianresponse.info/ns/#TotalPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "The total population for an administrative unit. Example: A region.<br /><small>Term origin: Shelter Cluster.</small>" .
 <http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2004/02/skos/core#prefLabel> "Data container"@en .
-<http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the <em>container</em> element for to attach any metadata to. Any HXL file has to include exactly one data container element and make all metadata statements about this container. When loading the file into the triple store, a new named graph will be created that inherits the metadata from this container." .
+<http://hxl.humanitarianresponse.info/ns/#DataContainer> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the <em>container</em> element to attach any metadata to. Any HXL file has to include exactly one data container element and make all metadata statements about this container. When loading the file into the triple store, a new named graph will be created that inherits the metadata from this container." .
+<http://hxl.humanitarianresponse.info/ns/#relatedInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://hxl.humanitarianresponse.info/ns/#relatedInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://hxl.humanitarianresponse.info/ns/#relatedInfo> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
+<http://hxl.humanitarianresponse.info/ns/#relatedInfo> <http://www.w3.org/2004/02/skos/core#prefLabel> "related information" .
+<http://hxl.humanitarianresponse.info/ns/#relatedInfo> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides a link to a website with further information related to the data in the data container." .
+<http://hxl.humanitarianresponse.info/ns/#relatedInfo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#DataContainer> .
+<http://hxl.humanitarianresponse.info/ns/#relatedInfo> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Document> .
 <http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Approval level"@en .
-<http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Instance of this class define fixed levels of approval. Example:  in the WHO system, there could be three levels: region, country, and world." .
+<http://hxl.humanitarianresponse.info/ns/#ApprovalLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Instances of this class define fixed levels of approval in the HXL data repository." .
 <http://hxl.humanitarianresponse.info/ns/#organisationHomepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#organisationHomepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://hxl.humanitarianresponse.info/ns/#organisationHomepage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#responseSection> .
@@ -576,7 +600,7 @@
 <http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
 <http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
 <http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/2004/02/skos/core#prefLabel> "version ID"@en .
-<http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the identifier for the Administrative Units Dataset."@en .
+<http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the version identifier for the Administrative Units Dataset. This ID should be unique for the given dataset and consist of no more than 8 characters, as it will also be part of the URI of the AdminDatasetVersion."@en .
 <http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#AdminDatasetVersion> .
 <http://hxl.humanitarianresponse.info/ns/#versionID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <http://hxl.humanitarianresponse.info/ns/#pcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
@@ -589,7 +613,7 @@
 <http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/2004/02/skos/core#prefLabel> "Intersex"@en .
-<http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Sex> .
+<http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#SexCategory> .
 <http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/2000/01/rdf-schema#comment> "A person or group of persons who are biologically intersex." .
 <http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Female> .
 <http://hxl.humanitarianresponse.info/ns/#Intersex> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Male> .
@@ -597,7 +621,7 @@
 <http://hxl.humanitarianresponse.info/ns/#MixedSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#MixedSex> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
 <http://hxl.humanitarianresponse.info/ns/#MixedSex> <http://www.w3.org/2004/02/skos/core#prefLabel> "mixed sex"@en .
-<http://hxl.humanitarianresponse.info/ns/#MixedSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#Sex> .
+<http://hxl.humanitarianresponse.info/ns/#MixedSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#SexCategory> .
 <http://hxl.humanitarianresponse.info/ns/#MixedSex> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of persons of mixed sexes."@en .
 <http://hxl.humanitarianresponse.info/ns/#MixedSex> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Female> .
 <http://hxl.humanitarianresponse.info/ns/#MixedSex> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#Male> .
@@ -608,7 +632,7 @@
 <http://hxl.humanitarianresponse.info/ns/#sexCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "sex category" .
 <http://hxl.humanitarianresponse.info/ns/#sexCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the sex of the population." .
 <http://hxl.humanitarianresponse.info/ns/#sexCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#Population> .
-<http://hxl.humanitarianresponse.info/ns/#sexCategory> <http://www.w3.org/2000/01/rdf-schema#range> <http://hxl.humanitarianresponse.info/ns/#Sex> .
+<http://hxl.humanitarianresponse.info/ns/#sexCategory> <http://www.w3.org/2000/01/rdf-schema#range> <http://hxl.humanitarianresponse.info/ns/#SexCategory> .
 <http://hxl.humanitarianresponse.info/ns/#sexCategoryOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://hxl.humanitarianresponse.info/ns/#sexCategory> .
 <http://hxl.humanitarianresponse.info/ns/#ageGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#ageGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -661,7 +685,7 @@
 <http://hxl.humanitarianresponse.info/ns/#ReportCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Instances of this class are specific report categories such as <em>humanitrian profile</em>, <em>shelter</em> or <em>security</em>. Each ReportCategory should be added to at least one <a href='#ReportCategorySet'>ReportCategorySet</a> following the conventions of the <a href='http://www.w3.org/TR/rdf-schema/#ch_containermembershipproperty'>rdfs:ContainerMembershipProperty</a>."@en .
 <http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
+<http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#metadataSection> .
 <http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "report category" .
 <http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the ReportCategory of a DataContainer." .
 <http://hxl.humanitarianresponse.info/ns/#reportCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#DataContainer> .
