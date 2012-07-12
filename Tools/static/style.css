@@ -63,6 +63,11 @@ h3 {
   margin-top: 2.5em;
 }
 
+h3 small{
+	font-size: 0.7em;
+	margin-left: 30px;
+}
+
 h4 {
   font-size: 120%;
   margin: 2em 0 0.5em;

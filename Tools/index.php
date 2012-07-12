@@ -470,13 +470,21 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 					print ' / '.$alt;
 				}
 			}
+			
+			// show plural form of label, if there is one:
+			if($class->get("http://www.wasab.dk/morten/2004/03/label#plural")){
+				print ' <small><em>Plural: '.$class->get("http://www.wasab.dk/morten/2004/03/label#plural").'.</em></small>' ;
+			}
+			
 			print '</h3>';
+			
+			
 			
 			// highlight hxl:TopLevelConcepts
 			if($class->get($vocab."#topLevelConcept")){
 				print '<p><strong>'.$class->label().' is a HXL top level concept.</strong></p>' ;
 			}
-			
+					
 			
 			
 			if($class->hasProperty("rdfs:subClassOf")){	 
