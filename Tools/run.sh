@@ -7,7 +7,7 @@ for file in *.dot; do
 	dot $file -Tpng -O; 
 	dot $file -Tsvg -O; 
 done
-curl -o static.html http://localhost/HXL-Vocab/Tools/index.php; 
+curl -o index.html http://localhost/HXL-Vocab/Tools/index.php; 
 scp hxl.ttl static/hxl.ttl;
 mv *.png *.svg *.pdf *.html *.css *.rdf *.n3 static;
 open http://localhost/HXL-Vocab/Tools/static/index.html#AdminUnit;
