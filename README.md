@@ -13,5 +13,5 @@ Version history and development tools for the **Humanitarian eXchange Language (
 
 1. Create a folder named *hxl* in the htdocs folder of your webserver. Move the contents of the tools folder into the hxl folder.
 2. To change the vocabulary, edit the *hxl.ttl* file in the tools folder. 
-3. Once you are done, execute *run.sh* (you may need to edit this file a bit if you are on a Windows system)
+3. Once you are done, execute tools/*run.sh* (tools/winrun.bat on Windows)
 4. That's it.
