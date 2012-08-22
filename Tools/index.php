@@ -322,7 +322,7 @@ print $date->format('F j, Y'); ?></dd>
 <div class="overview">
 <h2 id="sec-specification">3. Cross-reference for all HXL classes and properties</h2>
 
-<p>The cross-reference is organized into thematic sections. Each section is illustrated by a graph of the respective classes and properties. The ellipses in the graph represent classes, whereas the arrows represent properties. Dashed lines indicate a subclass relationship (e.g. Camp is a subclass of Site). Solid lines are labeled with the property that connects these two classes. Grey ellipses indicate <em>adjacent</em> classes that are defined in a different section.</p> 
+<p>The cross-reference is organized into thematic sections. Each section is illustrated by a graph of the respective classes and properties. The ellipses in the graph represent classes, whereas the arrows represent properties. Dashed lines indicate a subclass relationship (e.g. <a href="#Emergency">Emergency</a> is a  subclass of <a href="#Situation">Situation</a>). Solid lines are labeled with the property that connects these two classes. Grey ellipses indicate <em>adjacent</em> classes that are defined in a different section.</p> 
 
 <p>Jump directly to the different sections: | 
 <?php
@@ -594,7 +594,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 
 <h2 id="sec-completegraph">4. Integrated graph overview of the complete HXL vocabulary</h2>
 
-<p>The following figure gives an overview of <em>all</em> classes and properties defined by HXL, and how they are connected. The ellipses represent classes, whereas the arrows represent properties: Dashed lines indicate a subclass relationship (e.g. Camp is a subclass of Site). Solid lines are labeled with the property that connects these two classes.</p>
+<p>The following figure gives an overview of <em>all</em> classes and properties defined by HXL, and how they are connected. The ellipses represent classes, whereas the arrows represent properties: Dashed lines indicate a subclass relationship  (e.g. <a href="#Emergency">Emergency</a> is a  subclass of <a href="#Situation">Situation</a>). Solid lines are labeled with the property that connects these two classes.</p>
 
 <a href="hxl.dot.svg" target="_blank"><img src="hxl.dot.png"></a>
 <p align="right"><small>[click to enlarge as <a href="hxl.dot.svg" target="_blank">SVG (with embedded hyperlinks)</a> or <a href="hxl.dot.png" target="_blank">PNG</a>]</small></p>

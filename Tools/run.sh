@@ -2,6 +2,7 @@ rm /Applications/MAMP/logs/php_error.log;
 touch /Applications/MAMP/logs/php_error.log;
 rapper -i turtle hxl.ttl -o rdfxml > hxl.rdf; 
 rapper -i turtle hxl.ttl -o ntriples > hxl.n3; 
+rapper -i turtle hxl.ttl -o turtle > upload.ttl; 
 curl -o index.html http://localhost/HXL-Vocab/Tools/index.php; 
 for file in *.dot; do
 	dot $file -Tpng -O; 
