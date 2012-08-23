@@ -422,7 +422,6 @@ hxl:atLocation
     rdfs:domain hxl:BaseClass ;
     rdfs:isDefinedBy hxl:geolocationSection ;
     rdfs:range geo:Feature ;
-    rdfs:subPropertyOf dc:spatial ;
     skos:prefLabel "at Location"@en .
 
 hxl:comment

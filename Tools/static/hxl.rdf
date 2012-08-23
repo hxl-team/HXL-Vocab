@@ -1162,9 +1162,6 @@
     <skos:prefLabel xml:lang="en">at Location</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/spatial"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
     <rdfs:comment xml:lang="en">Specififes the location for things like emergencies, projects, or camps. It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
