@@ -4,7 +4,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
-    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-08-29</dc:date>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-09-03</dc:date>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
     <dc:creator rdf:resource="http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler"/>
