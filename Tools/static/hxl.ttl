@@ -175,17 +175,6 @@ hxl:Displaced
     rdfs:comment "Refers to internally displaced persons, refugees, and others of concern.<br /><small>Term origin: Humanitarian Profile, ACAPS DSS (<em>Displacement</em>)</small>" ;
 owl:disjointWith hxl:NonDisplaced .
 
-hxl:currentLocation 
-    a rdf:Property, owl:ObjectProperty ;
-    rdfs:isDefinedBy hxl:humanitarianProfileSection ;
-	rdfs:subPropertyOf hxl:atLocation ;
-    skos:prefLabel "current location"@en;
-    rdfs:domain hxl:Population ;
-    rdfs:range geo:Feature ;
-rdfs:comment "The current location of the population being reported should be given at the level of geographic detail agreed by the IM Network using the Administrative Boundaries and Populated Places Common Operational Datasets. Organizations reporting Humanitarian Profile numbers should be encouraged to use the p-code system for unambiguous location reporting.<br /><small>Term origin: Humanitarian profile.</small>" .
-
-hxl:currentLocationOf owl:inverseOf hxl:currentLocation .
-
 hxl:APL
     a rdfs:Class ; 
 	hxl:topLevelConcept "true"^^xsd:boolean;
@@ -490,7 +479,7 @@ hxl:atLocation
     a rdf:Property, owl:ObjectProperty ;
     rdfs:isDefinedBy hxl:geolocationSection ;
     skos:prefLabel "at Location"@en ;
-    rdfs:comment "Specififes the location for things like emergencies, projects, or camps. This should be an administrative unit or other feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs."@en ;
+    rdfs:comment "Specififes the location for things like emergencies, projects, or camps. This should usually be a feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs."@en ;
     rdfs:domain hxl:BaseClass ; 
 rdfs:range geo:Feature .
 
