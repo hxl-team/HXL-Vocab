@@ -479,7 +479,7 @@ hxl:atLocation
     a rdf:Property, owl:ObjectProperty ;
     rdfs:isDefinedBy hxl:geolocationSection ;
     skos:prefLabel "at Location"@en ;
-    rdfs:comment "Specififes the location for things like emergencies, projects, or camps. This should usually be a feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs."@en ;
+    rdfs:comment "Specififes the location for things like emergencies, projects, or camps. This should be an administrative unit or other feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs."@en ;
     rdfs:domain hxl:BaseClass ; 
 rdfs:range geo:Feature .
 

@@ -130,15 +130,6 @@
 <http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hxl.humanitarianresponse.info/ns/#AffectedPopulation> .
 <http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to internally displaced persons, refugees, and others of concern.<br /><small>Term origin: Humanitarian Profile, ACAPS DSS (<em>Displacement</em>)</small>" .
 <http://hxl.humanitarianresponse.info/ns/#Displaced> <http://www.w3.org/2002/07/owl#disjointWith> <http://hxl.humanitarianresponse.info/ns/#NonDisplaced> .
-<http://hxl.humanitarianresponse.info/ns/#currentLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://hxl.humanitarianresponse.info/ns/#currentLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://hxl.humanitarianresponse.info/ns/#currentLocation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection> .
-<http://hxl.humanitarianresponse.info/ns/#currentLocation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://hxl.humanitarianresponse.info/ns/#atLocation> .
-<http://hxl.humanitarianresponse.info/ns/#currentLocation> <http://www.w3.org/2004/02/skos/core#prefLabel> "current location"@en .
-<http://hxl.humanitarianresponse.info/ns/#currentLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#Population> .
-<http://hxl.humanitarianresponse.info/ns/#currentLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/geosparql#Feature> .
-<http://hxl.humanitarianresponse.info/ns/#currentLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "The current location of the population being reported should be given at the level of geographic detail agreed by the IM Network using the Administrative Boundaries and Populated Places Common Operational Datasets. Organizations reporting Humanitarian Profile numbers should be encouraged to use the p-code system for unambiguous location reporting.<br /><small>Term origin: Humanitarian profile.</small>" .
-<http://hxl.humanitarianresponse.info/ns/#currentLocationOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://hxl.humanitarianresponse.info/ns/#currentLocation> .
 <http://hxl.humanitarianresponse.info/ns/#APL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
 <http://hxl.humanitarianresponse.info/ns/#APL> <http://hxl.humanitarianresponse.info/ns/#topLevelConcept> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://hxl.humanitarianresponse.info/ns/#APL> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/geosparql#Feature> .

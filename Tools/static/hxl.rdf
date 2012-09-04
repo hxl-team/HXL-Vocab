@@ -396,33 +396,6 @@
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#Displaced">
     <owl:disjointWith rdf:resource="http://hxl.humanitarianresponse.info/ns/#NonDisplaced"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
-    <rdfs:isDefinedBy rdf:resource="http://hxl.humanitarianresponse.info/ns/#humanitarianProfileSection"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
-    <rdfs:subPropertyOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#atLocation"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
-    <skos:prefLabel xml:lang="en">current location</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
-    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#Population"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
-    <rdfs:range rdf:resource="http://www.opengis.net/geosparql#Feature"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocation">
-    <rdfs:comment>The current location of the population being reported should be given at the level of geographic detail agreed by the IM Network using the Administrative Boundaries and Populated Places Common Operational Datasets. Organizations reporting Humanitarian Profile numbers should be encouraged to use the p-code system for unambiguous location reporting.&lt;br /&gt;&lt;small&gt;Term origin: Humanitarian profile.&lt;/small&gt;</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#currentLocationOf">
-    <owl:inverseOf rdf:resource="http://hxl.humanitarianresponse.info/ns/#currentLocation"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#APL">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
