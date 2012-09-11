@@ -24,11 +24,14 @@
 <http://hxl.humanitarianresponse.info/ns/#metadataSection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://hxl.humanitarianresponse.info/ns/#vocabularySection> .
 <http://hxl.humanitarianresponse.info/ns/#metadataSection> <http://www.w3.org/2000/01/rdf-schema#comment> "This section of the vocabulary defines the standards for metadata about a set of HXL data that is being exchanged. The <a href='hxl-datetime-standard-draft.pdf'>draft HXL date/time standard</a> contains a detailed description of how to use the classes and properties related to dates and timestamps."@en .
 <http://hxl.humanitarianresponse.info/ns/#metadataSection> <http://purl.org/dc/terms/title> "Metadata Section" .
+<http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
 <http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler> <http://xmlns.com/foaf/0.1/name> "Carsten Ke\u00DFler" .
 <http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler> <http://xmlns.com/foaf/0.1/mbox> "me@carsten.io" .
 <http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler> <http://xmlns.com/foaf/0.1/homepage> <http://carsten.io> .
+<http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
 <http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix> <http://xmlns.com/foaf/0.1/name> "CJ Hendrix" .
 <http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix> <http://xmlns.com/foaf/0.1/mbox> "hendrix.cj@gmail.com" .
+<http://hxl.humanitarianresponse.info/data/persons/unocha/minu_limbu> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
 <http://hxl.humanitarianresponse.info/data/persons/unocha/minu_limbu> <http://xmlns.com/foaf/0.1/name> "Minu Limbu" .
 <http://hxl.humanitarianresponse.info/data/persons/unocha/minu_limbu> <http://xmlns.com/foaf/0.1/mbox> "minulimbu@gmail.com" .
 <http://hxl.humanitarianresponse.info/ns/#BaseClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
