@@ -41,14 +41,17 @@ hxl:metadataSection a hxl:vocabularySection ;
         rdfs:comment "This section of the vocabulary defines the standards for metadata about a set of HXL data that is being exchanged. The <a href='hxl-datetime-standard-draft.pdf'>draft HXL date/time standard</a> contains a detailed description of how to use the classes and properties related to dates and timestamps."@en ;
 dc:title "Metadata Section".
                 
-<http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler> foaf:name "Carsten Keßler" ;
+<http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler> a foaf:Person;
+        foaf:name "Carsten Keßler" ;
         foaf:mbox "me@carsten.io" ;
         foaf:homepage <http://carsten.io> .
 
-<http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix> foaf:name "CJ Hendrix" ;
+<http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix> a foaf:Person;
+        foaf:name "CJ Hendrix" ;
         foaf:mbox "hendrix.cj@gmail.com" .
 
-<http://hxl.humanitarianresponse.info/data/persons/unocha/minu_limbu> foaf:name "Minu Limbu" ;
+<http://hxl.humanitarianresponse.info/data/persons/unocha/minu_limbu> a foaf:Person;
+        foaf:name "Minu Limbu" ;
         foaf:mbox "minulimbu@gmail.com" .
 
 hxl:BaseClass
