@@ -79,6 +79,9 @@
     <dc:title>Metadata Section</dc:title>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler">
     <foaf:name>Carsten Keßler</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler">
@@ -88,10 +91,16 @@
     <foaf:homepage rdf:resource="http://carsten.io"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix">
     <foaf:name>CJ Hendrix</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix">
     <foaf:mbox>hendrix.cj@gmail.com</foaf:mbox>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/data/persons/unocha/minu_limbu">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/data/persons/unocha/minu_limbu">
     <foaf:name>Minu Limbu</foaf:name>
