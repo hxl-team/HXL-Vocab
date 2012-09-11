@@ -1,0 +1,29 @@
+digraph { 
+ rankdir="BT";	
+ charset="utf-8";
+ overlap=false;
+ edge [color=darkslategray];
+ edge [fontname=Helvetica];
+ node [fontname=Helvetica];
+
+"Organisation" [ URL = "./#Organisation"] ;
+		"Organisation" -> "http://xmlns.com/foaf/0.1/Organisation" [ color=red style="dashed" ]; 
+			"BaseClass" [ URL = "./#Organisation" color="gray" fontcolor="gray"] ;
+				"Organisation" -> "BaseClass" [ color=red style="dashed" ]; 
+			"Response" [ URL = "./#Response"] ;
+		"BaseClass" [ URL = "./#Response" color="gray" fontcolor="gray"] ;
+				"Response" -> "BaseClass" [ color=red style="dashed" ]; 
+			"http://xmlns.com/foaf/0.1/Organisation" [ URL = "./#http://xmlns.com/foaf/0.1/Organisation"] ;
+		"http://xmlns.com/foaf/0.1/Agent" [ URL = "./#http://xmlns.com/foaf/0.1/Organisation" color="gray" fontcolor="gray"] ;
+				"http://xmlns.com/foaf/0.1/Organisation" -> "http://xmlns.com/foaf/0.1/Agent" [ color=red style="dashed" ]; 
+			"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
+					"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="abbreviation" URL = "./#abbreviation"]; 
+				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
+					"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgDisplayName" URL = "./#orgDisplayName"]; 
+				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
+					"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgName" URL = "./#orgName"]; 
+				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
+					"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgNativeName" URL = "./#orgNativeName"]; 
+				"http://xmlns.com/foaf/0.1/Document" [ URL = "./#http://xmlns.com/foaf/0.1/Document" color="gray" fontcolor="gray"] ;
+					"Organisation" -> "http://xmlns.com/foaf/0.1/Document" [ label="organisationHomepage" URL = "./#organisationHomepage"]; 
+				}

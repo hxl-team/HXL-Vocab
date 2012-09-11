@@ -1,0 +1,24 @@
+digraph { 
+ rankdir="BT";	
+ charset="utf-8";
+ overlap=false;
+ edge [color=darkslategray];
+ edge [fontname=Helvetica];
+ node [fontname=Helvetica];
+
+"Emergency" [ URL = "./#Emergency"] ;
+		"Emergency" -> "Situation" [ color=red style="dashed" ]; 
+			"Situation" [ URL = "./#Situation"] ;
+		"BaseClass" [ URL = "./#Situation" color="gray" fontcolor="gray"] ;
+				"Situation" -> "BaseClass" [ color=red style="dashed" ]; 
+			"http://xmlns.com/foaf/0.1/Agent" [ URL = "./#http://xmlns.com/foaf/0.1/Agent"] ;
+		"http://xmlns.com/foaf/0.1/Group" [ URL = "./#http://xmlns.com/foaf/0.1/Group"] ;
+		"http://xmlns.com/foaf/0.1/Group" -> "http://xmlns.com/foaf/0.1/Agent" [ color=red style="dashed" ]; 
+			"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
+					"Situation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="commonTitle" URL = "./#commonTitle"]; 
+				"BaseClass" [ URL = "./#BaseClass" color="gray" fontcolor="gray"] ;
+				"http://www.w3.org/2001/XMLSchema#int" [ URL = "./#http://www.w3.org/2001/XMLSchema#int" color="gray" fontcolor="gray"] ;
+					"BaseClass" -> "http://www.w3.org/2001/XMLSchema#int" [ label="count" URL = "./#count"]; 
+				"http://www.w3.org/2001/XMLSchema#string" [ URL = "./#http://www.w3.org/2001/XMLSchema#string" color="gray" fontcolor="gray"] ;
+					"Emergency" -> "http://www.w3.org/2001/XMLSchema#string" [ label="hasGLIDEnumber" URL = "./#hasGLIDEnumber"]; 
+				}
