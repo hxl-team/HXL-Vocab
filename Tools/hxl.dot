@@ -108,14 +108,13 @@ digraph {
 			"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="description" URL = "./#description"]; 
 			"APL" -> "DisplacedLocationType" [ label="displacedLocationType" URL = "./#displacedLocationType"]; 
 			"http://purl.org/dc/terms/PeriodOfTime" -> "http://www.w3.org/2001/XMLSchema#duration" [ label="duration" URL = "./#duration"]; 
-			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#date" [ label="end" URL = "./#end"]; 
+			"ReportingPeriod" -> "http://www.w3.org/2001/XMLSchema#date" [ label="end" URL = "./#end"]; 
 			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureAltName" URL = "./#featureAltName"]; 
 			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureName" URL = "./#featureName"]; 
 			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureRefName" URL = "./#featureRefName"]; 
 			"AgeGroup" -> "http://www.w3.org/2001/XMLSchema#int" [ label="fromAge" URL = "./#fromAge"]; 
 			"Emergency" -> "http://www.w3.org/2001/XMLSchema#string" [ label="hasGLIDEnumber" URL = "./#hasGLIDEnumber"]; 
 			"Population" -> "http://www.w3.org/2001/XMLSchema#int" [ label="householdCount" URL = "./#householdCount"]; 
-			"Population" -> "Population" [ label="includes" URL = "./#includes"]; 
 			"Population" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="method" URL = "./#method"]; 
 			"Population" -> "Country" [ label="nationality" URL = "./#nationality"]; 
 			"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgDisplayName" URL = "./#orgDisplayName"]; 
@@ -130,10 +129,18 @@ digraph {
 			"DataContainer" -> "HXLer" [ label="reportedBy" URL = "./#reportedBy"]; 
 			"Population" -> "SexCategory" [ label="sexCategory" URL = "./#sexCategory"]; 
 			"Population" -> "Organisation" [ label="source" URL = "./#source"]; 
-			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#date" [ label="start" URL = "./#start"]; 
+			"ReportingPeriod" -> "http://www.w3.org/2001/XMLSchema#date" [ label="start" URL = "./#start"]; 
 			"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="title" URL = "./#title"]; 
 			"AgeGroup" -> "http://www.w3.org/2001/XMLSchema#int" [ label="toAge" URL = "./#toAge"]; 
+			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validFrom" URL = "./#validFrom"]; 
+			"Population" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validFrom" URL = "./#validFrom"]; 
+			"Organisation" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validFrom" URL = "./#validFrom"]; 
+			"Situation" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validFrom" URL = "./#validFrom"]; 
+			"DataContainer" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validFrom" URL = "./#validFrom"]; 
+			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validUntil" URL = "./#validUntil"]; 
+			"Population" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validUntil" URL = "./#validUntil"]; 
+			"Organisation" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validUntil" URL = "./#validUntil"]; 
+			"Situation" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validUntil" URL = "./#validUntil"]; 
+			"DataContainer" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validUntil" URL = "./#validUntil"]; 
 			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validityDate" URL = "./#validityDate"]; 
-			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validityEnd" URL = "./#validityEnd"]; 
-			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validityStart" URL = "./#validityStart"]; 
 			}

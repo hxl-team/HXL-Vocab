@@ -55,7 +55,6 @@ digraph {
 					"AgeGroup" -> "http://www.w3.org/2001/XMLSchema#int" [ label="fromAge" URL = "./#fromAge"]; 
 				"http://www.w3.org/2001/XMLSchema#int" [ URL = "./#http://www.w3.org/2001/XMLSchema#int" color="gray" fontcolor="gray"] ;
 					"Population" -> "http://www.w3.org/2001/XMLSchema#int" [ label="householdCount" URL = "./#householdCount"]; 
-				"Population" -> "Population" [ label="includes" URL = "./#includes"]; 
 				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
 					"Population" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="method" URL = "./#method"]; 
 				"Country" [ URL = "./#Country" color="gray" fontcolor="gray"] ;
