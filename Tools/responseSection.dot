@@ -19,6 +19,8 @@ digraph {
 			"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
 					"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="abbreviation" URL = "./#abbreviation"]; 
 				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
+					"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="ftsId" URL = "./#ftsId"]; 
+				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
 					"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgDisplayName" URL = "./#orgDisplayName"]; 
 				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
 					"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgName" URL = "./#orgName"]; 
