@@ -79,9 +79,6 @@ digraph {
 		"ReportCategorySet" [ URL = "./#ReportCategorySet"] ;
 	"ReportCategorySet" -> "BaseClass" [ color=red style="dashed" ]; 
 		"ReportCategorySet" -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag" [ color=red style="dashed" ]; 
-		"ReportingPeriod" [ URL = "./#ReportingPeriod"] ;
-	"ReportingPeriod" -> "BaseClass" [ color=red style="dashed" ]; 
-		"ReportingPeriod" -> "http://purl.org/dc/terms/PeriodOfTime" [ color=red style="dashed" ]; 
 		"Response" [ URL = "./#Response"] ;
 	"Response" -> "BaseClass" [ color=red style="dashed" ]; 
 		"SexCategory" [ URL = "./#SexCategory"] ;
@@ -113,8 +110,6 @@ digraph {
 			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#date" [ label="date" URL = "./#date"]; 
 			"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="description" URL = "./#description"]; 
 			"APL" -> "DisplacedLocationType" [ label="displacedLocationType" URL = "./#displacedLocationType"]; 
-			"http://purl.org/dc/terms/PeriodOfTime" -> "http://www.w3.org/2001/XMLSchema#duration" [ label="duration" URL = "./#duration"]; 
-			"ReportingPeriod" -> "http://www.w3.org/2001/XMLSchema#date" [ label="end" URL = "./#end"]; 
 			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureAltName" URL = "./#featureAltName"]; 
 			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureName" URL = "./#featureName"]; 
 			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureRefName" URL = "./#featureRefName"]; 
@@ -136,7 +131,6 @@ digraph {
 			"DataContainer" -> "HXLer" [ label="reportedBy" URL = "./#reportedBy"]; 
 			"Population" -> "SexCategory" [ label="sexCategory" URL = "./#sexCategory"]; 
 			"Population" -> "Organisation" [ label="source" URL = "./#source"]; 
-			"ReportingPeriod" -> "http://www.w3.org/2001/XMLSchema#date" [ label="start" URL = "./#start"]; 
 			"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="title" URL = "./#title"]; 
 			"AgeGroup" -> "http://www.w3.org/2001/XMLSchema#int" [ label="toAge" URL = "./#toAge"]; 
 			"DataContainer" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validOn" URL = "./#validOn"]; 

@@ -25,10 +25,6 @@ digraph {
 				"ReportCategorySet" -> "BaseClass" [ color=red style="dashed" ]; 
 			"http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag" [ URL = "./#ReportCategorySet" color="gray" fontcolor="gray"] ;
 				"ReportCategorySet" -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag" [ color=red style="dashed" ]; 
-			"ReportingPeriod" [ URL = "./#ReportingPeriod"] ;
-		"BaseClass" [ URL = "./#ReportingPeriod" color="gray" fontcolor="gray"] ;
-				"ReportingPeriod" -> "BaseClass" [ color=red style="dashed" ]; 
-			"ReportingPeriod" -> "http://purl.org/dc/terms/PeriodOfTime" [ color=red style="dashed" ]; 
 			"http://purl.org/dc/terms/PeriodOfTime" [ URL = "./#http://purl.org/dc/terms/PeriodOfTime"] ;
 		"Emergency" [ URL = "./#Emergency" color="gray" fontcolor="gray"] ;
 					"DataContainer" -> "Emergency" [ label="aboutEmergency" URL = "./#aboutEmergency"]; 
@@ -43,16 +39,10 @@ digraph {
 				"BaseClass" [ URL = "./#BaseClass" color="gray" fontcolor="gray"] ;
 				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
 					"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="description" URL = "./#description"]; 
-				"http://www.w3.org/2001/XMLSchema#duration" [ URL = "./#http://www.w3.org/2001/XMLSchema#duration" color="gray" fontcolor="gray"] ;
-					"http://purl.org/dc/terms/PeriodOfTime" -> "http://www.w3.org/2001/XMLSchema#duration" [ label="duration" URL = "./#duration"]; 
-				"http://www.w3.org/2001/XMLSchema#date" [ URL = "./#http://www.w3.org/2001/XMLSchema#date" color="gray" fontcolor="gray"] ;
-					"ReportingPeriod" -> "http://www.w3.org/2001/XMLSchema#date" [ label="end" URL = "./#end"]; 
 				"http://xmlns.com/foaf/0.1/Document" [ URL = "./#http://xmlns.com/foaf/0.1/Document" color="gray" fontcolor="gray"] ;
 					"DataContainer" -> "http://xmlns.com/foaf/0.1/Document" [ label="relatedInfo" URL = "./#relatedInfo"]; 
 				"DataContainer" -> "ReportCategory" [ label="reportCategory" URL = "./#reportCategory"]; 
 				"DataContainer" -> "HXLer" [ label="reportedBy" URL = "./#reportedBy"]; 
-				"http://www.w3.org/2001/XMLSchema#date" [ URL = "./#http://www.w3.org/2001/XMLSchema#date" color="gray" fontcolor="gray"] ;
-					"ReportingPeriod" -> "http://www.w3.org/2001/XMLSchema#date" [ label="start" URL = "./#start"]; 
 				"BaseClass" [ URL = "./#BaseClass" color="gray" fontcolor="gray"] ;
 				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
 					"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="title" URL = "./#title"]; 
