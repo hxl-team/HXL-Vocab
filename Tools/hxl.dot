@@ -39,6 +39,8 @@ digraph {
 		"DisplacedLocationTypeSet" [ URL = "./#DisplacedLocationTypeSet"] ;
 	"DisplacedLocationTypeSet" -> "BaseClass" [ color=red style="dashed" ]; 
 		"DisplacedLocationTypeSet" -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag" [ color=red style="dashed" ]; 
+		"Distribution" [ URL = "./#Distribution"] ;
+	"Distribution" -> "BaseClass" [ color=red style="dashed" ]; 
 		"Emergency" [ URL = "./#Emergency"] ;
 	"Emergency" -> "Situation" [ color=red style="dashed" ]; 
 		"HXLer" [ URL = "./#HXLer"] ;
@@ -48,10 +50,14 @@ digraph {
 	"HostPopulation" -> "NonDisplaced" [ color=red style="dashed" ]; 
 		"IDP" [ URL = "./#IDP"] ;
 	"IDP" -> "Displaced" [ color=red style="dashed" ]; 
+		"Incident" [ URL = "./#Incident"] ;
+	"Incident" -> "BaseClass" [ color=red style="dashed" ]; 
 		"Injured" [ URL = "./#Injured"] ;
 	"Injured" -> "Casualty" [ color=red style="dashed" ]; 
 		"Missing" [ URL = "./#Missing"] ;
 	"Missing" -> "Casualty" [ color=red style="dashed" ]; 
+		"Need" [ URL = "./#Need"] ;
+	"Need" -> "BaseClass" [ color=red style="dashed" ]; 
 		"NonDisplaced" [ URL = "./#NonDisplaced"] ;
 	"NonDisplaced" -> "AffectedPopulation" [ color=red style="dashed" ]; 
 		"NonHostPopulation" [ URL = "./#NonHostPopulation"] ;
