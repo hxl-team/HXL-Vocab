@@ -10,7 +10,7 @@
 @prefix label: <http://www.wasab.dk/morten/2004/03/label#> .
 
 <http://hxl.humanitarianresponse.info/ns/> a owl:Ontology ;  
-        dc:date "2012-09-28"^^xsd:date ; #update
+        dc:date "2012-10-09"^^xsd:date ; #update
         dc:creator <http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler> , <http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix> , <http://hxl.humanitarianresponse.info/data/persons/unocha/minu_limbu> ;
         dc:title "Humanitarian eXchange Language (HXL) Situation and Response Standard"@en ;
         dc:abstract "<p>Draft specification of the Humanitarian eXchange Language (HXL) standard. <span style='color: red'>This vocabulary specification is currently <b>under development</b> and may change at any time without notice.</span></p> <p>The porpuse of HXL is to facilitate data exchange within the humanitarian domain. It provides a core domain model that has been created bottom-up by inspecting a broad range of systems in use with different humanitarian organisations. As needs vary widely across organisations in this domain, this vocabulary does <em>not</em> intend to be complete; in fact, it is the smallest common denominator. Any organisations that wish to publish <em>full</em> exports of their data can do so by extending this domain model with application- or organisation-specific models that reflect their internal data models (which may already be formalised in an XML schema or database schema).</p>"@en ;
@@ -506,7 +506,7 @@ hxl:atLocation
     a rdf:Property, owl:ObjectProperty ;
     rdfs:isDefinedBy hxl:geolocationSection ;
     skos:prefLabel "at Location"@en ;
-    rdfs:comment "Specififes the location for things like emergencies, projects, or camps. This should be an administrative unit or other feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs."@en ;
+    rdfs:comment "Specififes the location for things like emergencies, projects, or affected population locations. This should be an administrative unit or other feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs."@en ;
     rdfs:domain hxl:BaseClass ; 
 rdfs:range geo:Feature .
 

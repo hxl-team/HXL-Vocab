@@ -1,5 +1,5 @@
 <http://hxl.humanitarianresponse.info/ns/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://hxl.humanitarianresponse.info/ns/> <http://purl.org/dc/terms/date> "2012-09-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://hxl.humanitarianresponse.info/ns/> <http://purl.org/dc/terms/date> "2012-10-09"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://hxl.humanitarianresponse.info/ns/> <http://purl.org/dc/terms/creator> <http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler> .
 <http://hxl.humanitarianresponse.info/ns/> <http://purl.org/dc/terms/creator> <http://hxl.humanitarianresponse.info/data/persons/unocha/cj_hendrix> .
 <http://hxl.humanitarianresponse.info/ns/> <http://purl.org/dc/terms/creator> <http://hxl.humanitarianresponse.info/data/persons/unocha/minu_limbu> .
@@ -387,7 +387,7 @@
 <http://hxl.humanitarianresponse.info/ns/#atLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://hxl.humanitarianresponse.info/ns/#atLocation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://hxl.humanitarianresponse.info/ns/#geolocationSection> .
 <http://hxl.humanitarianresponse.info/ns/#atLocation> <http://www.w3.org/2004/02/skos/core#prefLabel> "at Location"@en .
-<http://hxl.humanitarianresponse.info/ns/#atLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Specififes the location for things like emergencies, projects, or camps. This should be an administrative unit or other feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs."@en .
+<http://hxl.humanitarianresponse.info/ns/#atLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Specififes the location for things like emergencies, projects, or affected population locations. This should be an administrative unit or other feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs."@en .
 <http://hxl.humanitarianresponse.info/ns/#atLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://hxl.humanitarianresponse.info/ns/#BaseClass> .
 <http://hxl.humanitarianresponse.info/ns/#atLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/geosparql#Feature> .
 <http://hxl.humanitarianresponse.info/ns/#locationOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://hxl.humanitarianresponse.info/ns/#atLocation> .

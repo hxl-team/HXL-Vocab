@@ -4,7 +4,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
-    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-09-28</dc:date>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-10-09</dc:date>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/">
     <dc:creator rdf:resource="http://hxl.humanitarianresponse.info/data/persons/unocha/carsten_kessler"/>
@@ -1168,7 +1168,7 @@
     <skos:prefLabel xml:lang="en">at Location</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
-    <rdfs:comment xml:lang="en">Specififes the location for things like emergencies, projects, or camps. This should be an administrative unit or other feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Specififes the location for things like emergencies, projects, or affected population locations. This should be an administrative unit or other feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
     <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#BaseClass"/>
