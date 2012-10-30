@@ -17,6 +17,7 @@ digraph {
 				"HXLer" -> "http://xmlns.com/foaf/0.1/Agent" [ color=red style="dashed" ]; 
 			"BaseClass" [ URL = "./#HXLer" color="gray" fontcolor="gray"] ;
 				"HXLer" -> "BaseClass" [ color=red style="dashed" ]; 
+			"HXLer" -> "Source" [ color=red style="dashed" ]; 
 			"ReportCategory" [ URL = "./#ReportCategory"] ;
 		"BaseClass" [ URL = "./#ReportCategory" color="gray" fontcolor="gray"] ;
 				"ReportCategory" -> "BaseClass" [ color=red style="dashed" ]; 
@@ -25,6 +26,13 @@ digraph {
 				"ReportCategorySet" -> "BaseClass" [ color=red style="dashed" ]; 
 			"http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag" [ URL = "./#ReportCategorySet" color="gray" fontcolor="gray"] ;
 				"ReportCategorySet" -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag" [ color=red style="dashed" ]; 
+			"Source" [ URL = "./#Source"] ;
+		"http://xmlns.com/foaf/0.1/Agent" [ URL = "./#Source" color="gray" fontcolor="gray"] ;
+				"Source" -> "http://xmlns.com/foaf/0.1/Agent" [ color=red style="dashed" ]; 
+			"BaseClass" [ URL = "./#Source" color="gray" fontcolor="gray"] ;
+				"Source" -> "BaseClass" [ color=red style="dashed" ]; 
+			"System" [ URL = "./#System"] ;
+		"System" -> "Source" [ color=red style="dashed" ]; 
 			"http://purl.org/dc/terms/PeriodOfTime" [ URL = "./#http://purl.org/dc/terms/PeriodOfTime"] ;
 		"Emergency" [ URL = "./#Emergency" color="gray" fontcolor="gray"] ;
 					"DataContainer" -> "Emergency" [ label="aboutEmergency" URL = "./#aboutEmergency"]; 

@@ -64,8 +64,8 @@ digraph {
 				"http://www.opengis.net/geosparql#Feature" [ URL = "./#http://www.opengis.net/geosparql#Feature" color="gray" fontcolor="gray"] ;
 					"Displaced" -> "http://www.opengis.net/geosparql#Feature" [ label="placeOfOrigin" URL = "./#placeOfOrigin"]; 
 				"Population" -> "SexCategory" [ label="sexCategory" URL = "./#sexCategory"]; 
-				"Organisation" [ URL = "./#Organisation" color="gray" fontcolor="gray"] ;
-					"Population" -> "Organisation" [ label="source" URL = "./#source"]; 
+				"Source" [ URL = "./#Source" color="gray" fontcolor="gray"] ;
+					"Population" -> "Source" [ label="source" URL = "./#source"]; 
 				"http://www.w3.org/2001/XMLSchema#int" [ URL = "./#http://www.w3.org/2001/XMLSchema#int" color="gray" fontcolor="gray"] ;
 					"AgeGroup" -> "http://www.w3.org/2001/XMLSchema#int" [ label="toAge" URL = "./#toAge"]; 
 				}

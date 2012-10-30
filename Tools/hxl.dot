@@ -46,6 +46,7 @@ digraph {
 		"HXLer" [ URL = "./#HXLer"] ;
 	"HXLer" -> "http://xmlns.com/foaf/0.1/Agent" [ color=red style="dashed" ]; 
 		"HXLer" -> "BaseClass" [ color=red style="dashed" ]; 
+		"HXLer" -> "Source" [ color=red style="dashed" ]; 
 		"HostPopulation" [ URL = "./#HostPopulation"] ;
 	"HostPopulation" -> "NonDisplaced" [ color=red style="dashed" ]; 
 		"IDP" [ URL = "./#IDP"] ;
@@ -65,6 +66,7 @@ digraph {
 		"Organisation" [ URL = "./#Organisation"] ;
 	"Organisation" -> "http://xmlns.com/foaf/0.1/Organisation" [ color=red style="dashed" ]; 
 		"Organisation" -> "BaseClass" [ color=red style="dashed" ]; 
+		"Organisation" -> "Source" [ color=red style="dashed" ]; 
 		"Others" [ URL = "./#Others"] ;
 	"Others" -> "Displaced" [ color=red style="dashed" ]; 
 		"PopulatedPlace" [ URL = "./#PopulatedPlace"] ;
@@ -85,6 +87,11 @@ digraph {
 	"SexCategory" -> "BaseClass" [ color=red style="dashed" ]; 
 		"Situation" [ URL = "./#Situation"] ;
 	"Situation" -> "BaseClass" [ color=red style="dashed" ]; 
+		"Source" [ URL = "./#Source"] ;
+	"Source" -> "http://xmlns.com/foaf/0.1/Agent" [ color=red style="dashed" ]; 
+		"Source" -> "BaseClass" [ color=red style="dashed" ]; 
+		"System" [ URL = "./#System"] ;
+	"System" -> "Source" [ color=red style="dashed" ]; 
 		"TotalPopulation" [ URL = "./#TotalPopulation"] ;
 	"TotalPopulation" -> "Population" [ color=red style="dashed" ]; 
 		"http://purl.org/dc/terms/PeriodOfTime" [ URL = "./#http://purl.org/dc/terms/PeriodOfTime"] ;
@@ -130,7 +137,7 @@ digraph {
 			"DataContainer" -> "ReportCategory" [ label="reportCategory" URL = "./#reportCategory"]; 
 			"DataContainer" -> "HXLer" [ label="reportedBy" URL = "./#reportedBy"]; 
 			"Population" -> "SexCategory" [ label="sexCategory" URL = "./#sexCategory"]; 
-			"Population" -> "Organisation" [ label="source" URL = "./#source"]; 
+			"Population" -> "Source" [ label="source" URL = "./#source"]; 
 			"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="title" URL = "./#title"]; 
 			"AgeGroup" -> "http://www.w3.org/2001/XMLSchema#int" [ label="toAge" URL = "./#toAge"]; 
 			"DataContainer" -> "http://www.w3.org/2001/XMLSchema#date" [ label="validOn" URL = "./#validOn"]; 
