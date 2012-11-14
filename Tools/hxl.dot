@@ -69,6 +69,8 @@ digraph {
 		"Organisation" -> "Source" [ color=red style="dashed" ]; 
 		"Others" [ URL = "./#Others"] ;
 	"Others" -> "Displaced" [ color=red style="dashed" ]; 
+		"PopPlaceClass" [ URL = "./#PopPlaceClass"] ;
+	"PopPlaceClass" -> "BaseClass" [ color=red style="dashed" ]; 
 		"PopulatedPlace" [ URL = "./#PopulatedPlace"] ;
 	"PopulatedPlace" -> "AdminUnit" [ color=red style="dashed" ]; 
 		"Population" [ URL = "./#Population"] ;
@@ -124,6 +126,7 @@ digraph {
 			"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="ftsId" URL = "./#ftsId"]; 
 			"Emergency" -> "http://www.w3.org/2001/XMLSchema#string" [ label="hasGLIDEnumber" URL = "./#hasGLIDEnumber"]; 
 			"Population" -> "http://www.w3.org/2001/XMLSchema#int" [ label="householdCount" URL = "./#householdCount"]; 
+			"PopulatedPlace" -> "PopPlaceClass" [ label="inClass" URL = "./#inClass"]; 
 			"Population" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="method" URL = "./#method"]; 
 			"Population" -> "Country" [ label="nationality" URL = "./#nationality"]; 
 			"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgDisplayName" URL = "./#orgDisplayName"]; 
@@ -133,6 +136,9 @@ digraph {
 			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="pcode" URL = "./#pcode"]; 
 			"Population" -> "http://www.w3.org/2001/XMLSchema#int" [ label="personCount" URL = "./#personCount"]; 
 			"Displaced" -> "http://www.opengis.net/geosparql#Feature" [ label="placeOfOrigin" URL = "./#placeOfOrigin"]; 
+			"PopPlaceClass" -> "Country" [ label="popPlaceClassCountry" URL = "./#popPlaceClassCountry"]; 
+			"PopPlaceClass" -> "http://www.w3.org/2001/XMLSchema#int" [ label="popPlaceClassNumber" URL = "./#popPlaceClassNumber"]; 
+			"PopPlaceClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="popPlaceClassTitle" URL = "./#popPlaceClassTitle"]; 
 			"DataContainer" -> "http://xmlns.com/foaf/0.1/Document" [ label="relatedInfo" URL = "./#relatedInfo"]; 
 			"DataContainer" -> "ReportCategory" [ label="reportCategory" URL = "./#reportCategory"]; 
 			"DataContainer" -> "HXLer" [ label="reportedBy" URL = "./#reportedBy"]; 
