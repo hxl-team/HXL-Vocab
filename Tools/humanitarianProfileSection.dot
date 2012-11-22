@@ -61,8 +61,8 @@ digraph {
 					"Population" -> "Country" [ label="nationality" URL = "./#nationality"]; 
 				"http://www.w3.org/2001/XMLSchema#int" [ URL = "./#http://www.w3.org/2001/XMLSchema#int" color="gray" fontcolor="gray"] ;
 					"Population" -> "http://www.w3.org/2001/XMLSchema#int" [ label="personCount" URL = "./#personCount"]; 
-				"http://www.opengis.net/geosparql#Feature" [ URL = "./#http://www.opengis.net/geosparql#Feature" color="gray" fontcolor="gray"] ;
-					"Displaced" -> "http://www.opengis.net/geosparql#Feature" [ label="placeOfOrigin" URL = "./#placeOfOrigin"]; 
+				"http://www.opengis.net/ont/geosparql#Feature" [ URL = "./#http://www.opengis.net/ont/geosparql#Feature" color="gray" fontcolor="gray"] ;
+					"Displaced" -> "http://www.opengis.net/ont/geosparql#Feature" [ label="placeOfOrigin" URL = "./#placeOfOrigin"]; 
 				"Population" -> "SexCategory" [ label="sexCategory" URL = "./#sexCategory"]; 
 				"Source" [ URL = "./#Source" color="gray" fontcolor="gray"] ;
 					"Population" -> "Source" [ label="source" URL = "./#source"]; 

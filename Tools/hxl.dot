@@ -7,10 +7,10 @@ digraph {
  node [fontname=Helvetica];
 
 "APL" [ URL = "./#APL"] ;
-	"APL" -> "http://www.opengis.net/geosparql#Feature" [ color=red style="dashed" ]; 
+	"APL" -> "http://www.opengis.net/ont/geosparql#Feature" [ color=red style="dashed" ]; 
 		"APL" -> "BaseClass" [ color=red style="dashed" ]; 
 		"AdminUnit" [ URL = "./#AdminUnit"] ;
-	"AdminUnit" -> "http://www.opengis.net/geosparql#Feature" [ color=red style="dashed" ]; 
+	"AdminUnit" -> "http://www.opengis.net/ont/geosparql#Feature" [ color=red style="dashed" ]; 
 		"AdminUnit" -> "BaseClass" [ color=red style="dashed" ]; 
 		"AdminUnitLevel" [ URL = "./#AdminUnitLevel"] ;
 	"AdminUnitLevel" -> "BaseClass" [ color=red style="dashed" ]; 
@@ -112,16 +112,16 @@ digraph {
 			"DataContainer" -> "ApprovalLevel" [ label="approvedAtLevel" URL = "./#approvedAtLevel"]; 
 			"DataContainer" -> "HXLer" [ label="approvedBy" URL = "./#approvedBy"]; 
 			"AdminUnit" -> "AdminUnitLevel" [ label="atLevel" URL = "./#atLevel"]; 
-			"BaseClass" -> "http://www.opengis.net/geosparql#Feature" [ label="atLocation" URL = "./#atLocation"]; 
+			"BaseClass" -> "http://www.opengis.net/ont/geosparql#Feature" [ label="atLocation" URL = "./#atLocation"]; 
 			"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="comment" URL = "./#comment"]; 
 			"Situation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="commonTitle" URL = "./#commonTitle"]; 
 			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#int" [ label="count" URL = "./#count"]; 
 			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#date" [ label="date" URL = "./#date"]; 
 			"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="description" URL = "./#description"]; 
 			"APL" -> "DisplacedLocationType" [ label="displacedLocationType" URL = "./#displacedLocationType"]; 
-			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureAltName" URL = "./#featureAltName"]; 
-			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureName" URL = "./#featureName"]; 
-			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureRefName" URL = "./#featureRefName"]; 
+			"http://www.opengis.net/ont/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureAltName" URL = "./#featureAltName"]; 
+			"http://www.opengis.net/ont/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureName" URL = "./#featureName"]; 
+			"http://www.opengis.net/ont/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="featureRefName" URL = "./#featureRefName"]; 
 			"AgeGroup" -> "http://www.w3.org/2001/XMLSchema#int" [ label="fromAge" URL = "./#fromAge"]; 
 			"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="ftsId" URL = "./#ftsId"]; 
 			"Emergency" -> "http://www.w3.org/2001/XMLSchema#string" [ label="hasGLIDEnumber" URL = "./#hasGLIDEnumber"]; 
@@ -133,9 +133,9 @@ digraph {
 			"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgName" URL = "./#orgName"]; 
 			"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgNativeName" URL = "./#orgNativeName"]; 
 			"Organisation" -> "http://xmlns.com/foaf/0.1/Document" [ label="organisationHomepage" URL = "./#organisationHomepage"]; 
-			"http://www.opengis.net/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="pcode" URL = "./#pcode"]; 
+			"http://www.opengis.net/ont/geosparql#Feature" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="pcode" URL = "./#pcode"]; 
 			"Population" -> "http://www.w3.org/2001/XMLSchema#int" [ label="personCount" URL = "./#personCount"]; 
-			"Displaced" -> "http://www.opengis.net/geosparql#Feature" [ label="placeOfOrigin" URL = "./#placeOfOrigin"]; 
+			"Displaced" -> "http://www.opengis.net/ont/geosparql#Feature" [ label="placeOfOrigin" URL = "./#placeOfOrigin"]; 
 			"PopPlaceClass" -> "Country" [ label="popPlaceClassCountry" URL = "./#popPlaceClassCountry"]; 
 			"PopPlaceClass" -> "http://www.w3.org/2001/XMLSchema#int" [ label="popPlaceClassNumber" URL = "./#popPlaceClassNumber"]; 
 			"PopPlaceClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="popPlaceClassTitle" URL = "./#popPlaceClassTitle"]; 
