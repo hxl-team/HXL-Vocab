@@ -182,13 +182,73 @@ echo'<?xml version="1.0" encoding="UTF-8"?>'; ?>
 >
 <head>
  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  	<link rel="stylesheet" type="text/css" href="style.css" />
+  	<link href="css/hxl.css" rel="stylesheet">
   	<title><?php print $vocab->label(); ?></title>
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <style type="text/css">
+    h3{
+    	margin-top: 45px;
+    }
+
+    h4{
+    	margin-top: 35px;
+    }
+	</style>
+
+    <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 
-<body>
 
-<div id="doc-link"><a href="#sec-toc">TOC</a></div>
+<body data-spy="scroll" data-target=".navspy" onload="prettyPrint()">
+	<div class="container">
+	<div class="navbar">
+        <div class="container">
+          <div class="nav-hxlator">
+          <span class="brand" style="padding-top: 0"><img src="img/logo.png"></span>        
+            <ul class="nav" id="topnav">
+
+			<li><a href="http://hxl.humanitarianresponse.info/docs/">HXL Documentation</a></li>
+			<li class="active"><a href="http://hxl.humanitarianresponse.info/ns/">HXL Vocabulary</a></li>           
+            </ul>
+          </div>
+      </div>
+    </div> 
+
+
+<div class="container start">	    
+    	<div class="row">
+	     	<div class="span4" style="text-align: center">
+	    		<img src="img/tag.png" />
+	    		<div class="navspy">
+	    			<ul class="nav nav-tabs nav-stacked affix-top sidenav" data-spy="affix" data-offset-top="314">
+	  					<li><a href="#sec-intro">Introduction <i class="icon-chevron-right pull-right"></i></a></li>
+  						<li><a href="#sec-glance">HXL at a glance <i class="icon-chevron-right pull-right"></i></a></li>
+  						<!-- <li><a href="#sec-specification">Cross-reference for core HXL classes and properties by section: <i class="icon-chevron-right pull-right"></i></a></li> -->
+  						<?php
+						
+						// get all vocabulary sections (i.e., each resource that is 
+						// used as object in rdfs:isDefinedBy statements):
+						
+						$sections = $graph->allOfType($vocab."#vocabularySection");
+				 		sort($sections);
+						
+						foreach($sections as $section){
+							print '<li><a href="#'.$u->getHXLFragment($section).'">'.$section->get("dc:title").' <i class="icon-chevron-right pull-right"></i></a></li>';
+						}
+						
+						
+						?>					
+				  <li><a href="#sec-completegraph">Graph overview of the complete vocabulary <i class="icon-chevron-right pull-right"></i></a></li>
+				  <li><a href="#sec-license">License <i class="icon-chevron-right pull-right"></i></a></li>
+				  <li><a href="#sec-changes">Change log <i class="icon-chevron-right pull-right"></i></a></li>
+</ol>     
+			        </ul>		
+			    </div>	
+	      	</div>
+	      	<div class="span8">	      				       	      	
 
 <h1 about="" property="dc:title" xml:lang="en"><?php print $vocab->label(); ?></h1>
 
@@ -227,7 +287,7 @@ print $date->format('F j, Y'); ?></dd>
 
 </dl>
 
-<h2 id="sec-toc">Table of contents</h2>
+<!-- <h2 id="sec-toc">Table of contents</h2>
 <ol>
   <li><a href="#sec-intro">Introduction</a></li>
   <li><a href="#sec-glance">The HXL vocabulary at a glance</a></li>
@@ -251,11 +311,11 @@ print $date->format('F j, Y'); ?></dd>
   <li><a href="#sec-completegraph">Integrated graph overview of the complete HXL vocabulary</a></li>
   <li><a href="#sec-license">License</a></li>
   <li><a href="#sec-changes">Change log</a></li>
-</ol>
+</ol> -->
 
 <hr />
 
-<h2 id="sec-intro">1. Introduction</h2>
+<h2 id="sec-intro">Introduction</h2>
 
 <p about="<?php print $vocab; ?>" property="dc:abstract">
 	<?php print $vocab->get('dc:abstract'); ?>
@@ -278,12 +338,11 @@ print $date->format('F j, Y'); ?></dd>
 <p class='intro'><img src='intro6.dot.png'  align='right'>The domain and range define the types of things between which a property can be used. Consider the property <a href='#hasObjective'>hasObjective</a>, whose <em>domain</em> is defined as <a href='#Activity'>Humanitarian Activity</a>. This states that whenever we see a statement using hasObjective as property, we can infere that the <em>subject</em> of this triple is a Humanitarian Activity. Likewise, its <em>range</em> is defined as <a href='#Objective'>Objective</a>, so that we can infere that the <em>object</em> in any statement using hasObjective is an Objective. In the graphs shown in this standard, the property arrows point from domain to range (i.e., from kinds of subjects to kinds of objects). 
 
 
-<div class="glance">
-<h2 id="sec-glance">2. The HXL vocabulary at a glance</h2>
+<h2 id="sec-glance">The HXL vocabulary at a glance</h2>
 
 <p>An alphabetical index of all terms from the HXL vocabulary, by class and by property, is given below for quick reference. Click the terms for a more detailed description.</p>
 
-<div class="index">
+<div class="hero-unit" style="padding: 15px">
 
 <p><strong>Classes</strong> |
   
@@ -301,6 +360,9 @@ print $date->format('F j, Y'); ?></dd>
   
 </p>
 
+</div>
+
+<div class="hero-unit" style="padding: 15px">
 
 <p><strong>Properties</strong> |
 
@@ -320,7 +382,7 @@ print $date->format('F j, Y'); ?></dd>
   
 
 <div class="overview">
-<h2 id="sec-specification">3. Cross-reference for all HXL classes and properties</h2>
+<h2 id="sec-specification">Cross-reference for all HXL classes and properties</h2>
 
 <p>The cross-reference is organized into thematic sections. Each section is illustrated by a graph of the respective classes and properties. The ellipses in the graph represent classes, whereas the arrows represent properties. Dashed lines indicate a subclass relationship (e.g. <a href="#Emergency">Emergency</a> is a  subclass of <a href="#Situation">Situation</a>). Solid lines are labeled with the property that connects these two classes. Grey ellipses indicate <em>adjacent</em> classes that are defined in a different section.</p> 
 
@@ -412,7 +474,7 @@ file_put_contents($file, $dot);
 
 ?>
 
-<div class="index">
+<div class="hero-unit" style="padding: 15px">
 
 <p><strong>Classes</strong> |
   
@@ -430,6 +492,9 @@ file_put_contents($file, $dot);
   
 </p>
 
+</div>
+
+<div class="hero-unit" style="padding: 15px">
 
 <p><strong>Properties</strong> |
 
@@ -454,7 +519,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 
 
 ?>
-	<h2>Classes:</h2>
+	<h3>Classes</h3>
 
 
 <?php
@@ -463,7 +528,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 	foreach($classes as $class){
 		if($class->get("rdfs:isDefinedBy") == $section){
 			print '		<div class="specterm" id="' .$u->getFragment($class). '" about="" typeof="'. $class->get('rdf:type') .'">';
-			print '	  <h3>Class: ' . $class->label();
+			print '	  <h4>' . $class->label();
 			if($class->hasProperty('skos:altLabel')){
 				$alts = $class->all('skos:altLabel');
 				foreach($alts as $alt){
@@ -476,7 +541,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 				print ' <small><em>Plural: '.$class->get("http://www.wasab.dk/morten/2004/03/label#plural").'.</em></small>' ;
 			}
 			
-			print '</h3>';
+			print '</h4>';
 			
 			
 			
@@ -492,8 +557,8 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 			}
 			
 			print'	  <div property="skos:prefLabel" content="' . $class->label() . '" xml:lang="en"></div>';
-			print'	  <p class="TermComment" property="rdfs:comment" xml:lang="en">' . $class->get('rdfs:comment') . '</p>';
-			print'  <table>
+			print'	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Class. ' . $class->get('rdfs:comment') . '</p>';
+			print'  <table class="table table-bordered">
 			    <tbody>
 			      <tr><th>Identifier:</th><td>'.$u->makeIDLink($class).'</td></tr>';
 			if($class->hasProperty("rdfs:subClassOf") && $u->getFragment($class->get('rdfs:subClassOf')) != "BaseClass"){	 
@@ -518,9 +583,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 			
 				print '	      </tbody>
 			    	</table>
-			  		<p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>
-			  	<br/>
-					</div>';
+			  	</div>';
 			
 			}
 	}
@@ -530,7 +593,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 
 
 
-<h2>Properties:</h2>
+<h3>Properties</h3>
 
 <?php
 
@@ -539,10 +602,10 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 				
 			print '		<div class="specterm" id="' .$u->getFragment($property). '" about="" typeof="'. $property->get('rdf:type') .'">';
 			
-			print '  <h3>Property: '.$property->label().'</h3>';
+			print '  <h4>'.$property->label().'</h4>';
 			
-			print '  <p class="TermComment" property="rdfs:comment" xml:lang="en">'.$property->get('rdfs:comment').'</p>';
-			print '  <table>';
+			print '  <p class="TermComment" property="rdfs:comment" xml:lang="en">Property. '.$property->get('rdfs:comment').'</p>';
+			print '  <table class="table table-bordered">';
 			print '    <tbody>';
 			print '     <tr><th>Identifier:</th><td>'.$u->makeIDLink($property).'</td></tr>';
 			
@@ -581,8 +644,6 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 			}
 			print '      </tbody>';
 			print '    </table>';
-			print '  <p style="float: right; font-size: small;">[<a href="#sec-glance">back to overview</a>]</p>';
-			print '  <br/>';
 			print '</div>';
 		}
 	}
@@ -592,7 +653,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 
 </div>
 
-<h2 id="sec-completegraph">4. Integrated graph overview of the complete HXL vocabulary</h2>
+<h2 id="sec-completegraph">Integrated graph overview of the complete HXL vocabulary</h2>
 
 <p>The following figure gives an overview of <em>all</em> classes and properties defined by HXL, and how they are connected. The ellipses represent classes, whereas the arrows represent properties: Dashed lines indicate a subclass relationship  (e.g. <a href="#Emergency">Emergency</a> is a  subclass of <a href="#Situation">Situation</a>). Solid lines are labeled with the property that connects these two classes.</p>
 
@@ -600,7 +661,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 <p align="right"><small>[click to enlarge as <a href="hxl.dot.svg" target="_blank">SVG (with embedded hyperlinks)</a> or <a href="hxl.dot.png" target="_blank">PNG</a>]</small></p>
 
 
-<h2 id="sec-license">5. License</h2>
+<h2 id="sec-license">License</h2>
 <p><?php print $vocab->get("dc:license"); ?></p>
 
 <p about="" resource="http://www.w3.org/TR/rdfa-syntax" rel="dc:conformsTo">
@@ -611,7 +672,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 
 
 
-<h2 id="sec-changes">6. Change log</h2>
+<h2 id="sec-changes">Change log</h2>
 
 <p><?php print $vocab->get('skos:changeNote'); ?></p>
 
@@ -672,8 +733,30 @@ file_put_contents($file, $dot);
 
 ?>
 
-<hr />
-</body>
+			</div>
+	  	</div>
+	</div>
+
+  </div> <!-- /container -->
+	
+  <div class="container footer">
+		<div class="row">
+		  <div class="span3"><strong>Contact</strong><br />
+		  This site is part of the HumanitarianResponse network. Write to 
+		  <a href="mailto:info@humanitarianresponse.info">info@humanitarianresponse.info</a> for more information.</div>
+		  <div class="span3"><strong>Updates</strong><br />
+		  This part of the docs has been last updated on <strong> Nov 8, 2012</strong> by <a href="http://carsten.io">Carsten Keßler</a>.
+      </div>
+      <div class="span3"><strong>Elsewhere</strong><br />
+      The entire code for HXL and the tools we are building around the standard is available on <a href="https://github.com/hxl-team">GitHub</a>.</div>      
+		  <div class="span3"><strong>Legal</strong><br />
+		  &copy; 2012 UNOCHA</div>
+		</div>
+	</div>
+	  <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/prettify.js"></script>
+  </body>
 </html>
 
 <?php
