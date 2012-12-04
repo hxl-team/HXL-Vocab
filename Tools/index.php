@@ -280,7 +280,7 @@ print $date->format('F j, Y'); ?></dd>
    <dt>Further information:</dt>
    <dd><?php print $vocab->get('rdfs:seeAlso'); ?></dd>
    <dt>Formats:</dt>
-   <dd>Besides this human-readable form, the HXL vocabulary specification is also available in various machine-readble RDF serializations: <a href="hxl.rdf">RDF/XML</a> | <a href="hxl.ttl">Turtle</a> | <a href="hxl.n3">N-Triples</a>.</dd>
+   <dd>Besides this human-readable form, the HXL vocabulary specification is also available in various machine-readable RDF serializations: <a href="hxl.rdf">RDF/XML</a> | <a href="hxl.ttl">Turtle</a> | <a href="hxl.n3">N-Triples</a>.</dd>
 <p style='clear:both'>The XML Namespace URI that should be used by implementations of this version of the specification is: <a href="<?php print $vocab; ?>"><?php print $vocab; ?></a>.</p> 
 
 <p>The preferred prefix for the vocabulary is <strong>hxl</strong>.</p>
