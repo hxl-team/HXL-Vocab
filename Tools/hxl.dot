@@ -127,6 +127,7 @@ digraph {
 			"PopulatedPlace" -> "PopPlaceClass" [ label="inClass" URL = "./#inClass"]; 
 			"Population" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="method" URL = "./#method"]; 
 			"Population" -> "Country" [ label="nationality" URL = "./#nationality"]; 
+			"System" -> "HXLer" [ label="operatedBy" URL = "./#operatedBy"]; 
 			"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgDisplayName" URL = "./#orgDisplayName"]; 
 			"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgName" URL = "./#orgName"]; 
 			"Organisation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="orgNativeName" URL = "./#orgNativeName"]; 
