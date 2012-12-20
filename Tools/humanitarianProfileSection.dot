@@ -46,8 +46,6 @@ digraph {
 			"SexCategory" [ URL = "./#SexCategory"] ;
 		"BaseClass" [ URL = "./#SexCategory" color="gray" fontcolor="gray"] ;
 				"SexCategory" -> "BaseClass" [ color=red style="dashed" ]; 
-			"TotalPopulation" [ URL = "./#TotalPopulation"] ;
-		"TotalPopulation" -> "Population" [ color=red style="dashed" ]; 
 			"Emergency" [ URL = "./#Emergency" color="gray" fontcolor="gray"] ;
 					"AffectedPopulation" -> "Emergency" [ label="affectedBy" URL = "./#affectedBy"]; 
 				"Population" -> "AgeGroup" [ label="ageGroup" URL = "./#ageGroup"]; 

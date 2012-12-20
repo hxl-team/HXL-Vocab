@@ -12,8 +12,8 @@
 <!-- AffectedPopulation -->
 <g id="node1" class="node"><title>AffectedPopulation</title>
 <a xlink:href="./#AffectedPopulation" xlink:title="AffectedPopulation">
-<ellipse fill="none" stroke="black" cx="1049" cy="-180" rx="90.1842" ry="18"/>
-<text text-anchor="middle" x="1049" y="-176.3" font-family="Helvetica,sans-Serif" font-size="14.00">AffectedPopulation</text>
+<ellipse fill="none" stroke="black" cx="990" cy="-180" rx="90.1842" ry="18"/>
+<text text-anchor="middle" x="990" y="-176.3" font-family="Helvetica,sans-Serif" font-size="14.00">AffectedPopulation</text>
 </a>
 </g>
 <!-- Population -->
@@ -25,24 +25,24 @@
 </g>
 <!-- AffectedPopulation&#45;&gt;Population -->
 <g id="edge2" class="edge"><title>AffectedPopulation&#45;&gt;Population</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1019.28,-197.176C993.099,-211.427 954.893,-232.223 926.987,-247.412"/>
-<polygon fill="red" stroke="red" points="925.061,-244.476 917.951,-252.331 928.407,-250.624 925.061,-244.476"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M970.441,-197.991C955.235,-211.2 933.991,-229.654 917.297,-244.156"/>
+<polygon fill="red" stroke="red" points="914.768,-241.717 909.514,-250.917 919.359,-247.001 914.768,-241.717"/>
 </g>
 <!-- Emergency -->
-<g id="node40" class="node"><title>Emergency</title>
+<g id="node38" class="node"><title>Emergency</title>
 <a xlink:href="./#Emergency" xlink:title="Emergency">
-<ellipse fill="none" stroke="gray" cx="1049" cy="-268" rx="59.2899" ry="18"/>
-<text text-anchor="middle" x="1049" y="-264.3" font-family="Helvetica,sans-Serif" font-size="14.00" fill="gray">Emergency</text>
+<ellipse fill="none" stroke="gray" cx="1023" cy="-268" rx="59.2899" ry="18"/>
+<text text-anchor="middle" x="1023" y="-264.3" font-family="Helvetica,sans-Serif" font-size="14.00" fill="gray">Emergency</text>
 </a>
 </g>
 <!-- AffectedPopulation&#45;&gt;Emergency -->
-<g id="edge40" class="edge"><title>AffectedPopulation&#45;&gt;Emergency</title>
+<g id="edge38" class="edge"><title>AffectedPopulation&#45;&gt;Emergency</title>
 <a xlink:href="./#affectedBy" xlink:title="affectedBy">
-<path fill="none" stroke="darkslategray" d="M1049,-198.403C1049,-210.254 1049,-226.183 1049,-239.708"/>
-<polygon fill="darkslategray" stroke="darkslategray" points="1045.5,-239.916 1049,-249.916 1052.5,-239.916 1045.5,-239.916"/>
+<path fill="none" stroke="darkslategray" d="M996.52,-197.991C1001.18,-210.123 1007.53,-226.68 1012.84,-240.535"/>
+<polygon fill="darkslategray" stroke="darkslategray" points="1009.64,-241.962 1016.49,-250.044 1016.18,-239.454 1009.64,-241.962"/>
 </a>
 <a xlink:href="./#affectedBy" xlink:title="affectedBy">
-<text text-anchor="middle" x="1084.5" y="-220.3" font-family="Helvetica,sans-Serif" font-size="14.00">affectedBy</text>
+<text text-anchor="middle" x="1045.5" y="-220.3" font-family="Helvetica,sans-Serif" font-size="14.00">affectedBy</text>
 </a>
 </g>
 <!-- AgeGroup -->
@@ -53,7 +53,7 @@
 </a>
 </g>
 <!-- Population&#45;&gt;AgeGroup -->
-<g id="edge42" class="edge"><title>Population&#45;&gt;AgeGroup</title>
+<g id="edge40" class="edge"><title>Population&#45;&gt;AgeGroup</title>
 <a xlink:href="./#ageGroup" xlink:title="ageGroup">
 <path fill="none" stroke="darkslategray" d="M837.607,-271.284C780.959,-274.769 696.328,-283.352 672,-304 664.942,-309.99 660.801,-318.995 658.377,-327.778"/>
 <polygon fill="darkslategray" stroke="darkslategray" points="654.904,-327.285 656.247,-337.794 661.75,-328.741 654.904,-327.285"/>
@@ -94,7 +94,7 @@
 </a>
 </g>
 <!-- Population&#45;&gt;SexCategory -->
-<g id="edge56" class="edge"><title>Population&#45;&gt;SexCategory</title>
+<g id="edge54" class="edge"><title>Population&#45;&gt;SexCategory</title>
 <a xlink:href="./#sexCategory" xlink:title="sexCategory">
 <path fill="none" stroke="darkslategray" d="M836.663,-269.448C727.47,-270.916 489.699,-277.188 465,-304 459.195,-310.301 458.06,-319.118 458.896,-327.651"/>
 <polygon fill="darkslategray" stroke="darkslategray" points="455.494,-328.509 460.711,-337.73 462.384,-327.268 455.494,-328.509"/>
@@ -104,14 +104,14 @@
 </a>
 </g>
 <!-- http://www.w3.org/2001/XMLSchema#int -->
-<g id="node43" class="node"><title>http://www.w3.org/2001/XMLSchema#int</title>
+<g id="node41" class="node"><title>http://www.w3.org/2001/XMLSchema#int</title>
 <a xlink:href="./#http://www.w3.org/2001/XMLSchema#int" xlink:title="http://www.w3.org/2001/XMLSchema#int">
 <ellipse fill="none" stroke="gray" cx="755" cy="-444" rx="180.068" ry="18"/>
 <text text-anchor="middle" x="755" y="-440.3" font-family="Helvetica,sans-Serif" font-size="14.00" fill="gray">http://www.w3.org/2001/XMLSchema#int</text>
 </a>
 </g>
 <!-- Population&#45;&gt;http://www.w3.org/2001/XMLSchema#int -->
-<g id="edge46" class="edge"><title>Population&#45;&gt;http://www.w3.org/2001/XMLSchema#int</title>
+<g id="edge44" class="edge"><title>Population&#45;&gt;http://www.w3.org/2001/XMLSchema#int</title>
 <a xlink:href="./#householdCount" xlink:title="householdCount">
 <path fill="none" stroke="darkslategray" d="M850.093,-279.911C820.969,-289.961 783.644,-307.972 764,-338 748.955,-360.999 748.467,-393.158 750.633,-415.81"/>
 <polygon fill="darkslategray" stroke="darkslategray" points="747.162,-416.264 751.814,-425.783 754.113,-415.44 747.162,-416.264"/>
@@ -121,7 +121,7 @@
 </a>
 </g>
 <!-- Population&#45;&gt;http://www.w3.org/2001/XMLSchema#int -->
-<g id="edge52" class="edge"><title>Population&#45;&gt;http://www.w3.org/2001/XMLSchema#int</title>
+<g id="edge50" class="edge"><title>Population&#45;&gt;http://www.w3.org/2001/XMLSchema#int</title>
 <a xlink:href="./#personCount" xlink:title="personCount">
 <path fill="none" stroke="darkslategray" d="M891.442,-286.279C891.168,-308.554 887.738,-347.559 869,-374 854.077,-395.058 830.51,-410.866 808.668,-422.001"/>
 <polygon fill="darkslategray" stroke="darkslategray" points="806.904,-418.967 799.443,-426.489 809.966,-425.262 806.904,-418.967"/>
@@ -131,54 +131,54 @@
 </a>
 </g>
 <!-- http://www.w3.org/2000/01/rdf&#45;schema#Literal -->
-<g id="node46" class="node"><title>http://www.w3.org/2000/01/rdf&#45;schema#Literal</title>
+<g id="node44" class="node"><title>http://www.w3.org/2000/01/rdf&#45;schema#Literal</title>
 <a xlink:href="./#http://www.w3.org/2000/01/rdf-schema#Literal" xlink:title="http://www.w3.org/2000/01/rdf&#45;schema#Literal">
 <ellipse fill="none" stroke="gray" cx="1490" cy="-356" rx="200.365" ry="18"/>
 <text text-anchor="middle" x="1490" y="-352.3" font-family="Helvetica,sans-Serif" font-size="14.00" fill="gray">http://www.w3.org/2000/01/rdf&#45;schema#Literal</text>
 </a>
 </g>
 <!-- Population&#45;&gt;http://www.w3.org/2000/01/rdf&#45;schema#Literal -->
-<g id="edge48" class="edge"><title>Population&#45;&gt;http://www.w3.org/2000/01/rdf&#45;schema#Literal</title>
+<g id="edge46" class="edge"><title>Population&#45;&gt;http://www.w3.org/2000/01/rdf&#45;schema#Literal</title>
 <a xlink:href="./#method" xlink:title="method">
-<path fill="none" stroke="darkslategray" d="M936.243,-278.021C950.533,-280.743 966.402,-283.634 981,-286 1111.77,-307.199 1262.17,-327.029 1365.38,-339.941"/>
-<polygon fill="darkslategray" stroke="darkslategray" points="1365.17,-343.443 1375.53,-341.208 1366.04,-336.497 1365.17,-343.443"/>
+<path fill="none" stroke="darkslategray" d="M930.756,-280.426C938.74,-282.475 947.103,-284.449 955,-286 1086.22,-311.774 1237.5,-330.262 1345.65,-341.574"/>
+<polygon fill="darkslategray" stroke="darkslategray" points="1345.34,-345.061 1355.65,-342.613 1346.06,-338.099 1345.34,-345.061"/>
 </a>
 <a xlink:href="./#method" xlink:title="method">
-<text text-anchor="middle" x="1228.5" y="-308.3" font-family="Helvetica,sans-Serif" font-size="14.00">method</text>
+<text text-anchor="middle" x="1184.5" y="-308.3" font-family="Helvetica,sans-Serif" font-size="14.00">method</text>
 </a>
 </g>
 <!-- Country -->
-<g id="node48" class="node"><title>Country</title>
+<g id="node46" class="node"><title>Country</title>
 <a xlink:href="./#Country" xlink:title="Country">
 <ellipse fill="none" stroke="gray" cx="1752" cy="-356" rx="44.393" ry="18"/>
 <text text-anchor="middle" x="1752" y="-352.3" font-family="Helvetica,sans-Serif" font-size="14.00" fill="gray">Country</text>
 </a>
 </g>
 <!-- Population&#45;&gt;Country -->
-<g id="edge50" class="edge"><title>Population&#45;&gt;Country</title>
+<g id="edge48" class="edge"><title>Population&#45;&gt;Country</title>
 <a xlink:href="./#nationality" xlink:title="nationality">
-<path fill="none" stroke="darkslategray" d="M935.234,-278.463C949.756,-281.273 966.013,-284.103 981,-286 1298.41,-326.177 1385.03,-276.451 1699,-338 1702.68,-338.721 1706.46,-339.614 1710.22,-340.609"/>
-<polygon fill="darkslategray" stroke="darkslategray" points="1709.51,-344.045 1720.08,-343.439 1711.44,-337.316 1709.51,-344.045"/>
+<path fill="none" stroke="darkslategray" d="M930.005,-280.62C938.2,-282.705 946.835,-284.643 955,-286 1068.39,-304.839 1098.33,-295.989 1213,-304 1429,-319.091 1486.37,-297.082 1699,-338 1702.68,-338.708 1706.46,-339.592 1710.23,-340.582"/>
+<polygon fill="darkslategray" stroke="darkslategray" points="1709.51,-344.017 1720.09,-343.402 1711.44,-337.287 1709.51,-344.017"/>
 </a>
 <a xlink:href="./#nationality" xlink:title="nationality">
-<text text-anchor="middle" x="1611.5" y="-308.3" font-family="Helvetica,sans-Serif" font-size="14.00">nationality</text>
+<text text-anchor="middle" x="1609.5" y="-308.3" font-family="Helvetica,sans-Serif" font-size="14.00">nationality</text>
 </a>
 </g>
 <!-- Source -->
-<g id="node54" class="node"><title>Source</title>
+<g id="node52" class="node"><title>Source</title>
 <a xlink:href="./#Source" xlink:title="Source">
 <ellipse fill="none" stroke="gray" cx="1854" cy="-356" rx="40.0939" ry="18"/>
 <text text-anchor="middle" x="1854" y="-352.3" font-family="Helvetica,sans-Serif" font-size="14.00" fill="gray">Source</text>
 </a>
 </g>
 <!-- Population&#45;&gt;Source -->
-<g id="edge58" class="edge"><title>Population&#45;&gt;Source</title>
+<g id="edge56" class="edge"><title>Population&#45;&gt;Source</title>
 <a xlink:href="./#source" xlink:title="source">
-<path fill="none" stroke="darkslategray" d="M934.736,-278.714C949.371,-281.575 965.822,-284.372 981,-286 1275.86,-317.622 1353.58,-268.463 1648,-304 1718.88,-312.556 1736.26,-318.709 1805,-338 1807.98,-338.837 1811.05,-339.755 1814.12,-340.719"/>
-<polygon fill="darkslategray" stroke="darkslategray" points="1813.27,-344.123 1823.86,-343.904 1815.44,-337.47 1813.27,-344.123"/>
+<path fill="none" stroke="darkslategray" d="M929.621,-280.81C937.92,-282.91 946.693,-284.805 955,-286 1259.09,-329.732 1340.93,-267.725 1646,-304 1717.76,-312.533 1735.4,-318.564 1805,-338 1807.98,-338.833 1811.05,-339.749 1814.12,-340.71"/>
+<polygon fill="darkslategray" stroke="darkslategray" points="1813.27,-344.115 1823.86,-343.891 1815.44,-337.46 1813.27,-344.115"/>
 </a>
 <a xlink:href="./#source" xlink:title="source">
-<text text-anchor="middle" x="1759" y="-308.3" font-family="Helvetica,sans-Serif" font-size="14.00">source</text>
+<text text-anchor="middle" x="1758" y="-308.3" font-family="Helvetica,sans-Serif" font-size="14.00">source</text>
 </a>
 </g>
 <!-- AgeGroup&#45;&gt;BaseClass -->
@@ -187,7 +187,7 @@
 <polygon fill="red" stroke="red" points="539.84,-421.513 532.301,-428.957 542.837,-427.84 539.84,-421.513"/>
 </g>
 <!-- AgeGroup&#45;&gt;http://www.w3.org/2001/XMLSchema#int -->
-<g id="edge44" class="edge"><title>AgeGroup&#45;&gt;http://www.w3.org/2001/XMLSchema#int</title>
+<g id="edge42" class="edge"><title>AgeGroup&#45;&gt;http://www.w3.org/2001/XMLSchema#int</title>
 <a xlink:href="./#fromAge" xlink:title="fromAge">
 <path fill="none" stroke="darkslategray" d="M634.273,-372.625C623.104,-382.957 613.243,-396.641 622,-408 627.362,-414.955 640.624,-420.803 656.804,-425.606"/>
 <polygon fill="darkslategray" stroke="darkslategray" points="656.059,-429.031 666.63,-428.314 657.919,-422.283 656.059,-429.031"/>
@@ -197,7 +197,7 @@
 </a>
 </g>
 <!-- AgeGroup&#45;&gt;http://www.w3.org/2001/XMLSchema#int -->
-<g id="edge60" class="edge"><title>AgeGroup&#45;&gt;http://www.w3.org/2001/XMLSchema#int</title>
+<g id="edge58" class="edge"><title>AgeGroup&#45;&gt;http://www.w3.org/2001/XMLSchema#int</title>
 <a xlink:href="./#toAge" xlink:title="toAge">
 <path fill="none" stroke="darkslategray" d="M668.1,-373.646C676.808,-384.146 688.841,-397.634 701,-408 706.141,-412.383 711.866,-416.648 717.612,-420.606"/>
 <polygon fill="darkslategray" stroke="darkslategray" points="715.715,-423.548 725.981,-426.165 719.587,-417.717 715.715,-423.548"/>
@@ -233,168 +233,156 @@
 <!-- Casualty -->
 <g id="node11" class="node"><title>Casualty</title>
 <a xlink:href="./#Casualty" xlink:title="Casualty">
-<ellipse fill="none" stroke="black" cx="1202" cy="-92" rx="47.3916" ry="18"/>
-<text text-anchor="middle" x="1202" y="-88.3" font-family="Helvetica,sans-Serif" font-size="14.00">Casualty</text>
+<ellipse fill="none" stroke="black" cx="1206" cy="-92" rx="47.3916" ry="18"/>
+<text text-anchor="middle" x="1206" y="-88.3" font-family="Helvetica,sans-Serif" font-size="14.00">Casualty</text>
 </a>
 </g>
 <!-- Casualty&#45;&gt;AffectedPopulation -->
 <g id="edge10" class="edge"><title>Casualty&#45;&gt;AffectedPopulation</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1176.39,-107.394C1151.93,-121.142 1114.78,-142.028 1086.89,-157.701"/>
-<polygon fill="red" stroke="red" points="1084.83,-154.848 1077.82,-162.799 1088.26,-160.95 1084.83,-154.848"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1174.59,-105.505C1138.77,-119.767 1079.79,-143.251 1038.15,-159.829"/>
+<polygon fill="red" stroke="red" points="1036.75,-156.619 1028.75,-163.57 1039.34,-163.122 1036.75,-156.619"/>
 </g>
 <!-- Dead -->
 <g id="node13" class="node"><title>Dead</title>
 <a xlink:href="./#Dead" xlink:title="Dead">
-<ellipse fill="none" stroke="black" cx="1249" cy="-18" rx="33.2948" ry="18"/>
-<text text-anchor="middle" x="1249" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">Dead</text>
+<ellipse fill="none" stroke="black" cx="1253" cy="-18" rx="33.2948" ry="18"/>
+<text text-anchor="middle" x="1253" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">Dead</text>
 </a>
 </g>
 <!-- Dead&#45;&gt;Casualty -->
 <g id="edge12" class="edge"><title>Dead&#45;&gt;Casualty</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1238.33,-35.3379C1232.47,-44.3232 1225.07,-55.6657 1218.47,-65.7638"/>
-<polygon fill="red" stroke="red" points="1215.48,-63.9401 1212.95,-74.2271 1221.35,-67.7665 1215.48,-63.9401"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1242.33,-35.3379C1236.47,-44.3232 1229.07,-55.6657 1222.47,-65.7638"/>
+<polygon fill="red" stroke="red" points="1219.48,-63.9401 1216.95,-74.2271 1225.35,-67.7665 1219.48,-63.9401"/>
 </g>
 <!-- Displaced -->
 <g id="node15" class="node"><title>Displaced</title>
 <a xlink:href="./#Displaced" xlink:title="Displaced">
-<ellipse fill="none" stroke="black" cx="586" cy="-92" rx="51.9908" ry="18"/>
-<text text-anchor="middle" x="586" y="-88.3" font-family="Helvetica,sans-Serif" font-size="14.00">Displaced</text>
+<ellipse fill="none" stroke="black" cx="645" cy="-92" rx="51.9908" ry="18"/>
+<text text-anchor="middle" x="645" y="-88.3" font-family="Helvetica,sans-Serif" font-size="14.00">Displaced</text>
 </a>
 </g>
 <!-- Displaced&#45;&gt;AffectedPopulation -->
 <g id="edge14" class="edge"><title>Displaced&#45;&gt;AffectedPopulation</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M630.394,-101.246C710.075,-116.046 878.085,-147.253 975.287,-165.308"/>
-<polygon fill="red" stroke="red" points="974.862,-168.789 985.333,-167.174 976.141,-161.907 974.862,-168.789"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M685.59,-103.118C744.841,-117.888 855.592,-145.495 925.916,-163.026"/>
+<polygon fill="red" stroke="red" points="925.438,-166.513 935.988,-165.536 927.131,-159.721 925.438,-166.513"/>
 </g>
 <!-- http://www.opengis.net/ont/geosparql#Feature -->
-<g id="node51" class="node"><title>http://www.opengis.net/ont/geosparql#Feature</title>
+<g id="node49" class="node"><title>http://www.opengis.net/ont/geosparql#Feature</title>
 <a xlink:href="./#http://www.opengis.net/ont/geosparql#Feature" xlink:title="http://www.opengis.net/ont/geosparql#Feature">
-<ellipse fill="none" stroke="gray" cx="568" cy="-180" rx="203.364" ry="18"/>
-<text text-anchor="middle" x="568" y="-176.3" font-family="Helvetica,sans-Serif" font-size="14.00" fill="gray">http://www.opengis.net/ont/geosparql#Feature</text>
+<ellipse fill="none" stroke="gray" cx="645" cy="-180" rx="203.364" ry="18"/>
+<text text-anchor="middle" x="645" y="-176.3" font-family="Helvetica,sans-Serif" font-size="14.00" fill="gray">http://www.opengis.net/ont/geosparql#Feature</text>
 </a>
 </g>
 <!-- Displaced&#45;&gt;http://www.opengis.net/ont/geosparql#Feature -->
-<g id="edge54" class="edge"><title>Displaced&#45;&gt;http://www.opengis.net/ont/geosparql#Feature</title>
+<g id="edge52" class="edge"><title>Displaced&#45;&gt;http://www.opengis.net/ont/geosparql#Feature</title>
 <a xlink:href="./#placeOfOrigin" xlink:title="placeOfOrigin">
-<path fill="none" stroke="darkslategray" d="M582.444,-109.991C579.945,-121.927 576.551,-138.147 573.68,-151.862"/>
-<polygon fill="darkslategray" stroke="darkslategray" points="570.233,-151.245 571.61,-161.75 577.085,-152.679 570.233,-151.245"/>
+<path fill="none" stroke="darkslategray" d="M645,-110.403C645,-122.254 645,-138.183 645,-151.708"/>
+<polygon fill="darkslategray" stroke="darkslategray" points="641.5,-151.916 645,-161.916 648.5,-151.916 641.5,-151.916"/>
 </a>
 <a xlink:href="./#placeOfOrigin" xlink:title="placeOfOrigin">
-<text text-anchor="middle" x="623" y="-132.3" font-family="Helvetica,sans-Serif" font-size="14.00">placeOfOrigin</text>
+<text text-anchor="middle" x="689" y="-132.3" font-family="Helvetica,sans-Serif" font-size="14.00">placeOfOrigin</text>
 </a>
 </g>
 <!-- HostPopulation -->
 <g id="node17" class="node"><title>HostPopulation</title>
 <a xlink:href="./#HostPopulation" xlink:title="HostPopulation">
-<ellipse fill="none" stroke="black" cx="1019" cy="-18" rx="75.2868" ry="18"/>
-<text text-anchor="middle" x="1019" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">HostPopulation</text>
+<ellipse fill="none" stroke="black" cx="1023" cy="-18" rx="75.2868" ry="18"/>
+<text text-anchor="middle" x="1023" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">HostPopulation</text>
 </a>
 </g>
 <!-- NonDisplaced -->
 <g id="node19" class="node"><title>NonDisplaced</title>
 <a xlink:href="./#NonDisplaced" xlink:title="NonDisplaced">
-<ellipse fill="none" stroke="black" cx="1019" cy="-92" rx="69.5877" ry="18"/>
-<text text-anchor="middle" x="1019" y="-88.3" font-family="Helvetica,sans-Serif" font-size="14.00">NonDisplaced</text>
+<ellipse fill="none" stroke="black" cx="990" cy="-92" rx="69.5877" ry="18"/>
+<text text-anchor="middle" x="990" y="-88.3" font-family="Helvetica,sans-Serif" font-size="14.00">NonDisplaced</text>
 </a>
 </g>
 <!-- HostPopulation&#45;&gt;NonDisplaced -->
 <g id="edge16" class="edge"><title>HostPopulation&#45;&gt;NonDisplaced</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1019,-36.063C1019,-44.1928 1019,-54.1239 1019,-63.2953"/>
-<polygon fill="red" stroke="red" points="1015.5,-63.5593 1019,-73.5593 1022.5,-63.5594 1015.5,-63.5593"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1015.18,-36.063C1011.23,-44.671 1006.36,-55.2984 1001.96,-64.9053"/>
+<polygon fill="red" stroke="red" points="998.749,-63.5105 997.764,-74.0595 1005.11,-66.4271 998.749,-63.5105"/>
 </g>
 <!-- NonDisplaced&#45;&gt;AffectedPopulation -->
 <g id="edge24" class="edge"><title>NonDisplaced&#45;&gt;AffectedPopulation</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1024.93,-109.991C1029.13,-122.044 1034.86,-138.465 1039.67,-152.265"/>
-<polygon fill="red" stroke="red" points="1036.38,-153.461 1042.98,-161.75 1042.99,-151.155 1036.38,-153.461"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M990,-110.403C990,-122.254 990,-138.183 990,-151.708"/>
+<polygon fill="red" stroke="red" points="986.5,-151.916 990,-161.916 993.5,-151.916 986.5,-151.916"/>
 </g>
 <!-- IDP -->
 <g id="node20" class="node"><title>IDP</title>
 <a xlink:href="./#IDP" xlink:title="IDP">
-<ellipse fill="none" stroke="black" cx="586" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="586" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">IDP</text>
+<ellipse fill="none" stroke="black" cx="603" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="603" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">IDP</text>
 </a>
 </g>
 <!-- IDP&#45;&gt;Displaced -->
 <g id="edge18" class="edge"><title>IDP&#45;&gt;Displaced</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M586,-36.063C586,-44.1928 586,-54.1239 586,-63.2953"/>
-<polygon fill="red" stroke="red" points="582.5,-63.5593 586,-73.5593 589.5,-63.5594 582.5,-63.5593"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M612.321,-34.9791C617.539,-43.924 624.167,-55.2867 630.089,-65.4376"/>
+<polygon fill="red" stroke="red" points="627.205,-67.4407 635.267,-74.3149 633.252,-63.9136 627.205,-67.4407"/>
 </g>
 <!-- Injured -->
 <g id="node22" class="node"><title>Injured</title>
 <a xlink:href="./#Injured" xlink:title="Injured">
-<ellipse fill="none" stroke="black" cx="1339" cy="-18" rx="38.9931" ry="18"/>
-<text text-anchor="middle" x="1339" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">Injured</text>
+<ellipse fill="none" stroke="black" cx="1343" cy="-18" rx="38.9931" ry="18"/>
+<text text-anchor="middle" x="1343" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">Injured</text>
 </a>
 </g>
 <!-- Injured&#45;&gt;Casualty -->
 <g id="edge20" class="edge"><title>Injured&#45;&gt;Casualty</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1314.19,-32.0387C1292.82,-43.2721 1261.7,-59.6249 1237.66,-72.2608"/>
-<polygon fill="red" stroke="red" points="1235.72,-69.3253 1228.49,-77.0757 1238.98,-75.5217 1235.72,-69.3253"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1318.19,-32.0387C1296.82,-43.2721 1265.7,-59.6249 1241.66,-72.2608"/>
+<polygon fill="red" stroke="red" points="1239.72,-69.3253 1232.49,-77.0757 1242.98,-75.5217 1239.72,-69.3253"/>
 </g>
 <!-- Missing -->
 <g id="node24" class="node"><title>Missing</title>
 <a xlink:href="./#Missing" xlink:title="Missing">
-<ellipse fill="none" stroke="black" cx="1155" cy="-18" rx="42.7926" ry="18"/>
-<text text-anchor="middle" x="1155" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">Missing</text>
+<ellipse fill="none" stroke="black" cx="1159" cy="-18" rx="42.7926" ry="18"/>
+<text text-anchor="middle" x="1159" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">Missing</text>
 </a>
 </g>
 <!-- Missing&#45;&gt;Casualty -->
 <g id="edge22" class="edge"><title>Missing&#45;&gt;Casualty</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1165.9,-35.6992C1171.77,-44.6957 1179.14,-55.9753 1185.68,-65.9971"/>
-<polygon fill="red" stroke="red" points="1182.76,-67.9307 1191.16,-74.3913 1188.62,-64.1043 1182.76,-67.9307"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M1169.9,-35.6992C1175.77,-44.6957 1183.14,-55.9753 1189.68,-65.9971"/>
+<polygon fill="red" stroke="red" points="1186.76,-67.9307 1195.16,-74.3913 1192.62,-64.1043 1186.76,-67.9307"/>
 </g>
 <!-- NonHostPopulation -->
 <g id="node27" class="node"><title>NonHostPopulation</title>
 <a xlink:href="./#NonHostPopulation" xlink:title="NonHostPopulation">
-<ellipse fill="none" stroke="black" cx="833" cy="-18" rx="92.8835" ry="18"/>
-<text text-anchor="middle" x="833" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">NonHostPopulation</text>
+<ellipse fill="none" stroke="black" cx="837" cy="-18" rx="92.8835" ry="18"/>
+<text text-anchor="middle" x="837" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">NonHostPopulation</text>
 </a>
 </g>
 <!-- NonHostPopulation&#45;&gt;NonDisplaced -->
 <g id="edge26" class="edge"><title>NonHostPopulation&#45;&gt;NonDisplaced</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M872.902,-34.4458C902.087,-45.7432 941.763,-61.1019 972.404,-72.9628"/>
-<polygon fill="red" stroke="red" points="971.421,-76.3353 982.01,-76.6813 973.948,-69.8073 971.421,-76.3353"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M870.576,-34.8007C893.665,-45.6657 924.465,-60.16 949.003,-71.7073"/>
+<polygon fill="red" stroke="red" points="947.533,-74.8838 958.072,-75.9749 950.514,-68.55 947.533,-74.8838"/>
 </g>
 <!-- Others -->
 <g id="node29" class="node"><title>Others</title>
 <a xlink:href="./#Others" xlink:title="Others">
-<ellipse fill="none" stroke="black" cx="670" cy="-18" rx="38.9931" ry="18"/>
-<text text-anchor="middle" x="670" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">Others</text>
+<ellipse fill="none" stroke="black" cx="687" cy="-18" rx="38.9931" ry="18"/>
+<text text-anchor="middle" x="687" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">Others</text>
 </a>
 </g>
 <!-- Others&#45;&gt;Displaced -->
 <g id="edge28" class="edge"><title>Others&#45;&gt;Displaced</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M652.186,-34.2693C640.62,-44.1828 625.343,-57.2778 612.38,-68.3886"/>
-<polygon fill="red" stroke="red" points="609.977,-65.8388 604.662,-75.0041 614.532,-71.1536 609.977,-65.8388"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M677.259,-35.6992C672.19,-44.388 665.88,-55.2064 660.187,-64.9646"/>
+<polygon fill="red" stroke="red" points="656.996,-63.49 654.98,-73.8914 663.042,-67.0171 656.996,-63.49"/>
 </g>
 <!-- RefugeesAsylumSeekers -->
 <g id="node34" class="node"><title>RefugeesAsylumSeekers</title>
 <a xlink:href="./#RefugeesAsylumSeekers" xlink:title="RefugeesAsylumSeekers">
-<ellipse fill="none" stroke="black" cx="423" cy="-18" rx="117.779" ry="18"/>
-<text text-anchor="middle" x="423" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">RefugeesAsylumSeekers</text>
+<ellipse fill="none" stroke="black" cx="440" cy="-18" rx="117.779" ry="18"/>
+<text text-anchor="middle" x="440" y="-14.3" font-family="Helvetica,sans-Serif" font-size="14.00">RefugeesAsylumSeekers</text>
 </a>
 </g>
 <!-- RefugeesAsylumSeekers&#45;&gt;Displaced -->
 <g id="edge34" class="edge"><title>RefugeesAsylumSeekers&#45;&gt;Displaced</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M459.58,-35.1582C485.245,-46.4945 519.551,-61.6483 545.95,-73.3093"/>
-<polygon fill="red" stroke="red" points="544.726,-76.5949 555.288,-77.4339 547.555,-70.1917 544.726,-76.5949"/>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M484.735,-34.7117C518.94,-46.7252 565.888,-63.2143 600.127,-75.2398"/>
+<polygon fill="red" stroke="red" points="599.276,-78.6504 609.871,-78.6619 601.596,-72.0459 599.276,-78.6504"/>
 </g>
 <!-- SexCategory&#45;&gt;BaseClass -->
 <g id="edge36" class="edge"><title>SexCategory&#45;&gt;BaseClass</title>
 <path fill="none" stroke="red" stroke-dasharray="5,2" d="M473.717,-373.991C478.514,-386.123 485.06,-402.68 490.537,-416.535"/>
 <polygon fill="red" stroke="red" points="487.365,-418.032 494.297,-426.044 493.875,-415.458 487.365,-418.032"/>
-</g>
-<!-- TotalPopulation -->
-<g id="node38" class="node"><title>TotalPopulation</title>
-<a xlink:href="./#TotalPopulation" xlink:title="TotalPopulation">
-<ellipse fill="none" stroke="black" cx="865" cy="-180" rx="76.0865" ry="18"/>
-<text text-anchor="middle" x="865" y="-176.3" font-family="Helvetica,sans-Serif" font-size="14.00">TotalPopulation</text>
-</a>
-</g>
-<!-- TotalPopulation&#45;&gt;Population -->
-<g id="edge38" class="edge"><title>TotalPopulation&#45;&gt;Population</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M870.137,-197.991C873.769,-210.005 878.713,-226.359 882.877,-240.131"/>
-<polygon fill="red" stroke="red" points="879.63,-241.485 885.874,-250.044 886.33,-239.459 879.63,-241.485"/>
 </g>
 </g>
 </svg>

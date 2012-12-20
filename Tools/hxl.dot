@@ -94,8 +94,6 @@ digraph {
 		"Source" -> "BaseClass" [ color=red style="dashed" ]; 
 		"System" [ URL = "./#System"] ;
 	"System" -> "Source" [ color=red style="dashed" ]; 
-		"TotalPopulation" [ URL = "./#TotalPopulation"] ;
-	"TotalPopulation" -> "Population" [ color=red style="dashed" ]; 
 		"http://purl.org/dc/terms/PeriodOfTime" [ URL = "./#http://purl.org/dc/terms/PeriodOfTime"] ;
 	"http://xmlns.com/foaf/0.1/Agent" [ URL = "./#http://xmlns.com/foaf/0.1/Agent"] ;
 	"http://xmlns.com/foaf/0.1/Group" [ URL = "./#http://xmlns.com/foaf/0.1/Group"] ;
