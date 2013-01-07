@@ -557,7 +557,7 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 			}
 			
 			print'	  <div property="skos:prefLabel" content="' . $class->label() . '" xml:lang="en"></div>';
-			print'	  <p class="TermComment" property="rdfs:comment" xml:lang="en">Class. ' . $class->get('rdfs:comment') . '</p>';
+			print'	  <p class="TermComment" property="rdfs:comment" xml:lang="en"><strong>Class.</strong> ' . $class->get('rdfs:comment') . '</p>';
 			print'  <table class="table table-bordered">
 			    <tbody>
 			      <tr><th>Identifier:</th><td>'.$u->makeIDLink($class).'</td></tr>';
@@ -602,9 +602,21 @@ print '<p align="right"><small>[click to enlarge as <a href="'.$u->getHXLFragmen
 				
 			print '		<div class="specterm" id="' .$u->getFragment($property). '" about="" typeof="'. $property->get('rdf:type') .'">';
 			
-			print '  <h4>'.$property->label().'</h4>';
+			print '  <h4>'.$property->label();
+
+			if($property->get("owl:minCardinality") == "1"){
+				print ' <i class="icon-ok-sign"></i>' ;
+			}
+
+			print '</h4>';
 			
-			print '  <p class="TermComment" property="rdfs:comment" xml:lang="en">Property. '.$property->get('rdfs:comment').'</p>';
+			print '  <p class="TermComment" property="rdfs:comment" xml:lang="en"><strong>';
+			if($property->get("owl:minCardinality") == "1"){
+				print 'Mandatory property.' ;
+			}else{
+				print 'Property.';
+			}
+			print '</strong> '.$property->get('rdfs:comment').'</p>';
 			print '  <table class="table table-bordered">';
 			print '    <tbody>';
 			print '     <tr><th>Identifier:</th><td>'.$u->makeIDLink($property).'</td></tr>';

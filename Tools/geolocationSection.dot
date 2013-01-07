@@ -9,13 +9,13 @@ digraph {
 "APL" [ URL = "./#APL"] ;
 		"http://www.opengis.net/ont/geosparql#Feature" [ URL = "./#APL" color="gray" fontcolor="gray"] ;
 				"APL" -> "http://www.opengis.net/ont/geosparql#Feature" [ color=red style="dashed" ]; 
-			"BaseClass" [ URL = "./#APL" color="gray" fontcolor="gray"] ;
-				"APL" -> "BaseClass" [ color=red style="dashed" ]; 
+			"LocatedBaseClass" [ URL = "./#APL" color="gray" fontcolor="gray"] ;
+				"APL" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 			"AdminUnit" [ URL = "./#AdminUnit"] ;
 		"http://www.opengis.net/ont/geosparql#Feature" [ URL = "./#AdminUnit" color="gray" fontcolor="gray"] ;
 				"AdminUnit" -> "http://www.opengis.net/ont/geosparql#Feature" [ color=red style="dashed" ]; 
-			"BaseClass" [ URL = "./#AdminUnit" color="gray" fontcolor="gray"] ;
-				"AdminUnit" -> "BaseClass" [ color=red style="dashed" ]; 
+			"LocatedBaseClass" [ URL = "./#AdminUnit" color="gray" fontcolor="gray"] ;
+				"AdminUnit" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 			"AdminUnitLevel" [ URL = "./#AdminUnitLevel"] ;
 		"BaseClass" [ URL = "./#AdminUnitLevel" color="gray" fontcolor="gray"] ;
 				"AdminUnitLevel" -> "BaseClass" [ color=red style="dashed" ]; 
