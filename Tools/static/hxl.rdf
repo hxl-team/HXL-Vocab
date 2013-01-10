@@ -1363,7 +1363,7 @@
     <rdfs:comment xml:lang="en">Specififes the location for things like emergencies, projects, or affected population locations. This should be an administrative unit or other feature established in the HXL data repositiry (generally an Administrative Unit, Populated Place, or Affected Population Location agreed by the IM Working Group in a given emergency). It is also used to define the hierarchy of administrative units with each lower level admin unit requiring a hxl:atLocation property specifying the next higher level admin unit to which it belongs.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
-    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#BaseClass"/>
+    <rdfs:domain rdf:resource="http://hxl.humanitarianresponse.info/ns/#LocatedBaseClass"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://hxl.humanitarianresponse.info/ns/#atLocation">
     <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>

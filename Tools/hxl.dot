@@ -112,7 +112,7 @@ digraph {
 			"DataContainer" -> "ApprovalLevel" [ label="approvedAtLevel" URL = "./#approvedAtLevel"]; 
 			"DataContainer" -> "HXLer" [ label="approvedBy" URL = "./#approvedBy"]; 
 			"AdminUnit" -> "AdminUnitLevel" [ label="atLevel" URL = "./#atLevel"]; 
-			"BaseClass" -> "http://www.opengis.net/ont/geosparql#Feature" [ label="atLocation" URL = "./#atLocation"]; 
+			"LocatedBaseClass" -> "http://www.opengis.net/ont/geosparql#Feature" [ label="atLocation" URL = "./#atLocation"]; 
 			"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="comment" URL = "./#comment"]; 
 			"Situation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="commonTitle" URL = "./#commonTitle"]; 
 			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#int" [ label="count" URL = "./#count"]; 

@@ -41,9 +41,9 @@ digraph {
 				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
 					"AdminUnitLevel" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="adminUnitLevelTitle" URL = "./#adminUnitLevelTitle"]; 
 				"AdminUnit" -> "AdminUnitLevel" [ label="atLevel" URL = "./#atLevel"]; 
-				"BaseClass" [ URL = "./#BaseClass" color="gray" fontcolor="gray"] ;
+				"LocatedBaseClass" [ URL = "./#LocatedBaseClass" color="gray" fontcolor="gray"] ;
 				"http://www.opengis.net/ont/geosparql#Feature" [ URL = "./#http://www.opengis.net/ont/geosparql#Feature" color="gray" fontcolor="gray"] ;
-					"BaseClass" -> "http://www.opengis.net/ont/geosparql#Feature" [ label="atLocation" URL = "./#atLocation"]; 
+					"LocatedBaseClass" -> "http://www.opengis.net/ont/geosparql#Feature" [ label="atLocation" URL = "./#atLocation"]; 
 				"APL" -> "DisplacedLocationType" [ label="displacedLocationType" URL = "./#displacedLocationType"]; 
 				"http://www.opengis.net/ont/geosparql#Feature" [ URL = "./#http://www.opengis.net/ont/geosparql#Feature" color="gray" fontcolor="gray"] ;
 				"http://www.w3.org/2000/01/rdf-schema#Literal" [ URL = "./#http://www.w3.org/2000/01/rdf-schema#Literal" color="gray" fontcolor="gray"] ;
