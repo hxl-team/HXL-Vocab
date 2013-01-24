@@ -8,9 +8,15 @@ digraph {
 
 "Emergency" [ URL = "./#Emergency"] ;
 		"Emergency" -> "Situation" [ color=red style="dashed" ]; 
+			"Incident" [ URL = "./#Incident"] ;
+		"LocatedBaseClass" [ URL = "./#Incident" color="gray" fontcolor="gray"] ;
+				"Incident" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
+			"Need" [ URL = "./#Need"] ;
+		"BaseClass" [ URL = "./#Need" color="gray" fontcolor="gray"] ;
+				"Need" -> "BaseClass" [ color=red style="dashed" ]; 
 			"Situation" [ URL = "./#Situation"] ;
-		"BaseClass" [ URL = "./#Situation" color="gray" fontcolor="gray"] ;
-				"Situation" -> "BaseClass" [ color=red style="dashed" ]; 
+		"LocatedBaseClass" [ URL = "./#Situation" color="gray" fontcolor="gray"] ;
+				"Situation" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 			"http://xmlns.com/foaf/0.1/Agent" [ URL = "./#http://xmlns.com/foaf/0.1/Agent"] ;
 		"http://xmlns.com/foaf/0.1/Group" [ URL = "./#http://xmlns.com/foaf/0.1/Group"] ;
 		"http://xmlns.com/foaf/0.1/Group" -> "http://xmlns.com/foaf/0.1/Agent" [ color=red style="dashed" ]; 

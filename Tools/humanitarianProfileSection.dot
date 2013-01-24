@@ -37,8 +37,8 @@ digraph {
 			"Others" [ URL = "./#Others"] ;
 		"Others" -> "Displaced" [ color=red style="dashed" ]; 
 			"Population" [ URL = "./#Population"] ;
-		"BaseClass" [ URL = "./#Population" color="gray" fontcolor="gray"] ;
-				"Population" -> "BaseClass" [ color=red style="dashed" ]; 
+		"LocatedBaseClass" [ URL = "./#Population" color="gray" fontcolor="gray"] ;
+				"Population" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 			"http://xmlns.com/foaf/0.1/Group" [ URL = "./#Population" color="gray" fontcolor="gray"] ;
 				"Population" -> "http://xmlns.com/foaf/0.1/Group" [ color=red style="dashed" ]; 
 			"RefugeesAsylumSeekers" [ URL = "./#RefugeesAsylumSeekers"] ;

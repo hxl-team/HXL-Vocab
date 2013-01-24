@@ -8,10 +8,10 @@ digraph {
 
 "APL" [ URL = "./#APL"] ;
 	"APL" -> "http://www.opengis.net/ont/geosparql#Feature" [ color=red style="dashed" ]; 
-		"APL" -> "BaseClass" [ color=red style="dashed" ]; 
+		"APL" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 		"AdminUnit" [ URL = "./#AdminUnit"] ;
 	"AdminUnit" -> "http://www.opengis.net/ont/geosparql#Feature" [ color=red style="dashed" ]; 
-		"AdminUnit" -> "BaseClass" [ color=red style="dashed" ]; 
+		"AdminUnit" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 		"AdminUnitLevel" [ URL = "./#AdminUnitLevel"] ;
 	"AdminUnitLevel" -> "BaseClass" [ color=red style="dashed" ]; 
 		"AffectedPopulation" [ URL = "./#AffectedPopulation"] ;
@@ -40,7 +40,7 @@ digraph {
 	"DisplacedLocationTypeSet" -> "BaseClass" [ color=red style="dashed" ]; 
 		"DisplacedLocationTypeSet" -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag" [ color=red style="dashed" ]; 
 		"Distribution" [ URL = "./#Distribution"] ;
-	"Distribution" -> "BaseClass" [ color=red style="dashed" ]; 
+	"Distribution" -> "Response" [ color=red style="dashed" ]; 
 		"Emergency" [ URL = "./#Emergency"] ;
 	"Emergency" -> "Situation" [ color=red style="dashed" ]; 
 		"HXLer" [ URL = "./#HXLer"] ;
@@ -52,9 +52,11 @@ digraph {
 		"IDP" [ URL = "./#IDP"] ;
 	"IDP" -> "Displaced" [ color=red style="dashed" ]; 
 		"Incident" [ URL = "./#Incident"] ;
-	"Incident" -> "BaseClass" [ color=red style="dashed" ]; 
+	"Incident" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 		"Injured" [ URL = "./#Injured"] ;
 	"Injured" -> "Casualty" [ color=red style="dashed" ]; 
+		"LocatedBaseClass" [ URL = "./#LocatedBaseClass"] ;
+	"LocatedBaseClass" -> "BaseClass" [ color=red style="dashed" ]; 
 		"Missing" [ URL = "./#Missing"] ;
 	"Missing" -> "Casualty" [ color=red style="dashed" ]; 
 		"Need" [ URL = "./#Need"] ;
@@ -74,7 +76,7 @@ digraph {
 		"PopulatedPlace" [ URL = "./#PopulatedPlace"] ;
 	"PopulatedPlace" -> "AdminUnit" [ color=red style="dashed" ]; 
 		"Population" [ URL = "./#Population"] ;
-	"Population" -> "BaseClass" [ color=red style="dashed" ]; 
+	"Population" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 		"Population" -> "http://xmlns.com/foaf/0.1/Group" [ color=red style="dashed" ]; 
 		"RefugeesAsylumSeekers" [ URL = "./#RefugeesAsylumSeekers"] ;
 	"RefugeesAsylumSeekers" -> "Displaced" [ color=red style="dashed" ]; 
@@ -84,11 +86,11 @@ digraph {
 	"ReportCategorySet" -> "BaseClass" [ color=red style="dashed" ]; 
 		"ReportCategorySet" -> "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag" [ color=red style="dashed" ]; 
 		"Response" [ URL = "./#Response"] ;
-	"Response" -> "BaseClass" [ color=red style="dashed" ]; 
+	"Response" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 		"SexCategory" [ URL = "./#SexCategory"] ;
 	"SexCategory" -> "BaseClass" [ color=red style="dashed" ]; 
 		"Situation" [ URL = "./#Situation"] ;
-	"Situation" -> "BaseClass" [ color=red style="dashed" ]; 
+	"Situation" -> "LocatedBaseClass" [ color=red style="dashed" ]; 
 		"Source" [ URL = "./#Source"] ;
 	"Source" -> "http://xmlns.com/foaf/0.1/Agent" [ color=red style="dashed" ]; 
 		"Source" -> "BaseClass" [ color=red style="dashed" ]; 
@@ -110,7 +112,7 @@ digraph {
 			"DataContainer" -> "ApprovalLevel" [ label="approvedAtLevel" URL = "./#approvedAtLevel"]; 
 			"DataContainer" -> "HXLer" [ label="approvedBy" URL = "./#approvedBy"]; 
 			"AdminUnit" -> "AdminUnitLevel" [ label="atLevel" URL = "./#atLevel"]; 
-			"BaseClass" -> "http://www.opengis.net/ont/geosparql#Feature" [ label="atLocation" URL = "./#atLocation"]; 
+			"LocatedBaseClass" -> "http://www.opengis.net/ont/geosparql#Feature" [ label="atLocation" URL = "./#atLocation"]; 
 			"BaseClass" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="comment" URL = "./#comment"]; 
 			"Situation" -> "http://www.w3.org/2000/01/rdf-schema#Literal" [ label="commonTitle" URL = "./#commonTitle"]; 
 			"BaseClass" -> "http://www.w3.org/2001/XMLSchema#int" [ label="count" URL = "./#count"]; 
